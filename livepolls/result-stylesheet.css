@@ -1,0 +1,207 @@
+:root{
+    --bg-1: rgb(255, 0, 85);
+    --bg-2: rgb(255, 85, 142);
+    --bg-3: rgb(235, 0, 78);
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    width: 8px;
+    background-color: rgb(209, 209, 209);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--bg-1);
+    border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--bg-3);
+}
+.no-select {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.hidden{
+    display: none;
+}
+*{
+    font-family: "Poppins" , Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    box-sizing:border-box;
+}
+body{
+    padding: 0px;
+    margin: 0px;
+}
+                                                            /* Navbar Starts */
+.nav{
+    padding: 0px;
+}
+.btn-nav{
+    outline: 2px solid var(--bg-1);
+}
+.nav-div{
+    box-shadow: 0px 1px 12px 0.1px rgb(221, 221, 221);
+    background-color: white;
+}
+.nav-item > a{
+    color: rgb(109, 109, 109) !important;
+    border-bottom: 3px solid white;
+    text-align: center;
+    &:hover{
+        color: rgb(0, 0, 0) !important;
+        border-bottom: 3px solid var(--bg-1);
+    }
+}
+.nav-items{
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+.nav-items a{
+    cursor: pointer;
+}
+.nav-side-item{
+    display: flex;
+    margin-left: auto;
+}
+.signup{
+    background-color: var(--bg-1);
+    border-radius: 25px;
+    padding: 0px 20px;
+    text-align: center;
+}
+.login{
+    border-bottom: 3px solid var(--bg-1);
+    padding: 0px 15px;
+    text-align: center;
+    margin-left: auto;
+}
+.signup > a {
+    color: white !important;
+}
+                                               /*  Main Body Startes  */
+.total-div{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding: 0px 0px;
+}
+.middle-div{
+    height: max-content;   /*  Made Changes  */
+    margin-top: 20px;
+    color: rgb(35, 35, 35);
+    padding: 1vw;
+}
+.middle-div > h1{
+    color: var(--bg-1);
+    text-align: center;
+}
+.middle-div-under-1{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    gap: 20px 20px;
+    flex-direction: row;
+    justify-content: center;
+}
+/*  Data Charts CSS  */
+.middle-div-under-1 > div{
+    max-height: 400px;
+    min-width: 60px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.poll-option{
+    font-size: x-small;
+}
+.outer-bar{
+    height: 300px;
+    background-color: rgb(255, 233, 233);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.inner-bar{
+    border-radius: 50px;
+    width: 10px;
+    background-color: var(--bg-1);
+    color: var(--bg-1);
+}
+.outer-round{
+    position: relative;
+    top: -15px;
+    width: 50px;
+    aspect-ratio: 1 / 1;
+    padding: 4px;
+    background-color: var(--bg-1);
+    border-radius: 50%;
+}
+.inner-round{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.poll-percentage{
+    font-weight: 600;
+}
+                                                                /*  Footer Starts  */
+footer{
+    margin-top: auto;
+    background-color: white;
+    color: var(--bg-1);
+    text-align: center;
+    height: fit-content;
+    width: 100%;
+    box-shadow: 0px -1px 12px 0.1px rgb(221, 221, 221);
+    padding: 15px;
+}
+.footer-div-1{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    gap: 3vw 3vw;
+}
+.footer-div-1 > a{
+    text-decoration: none;
+    color: var(--bg-1);
+}
+@media only screen and (max-width: 1240px) { /*  This is only for Poll Chart Div Responsiveness  */
+    .middle-div-under-1{
+        flex-wrap: wrap;
+    }
+    .box{
+        display: flex;
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        width: fit-content;
+        height: fit-content;
+    }
+    .outer-round{
+        order: 1;
+        top: 0px;
+    }
+    .outer-bar{
+        order: 2;
+        height: 10px;
+        width: 50vw;
+    }
+    .inner-bar{
+        height: 10px;
+    }
+    .poll-option{
+        order: 3;
+        position: relative;
+        top: 8px;
+    }
+}

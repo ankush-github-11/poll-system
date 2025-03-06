@@ -1,0 +1,926 @@
+:root{
+    --bg-1: rgb(255, 0, 85);
+    --bg-2: rgb(255, 85, 142);
+    --bg-3: rgb(235, 0, 78);
+    --bg-color: white;
+    --text-color: black;
+    --nav-footer-shadow: rgb(221, 221, 221);
+    --middle-div-under-1: rgb(255, 255, 255);
+    --side-div: #EDEEF2;
+    --title-text: rgb(0, 0, 0);
+    --create-text-1: rgb(255, 0, 85);
+    --create-text-2: rgb(255, 155, 155);
+    --scrollbar-track: rgb(209, 209, 209);
+    --box-border: #DFE0E1;
+    --box-color: rgb(255, 255, 255);
+    --gradient-color: rgb(215, 218, 228);
+
+    --hover-color: rgb(245, 245, 245);
+    --dropdown-text-color: rgb(26, 26, 26);
+    --dropdown-bg-color: rgb(250, 250, 255);
+}
+.darkmode{
+    --bg-1: rgb(255, 0, 85);
+    --bg-2: rgb(255, 85, 142);
+    --bg-3: rgb(235, 0, 78);
+    --bg-color: #121212;
+    --text-color: rgb(240, 240, 240);
+    --nav-footer-shadow: rgb(0, 0, 0);
+    --middle-div-under-1: rgb(27, 30, 36);
+    --side-div: #1a1c22;
+    --title-text: rgb(246, 247, 249);
+    --create-text-1: rgb(255, 255, 255);
+    --create-text-2: rgb(119, 114, 148);
+    --scrollbar-track: rgb(39, 39, 39);
+    --box-border: #505050;
+    --box-color: rgb(31, 31, 31);
+    --gradient-color: rgb(255, 0, 85);
+    
+    --hover-color: rgb(32, 32, 32);
+    --dropdown-text-color: rgb(248, 248, 248);
+    --dropdown-bg-color: rgb(22, 22, 22);
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    width: 8px;
+    background-color: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--bg-1);
+    border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--bg-3);
+}
+.no-select {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.hidden{
+    display: none;
+}
+.flex{
+    display: flex;
+}
+*{
+    font-family: "Poppins" , Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    box-sizing:border-box;
+}
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+                                                            /* Navbar Starts */
+.nav{
+    padding: 0px;
+}
+.btn-nav{
+    outline: 2px solid var(--bg-1);
+}
+.nav-div{
+    box-shadow: 0px 1px 12px 0.1px var(--nav-footer-shadow);
+    background-color: var(--bg-color);
+}
+.nav-item > a{
+    color: rgb(157, 157, 157) !important;
+    border-bottom: 3px solid var(--bg-color);
+    text-align: center;
+    &:hover{
+        color: var(--text-color) !important;
+        border-bottom: 3px solid var(--bg-1);
+    }
+}
+.light-dark-div{
+    height: fit-content;
+    width: fit-content;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    position: relative;
+    bottom: 2px;
+}
+.light-mode-svg, .dark-mode-svg{
+    border-radius: 50%;
+    margin: 5px;
+    height: 15px;
+    aspect-ratio: 1 / 1;
+}
+.nav-items{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+.nav-items a{
+    cursor: pointer;
+}
+.nav-side-item{
+    display: flex;
+    margin-left: auto;
+}
+.signup{
+    background-color: var(--bg-1);
+    border-radius: 25px;
+    padding: 0px 20px;
+    text-align: center;
+}
+.login{
+    border-bottom: 3px solid var(--bg-1);
+    padding: 0px 15px;
+    text-align: center;
+    margin-left: auto;
+}
+/*  Profile CSS starts  */
+.dropdown-profile-div{
+    margin-left: auto;
+    cursor: pointer;
+}
+.profile{
+    height: 45px !important;
+    width: 45px !important;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255) !important;
+}
+.profile-logo{
+    height: 100%;
+    width: 100%;
+}
+.profile-dropdown-div{
+    height: fit-content;
+    background-color: var(--dropdown-bg-color);
+    position: absolute;
+    top: 54.5px;
+    right: 13px;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 
+    0 4px 12px rgba(0, 0, 0, 0.10);
+    /* display: flex; */
+    flex-direction: column;
+    align-items: flex-start;
+    cursor:default;
+}
+.profile-image-name-div{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+.profile-image-div{
+    display: flex;
+    align-items: center;
+}
+.profile-image-div > a{
+    height: 80px;
+}
+.profile-name-div{
+    min-width: 150px;
+}
+.profile-name-div > a{
+    height: fit-content;
+    width: min-content;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: 0.5px; 
+    color: var(--text-color); 
+}
+.horizontal-line{
+    height: 1.5px;
+    width: 100%;
+    background: linear-gradient(155deg, rgb(220, 220, 220), rgb(65, 65, 65));
+    border-radius: 10px;
+    margin-top: 0.8rem;
+    margin-bottom: 0.9rem;
+}
+.settings-div, .edit-div, .signout-div{
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    gap: 15px;
+    height: 30px;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover{
+        background-color: var(--hover-color);
+    }
+}
+.settings-div > i, .edit-div > i .signout-div > i{
+    color: var(--dropdown-text-color);
+}
+.settings-div > a, .edit-div > a{
+    width: 100%;
+    text-decoration: none;
+    color: var(--dropdown-text-color);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+.signout-div button{
+    border: none;
+    outline: none;
+    padding: 0;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: var(--dropdown-text-color);
+    background-color: var(--dropdown-bg-color);
+}
+.profile-dropdown{
+    background-color: var(--bg-color) !important;
+}
+.profile-dropdown a{
+    color: rgb(157, 157, 157) !important;
+    &:hover{
+        color: var(--text-color) !important;
+        background-color: var(--bg-color);
+    }
+}
+/*  Profile CSS ends  */
+.login > a{
+    color: var(--text-color) !important;
+}
+.signup > a {
+    color: white !important;
+}
+                                                /* Total Div Starts*/
+.total-div-1{
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+}
+.total-div-2{
+    display: grid;
+    height: min-content;
+    gap: 20px;
+    grid-template-columns: 2.8fr 1fr;                  /*   Grid Layout   */ 
+    padding: 0px 8vw;
+}
+
+                               /*   Middle Div   */
+.middle-div{
+    height: max-content;   /*  Made Changes  */
+    width: 100%;
+    margin-top: 20px;
+    color: rgb(35, 35, 35);
+}
+                                 /*   Under the Side Div 1    */
+.middle-div-under-1{
+    height: 80vh;
+    text-align: center;
+    display: flex;
+    gap: 1.5vw;
+    padding-top: 20vh;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    background-color: var(--middle-div-under-1);
+}
+/* Swing Animation
+.swing-container {
+    position: relative;
+    margin-right: auto;
+}
+
+.swing-image {
+    animation: swing 7s infinite;
+    width: 87px;   
+    height: auto;
+}
+
+@keyframes swing {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(40px); 
+    }
+    100% {
+        transform: translateY(0);
+    }
+} */
+.create-text{
+    margin-top: 30px;
+}
+.create-text > h2{
+    margin: 0;
+    font-size: 50px;
+    color: var(--title-text);
+}
+.create-text{
+    background: linear-gradient(155deg, var(--create-text-1) , var(--create-text-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+/* .vote-text > h3{
+    font-size: 22px;
+    color: rgb(159, 159, 159);
+}
+.moving-glow {
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #ff0000, #ff7300, #ffd700, #00ff00, #008cff, #4b0082, #ee82ee);
+    background-size: 400% 400%;
+    animation: glow 8s ease infinite;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+@keyframes glow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+} */
+.btn-middle-div{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 20px;
+}
+.createpoll{
+    width: 150px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    outline: 2px solid var(--bg-1);
+    color: var(--bg-1);
+    &:hover{
+        color: white;
+        background-color: var(--bg-1);
+    }
+}
+.demo{
+    width: 150px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    font-weight: 500;
+    background: linear-gradient(155deg,var(--bg-1), rgb(43, 13, 13)) !important;
+    color: white;
+    &:hover{
+        color: rgb(255, 221, 229);
+    }
+}
+                                              /* Side Div*/
+
+.side-div{
+    height: 95vh;   /*  Made Changes  */
+    background: linear-gradient(135deg, var(--side-div), var(--bg-color)); 
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    color: black;
+    padding-top: 10vh;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    padding-bottom: 3vh;
+}
+.popular-polls-div{
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 5vh;
+}
+.popular-polls{
+    height: 100%;
+}
+.side-div h3{
+    text-align: center;
+    font-size: 45px;
+    color: var(--title-text);
+}
+
+                                        /*Under the Side Div 1*/
+.side-div-under-1 , .side-div-under-2{
+    height: 85vh;
+    text-align: center;
+    height: min-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 22px 10px;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 180px;
+}
+.side-box-1 , .side-box-2 , .side-box-3{
+    min-height: 250px;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    outline: 2px solid var(--box-border);
+    background-color: var(--box-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 
+    0 4px 12px rgba(0, 0, 0, 0.10);
+}
+.side-box-1 > div , .side-box-2 > div , .side-box-3 > div{
+    width: 100%;
+}
+.side-box-1 h4 , .side-box-2 h4 , .side-box-3 h4{
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+.side-box-4{
+    height: 450px;
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    border-radius: 10px;
+    clip-path: path("M 0,175 A 25,25 0,0,1 25,150 L 275,150 A 25,25 0,0,0 300,125 L 300,100 A 25,25 0,0,1 325,75 L 575,75 A 25,25 0,0,0 600,50 L 600,25 A 25,25 0,0,1 625,0 L 875,0 A 25,25 0,0,1 900,25 L 900,275 A 25,25 0,0,1 875,300 L 625,300 A 25,25 0,0,0 600,325 L 600,350 A 25,25 0,0,1 575,375 L 325,375 A 25,25 0,0,0 300,400 L 300,425 A 25,25 0,0,1 275,450 L 25,450 A 25,25 0,0,1 0,425 Z");
+}
+.side-box-4 div{
+    color: var(--text-color);
+}
+.my-fa-1{
+    position: relative;
+    top: 75px;
+}
+.my-fa-3{
+    position: relative;
+    bottom: 75px;
+}
+.my-fa-1, .my-fa-2, .my-fa-3{
+    background: linear-gradient(135deg, var(--gradient-color), var(--bg-color)) !important;
+    color: var(--bg-1) !important;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100%;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+.my-fa-1>div, .my-fa-2>div, .my-fa-3>div{
+    font-size: large;
+    font-weight: 500;
+}
+.my-fa-1>h3, .my-fa-2>h3, .my-fa-3>h3{
+    font-size: xx-large;
+    font-weight: 600;
+}
+.btn-vote-side-box-1, .btn-vote-side-box-2 , .btn-vote-side-box-3{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px 10px ;
+}
+.side-box-1 div , .side-box-2 div , .side-box-3 div{
+    color: rgb(128, 128, 128);
+    font-size: 1rem;
+}
+.btn-side-box{
+    width: 35%;
+    border: none;
+    height: min-content;
+    color: white;
+    background-color: var(--bg-1);
+    &:hover{
+        color: white;
+        background-color: var(--bg-3);
+    }
+}
+                                                                      /*    How It Works Div Start    */
+.how-it-works-div {
+    grid-column: 1/3;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.how-it-works-div-under {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.how-it-works-div-under > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 22%;
+    height: 130px;
+    outline: 3px solid rgb(222, 222, 222);
+    padding: 20px;
+    border-radius: 8px;
+    min-width: 200px;
+    text-align: center;
+}
+.moving-border {  /*  How It Works Each Div Moving Border Effect  */
+    &:hover{
+        animation: move 1s ease-in-out;
+    }
+}
+@keyframes move {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    0% {
+        transform: rotate(0deg);
+    }
+}                                                                        /*  Modal Area starts  */
+.blur{
+    filter: blur(20px);
+}
+.flex{
+    display: flex;
+}
+.active-bg{
+    background-color: rgb(12, 165, 40);
+}
+.active-text{
+    color: white;
+}
+.total-div-3-css{
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.modal-1-css , .modal-2-css , .modal-3-css{
+    background-color: rgba(207, 207, 207, 0.1);
+    outline: 2px solid rgb(211, 211, 211);
+    border-radius: 10px;
+    position: fixed;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
+    height: 80vh;
+    width: 90vw;
+    z-index: 3;
+}
+.x-1 , .x-2 , .x-3{
+    margin-left: auto;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.modal-1-header, .modal-2-header, .modal-3-header{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.modal-1-header > h1 , .modal-2-header > h1 , .modal-3-header > h1{
+    margin: 20px;
+    color: var(--bg-1);
+    height: min-content;
+}
+.modal-1-line, .modal-2-line, .modal-3-line{
+    margin: 0 auto;
+    margin-bottom: 5px;
+    width: 97%;
+    height: 2px;
+    background-color: rgb(211, 211, 211);
+}
+.modal-1-options-div {
+    height: 50vh;
+    display: grid;
+    gap: 10px 10px;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(6,1fr);
+}
+
+.modal-1-options-div > div {
+    cursor: pointer;
+    outline: 2px solid rgb(218, 218, 218);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    &:hover{
+        outline: 2px solid rgb(201, 201, 201);
+    }
+}
+.modal-2-options-div {
+    height: 50vh;
+    display: grid;
+    gap: 10px 10px;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(6,1fr);
+}
+
+.modal-2-options-div > div {
+    cursor: pointer;
+    outline: 2px solid rgb(218, 218, 218);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    &:hover{
+        outline: 2px solid rgb(201, 201, 201);
+    }
+}
+.modal-3-options-div {
+    height: 50vh;
+    display: grid;
+    gap: 10px 10px;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(6,1fr);
+}
+
+.modal-3-options-div > div {
+    cursor: pointer;
+    outline: 2px solid rgb(218, 218, 218);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    &:hover{
+        outline: 2px solid rgb(201, 201, 201);
+    }
+}
+.modal-1-cancel-submit, .modal-2-cancel-submit, .modal-3-cancel-submit{
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+    justify-content: right;
+    padding: 5px 30px;
+}
+.cancel-1, .cancel-2, .cancel-3{
+    border: none;
+}
+.submit-1, .submit-2, .submit-3{
+    border: none;
+}
+.modal-1-result, .modal-2-result, .modal-3-result{
+    height: 50vh;
+    flex-direction: column;
+    gap: 20px 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.modal-1-result > i, .modal-2-result > i, .modal-3-result > i{
+    color: rgb(24, 172, 24);
+}
+.btn-view-res-1, .btn-view-res-2, .btn-view-res-3{
+    color: white;
+    background-color: var(--bg-1);
+    &:hover{
+        background-color: var(--bg-3);
+        color: white;
+    }
+}
+                                                                         /*     Footer Starts     */
+footer{
+    margin-top: auto;
+    background-color: var(--bg-color);
+    color: var(--bg-1);
+    text-align: center;
+    height: fit-content;
+    width: 100%;
+    box-shadow: 0px -1px 12px 0.1px var(--nav-footer-shadow);
+    padding: 15px;
+}
+.footer-div-1{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    gap: 3vw 3vw;
+}
+.footer-div-1 > a{
+    text-decoration: none;
+    color: var(--bg-1);
+}
+@media only screen and (max-width: 480px) {
+    .create-text{
+        margin-bottom: 20px;
+    }
+    .create-text > h2{
+        font-size: 35px;
+    }
+    .total-div-1{
+        padding: 0px 1vw;
+    }
+    .btn-middle-div{
+        flex-direction: column !important;
+        width: 100%;
+    }
+    .createpoll, .demo{
+        width: 12rem !important;
+    }
+    .vote-text h3{
+        font-size: 18px;
+    }
+    .side-div {
+        margin-top: 0;
+    }
+    .side-box-1, .side-box-2, .side-box-3 , .side-box-4 {
+        width: 90%;
+    }
+    .login {
+        margin: 0 auto;
+    }
+    .swing-container{
+        margin: 0 auto;
+    }
+    .modal-1-header > h1{
+        font-size: 18px;
+    }
+    .modal-1-options-div {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(8,1fr);
+    }
+    .modal-1-cancel-submit, .modal-2-cancel-submit, .modal-3-cancel-submit{
+        justify-content: center;
+    }
+}
+/* For screens up to 576px (mobile) */
+@media (min-width:481px) and (max-width: 576px) {
+    .create-text > h2{
+        font-size: 40px;
+    }
+    .side-div {
+        margin-top: 0;
+    }
+    .side-box-1, .side-box-2, .side-box-3 , .side-box-4 {
+        width: 80%;
+    }
+    .login {
+        margin: 0 auto;
+    }
+    .swing-container{
+        margin: 0 auto;
+    }
+    .modal-1-header > h1{
+        font-size: 25px;
+    }
+    .modal-1-options-div {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(8,1fr);
+    }
+    .modal-1-cancel-submit, .modal-2-cancel-submit, .modal-3-cancel-submit{
+        justify-content: center;
+    }
+}
+
+/* For screens between 577px and 768px (small tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .create-text > h2{
+        font-size: 45px;
+    }
+    .side-div {
+        margin-top: 0;
+    }
+    .side-box-1, .side-box-2, .side-box-3 , .side-box-4 {
+        width: 75%;
+    }
+    .login {
+        margin: 0 auto;
+    }
+    .swing-container{
+        margin: 0 auto;
+    }
+    .modal-1-options-div {
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(6,1fr);
+    }
+    .modal-1-cancel-submit, .modal-2-cancel-submit, .modal-3-cancel-submit{
+        justify-content: center;
+    }
+}
+
+/* For screens between 769px and 992px (medium devices) */
+@media (min-width: 769px) and (max-width: 991px) {
+    .login {
+        margin: 0 auto;
+    }
+    .swing-container{
+        margin: 0 auto;
+    }
+    .modal-1-options-div {
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(6,1fr);
+    }
+}
+@media only screen and (max-width: 1096px) { /*  This is only for Growth Overview Div Responsiveness  */
+    .my-fa-1, .my-fa-2, .my-fa-3{
+        height: fit-content;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        width: 100%;
+    }
+}
+/*  Make the Navbar Sticky  */
+/*  Close modal when clicking outside of it */
+/*  Add the media queries for the 2nd and 3rd poll  */
+/*  Add BG color to all the option divs in the popular polls and write the corresponding Javascript  */
+/*  Fix the Responsiveness of the modals  */
+/*  Fix the login button in responsiveness in result.php  */
+/*  Use cookie to ensure only one time voting  */
+/*  Make the Live Poll Submission confirmed from the SUBMIT button , currently its been done by View Results  */
+/*  Fix the please select an option  */
+/*  Fix view result button logic  */
+/*  Make Poll Result Chart Responsive  */
+/*  Add Media Query to all the stylesheets (Copy and Paste from index.stylesheet.css)  */
+/*  Make the content width in index page 85%  */
+/*  Deleting the option on questionAndPollOptions  */
+/*  Give info on hovering on each radio button  */
+/*  Add a Simple and Advanced Poll Switch in the beginning of the Create Poll  */
+/*  Fix the responsiveness of the divs under the Schedule and Duration Layout  */
+/*  Fix the layout of the Poll Chart in Mobile Mode  */
+/*  Use flatpickr for calendar logo in schedule and duration  */
+/*  Add Responsiveness to the Growth Overview Div  */
+/*  Add animation to the profile dropdown  */
+/*  Change the .sessionName logic to .sessionUsername  */
+/*  Fix the username issue in signup  */
+/*  Fix the demo form  */
+
+/*
+Settings/Configuration
+
+Privacy Settings
+Public (anyone can vote)
+Private (restricted access via a link or code).
+
+Results Visibility
+Show results after voting
+Show results after the poll ends
+Hide results.
+
+Preview Poll
+Button: Allows users to preview how the poll will look to voters.
+Button: To save and publish the poll.
+
+Reset Form
+Button: Clears all fields in the form.
+
+Randomize Option Order
+
+Poll Expiry Actions:
+Notify the admin.
+Automatically delete/disable the poll.
+Archive the poll results.
+
+Enable Analytics: Toggle to allow tracking of poll metrics such as:
+Number of participants.
+Geographical breakdown.
+Time distribution of votes.
+
+*/
+
+
+
+
+
+/*
+
+
+Live Results Display: Show real-time results during voting.
+7. Preview Feature
+Enable users to preview the selected template before finalizing.
+*/
