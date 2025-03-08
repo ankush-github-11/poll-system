@@ -3,13 +3,13 @@
   --bg-2: rgb(255, 85, 142);
   --bg-3: rgb(235, 0, 78);
   --bg-color: white;
-  --bg-color-less: rgb(246, 246, 246);
+  --bg-color-less: rgb(252, 252, 252);
   --text-color: black;
   --text-color-less: rgb(71, 71, 71);
   --nav-bg-color: rgb(243, 243, 255);
   --nav-footer-shadow: rgb(221, 221, 221);
   --scrollbar-track: rgb(209, 209, 209);
-  --hover-color: rgb(240, 240, 240);
+  --hover-color: rgb(236, 237, 242);
   --border-color: rgb(231, 231, 231);
 }
 .darkmode{
@@ -23,7 +23,7 @@
   --nav-footer-shadow: rgb(0, 0, 0);
   --scrollbar-track: rgb(39, 39, 39);
   --nav-bg-color: rgb(0, 0, 16);
-  --hover-color: rgb(40, 40, 40);
+  --hover-color: rgb(41, 40, 56);
   --border-color: rgb(74, 74, 74);
 }
 ::-webkit-scrollbar {
@@ -157,16 +157,24 @@ body{
   border-radius: 10px;
   cursor: pointer;
   &:hover{
-    background-color: var(--hover-color);
+    outline: 1px solid var(--hover-color);
+  }
+}
+.left-div i{
+  color: var(--text-color);
+}
+
+.active-div{
+  background: linear-gradient(155deg, var(--hover-color), var(--bg-color));
+  &:hover{
+    outline: 0;
   }
 }
 
 
 
-
-.right-div{
+.right-div-1{
   height: 100%;
-  display: flex;
   flex-direction: column;
   gap: 20px;
 }
@@ -517,6 +525,46 @@ button:hover a {
   color: var(--text-color);
 }
 
+
+
+/*  right-div-2 starts  */
+.right-div-2{
+  width: 100% !important;
+}
+.accordion{
+  width: 100% !important;
+
+}
+.accordion-item{
+  width: 100% !important;
+}
+.accordion-item h2{
+  background: linear-gradient(155deg, var(--bg-color));
+  width: 100% !important;
+}
+.accordion-button{
+  background: linear-gradient(155deg, var(--bg-color-less), var(--bg-color));
+  cursor: pointer;
+  color: var(--text-color) !important;
+  outline: 1px solid var(--border-color) !important;
+  border: 0px;
+  transition: none;
+}
+.accordion-button::after {
+  filter: invert(21%) sepia(85%) saturate(5230%) hue-rotate(330deg) brightness(102%) contrast(100%);
+}
+
+
+.accordion-collapse{
+  outline: 1px solid var(--border-color) !important;
+}
+.accordion-body{
+  border: 0px;
+  outline: 1px solid var(--border-color) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-color-less) !important;
+  background-color: var(--bg-color) !important;
+}
 
 footer{
   margin-top: auto;
