@@ -404,22 +404,12 @@ include "../config/connect.php";
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                            <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
-                                What should I do if I encounter a bug?
-                            </div>
-                            </h2>
-                            <div id="collapseSeventeen" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                    Please report any issues to our support team via the <strong>"Contact Us"</strong> page.
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="right-div-3 hidden">
-                    Messages and Support
+                    <div class="send-a-message-div">Send a message to us!</div>
+                    <textarea class="textarea" rows="8" required></textarea>
+                    <button class="send-btn">Send</button>
                 </div>
                 <div class="right-div-4 hidden">
                     Bug
