@@ -1,4 +1,4 @@
-<?php
+<strong?php
 include "../config/connect.php";
 ?>
 <!DOCTYPE html>
@@ -196,41 +196,224 @@ include "../config/connect.php";
                     </div>
                 </div>
                 <div class="right-div-2 hidden">
+                    <div class="general-questions-div">General Questions</div>
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                             <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                Accordion Item #1
+                                What is this polling system?
                             </div>
                             </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div id="collapseOne" class="accordion-collapse collapse">
                                 <div class="accordion-body">
-                                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                This is an online platform where users can <strong>create, participate in, and analyze polls</strong> easily.
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                             <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Accordion Item #2
+                                How do I create a poll?
                             </div>
                             </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                            </div>
+                            <div id="collapseTwo" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    You can create a poll by signing in, navigating to the <strong>"Create Poll"</strong> section, and filling in the required details such as question, options, and duration.
+                                </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                             <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Accordion Item #3
+                                Do I need an account to vote in a poll?
                             </div>
                             </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <div id="collapseThree" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    It <strong>depends</strong> on the poll settings. Some polls allow <strong> guest voting</strong>, while others require <strong>user registration</strong>.
+                                </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="voting-process-div">Voting Process</div>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                How many times can I vote in a poll?
+                            </div>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    Each poll has its own rules. Some allow only one vote per user, while others may allow multiple votes <strong>depending on the settings.</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Can I change my vote after submitting?
+                            </div>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    No, once a vote is submitted, it <strong>cannot be changed.</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                How do I know if my vote was counted?
+                            </div>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    After voting, you will see a <strong>confirmation message</strong>, and the poll results (if public) will update automatically.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                Why can't I vote in a poll?
+                            </div>
+                            </h2>
+                            <div id="collapseSeven" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    The poll has <strong>ended</strong> or
+                                    you've <strong>already voted</strong> (if multiple votes are not allowed) or
+                                    you need to <strong>sign in</strong> to vote.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="poll-management-div">Poll Management</div>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                Can I edit my poll after creating it?
+                            </div>
+                            </h2>
+                            <div id="collapseEight" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    No, once a poll is published, you <strong>cannot edit</strong> the question or options. However, you can <strong>close the poll</strong> early if needed.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                How long does a poll stay active?
+                            </div>
+                            </h2>
+                            <div id="collapseNine" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    The poll creator sets the duration. Once the <strong>time expires</strong>, voting is automatically disabled.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                Can I delete my poll?
+                            </div>
+                            </h2>
+                            <div id="collapseTen" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <strong>Yes</strong>, poll creators have the option to delete their polls from the dashboard.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="results-and-privacy-div">Results & Privacy</div>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                                How are poll results displayed?
+                            </div>
+                            </h2>
+                            <div id="collapseEleven" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    Poll results can be viewed in <strong>real-time if set to public</strong>. Otherwise, they are only visible <strong>after the poll ends</strong>.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                                Can I keep my poll results private?
+                            </div>
+                            </h2>
+                            <div id="collapseTwelve" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <strong>Yes</strong>, poll creators can choose to display results publicly or keep them private.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                                Are votes anonymous?
+                            </div>
+                            </h2>
+                            <div id="collapseThirteen" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <strong>Depending on the poll settings</strong>, votes may be anonymous or linked to user accounts.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="technical-and-security-div">Technical & Security</div>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+                                Is the polling system secure?
+                            </div>
+                            </h2>
+                            <div id="collapseFourteen" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <strong>Yes</strong>, we use <strong>encryption and anti-fraud measures</strong> to ensure the integrity of the polls.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                                How do you prevent multiple votes from the same person?
+                            </div>
+                            </h2>
+                            <div id="collapseFifteen" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    We use <strong>session tracking, IP restrictions, and optional user authentication</strong> to prevent duplicate votes.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+                                Can I embed a poll on my website?
+                            </div>
+                            </h2>
+                            <div id="collapseSixteen" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <strong>Yes</strong>, you can generate an embed code for your poll and add it to your website.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
+                                What should I do if I encounter a bug?
+                            </div>
+                            </h2>
+                            <div id="collapseSeventeen" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    Please report any issues to our support team via the <strong>"Contact Us"</strong> page.
+                                </div>
                             </div>
                         </div>
                     </div>
