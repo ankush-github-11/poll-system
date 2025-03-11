@@ -54,7 +54,7 @@
 *{
   font-family: "Poppins" , Arial, Helvetica, sans-serif;
   font-weight: 400;
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 body{
   padding: 0px;
@@ -605,6 +605,65 @@ button:hover a {
     color: white;
   }
 }
+.right-div-4{
+  flex-direction: column;
+}
+.report-bug-div{
+  margin: 6px 0px;
+  font-size: 23px;
+  color: var(--text-color);
+}
+.find-issue-div{
+  margin-top: -3px;
+  margin-bottom: 18px;
+  margin-left: 1px;
+  font-size: 16px;
+  color: var(--text-color-less);
+}
+.input-group{
+  margin-bottom: 20px;
+}
+.input-group input, .input-group textarea{
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  border: 2px solid var(--border-color);
+  transition: none;
+}
+.input-group input:focus, .input-group textarea:focus{
+  box-shadow: none !important;
+  outline: 2px solid var(--bg-2) !important; 
+  border: none !important;
+}
+.input-group-text{
+  background-color: var(--bg-color-less) !important;
+  color: var(--text-color-less) !important;
+  border: 2px solid var(--border-color);
+}
+.bug-description-div span{
+  align-items: flex-start !important;
+}
+.bug-description-div textarea{
+  resize: none;
+}
+.form-select{
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  border: 2px solid var(--border-color);
+}
+.submit-btn{
+  height: 40px;
+  width: 120px;
+  border-radius: 50px;
+  color: var(--bg-1);
+  background-color: var(--bg-color);
+  border: 2px solid var(--bg-1);
+  outline: none;
+  &:hover{
+    background-color: var(--bg-1);
+    color: white;
+  }
+}
+
 
 footer{
   margin-top: auto;
@@ -637,6 +696,11 @@ footer{
   .right-div-under-1{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+  }
+  .image-div{
+    height: 80px;
+    width: 80px;
+    margin-top: 45px;
   }
   .right-div-under-3{
     grid-template-columns: 1fr;
@@ -765,3 +829,4 @@ footer{
 /*  If anyone tries to access this page using URL then throw the Error that's not the page you are looking for message  */
 /*  Fix the dark mode  */
 /*  Fix the box shadow  */
+/*  Add the JS part for the Messages & Support webpage and Report a Bug webpage  */

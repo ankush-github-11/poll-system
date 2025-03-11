@@ -412,7 +412,28 @@ include "../config/connect.php";
                     <button class="send-btn">Send</button>
                 </div>
                 <div class="right-div-4 hidden">
-                    Bug
+                    <form action=""></form>
+                    <div class="report-bug-div">Report a Bug</div>
+                    <div class="find-issue-div">Found an issue? Help us improve by reporting it!</div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">Bug Title</span>
+                        <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap bug-description-div">
+                        <span class="input-group-text" id="addon-wrapping">Bug Description</span>
+                        <textarea type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" rows="3"></textarea>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupSelect01">Bug Category</label>
+                        <select class="form-select" id="inputGroupSelect01">
+                            <option value="1">UI/UX Issue</option>
+                            <option value="2">Functional Bug</option>
+                            <option value="3">Performance Issue</option>
+                            <option value="4">Security Issue</option>
+                            <option value="5">Other</option>
+                        </select>
+                    </div>
+                    <button class="submit-btn">Send</button>
                 </div>
             </div>
         </div>
