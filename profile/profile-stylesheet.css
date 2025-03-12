@@ -69,6 +69,7 @@ body{
   width: 100%;
   display: flex;
   align-items: center;
+  gap: 20px;
   flex-direction: row;
   box-shadow: 0px 1px 12px 0.1px var(--nav-footer-shadow);
   background: linear-gradient(160deg, var(--bg-color),var(--nav-bg-color));
@@ -111,6 +112,12 @@ body{
   height: 15px;
   aspect-ratio: 1 / 1;
 }
+.hamburger-div{
+  color: var(--bg-1);
+  display: none;
+}
+
+/*  Navbar ends  */
 .total-div{
   height: fit-content;
   width: 100%;
@@ -183,7 +190,8 @@ body{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  gap: 2%;
+  gap: 10px;
+  height: fit-content;
 }
 .e-card {
   background: transparent;
@@ -278,8 +286,10 @@ body{
   box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.45);
   border: 1px solid var(--border-color);
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 10px;
 }
 .polls-created-text, .polls-participated-text{
   display: flex;
@@ -287,7 +297,6 @@ body{
   justify-content: center;
   font-size: 22px;
   letter-spacing: 0.5px;
-  margin-top: 20px;
 }
 
 .polls-created-number, .polls-participated-number{
@@ -306,14 +315,12 @@ body{
   gap: 10%;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 50px;
   border: none;
   outline: none;
   color: var(--bg-1);
   background-color: var(--bg-color);
   border: 2px solid var(--bg-1);
-  border-top-left-radius: 50px;
-  border-bottom-right-radius: 50px;
   font-size: 17px;
   font-weight: 500;
   letter-spacing: 0.7px;
@@ -687,6 +694,19 @@ footer{
 }
 
 @media only screen and (max-width: 480px) {
+  .nav-items-top{
+    display: none;
+  }
+  .light-dark-div{
+    margin-left: 10px;
+  }
+  .hamburger-div{
+    display: flex;
+  }
+  .light-dark-div{
+    margin-left: auto !important;
+    margin-right: 20px;
+  }
   .left-div{
     display: none;
   }
@@ -695,12 +715,29 @@ footer{
   }
   .right-div-under-1{
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1.5fr 1fr;
   }
   .image-div{
     height: 80px;
     width: 80px;
     margin-top: 45px;
+  }
+  .polls-created-div, .polls-participated-div{
+  }
+  .polls-created-text, .polls-participated-text{
+    width: min-content;
+    font-size: 16px;
+  }
+  .polls-created-number, .polls-participated-number{
+    font-size: 30px;
+  }
+  .polls-created-seeall-arrow-div, .polls-participated-seeall-arrow-div{
+    width: 100%;
+  }
+  .polls-created-seeall-btn, .polls-participated-seeall-btn{
+    width: 100%;
+    height: 25px;
+    font-size: 13px;
   }
   .right-div-under-3{
     grid-template-columns: 1fr;
@@ -708,6 +745,19 @@ footer{
   }
 }
 @media (min-width:481px) and (max-width: 576px) {
+  .nav-items-top{
+    display: none;
+  }
+  .light-dark-div{
+    margin-left: 10px;
+  }
+  .hamburger-div{
+    display: flex;
+  }
+  .light-dark-div{
+    margin-left: auto !important;
+    margin-right: 20px;
+  }
   .left-div{
     display: none;
   }
@@ -717,6 +767,15 @@ footer{
   .right-div-under-1{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+  }
+  .polls-created-text, .polls-participated-text{
+    width: min-content;
+  }
+  .polls-created-seeall-arrow-div, .polls-participated-seeall-arrow-div{
+    width: 100%;
+  }
+  .polls-created-seeall-btn, .polls-participated-seeall-btn{
+    width: 100%;
   }
   .right-div-under-3{
     grid-template-columns: 1fr;
@@ -725,6 +784,19 @@ footer{
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
+  .nav-items-top{
+    display: none;
+  }
+  .light-dark-div{
+    margin-left: 10px;
+  }
+  .hamburger-div{
+    display: flex;
+  }
+  .light-dark-div{
+    margin-left: auto !important;
+    margin-right: 20px;
+  }
   .left-div{
     display: none;
   }
@@ -734,6 +806,9 @@ footer{
   .right-div-under-1{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+  }
+  .polls-created-text, .polls-participated-text{
+    width: min-content;
   }
   .right-div-under-3{
     grid-template-columns: 1fr;
