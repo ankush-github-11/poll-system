@@ -722,8 +722,6 @@ footer{
     width: 80px;
     margin-top: 45px;
   }
-  .polls-created-div, .polls-participated-div{
-  }
   .polls-created-text, .polls-participated-text{
     width: min-content;
     font-size: 16px;
