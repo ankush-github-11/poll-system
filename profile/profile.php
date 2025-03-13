@@ -163,7 +163,7 @@
                                 <div class="username-left-div">Username</div>
                                 <div class="username-right-div">
                                     <?php
-                                        echo $row['username'];
+                                        echo htmlspecialchars($row['username']);
                                     ?>
                                 </div>
                             </div>
@@ -171,7 +171,7 @@
                                 <div class="name-left-div">Name</div>
                                 <div class="name-right-div">
                                     <?php
-                                        echo $row['name'];
+                                        echo htmlspecialchars($row['name']);
                                     ?>
                                 </div>
                             </div>
@@ -180,7 +180,7 @@
                                 <div class="bio-right-div add-js">
                                     <?php
                                         if(isset($row['bio']))
-                                            echo $row['bio'];
+                                            echo htmlspecialchars($row['bio']);
                                         else
                                             echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
                                     ?>
@@ -191,7 +191,7 @@
                                 <div class="nationality-right-div add-js">
                                     <?php
                                         if(isset($row['nationality']))
-                                            echo $row['nationality'];
+                                            echo htmlspecialchars($row['nationality']);
                                         else
                                             echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
                                     ?>
@@ -202,7 +202,7 @@
                                 <div class="city-right-div add-js">
                                     <?php
                                         if(isset($row['city']))
-                                            echo $row['city'];
+                                            echo htmlspecialchars($row['city']);
                                         else
                                             echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
                                     ?>
@@ -213,7 +213,7 @@
                                 <div class="dob-right-div add-js">
                                     <?php
                                         if(isset($row['dob']))
-                                            echo $row['dob'];
+                                            echo htmlspecialchars($row['dob']);
                                         else
                                             echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
                                     ?>
@@ -233,7 +233,7 @@
                                 <div class="email-left-div">Email</div>
                                 <div class="email-right-div">
                                     <?php
-                                        echo $row['email'];
+                                        echo htmlspecialchars($row['email']);
                                     ?>
                                 </div>
                             </div>
@@ -242,7 +242,7 @@
                                 <div class="phone-right-div add-js">
                                     <?php
                                         if(isset($row['phone']))
-                                            echo $row['phone'];
+                                            echo htmlspecialchars($row['phone']);
                                         else
                                             echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
                                     ?>
@@ -253,7 +253,7 @@
                                 <div class="website-right-div add-js">
                                     <?php
                                         if(isset($row['website']))
-                                            echo $row['website'];
+                                            echo htmlspecialchars($row['website']);
                                         else
                                             echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
                                     ?>
@@ -264,7 +264,7 @@
                                 <div class="linkedin-right-div add-js">
                                     <?php
                                         if(isset($row['linkedin']))
-                                            echo $row['linkedin'];
+                                            echo htmlspecialchars($row['linkedin']);
                                         else
                                             echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
                                     ?>
@@ -275,7 +275,7 @@
                                 <div class="twitter-right-div add-js">
                                     <?php
                                         if(isset($row['twitter']))
-                                            echo $row['twitter'];
+                                            echo htmlspecialchars($row['twitter']);
                                         else
                                             echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
                                     ?>
@@ -286,7 +286,7 @@
                                 <div class="facebook-right-div add-js">
                                     <?php
                                         if(isset($row['facebook']))
-                                            echo $row['facebook'];
+                                            echo htmlspecialchars($row['facebook']);
                                         else
                                             echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
                                     ?>
@@ -297,7 +297,7 @@
                                 <div class="instagram-right-div add-js">
                                     <?php
                                         if(isset($row['instagram']))
-                                            echo $row['instagram'];
+                                            echo htmlspecialchars($row['instagram']);
                                         else
                                             echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
                                     ?>
