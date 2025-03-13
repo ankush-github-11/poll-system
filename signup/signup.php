@@ -129,20 +129,25 @@ function sanitizePassword($password){
 function validatePassword($password){
     return strlen($password) >= 8;
 }
+function getLocalPart($email) {
+    $parts = explode("@", $email);
+    return $parts[0] ?? ''; // Return the local part or empty string if not found
+}
 
 if(isset($_POST["signup"])){
     $name = sanitizeName($_POST['name']);
     $email = sanitizeEmail($_POST['email']);
     $password = sanitizePassword($_POST['password']);
     if (validateName($name) && validateEmail($email) && validatePassword($password)) {
-        $sql = "insert into user set name='$name',email='$email', password='$password'";
+        $username = getLocalPart($email);
+        $sql = "insert into user set name='$name',email='$email', password='$password', username='$username'";
         $res = mysqli_query($conn, $sql);
         if ($res == true)
         {
             $_SESSION["name"] = $name;
             $_SESSION["email"] = $email;
             $_SESSION["password"] = $password;
-            $_SESSION["username"] = strtolower(str_replace(' ', '', $name));
+            $_SESSION["username"] = $username;
             header("Location:../createpoll/create.php");
             exit();
         }
