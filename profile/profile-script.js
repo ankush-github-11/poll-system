@@ -23,13 +23,13 @@ document.querySelector('.light-dark-div').addEventListener('click', function () 
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
 });
 // Mode code ends
-const html = `<a href="../edit/edit.php" class="add-a">+ Add</a>`;
-document.querySelectorAll('.add-js').forEach(ele =>{
-    if(ele.textContent==="--"){
-        ele.textContent = '';
-        ele.innerHTML = html;
-    }
-})
+// const html = `<a href="../edit/edit.php" class="add-a">+ Add</a>`;
+// document.querySelectorAll('.add-js').forEach(ele =>{
+//     if(ele.textContent==="--"){
+//         ele.textContent = '';
+//         ele.innerHTML = html;
+//     }
+// })
 const hideDiv1 = function(){
     document.querySelector('.right-div-1').classList.remove('flex');
     document.querySelector('.dashboard-div').classList.remove('active-div');

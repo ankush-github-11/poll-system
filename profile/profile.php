@@ -1,5 +1,14 @@
-<strong?php
-include "../config/connect.php";
+<?php
+    include "../config/connect.php";
+    $uid = $_SESSION["uid"];
+    $sql = "select * from users where uid='$uid'";
+    $res = mysqli_query($conn,$sql);
+    $row = [];
+    if($res==true){
+        if(mysqli_num_rows($res)>0){
+            $row = mysqli_fetch_assoc($res);
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,15 +109,27 @@ include "../config/connect.php";
                                     <img draggable="false" src="../images/profile-logo.png" alt="Profile Image">
                                 </div>
                                 <div class="name-email-div">
-                                    <div class="name-div-top">Ankush Bhattacharjee</div>
-                                    <div class="email-div-top">ankush10yt@gmail.com</div>
+                                    <div class="name-div-top">
+                                        <?php
+                                            echo $row['name'];
+                                        ?>
+                                    </div>
+                                    <div class="email-div-top">
+                                        <?php
+                                            echo $row['email'];
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="polls-created-participated-div">
                             <div class="polls-created-div">
                                 <div class="polls-created-text">Polls Created</div>
-                                <div class="polls-created-number">9</div>
+                                <div class="polls-created-number">
+                                    <?php
+                                        echo $row['pollsCreated'];
+                                    ?>
+                                </div>
                                 <div class="polls-created-seeall-arrow-div">
                                     <button class="polls-created-seeall-btn">
                                         See All<i class="fa-solid fa-chevron-right"></i>
@@ -117,7 +138,11 @@ include "../config/connect.php";
                             </div>
                             <div class="polls-participated-div">
                                 <div class="polls-participated-text">Polls Participated</div>
-                                <div class="polls-participated-number">15</div>
+                                <div class="polls-participated-number">
+                                    <?php
+                                        echo $row['pollsVoted'];
+                                    ?>
+                                </div>
                                 <div class="polls-participated-seeall-arrow-div">
                                     <button class="polls-participated-seeall-btn">
                                         See All<i class="fa-solid fa-chevron-right"></i>
@@ -136,27 +161,63 @@ include "../config/connect.php";
                             <div class="personal-information-text-div">Personal Information</div>
                             <div class="username-div">
                                 <div class="username-left-div">Username</div>
-                                <div class="username-right-div">ankush10yt</div>
+                                <div class="username-right-div">
+                                    <?php
+                                        echo $row['username'];
+                                    ?>
+                                </div>
                             </div>
                             <div class="name-div">
                                 <div class="name-left-div">Name</div>
-                                <div class="name-right-div">Ankush Bhattacharjee</div>
+                                <div class="name-right-div">
+                                    <?php
+                                        echo $row['name'];
+                                    ?>
+                                </div>
                             </div>
                             <div class="bio-div">
                                 <div class="bio-left-div">Bio</div>
-                                <div class="bio-right-div add-js">--</div>
+                                <div class="bio-right-div add-js">
+                                    <?php
+                                        if(isset($row['bio']))
+                                            echo $row['bio'];
+                                        else
+                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                    ?>
+                                </div>
                             </div>
                             <div class="nationality-div">
                                 <div class="nationality-left-div">Nationality</div>
-                                <div class="nationality-right-div add-js">--</div>
+                                <div class="nationality-right-div add-js">
+                                    <?php
+                                        if(isset($row['nationality']))
+                                            echo $row['nationality'];
+                                        else
+                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                    ?>
+                                </div>
                             </div>
                             <div class="city-div">
                                 <div class="city-left-div">City</div>
-                                <div class="city-right-div add-js">--</div>
+                                <div class="city-right-div add-js">
+                                    <?php
+                                        if(isset($row['city']))
+                                            echo $row['city'];
+                                        else
+                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                    ?>
+                                </div>
                             </div>
                             <div class="dob-div">
                                 <div class="dob-left-div">Date of Birth</div>
-                                <div class="dob-right-div add-js">--</div>
+                                <div class="dob-right-div add-js">
+                                    <?php
+                                        if(isset($row['dob']))
+                                            echo $row['dob'];
+                                        else
+                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                    ?>
+                                </div>
                             </div>
                             <div class="status-div">
                                 <div class="status-left-div">Status</div>
@@ -170,31 +231,77 @@ include "../config/connect.php";
                             <div class="contact-details-text-div">Contact Details</div>
                             <div class="email-div">
                                 <div class="email-left-div">Email</div>
-                                <div class="email-right-div">ankush10yt@gmail.com</div>
+                                <div class="email-right-div">
+                                    <?php
+                                        echo $row['email'];
+                                    ?>
+                                </div>
                             </div>
                             <div class="phone-div">
                                 <div class="phone-left-div">Phone</div>
-                                <div class="phone-right-div add-js">--</div>
+                                <div class="phone-right-div add-js">
+                                    <?php
+                                        if(isset($row['phone']))
+                                            echo $row['phone'];
+                                        else
+                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                    ?>
+                                </div>
                             </div>
                             <div class="website-div">
                                 <div class="website-left-div">Your Website URL</div>
-                                <div class="website-right-div add-js">--</div>
+                                <div class="website-right-div add-js">
+                                    <?php
+                                        if(isset($row['website']))
+                                            echo $row['website'];
+                                        else
+                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                    ?>
+                                </div>
                             </div>
                             <div class="linkedin-div">
                                 <div class="linkedin-left-div">LinkedIn URL</div>
-                                <div class="linkedin-right-div add-js">--</div>
+                                <div class="linkedin-right-div add-js">
+                                    <?php
+                                        if(isset($row['linkedin']))
+                                            echo $row['linkedin'];
+                                        else
+                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                    ?>
+                                </div>
                             </div>
                             <div class="twitter-div">
                                 <div class="twitter-left-div">Twitter/X URL</div>
-                                <div class="twitter-right-div add-js">--</div>
+                                <div class="twitter-right-div add-js">
+                                    <?php
+                                        if(isset($row['twitter']))
+                                            echo $row['twitter'];
+                                        else
+                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                    ?>
+                                </div>
                             </div>
                             <div class="facebook-div">
                                 <div class="facebook-left-div">Facebook URL</div>
-                                <div class="facebook-right-div add-js">--</div>
+                                <div class="facebook-right-div add-js">
+                                    <?php
+                                        if(isset($row['facebook']))
+                                            echo $row['facebook'];
+                                        else
+                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                    ?>
+                                </div>
                             </div>
                             <div class="instagram-div">
                                 <div class="instagram-left-div">Instagram URL</div>
-                                <div class="instagram-right-div add-js">--</div>
+                                <div class="instagram-right-div add-js">
+                                    <?php
+                                        if(isset($row['instagram']))
+                                            echo $row['instagram'];
+                                        else
+                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                    ?>
+                                </div>
                             </div>
                         </div>
                     </div>

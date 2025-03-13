@@ -140,14 +140,25 @@ if(isset($_POST["signup"])){
     $password = sanitizePassword($_POST['password']);
     if (validateName($name) && validateEmail($email) && validatePassword($password)) {
         $username = getLocalPart($email);
-        $sql = "insert into users set name='$name',email='$email', password='$password', username='$username'";
+        $sql = "insert into users set username='$username', name='$name',email='$email', password='$password'";
         $res = mysqli_query($conn, $sql);
         if ($res == true)
         {
             $_SESSION["name"] = $name;
             $_SESSION["email"] = $email;
             $_SESSION["password"] = $password;
-            $_SESSION["username"] = $username;
+
+            $sql="select * from users where username='$username'";
+            $res=mysqli_query($conn,$sql);
+            if($res==true)
+            {
+                $count=mysqli_num_rows($res);
+                if($count>0)
+                {
+                    $row=mysqli_fetch_assoc($res);
+                    $_SESSION["uid"] = $row['uid'];
+                }
+            }
             header("Location:../createpoll/create.php");
             exit();
         }
