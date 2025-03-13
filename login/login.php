@@ -110,7 +110,7 @@ if (isset($_POST["login"])) {
     $email = sanitizeEmail($_POST["email"]);
     $password = sanitizePassword($_POST["password"]);
     if (validateEmail($email) && validatePassword($password)) {
-        $sql = "select * from user where email='$email' and password='$password'";
+        $sql = "select * from users where email='$email' and password='$password'";
         $res = mysqli_query($conn, $sql);
         if ($res == true) {
             $count = mysqli_num_rows($res);
