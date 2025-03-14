@@ -77,6 +77,7 @@ document.querySelector('.left-div').addEventListener('click', function(e){
         document.querySelector('.report-a-bug-div').classList.add('active-div');
     }
 });
+                                                                                        // Navbar code starts
 document.querySelector('.hamburger-div').addEventListener("click", function(){
     document.querySelector('.navbar-side-div').classList.remove('slide-animation-rev');
     document.querySelector('.total-div').classList.remove('blur-rev');
@@ -107,4 +108,30 @@ window.addEventListener("resize", function () {
       document.querySelector('.total-div').classList.remove('blur');
       document.querySelector('.my-navbar-div').classList.remove('blur');
     }
-  });
+});
+document.querySelector('.nav-item-1').addEventListener('mouseover',function(){
+    document.querySelector('.nav-item-1-hover-div').style.backgroundColor = "var(--bg-1)";
+});
+document.querySelector('.nav-item-2').addEventListener('mouseover',function(){
+    document.querySelector('.nav-item-2-hover-div').style.backgroundColor = "var(--bg-1)";
+});
+document.querySelector('.nav-item-3').addEventListener('mouseover',function(){
+    document.querySelector('.nav-item-3-hover-div').style.backgroundColor = "var(--bg-1)";
+});
+document.querySelector('.nav-item-4').addEventListener('mouseover',function(){
+    document.querySelector('.nav-item-4-hover-div').style.backgroundColor = "var(--bg-1)";
+});
+document.querySelector('.nav-item-1').addEventListener('mouseout',function(){
+    document.querySelector('.nav-item-1-hover-div').style.backgroundColor = "transparent";
+});
+document.querySelector('.nav-item-2').addEventListener('mouseout',function(){
+    document.querySelector('.nav-item-2-hover-div').style.backgroundColor = "transparent";
+});
+document.querySelector('.nav-item-3').addEventListener('mouseout',function(){
+    document.querySelector('.nav-item-3-hover-div').style.backgroundColor = "transparent";
+});
+document.querySelector('.nav-item-4').addEventListener('mouseout',function(){
+    document.querySelector('.nav-item-4-hover-div').style.backgroundColor = "transparent";
+});
+
+                                                                                        // Navbar code ends
