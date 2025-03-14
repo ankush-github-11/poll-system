@@ -23,13 +23,6 @@ document.querySelector('.light-dark-div').addEventListener('click', function () 
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
 });
 // Mode code ends
-// const html = `<a href="../edit/edit.php" class="add-a">+ Add</a>`;
-// document.querySelectorAll('.add-js').forEach(ele =>{
-//     if(ele.textContent==="--"){
-//         ele.textContent = '';
-//         ele.innerHTML = html;
-//     }
-// })
 const hideDiv1 = function(){
     document.querySelector('.right-div-1').classList.remove('flex');
     document.querySelector('.dashboard-div').classList.remove('active-div');
@@ -84,3 +77,34 @@ document.querySelector('.left-div').addEventListener('click', function(e){
         document.querySelector('.report-a-bug-div').classList.add('active-div');
     }
 });
+document.querySelector('.hamburger-div').addEventListener("click", function(){
+    document.querySelector('.navbar-side-div').classList.remove('slide-animation-rev');
+    document.querySelector('.total-div').classList.remove('blur-rev');
+    document.querySelector('.my-navbar-div').classList.remove('blur-rev');
+    document.querySelector('.navbar-side-div').classList.remove('hidden');
+    document.querySelector('.navbar-side-div').classList.add('flex');
+    document.querySelector('.navbar-side-div').classList.add('slide-animation');
+    document.querySelector('.total-div').classList.add('blur');
+    document.querySelector('.my-navbar-div').classList.add('blur');
+});
+document.querySelector('.navbar-fa-div').addEventListener("click", function(){
+    document.querySelector('.navbar-side-div').classList.remove('slide-animation');
+    document.querySelector('.navbar-side-div').classList.add('slide-animation-rev');
+    document.querySelector('.total-div').classList.add('blur-rev');
+    document.querySelector('.my-navbar-div').classList.add('blur-rev');
+    setTimeout(()=>{
+        document.querySelector('.navbar-side-div').classList.remove('flex');
+        document.querySelector('.navbar-side-div').classList.add('hidden');
+        document.querySelector('.total-div').classList.remove('blur');
+        document.querySelector('.my-navbar-div').classList.remove('blur');
+    },600);
+
+});
+window.addEventListener("resize", function () {
+    if (window.innerWidth >= 768) {
+      document.querySelector(".navbar-side-div").classList.remove("flex");
+      document.querySelector(".navbar-side-div").classList.add("hidden");
+      document.querySelector('.total-div').classList.remove('blur');
+      document.querySelector('.my-navbar-div').classList.remove('blur');
+    }
+  });

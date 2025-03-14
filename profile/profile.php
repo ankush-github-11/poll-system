@@ -30,16 +30,31 @@
     <div class="sessionUsername hidden">
         <?php
             if(isset($_SESSION["username"]))
-                echo $_SESSION["username"];
+                echo htmlspecialchars($_SESSION["username"]);
         ?>
     </div>
     <div class="sessionName hidden">
         <?php
             if(isset($_SESSION["name"]))
-                echo $_SESSION["name"];
+                echo htmlspecialchars($_SESSION["name"]);
         ?>
     </div>
     <header>
+        <div class="navbar-side-div slide-animation hidden">
+            <div class="navbar-fa-div"><i class="fa-solid fa-square-xmark fa-2xl"></i></div>
+            <div class="nav-side-item-1-div">
+                <a draggable="false" class="nav-side-item-1" href="../home/index.php">Home</a>
+            </div>
+            <div class="nav-side-item-2-div">
+                <a draggable="false" class="nav-side-item-2" href="">Contact</a>
+            </div>
+            <div class="nav-side-item-3-div">
+                <a draggable="false" class="nav-side-item-3" href="">View Polls</a>
+            </div>
+            <div class="nav-side-item-4-div">
+                <a draggable="false" class="nav-side-item-4" href="">Security</a>
+            </div>
+        </div>
         <div class="my-navbar-div fixed-top">
             <div class="website-logo-div">
                 <a class="website-logo" href="../home/index.php">
