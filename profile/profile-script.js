@@ -109,29 +109,15 @@ window.addEventListener("resize", function () {
       document.querySelector('.my-navbar-div').classList.remove('blur');
     }
 });
-document.querySelector('.nav-item-1').addEventListener('mouseover',function(){
-    document.querySelector('.nav-item-1-hover-div').style.backgroundColor = "var(--bg-1)";
-});
-document.querySelector('.nav-item-2').addEventListener('mouseover',function(){
-    document.querySelector('.nav-item-2-hover-div').style.backgroundColor = "var(--bg-1)";
-});
-document.querySelector('.nav-item-3').addEventListener('mouseover',function(){
-    document.querySelector('.nav-item-3-hover-div').style.backgroundColor = "var(--bg-1)";
-});
-document.querySelector('.nav-item-4').addEventListener('mouseover',function(){
-    document.querySelector('.nav-item-4-hover-div').style.backgroundColor = "var(--bg-1)";
-});
-document.querySelector('.nav-item-1').addEventListener('mouseout',function(){
-    document.querySelector('.nav-item-1-hover-div').style.backgroundColor = "transparent";
-});
-document.querySelector('.nav-item-2').addEventListener('mouseout',function(){
-    document.querySelector('.nav-item-2-hover-div').style.backgroundColor = "transparent";
-});
-document.querySelector('.nav-item-3').addEventListener('mouseout',function(){
-    document.querySelector('.nav-item-3-hover-div').style.backgroundColor = "transparent";
-});
-document.querySelector('.nav-item-4').addEventListener('mouseout',function(){
-    document.querySelector('.nav-item-4-hover-div').style.backgroundColor = "transparent";
-});
+document.querySelectorAll('.nav-items-div a').forEach((navItem, index) => {
+    const hoverDiv = document.querySelector(`.nav-item-${index + 1}-hover-div`);
+    
+    navItem.addEventListener('mouseover', () => {
+        hoverDiv.style.backgroundColor = "var(--bg-1)";
+    });
 
+    navItem.addEventListener('mouseout', () => {
+        hoverDiv.style.backgroundColor = "transparent";
+    });
+});
                                                                                         // Navbar code ends
