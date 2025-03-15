@@ -347,26 +347,36 @@ include "../config/connect.php";
                         <div class="advanced-settings-div-1">
                             <div>Voters Representation</div>
                             <div class="advanced-settings-div-1-under">
-                                <input type="radio" name="votersRepresentation" class="form-check-input initial-input advanced-settings-radio-btn" value="initial">
-                                <div class="initial-div no-select">A</div>
-                                <label for="initial-input" class="initial-label">Initial</label>
-                                <input type="radio" name="votersRepresentation" class="form-check-input counter-input advanced-settings-radio-btn" value="counter">
-                                <div class="counter-div no-select">11</div>
-                                <label for="counter-input" class="counter-label">Counter</label>
+                                <div class="advanced-settings-div-1-under-1">
+                                    <input type="radio" name="votersRepresentation" class="form-check-input initial-input advanced-settings-radio-btn" value="initial">
+                                    <div class="initial-div no-select">A</div>
+                                    <label for="initial-input" class="initial-label">Initial</label>
+                                </div>
+                                <div class="advanced-settings-div-1-under-2">
+                                    <input type="radio" name="votersRepresentation" class="form-check-input counter-input advanced-settings-radio-btn" value="counter">
+                                    <div class="counter-div no-select">11</div>
+                                    <label for="counter-input" class="counter-label">Counter</label>
+                                </div>
                             </div>
                         </div>
                         <div class="advanced-settings-div-2">
                             <div>Devices</div>
                             <div class="advanced-settings-div-2-under">
-                                <input type="radio" name="devices"
-                                class="form-check-input all-input advanced-settings-radio-btn" value="all" checked>
-                                <label for="all-input" class="all-label">All</label>
-                                <input type="radio" name="devices"
-                                class="form-check-input desktop-input advanced-settings-radio-btn" value="desktop">
-                                <label for="desktop-input" class="desktop-label">Desktop</label>
-                                <input type="radio" name="devices"
-                                class="form-check-input mobile-input advanced-settings-radio-btn" value="mobile">
-                                <label for="mobile-input" class="mobile-label">Mobile</label>
+                                <div>
+                                    <input type="radio" name="devices"
+                                    class="form-check-input all-input advanced-settings-radio-btn" value="all" checked>
+                                    <label for="all-input" class="all-label">All</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="devices"
+                                    class="form-check-input desktop-input advanced-settings-radio-btn" value="desktop">
+                                    <label for="desktop-input" class="desktop-label">Desktop</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="devices"
+                                    class="form-check-input mobile-input advanced-settings-radio-btn" value="mobile">
+                                    <label for="mobile-input" class="mobile-label">Mobile</label>
+                                </div>
                             </div>
                         </div>
 
@@ -589,7 +599,7 @@ include "../config/connect.php";
 
                     <div class="horizontal-line-right-div-2"></div>
                     <div class="btn-cancel-continue">
-                        <button type="button" href="../index.php" class="btn btn-cancel">Cancel</button>
+                        <button type="button" class="btn btn-cancel">Cancel</button>
                         <button type="button" class="btn btn-continue">Continue</button>
                         <button type="submit" value="Create" class="hidden btn btn-create">Create</button>
                     </div>

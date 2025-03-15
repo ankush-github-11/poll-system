@@ -382,7 +382,7 @@ document.querySelector('.light-dark-div').addEventListener('click', function () 
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
 });
 document.querySelector(".btn-cancel").addEventListener("click" , function() {
-    window.location.href = "../index.php";
+    window.location.href = "../home/index.php";
 });
 initializeTheme();
 window.addEventListener('resize', updateBarStyles);
