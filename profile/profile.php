@@ -31,6 +31,9 @@
         <?php
             if(isset($_SESSION["username"]))
                 echo htmlspecialchars($_SESSION["username"]);
+            else{
+                header("Location: ../signup/signup.php");
+            }
         ?>
     </div>
     <div class="sessionName hidden">

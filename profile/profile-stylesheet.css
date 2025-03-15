@@ -148,9 +148,12 @@ body{
   flex-direction: row;
   gap: 25px;
   position: relative;
-  top: 3.5px;
+  top: 1px;
 }
 .nav-items-div a{
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   text-decoration: none;
   color: rgb(157, 157, 157);
   font-weight: 400;
@@ -159,12 +162,11 @@ body{
   }
 }
 .nav-items-div > div{
-  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
 
 }
 .nav-items-div > div > div{
@@ -979,3 +981,4 @@ footer{
 /*  Fix the box shadow  */
 /*  Add the JS part for the Messages & Support webpage and Report a Bug webpage  */
 /*  When the Navbar will be opened then eveyrthing else should stop working  */
+/*  Add htmlspecialchars in every echo to prevent xss  */
