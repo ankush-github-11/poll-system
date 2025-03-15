@@ -25,6 +25,10 @@ include "../config/connect.php";
         <?php
             if(isset($_SESSION["username"]))
                 echo $_SESSION["username"];
+            else{
+                header("Location: ../signup/signup.php");
+                exit();
+            }
         ?>
     </div>
     <div class="sessionName hidden">
