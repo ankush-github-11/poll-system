@@ -3,7 +3,9 @@
     --bg-2: rgb(255, 85, 142);
     --bg-3: rgb(235, 0, 78);
     --bg-color: white;
+    --bg-color-less: rgb(250, 250, 250);
     --text-color: black;
+    --text-color-less: rgb(36, 36, 36);
     --nav-footer-shadow: rgb(221, 221, 221);
     --middle-div-under-1: rgb(255, 255, 255);
     --side-div: #EDEEF2;
@@ -13,7 +15,7 @@
     --scrollbar-track: rgb(209, 209, 209);
     --box-border: #DFE0E1;
     --box-color: rgb(255, 255, 255);
-    --gradient-color: rgb(215, 218, 228);
+    --growth-gradient-color: rgb(215, 218, 228);
 
     --hover-color: rgb(245, 245, 245);
     --dropdown-text-color: rgb(26, 26, 26);
@@ -23,8 +25,10 @@
     --bg-1: rgb(255, 0, 85);
     --bg-2: rgb(255, 85, 142);
     --bg-3: rgb(235, 0, 78);
-    --bg-color: #121212;
+    --bg-color: #05141d; 
+    --bg-color-less: #061720;   
     --text-color: rgb(240, 240, 240);
+    --text-color-less: rgb(201, 201, 201);
     --nav-footer-shadow: rgb(0, 0, 0);
     --middle-div-under-1: rgb(27, 30, 36);
     --side-div: #1a1c22;
@@ -34,7 +38,7 @@
     --scrollbar-track: rgb(39, 39, 39);
     --box-border: #505050;
     --box-color: rgb(31, 31, 31);
-    --gradient-color: rgb(255, 0, 85);
+    --growth-gradient-color: rgb(255, 0, 85);
     
     --hover-color: rgb(32, 32, 32);
     --dropdown-text-color: rgb(248, 248, 248);
@@ -478,7 +482,7 @@ body{
     bottom: 75px;
 }
 .my-fa-1, .my-fa-2, .my-fa-3{
-    background: linear-gradient(135deg, var(--gradient-color), var(--bg-color)) !important;
+    background: linear-gradient(135deg, var(--growth-gradient-color), var(--bg-color)) !important;
     color: var(--bg-1) !important;
     text-align: center;
     padding-left: 10px;
