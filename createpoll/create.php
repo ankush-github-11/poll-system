@@ -21,14 +21,20 @@ include "../config/connect.php";
 </head>
 
 <body>
-    <div class="sessionUsername hidden">
+    <div class="sessionUid">
         <?php
-            if(isset($_SESSION["username"]))
-                echo $_SESSION["username"];
+            if(isset($_SESSION["uid"]))
+                echo $_SESSION["uid"];
             else{
                 header("Location: ../signup/signup.php");
                 exit();
             }
+        ?>
+    </div>
+    <div class="sessionUsername hidden">
+        <?php
+            if(isset($_SESSION["username"]))
+                echo $_SESSION["username"];
         ?>
     </div>
     <div class="sessionName hidden">
@@ -106,7 +112,7 @@ include "../config/connect.php";
                                 </div>
                                 <div class="signout-div">
                                     <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                                    <form action="./index.php" method="POST">
+                                    <form action="../home/index.php" method="POST">
                                         <button class="sign-out-btn" name="signout" type="submit">Sign Out</button>
                                     </form>
                                 </div>
@@ -118,8 +124,8 @@ include "../config/connect.php";
         </nav>
     </header>
     <main>
-        <div class="popup-screen hidden">
-            <div class="popup-1 hidden">Please fill all the fields</div>
+        <div class=" no-select popup-screen hidden">
+            <div class="popup-1 hidden">Please fill all the fields correctly</div>
         </div>
 
         <form action="../mypoll/poll.php" method="POST">
@@ -266,9 +272,8 @@ include "../config/connect.php";
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input my-radio-btn" type="radio" name="themeOptions"
-                                        id="theme4" value="custom-bg">
-                                        <label class="form-check-label" for="theme4">Custom</label>
-                                    <span>(Premium)</span>
+                                        id="theme4" value="moderate-bg">
+                                        <label class="form-check-label" for="theme4">Moderate</label>
                                 </div>
                             </div>
                         </div>

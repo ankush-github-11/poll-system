@@ -95,7 +95,7 @@ body{
 }
 .popup-1{
     height: 50px;
-    width: 220px;
+    width: fit-content;
     position:fixed;
     letter-spacing: 0.8px;
     font-weight: 500;
@@ -109,6 +109,7 @@ body{
     animation: slide 2s cubic-bezier(0.25, 0.8, 0.25, 1);
     justify-content: center;
     align-items: center;
+    padding: 8px;
 }
 @keyframes slide {
     0% {
@@ -305,6 +306,7 @@ body{
     min-height: 91vh;
     width: 100%;
     padding: 80px 5px;
+    padding-top: 60px;
     display: flex;
     justify-content: center;
 }
@@ -1292,3 +1294,4 @@ Publish Immediately Checkbox : no
 Date and Time : no
 */
 /*  Give the background color to every select dropdown  */
+/*  Fix the dark mode bg color of the flatpickr  */
