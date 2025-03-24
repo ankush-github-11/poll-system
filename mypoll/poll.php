@@ -3,12 +3,10 @@
     if(isset($_SESSION["uid"])) $uid = $_SESSION["uid"];
     if(isset($_POST["title"])){
         $title = $_POST["title"];
-        $_SESSION["titleSession"] = $title;
     }
     
     if(isset($_POST["description"])){
         $description = $_POST["description"];
-        $_SESSION["descriptionSession"] = $description;
     }
 
     $i = 1;
@@ -76,9 +74,12 @@
         rel="stylesheet">
     <link rel="stylesheet" href="poll-stylesheet.css">
 </head>
-<body>
+<body class="">
+    <div class=" no-select popup-screen hidden">
+        <div class="popup-1 hidden">Copied to Clipboard</div>
+    </div>
     <div class="total-div">
-        <div class="main-div-1">
+        <div class="main-div">
             <div class="content-div">
                 <div class="tick-div">
                     <i class="fa-regular fa-circle-check"></i>
@@ -89,25 +90,17 @@
                     ?>
                 </div>
             </div>
-        </div>
-        <div class="main-div-2">
-            <div class="poll-title-div">
-                <div class="title-heading">Poll Title</div>
-                <div class="horizontal-line"></div>
-                <div class="title-body">
-                    <?php
-                    echo $_SESSION["titleSession"];
-                    ?>
-                </div>
+            <div class="view-share-div">
+                <a class="view-btn" href="">View Poll</a>
+                <button class="btn">Share Poll</button>
             </div>
-            <div class="poll-desc-div">
-                <div class="description-heading">Poll Description</div>
-                <div class="horizontal-line"></div>
-                <div class="description-body">
+            <div class="link-clipboard-div">
+                <div class="link-print-div">
                     <?php
-                    echo $_SESSION["descriptionSession"];
+                        echo "localhost/myproject/poll/poll.php?pid=".$_SESSION['pid'];
                     ?>
                 </div>
+                <div class="fa-regular fa-clone clipboard-btn"></div>
             </div>
         </div>
     </div>

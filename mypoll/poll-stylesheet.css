@@ -6,7 +6,7 @@
     --bg-middle-div-2: #efeff4;
     --bg-color-less: rgb(250, 250, 250);
     --text-color: black;
-    --text-color-less: rgb(36, 36, 36);
+    --text-color-less: rgb(51, 51, 51);
     --scrollbar-track: rgb(209, 209, 209);
     --border-color: rgb(229, 229, 229);
 }
@@ -58,18 +58,66 @@ body{
     background-color: var(--bg-color);
     color: var(--text-color);
 }
+.popup-screen{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.popup-1{
+    height: 40px;
+    width: fit-content;
+    position:fixed;
+    letter-spacing: 0.7px;
+    font-size: 15px;
+    font-weight: 400;
+    bottom: 30px;
+    margin: 0 auto;
+    z-index: 1;
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+    color: var(--text-color-less);
+    background-color: var(--bg-color);
+    animation: slide 2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+}
+@keyframes slide {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    25% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    75% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
 .total-div{
+    padding-top: 50px;
     min-height: 97vh;
     height: fit-content;
     width: 100%;
 }
-.main-div-1{
+.main-div{
     height: fit-content;
     width: 100%;
     position: relative;
     top: 0;
-    padding: 20px;
+    gap: 30px;
+    padding: 5px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 .content-div{
@@ -118,6 +166,7 @@ body{
 }
 .message{
     font-weight: 600;
+    text-align: center;
     animation: textAnimation 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1 forwards;
 }
 @keyframes textAnimation {
@@ -127,45 +176,188 @@ body{
     }
     50%{
         opacity: 0.8;
-        font-size: 22px;
+        font-size: 25px;
     }
     100%{
         opacity: 1;
-        font-size: 20px;
+        font-size: 22px;
     }
 }
-.main-div-2{
-    min-height: 50vh;
-    height: fit-content;
+.view-share-div{
     width: 100%;
-    background-color: var(--bg-middle-div-2);
-    position: absolute;
-    top: 50%;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
-.poll-title-div, .poll-desc-div{
-    width: 40%;
-    border-radius: 10px;
-    border: 2px solid var(--border-color);
-    background-color: var(--bg-color);
-    
+.view-btn {
+    height: 45px;
+    width: 135px;
+    text-decoration: none;
+    background: linear-gradient(155deg,var(--bg-1), blueviolet);
+    background-size: 150% 150%;
+    border-radius: 50px;
+    color: white;
+    padding: 7px 13px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-position 0.5s ease-in-out;
+    animation: leftSlide 1.5s ease-in-out forwards;
+    &:hover {
+        background-position: right bottom;
+    }
 }
-.title-heading, .description-heading{
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+@keyframes leftSlide{
+    0%{
+        transform: translateX(-100px) scale(0.5);
+        opacity: 0;
+    }
+    70%{
+        transform: translateX(4.5px) scale(1.1);
+        opacity: 0.5;
+    }
+    100%{
+        transform: translateX(0px) scale(1);
+        opacity: 1;
+
+    }
+}
+@keyframes rightSlide{
+    0%{
+        transform: translateX(100px) scale(0.5);
+        opacity: 0;
+    }
+    70%{
+        transform: translateX(-4.5px) scale(1.1);
+        opacity: 0.5;
+    }
+    100%{
+        transform: translateX(0px) scale(1);
+        opacity: 1;
+
+    }
+}
+@keyframes bottomSlide{
+    0%{
+        transform: translateY(100px) scale(0.5);
+        opacity: 0;
+    }
+    70%{
+        transform: translateY(-4.5px) scale(1.1);
+        opacity: 0.5;
+    }
+    100%{
+        transform: translateY(0px) scale(1);
+        opacity: 1;
+
+    }
+}
+.btn:focus,
+.btn:active {
+    outline: none;
+    border: 2px solid var(--bg-1);
+    color: var(--text-color) !important;
+}
+.btn {
+    height: 45px;
+    width: 135px;
+    display: inline-block;
+    color: white;
+    padding: 7px 13px;
+    border-radius: 50px;
+    border: 2px solid var(--bg-1);
     color: var(--bg-1);
+    font-weight: 500;
+    letter-spacing: 0.7px;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    animation: rightSlide 1.5s ease-in-out forwards;
+    &:hover {
+        color: white;
+    }
+}
+   
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-1);
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+}
+   
+.btn:hover::before {
+    transform: translateX(0);
+}
+.link-clipboard-div{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.link-print-div{
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
     padding: 5px 10px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    width: fit-content;
+    animation: bottomSlide 1.5s ease-in-out forwards;
 }
-.horizontal-line{
-    height: 2px;
-    width: 97%;
-    background-color: var(--border-color);
-    margin: 0 auto;
+.clipboard-btn{
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    color: var(--bg-1);
+    padding: 5px;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bottomSlide 1.5s ease-in-out forwards;
 }
-.title-body, .description-body{
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 5px 10px;
+@media only screen and (max-width: 400px) {
+    .view-btn{
+        padding: 5px 10px;
+        width: 80%;
+    }
+    .btn{
+        padding: 5px 10px;
+        width: 80%;
+    }
+    .link-print-div{
+        font-size: 10px;
+    }
 }
+@media (max-width: 575px) {
+    .link-print-div{
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+
+}
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
 /*  If someone tries to enter the page using the page URL then show the message that its not the page he's looking for and show the error 404 message  */
 /*  Add form verification in all the forms to prevent SQL injection */
+/*  Change the popup in the create page  */
