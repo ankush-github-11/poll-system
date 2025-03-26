@@ -161,13 +161,13 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px;
-  margin-right: 18px;
+  margin-right: 1%;
+  margin-left: 1%;
 }
 .nav-items-div{
   display: flex;
   flex-direction: row;
-  gap: 25px;
+  gap: 12px;
   position: relative;
   top: 1px;
 }
@@ -203,7 +203,7 @@ body{
   display: flex;
   align-items: center;
   border-radius: 50%;
-  margin-left: 45px;
+  margin-left: 25px;
 }
 .light-mode-svg, .dark-mode-svg{
   border-radius: 50%;
@@ -237,17 +237,25 @@ body{
       filter: blur(0px);
     }
   }
+.login{
+      border-bottom: 3px solid var(--bg-1);
+      text-align: center;
+      margin-left: auto;
+}
+.login a { 
+    padding: 6px 15px;
+    transition: none;
+}
 .signup{
     background-color: var(--bg-1);
-    border-radius: 25px;
-    padding: 0px 20px;
+    border-radius: 50px;
     text-align: center;
+    margin-right: 10px;
 }
-.login{
-    border-bottom: 3px solid var(--bg-1);
-    padding: 0px 15px;
-    text-align: center;
-    margin-left: auto;
+.signup a{
+    padding: 7px 20px;
+    height: 100%;
+    width: 100%;
 }
 /*  Profile CSS starts  */
 .dropdown-profile-div{
@@ -427,21 +435,43 @@ body{
         transform: translateY(0);
     }
 } */
-.create-text{
+.create-text {
     margin-top: 30px;
 }
-.create-text > h2{
+
+.create-text > h2 {
     margin: 0;
     font-size: 50px;
     color: var(--title-text);
+    animation: opacityAndSize 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1 forwards;
 }
-.create-text{
-    background: linear-gradient(155deg, var(--create-text-1) , var(--create-text-2));
+
+.create-text > h2 {
+    background: linear-gradient(155deg, var(--create-text-1), var(--create-text-2));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-
 }
+
+@keyframes opacityAndSize {
+    0% {
+        opacity: 0;
+        font-size: 10px; /* Start from a reasonable font size */
+        transform: translateY(0px);
+    }
+    50% {
+        opacity: 0.7;
+        font-size: 53px; /* Intermediate font size */
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        font-size: 50px; /* Keep it consistent with the h2 default size */
+        transform: translateY(15px);
+    }
+}
+
+
 /* .vote-text > h3{
     font-size: 22px;
     color: rgb(159, 159, 159);
@@ -471,6 +501,7 @@ body{
 } */
 .btn-middle-div{
     display: flex;
+    width: fit-content;
     justify-content: center;
     gap: 20px;
     align-items: center;
@@ -485,6 +516,7 @@ body{
     letter-spacing: 0.5px;
     outline: 2px solid var(--bg-1);
     color: var(--bg-1);
+    animation: leftSlide 1.5s ease-in-out forwards;
     &:hover{
         color: white;
         background-color: var(--bg-1);
@@ -497,8 +529,39 @@ body{
     font-weight: 500;
     background: linear-gradient(155deg,var(--bg-1), rgb(43, 13, 13)) !important;
     color: white;
+    animation: rightSlide 1.5s ease-in-out forwards;
     &:hover{
         color: rgb(255, 221, 229);
+    }
+}
+@keyframes leftSlide{
+    0%{
+        transform: translateX(-100px) scale(0.5);
+        opacity: 0;
+    }
+    70%{
+        transform: translateX(3px) scale(1.1);
+        opacity: 0.5;
+    }
+    100%{
+        transform: translateX(0px) scale(1);
+        opacity: 1;
+
+    }
+}
+@keyframes rightSlide{
+    0%{
+        transform: translateX(100px) scale(0.5);
+        opacity: 0;
+    }
+    70%{
+        transform: translateX(-3px) scale(1.1);
+        opacity: 0.5;
+    }
+    100%{
+        transform: translateX(0px) scale(1);
+        opacity: 1;
+
     }
 }
                                               /* Side Div*/
@@ -876,7 +939,10 @@ footer{
         width: 90%;
     }
     .login {
-        margin: 0 auto;
+        display: none;
+    }
+    .signup{
+        margin-left: auto;
     }
     .swing-container{
         margin: 0 auto;
@@ -904,7 +970,10 @@ footer{
         width: 80%;
     }
     .login {
-        margin: 0 auto;
+        display: none;
+    }
+    .signup{
+        margin-left: auto;
     }
     .swing-container{
         margin: 0 auto;
@@ -933,7 +1002,10 @@ footer{
         width: 75%;
     }
     .login {
-        margin: 0 auto;
+        display: none;
+    }
+    .signup{
+        margin-left: auto;
     }
     .swing-container{
         margin: 0 auto;
@@ -949,9 +1021,6 @@ footer{
 
 /* For screens between 769px and 992px (medium devices) */
 @media (min-width: 769px) and (max-width: 991px) {
-    .login {
-        margin: 0 auto;
-    }
     .swing-container{
         margin: 0 auto;
     }
@@ -1086,3 +1155,5 @@ Live Results Display: Show real-time results during voting.
 Enable users to preview the selected template before finalizing.
 */
 /*  Add the stylesheet to the login and signup button in the navbar  */
+/*  Change the popup of the create screen  */
+/*  Add the glow scan effect in the navbar only the first time it mounts  */
