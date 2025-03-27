@@ -91,7 +91,7 @@
                 </div>
             </div>
             <div class="view-share-div">
-                <a class="view-btn" href="">View Poll</a>
+                <a class="view-btn" href="../poll/poll.php">View Poll</a>
                 <button class="btn">Share Poll</button>
             </div>
             <div class="link-clipboard-div">

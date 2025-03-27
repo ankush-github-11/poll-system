@@ -437,11 +437,11 @@ body{
 } */
 .create-text {
     margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .create-text > h2 {
     margin: 0;
-    font-size: 50px;
     color: var(--title-text);
     animation: opacityAndSize 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1 forwards;
 }
@@ -456,17 +456,17 @@ body{
 @keyframes opacityAndSize {
     0% {
         opacity: 0;
-        font-size: 10px; /* Start from a reasonable font size */
+        font-size: 10px;
         transform: translateY(0px);
     }
     50% {
         opacity: 0.7;
-        font-size: 53px; /* Intermediate font size */
+        font-size: 52px;
         transform: translateY(25px);
     }
     100% {
         opacity: 1;
-        font-size: 50px; /* Keep it consistent with the h2 default size */
+        font-size: 50px;
         transform: translateY(15px);
     }
 }
@@ -506,7 +506,6 @@ body{
     gap: 20px;
     align-items: center;
     flex-direction: row;
-    margin-top: 20px;
 }
 .createpoll{
     width: 150px;
@@ -1157,3 +1156,4 @@ Enable users to preview the selected template before finalizing.
 /*  Add the stylesheet to the login and signup button in the navbar  */
 /*  Change the popup of the create screen  */
 /*  Add the glow scan effect in the navbar only the first time it mounts  */
+/*  Make the already voted text a bit small while being responsive  */
