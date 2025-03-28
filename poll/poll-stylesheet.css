@@ -17,6 +17,7 @@
     --box-border: #DFE0E1;
     --box-color: rgb(255, 255, 255);
     --growth-gradient-color: rgb(215, 218, 228);
+    --participant-header-div-gradient-color: rgb(255, 100, 139);
 
     --hover-color: rgb(245, 245, 245);
     --dropdown-text-color: rgb(26, 26, 26);
@@ -41,6 +42,7 @@
     --box-border: #505050;
     --box-color: rgb(31, 31, 31);
     --growth-gradient-color: rgb(255, 0, 85);
+    --participant-header-div-gradient-color: rgb(21, 0, 0);
     
     --hover-color: rgb(32, 32, 32);
     --dropdown-text-color: rgb(248, 248, 248);
@@ -378,14 +380,54 @@ body{
 .total-div{
     min-height: 97vh;
     height: fit-content;
+    padding: 20px;
 }
-.participant-view{
-    margin-top: 30px;
+.main-div-1{
     height: fit-content;
     width: 100%;
 }
+.participant-view{
+    height: fit-content;
+    width: 100%;
+    margin-top: 63px;
+    border-radius: 10px;
+    border: 2px solid var(--box-border);
+}
+.participant-header-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: linear-gradient(155deg, var(--bg-1), var(--participant-header-div-gradient-color));
+}
+/* .participant-header-image-div{
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    padding: 20px;
+    margin: 10px;
+    float: left;
+}
 .participant-image{
-    height: 50px;
+    height: 80px;
+} */
+.participant-header-texts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px 10px;
+}
+.participant-header-name{
+    color: white;
+    font-size: 18px;
+}
+.participant-header-title{
+    color: white;
+    font-size: 35px;
+    font-weight: 500;
+}
+.participant-description{
+    padding: 10px;
 }
 /*  Poll display code ends  */
 /*  Footer starts  */

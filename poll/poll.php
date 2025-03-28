@@ -136,9 +136,9 @@
             <div class="main-div-1">
                 <div class="participant-view">
                     <div class="participant-header-div">
-                        <div class="participant-header-image-div">
+                        <!-- <div class="participant-header-image-div">
                             <img class="participant-image" src="../images/admin-logo.png" alt="">
-                        </div>
+                        </div> -->
                         <div class="participant-header-texts">
                             <div class="participant-header-name">Admin Name</div>
                             <div class="participant-header-title">Poll Title</div>
