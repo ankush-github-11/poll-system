@@ -37,4 +37,7 @@ const popupScreen = function () {
       document.querySelector(".popup-1").classList.remove("flex");
       document.querySelector(".popup-1").classList.add("hidden");
     }, 2000);
-  };
+};
+document.querySelector('.view-btn').addEventListener('click', function(){
+    window.location.href = `${document.querySelector('.link-print-div').textContent}`;
+});

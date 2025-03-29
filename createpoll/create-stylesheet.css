@@ -306,7 +306,6 @@ body{
     min-height: 91vh;
     width: 100%;
     padding: 80px 5px;
-    padding-top: 60px;
     display: flex;
     justify-content: center;
 }
@@ -1295,3 +1294,4 @@ Date and Time : no
 */
 /*  Give the background color to every select dropdown  */
 /*  Fix the dark mode bg color of the flatpickr  */
+/*  Fix the responsiveness of the admin view section  */

@@ -1,3 +1,4 @@
+// Profile code starts
 if(document.querySelector(".sessionName").textContent.trim()){
     document.querySelector(".login").classList.add('hidden');
     document.querySelector(".signup").classList.add('hidden');
@@ -29,7 +30,7 @@ document.querySelector('.signout-div').addEventListener('mouseenter', () => {
 document.querySelector('.signout-div').addEventListener('mouseleave', () => {
     document.querySelector('.sign-out-btn').style.backgroundColor = "var(--dropdown-bg-color)";
 });
-
+// Profile code ends
 
 
 document.querySelector(".schedule-and-duration-div-2-calendar").value = 'Calendar';

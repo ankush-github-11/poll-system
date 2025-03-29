@@ -1,4 +1,4 @@
-// Profile Code Starts
+                                                                                     // Profile Code Starts
 if(document.querySelector(".sessionName").textContent.trim()){
     document.querySelector(".login").classList.add('hidden');
     document.querySelector(".signup").classList.add('hidden');
@@ -30,7 +30,25 @@ document.querySelector('.signout-div').addEventListener('mouseenter', () => {
 document.querySelector('.signout-div').addEventListener('mouseleave', () => {
     document.querySelector('.sign-out-btn').style.backgroundColor = "var(--dropdown-bg-color)";
 });
-// Profile Code Ends
+                                                                                     // Profile Code Ends
+
+const optionsStr = document.querySelector('.options').textContent;
+let optionsArr = optionsStr.split(/<\.-:\.=>/);
+for(let i = 0 ; i < optionsArr.length ; i++){
+    const html = `  <div class="option-div">
+                    <div class="preview-option">
+                        ${optionsArr[i]}
+                    </div>
+                    <div class="green-dot-div">
+                        <div class="green-dot-border">
+                            <div class="green-dot"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+    document.querySelector('.participant-poll-options-div').insertAdjacentHTML("beforeend", html);
+}
+
 
                                                                                 // Light or Dark Mode JS
 const initializeTheme = () => {
@@ -102,3 +120,13 @@ document.querySelectorAll('.nav-items-div a').forEach((navItem, index) => {
     });
 });
                                                                                         // Navbar code ends
+document.querySelector('.participant-poll-options-div').addEventListener('click', function (event) {
+    let optionDiv = event.target.closest('.option-div');
+    if (optionDiv && this.contains(optionDiv)) {
+        document.querySelectorAll('.green-dot').forEach((ele) => {
+            ele.classList.remove('green-dot-bg-add');
+        });
+        let greenDot = optionDiv.querySelector('.green-dot');
+        if (greenDot) greenDot.classList.add('green-dot-bg-add');
+    }
+});

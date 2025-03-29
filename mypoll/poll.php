@@ -1,6 +1,7 @@
 <?php
     include "../config/connect.php";
     if(isset($_SESSION["uid"])) $uid = $_SESSION["uid"];
+    if(isset($_SESSION["name"])) $name = $_SESSION["name"];
     if(isset($_POST["title"])){
         $title = $_POST["title"];
     }
@@ -43,16 +44,18 @@
     if(isset($_POST["showResults"])) $showResults = $_POST["showResults"];
     $sql = "";
 
-    if(isset($_POST['title'])) $sql = "insert into polls set uid = '$uid', title='$title', description='$description', options='$joinedOptions', pollType='$pollTypeOptions', theme='$themeOptions', caseOptions='$caseOptions', publishImmediately= '$publishImmediatelyCheckbox', startDateAndTime='$dateAndTime', duration='$duration', votersRepresentation='$votersRepresentation', devices='$devices', showResults='$showResults' ";
+    if(isset($_POST['title'])) $sql = "insert into polls set uid = '$uid', name='$name', title='$title', description='$description', options='$joinedOptions', pollType='$pollTypeOptions', theme='$themeOptions', caseOptions='$caseOptions', publishImmediately= '$publishImmediatelyCheckbox', startDateAndTime='$dateAndTime', duration='$duration', votersRepresentation='$votersRepresentation', devices='$devices', showResults='$showResults' ";
 
     $res = false;
+    $arr = [];
     if(isset($_POST['title'])) {
         $res = mysqli_query($conn, $sql);
         $sql = "select * from polls where uid='$uid' and title='$title'";
         $res = mysqli_query($conn, $sql);
         if($res == true && mysqli_num_rows($res) > 0){
-            $arr = mysqli_fetch_assoc($res);
-            $_SESSION['pid'] = $arr['pid'];
+            mysqli_data_seek($res, mysqli_num_rows($res) - 1); // Move pointer to last row
+            $arr = mysqli_fetch_assoc($res); // Fetch the last row
+            $_SESSION['pid'] = $arr["pid"];
         }
     }
     $message ="";
@@ -91,13 +94,15 @@
                 </div>
             </div>
             <div class="view-share-div">
-                <a class="view-btn" href="../poll/poll.php">View Poll</a>
+                <button class="view-btn">View Poll</button>
                 <button class="btn">Share Poll</button>
             </div>
             <div class="link-clipboard-div">
                 <div class="link-print-div">
                     <?php
-                        echo "localhost/myproject/poll/poll.php?pid=".$_SESSION['pid'];
+                        $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http")
+                        . "://$_SERVER[HTTP_HOST]/myproject/poll/poll.php?pid=".$_SESSION['pid'];
+                        echo $url;
                     ?>
                 </div>
                 <div class="fa-regular fa-clone clipboard-btn"></div>

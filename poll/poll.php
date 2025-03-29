@@ -22,9 +22,33 @@
         <?php
             if(isset($_SESSION["username"]))
                 echo $_SESSION["username"];
+            // else{
+            //     header("Location: ../signup/signup.php");
+            //     exit();
+            // }
+        ?>
+    </div>
+    <div class="pid hidden">
+        <?php
+            if(isset($_SERVER['QUERY_STRING'])){
+                $query_string = $_SERVER['QUERY_STRING']; // Example: "pid=123"
+                preg_match('/\d+/', $query_string, $matches);
+                $pid = $matches[0] ?? null;
+                echo htmlspecialchars($pid, ENT_QUOTES, 'UTF-8');
+                $sql = "select * from polls where pid = '$pid'";
+                $res = mysqli_query($conn, $sql);
+                $arr = [];
+                if($res==true){
+                    if(mysqli_num_rows($res) > 0){
+                        $arr = mysqli_fetch_assoc($res);
+                    }
+                    else{
+                        // No such poll exists
+                    }
+                }
+            }
             else{
-                header("Location: ../signup/signup.php");
-                exit();
+                // Write the logic to display that the URL is not correct
             }
         ?>
     </div>
@@ -32,6 +56,11 @@
         <?php
             if(isset($_SESSION["name"]))
                 echo $_SESSION["name"];
+        ?>
+    </div>
+    <div class="options hidden">
+        <?php
+            echo $arr["options"];
         ?>
     </div>
     <header>
@@ -140,15 +169,28 @@
                             <img class="participant-image" src="../images/admin-logo.png" alt="">
                         </div> -->
                         <div class="participant-header-texts">
-                            <div class="participant-header-name">Admin Name</div>
-                            <div class="participant-header-title">Poll Title</div>
+                            <div class="participant-header-name">Author: 
+                                <?php
+                                echo $arr["name"];
+                                ?>
+                            </div>
+                            <div class="participant-header-title">
+                                <?php
+                                    echo $arr["title"];
+                                ?>
+                            </div>
                         </div>
                     </div>
-                    <div class="participant-description">Poll Description</div>
+                    <div class="participant-description">
+                        <!-- Poll Description -->
+                         <?php
+                            echo $arr["description"];
+                         ?>
+                    </div>
                     <div class="participant-body-div">
-                        <div class="participant-body-heading">Select Your Option</div>
+                        <!-- <div class="participant-body-heading">Select Your Option</div> -->
                         <div class="participant-poll-options-div">
-                            <div class="option-div">
+                            <!-- <div class="option-div">
                                 <div class="preview-option">
                                     Hello this is your poll option number 1
                                 </div>
@@ -207,8 +249,7 @@
                                         <div class="green-dot"></div>
                                     </div>
                                 </div>
-                            </div>
-                            
+                            </div> -->
                         </div>
                     </div>
                     <div class="participants-horizontal-line-div">

@@ -415,7 +415,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 10px 10px;
+    margin: 15px 15px;
 }
 .participant-header-name{
     color: white;
@@ -427,7 +427,7 @@ body{
     font-weight: 500;
 }
 .participant-description{
-    padding: 10px;
+    padding: 15px;
     background: linear-gradient(155deg, var(--bg-color), var(--box-color));
     color: var(--text-color-less);
     border-bottom: 2px solid var(--box-border);
@@ -437,7 +437,7 @@ body{
     flex-wrap: wrap;
     align-items: center;
 }
-.participant-body-heading{
+/* .participant-body-heading{
     padding: 7px 10px;
     display: flex;
     flex-wrap: wrap;
@@ -449,19 +449,22 @@ body{
     margin: 10px;
     margin-bottom: 0px;
     border-radius: 10px;
-}
+} */
 .participant-poll-options-div{
-    padding: 10px;
+    padding: 15px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
 }
 .option-div{
-    height: fit-content;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
     align-items: center;
     border-radius: 5px;
     outline: 2px solid var(--box-border);
@@ -495,8 +498,18 @@ body{
     background-color: var(--bg-color);
 }
 .green-dot-bg-add{
-    background-color: rgb(4, 221, 0) !important;
+    background-color: lime !important;
+    box-shadow: 0 0 5px 2px lime;
+    animation: glow 1.3s infinite alternate ease-in-out;
 }
+  @keyframes glow {
+    0% {
+        box-shadow: 0 0 2.5px 1px lime;
+    }
+    100% {
+        box-shadow: 0 0 15px 3.5px rgba(50, 205, 50, 1);
+    }
+  }
 .participants-horizontal-line-div{
     margin: 5px 0px;
     width: 100%;
@@ -578,3 +591,4 @@ footer{
 /*  Navbar ends  */
 
 /*  Redirect to the signup page if someone tries to open the page from the direct link and do this in the mypoll/poll.php  */
+/*  Change the green dot color in the light mode  */

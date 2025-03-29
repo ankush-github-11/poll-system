@@ -140,6 +140,7 @@ if(isset($_POST["signup"])){
     $password = sanitizePassword($_POST['password']);
     if (validateName($name) && validateEmail($email) && validatePassword($password)) {
         $username = getLocalPart($email);
+        $_SESSION["username"] = $username;
         $sql = "insert into users set username='$username', name='$name',email='$email', password='$password'";
         $res = mysqli_query($conn, $sql);
         if ($res == true)
