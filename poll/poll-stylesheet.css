@@ -516,6 +516,39 @@ body{
     display: flex;
     justify-content: center;
 }
+.participants-footer-div{
+    height: fit-content;
+    width: 100%;
+    padding: 15px;
+}
+.participants-footer-buttons-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
+}
+.participants-footer-btn-exit{
+    width: 150px;
+    padding: auto;
+    color: black;
+    background-color: rgb(230, 230, 230);
+    border-radius: 50px;
+    &:hover{
+        color: black;
+        background-color: rgb(214, 214, 214);
+    }
+}
+.participants-footer-btn-submit{
+    width: 150px;
+    padding: auto;
+    background-color: rgb(3, 197, 0);
+    color: white;
+    border-radius: 50px;
+    &:hover{
+        background-color: rgb(3, 183, 0);
+        color: white;
+    }
+}
 /*  Poll display code ends  */
 /*  Footer starts  */
 footer{
