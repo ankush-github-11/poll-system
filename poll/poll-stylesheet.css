@@ -17,7 +17,8 @@
     --box-border: #DFE0E1;
     --box-color: rgb(255, 255, 255);
     --growth-gradient-color: rgb(215, 218, 228);
-    --participant-header-div-gradient-color: rgb(255, 100, 139);
+    --participant-header-div-gradient-color: rgb(255, 136, 166);
+    --green-shadow: rgb(155, 255, 155);
 
     --hover-color: rgb(245, 245, 245);
     --dropdown-text-color: rgb(26, 26, 26);
@@ -43,6 +44,7 @@
     --box-color: rgb(31, 31, 31);
     --growth-gradient-color: rgb(255, 0, 85);
     --participant-header-div-gradient-color: rgb(21, 0, 0);
+    --green-shadow: rgb(0, 255, 0);
     
     --hover-color: rgb(32, 32, 32);
     --dropdown-text-color: rgb(248, 248, 248);
@@ -378,7 +380,7 @@ body{
 
 /*  Poll display code starts  */
 .total-div{
-    min-height: 97vh;
+    min-height: 100vh;
     height: fit-content;
     padding: 20px;
 }
@@ -478,7 +480,7 @@ body{
 }
 .green-dot-div{
     width: 15%;
-    aspect-ratio: 1 / 1;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -507,11 +509,21 @@ body{
         box-shadow: 0 0 2.5px 1px lime;
     }
     100% {
-        box-shadow: 0 0 15px 3.5px rgba(50, 205, 50, 1);
+        box-shadow: 0 0 15px 3.5px var(--green-shadow);
     }
-  }
+}
 .participants-horizontal-line-div{
-    margin: 5px 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.participants-horizontal-line{
+    height: 1.5px;
+    width: 98%;
+    border-radius: 20px;
+    background-color: var(--box-border);
+}
+.participants-horizontal-line-div{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -528,20 +540,27 @@ body{
     gap: 20px;
 }
 .participants-footer-btn-exit{
+    font-weight: 500;
+    letter-spacing: 0.5px;
     width: 150px;
     padding: auto;
-    color: black;
-    background-color: rgb(230, 230, 230);
+    color: var(--text-color);
+    outline: 2px solid var(--box-border);
+    background-color: var(--bg-color-less);
     border-radius: 50px;
+    transition: none;
     &:hover{
-        color: black;
-        background-color: rgb(214, 214, 214);
+        color: var(--text-color);
+        outline: 2px solid var(--box-border);
+        background-color: var(--bg-color);
     }
 }
 .participants-footer-btn-submit{
+    font-weight: 500;
+    letter-spacing: 0.5px;
     width: 150px;
     padding: auto;
-    background-color: rgb(3, 197, 0);
+    background-color: limegreen;
     color: white;
     border-radius: 50px;
     &:hover{
