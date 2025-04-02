@@ -456,18 +456,18 @@ body{
 @keyframes opacityAndSize {
     0% {
         opacity: 0;
-        font-size: 10px;
+        font-size: 25px;
         transform: translateY(0px);
     }
     50% {
         opacity: 0.7;
-        font-size: 52px;
-        transform: translateY(25px);
+        font-size: 51.5px;
+        transform: translateY(55px);
     }
     100% {
         opacity: 1;
         font-size: 50px;
-        transform: translateY(15px);
+        transform: translateY(25px);
     }
 }
 
@@ -535,30 +535,30 @@ body{
 }
 @keyframes leftSlide{
     0%{
-        transform: translateX(-100px) scale(0.5);
+        transform: translateX(-100px) translateY(0px) scale(0.5);
         opacity: 0;
     }
     70%{
-        transform: translateX(3px) scale(1.1);
+        transform: translateX(2.5px) translateY(45px) scale(1.1);
         opacity: 0.5;
     }
     100%{
-        transform: translateX(0px) scale(1);
+        transform: translateX(0px) translateY(25px) scale(1);
         opacity: 1;
 
     }
 }
 @keyframes rightSlide{
     0%{
-        transform: translateX(100px) scale(0.5);
+        transform: translateX(100px) translateY(0px) scale(0.5);
         opacity: 0;
     }
     70%{
-        transform: translateX(-3px) scale(1.1);
+        transform: translateX(-2.5px) translateY(45px) scale(1.1);
         opacity: 0.5;
     }
     100%{
-        transform: translateX(0px) scale(1);
+        transform: translateX(0px) translateY(25px) scale(1);
         opacity: 1;
 
     }
