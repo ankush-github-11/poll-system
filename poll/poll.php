@@ -256,10 +256,13 @@
                         <div class="participants-horizontal-line"></div>
                     </div>
                     <div class="participants-footer-div">
-                        <div class="participants-footer-buttons-div">
-                            <button type="button" class="btn participants-footer-btn-exit">Exit</button>
-                            <button type="button" class="btn participants-footer-btn-submit">Submit</button>
-                        </div>
+                        <form action="../success/success.php" method="POST">
+                            <input type="text" class="hidden selected-option" name="selectedOption">
+                            <div class="participants-footer-buttons-div">
+                                <button type="button" class="btn participants-footer-btn-exit">Exit</button>
+                                <button type="submit" class="btn participants-footer-btn-submit disabled-button">Submit</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

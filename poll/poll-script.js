@@ -128,5 +128,7 @@ document.querySelector('.participant-poll-options-div').addEventListener('click'
         });
         let greenDot = optionDiv.querySelector('.green-dot');
         if (greenDot) greenDot.classList.add('green-dot-bg-add');
+        document.querySelector('.participants-footer-btn-submit').classList.remove('disabled-button');
+        document.querySelector('.selected-option').value = optionDiv.textContent.trim();
     }
 });
