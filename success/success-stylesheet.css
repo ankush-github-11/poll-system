@@ -309,6 +309,7 @@ body{
     justify-content: center;
 }
 .link-print-div{
+    margin: 0px 5vw;
     border: 2px solid var(--border-color);
     border-radius: 5px;
     padding: 5px 10px;
@@ -362,6 +363,4 @@ body{
 
 /*  If someone tries to enter the page using the page URL then show the message that its not the page he's looking for and show the error 404 message  */
 /*  Add form verification in all the forms to prevent SQL injection */
-/*  Change the popup in the create page  */
-/*  Add dark mode  */
-/*  Update the Polls Created count in the database  */
+/*  Add the dark mode in this page  */

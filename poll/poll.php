@@ -258,6 +258,7 @@
                     <div class="participants-footer-div">
                         <form action="../success/success.php" method="POST">
                             <input type="text" class="hidden selected-option" name="selectedOption">
+                            <input type="text" class="hidden voted-pid" name="votedPid">
                             <div class="participants-footer-buttons-div">
                                 <button type="button" class="btn participants-footer-btn-exit">Exit</button>
                                 <button type="submit" class="btn participants-footer-btn-submit disabled-button">Submit</button>
