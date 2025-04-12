@@ -47,6 +47,9 @@
 .flex{
     display: flex;
 }
+.pointer-none{
+    pointer-events: none;
+}
 *{
     font-family: "Poppins" , Arial, Helvetica, sans-serif;
     font-weight: 400;
@@ -308,7 +311,7 @@ body{
     gap: 10px;
     justify-content: center;
 }
-.link-print-div{
+.link-print-div-1, .link-print-div-2{
     border: 2px solid var(--border-color);
     border-radius: 5px;
     padding: 5px 10px;
@@ -318,7 +321,7 @@ body{
     width: fit-content;
     animation: bottomSlide 1.5s ease-in-out forwards;
 }
-.clipboard-btn{
+.clipboard-btn-1, .clipboard-btn-2{
     width: 40px;
     aspect-ratio: 1 / 1;
     cursor: pointer;
@@ -340,12 +343,12 @@ body{
         padding: 5px 10px;
         width: 80%;
     }
-    .link-print-div{
+    .link-print-div-1, .link-print-div-2{
         font-size: 10px;
     }
 }
 @media (max-width: 575px) {
-    .link-print-div{
+    .link-print-div-1, .link-print-div-2{
         font-size: 10px;
     }
 }

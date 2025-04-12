@@ -7,7 +7,7 @@
         // Error logic : That's not the page you are looking for
     }
     if(isset($_SESSION["uid"])) $uid = $_SESSION["uid"];
-    echo $_POST["votedPid"];
+    // if(isset($_POST["votedPid"])) echo $_POST["votedPid"];
     if(isset($_POST["selectedOption"])){
         $sql = "select * from polls where ";
     }
@@ -46,8 +46,8 @@
                 </div>
             </div>
             <div class="view-share-div">
-                <button class="view-btn">View Poll</button>
-                <button class="btn">Share Poll</button>
+                <button class="view-btn">Other Polls</button>
+                <button class="btn">Go to Homepage</button>
             </div>
             <div class="link-clipboard-div">
                 <div class="link-print-div">

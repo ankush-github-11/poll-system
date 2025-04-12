@@ -265,7 +265,7 @@ body{
 }
 .btn {
     height: 45px;
-    width: 135px;
+    width: fit-content;
     display: inline-block;
     color: white;
     padding: 7px 13px;

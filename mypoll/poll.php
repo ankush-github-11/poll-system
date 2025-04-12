@@ -1,11 +1,14 @@
 <?php
     include "../config/connect.php";
+    if(!(isset($_POST["title"]) || isset($_SESSION['pid']))){
+        include "../error/error.php";
+        exit();
+    }
     if(isset($_SESSION["uid"])) $uid = $_SESSION["uid"];
     if(isset($_SESSION["name"])) $name = $_SESSION["name"];
     if(isset($_POST["title"])){
         $title = $_POST["title"];
     }
-    
     if(isset($_POST["description"])){
         $description = $_POST["description"];
     }
@@ -43,8 +46,23 @@
 
     if(isset($_POST["showResults"])) $showResults = $_POST["showResults"];
     $sql = "";
+    function generateRandomPassword($length = 12) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $password = '';
+        $maxIndex = strlen($characters) - 1;
+    
+        for ($i = 0; $i < $length; $i++) {
+            $index = rand(0, $maxIndex);
+            $password .= $characters[$index];
+        }
+    
+        return $password;
+    }
 
-    if(isset($_POST['title'])) $sql = "insert into polls set uid = '$uid', name='$name', title='$title', description='$description', options='$joinedOptions', pollType='$pollTypeOptions', theme='$themeOptions', caseOptions='$caseOptions', publishImmediately= '$publishImmediatelyCheckbox', startDateAndTime='$dateAndTime', duration='$duration', votersRepresentation='$votersRepresentation', devices='$devices', showResults='$showResults' ";
+    if(isset($_POST['title'])){
+        $pollPassword = generateRandomPassword();
+        $sql = "insert into polls set uid = '$uid', name='$name', pollPassword='$pollPassword', title='$title', description='$description', options='$joinedOptions', pollType='$pollTypeOptions', theme='$themeOptions', caseOptions='$caseOptions', publishImmediately= '$publishImmediatelyCheckbox', startDateAndTime='$dateAndTime', duration='$duration', votersRepresentation='$votersRepresentation', devices='$devices', showResults='$showResults' ";
+    }
 
     $res = false;
     $arr = [];
@@ -56,6 +74,7 @@
             mysqli_data_seek($res, mysqli_num_rows($res) - 1); // Move pointer to last row
             $arr = mysqli_fetch_assoc($res); // Fetch the last row
             $_SESSION['pid'] = $arr["pid"];
+            $_SESSION['pollPassword'] = $arr["pollPassword"];
         }
     }
     $message ="";
@@ -98,14 +117,22 @@
                 <button class="btn">Share Poll</button>
             </div>
             <div class="link-clipboard-div">
-                <div class="link-print-div">
+                <div class="link-print-div-1">
                     <?php
                         $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http")
                         . "://$_SERVER[HTTP_HOST]/myproject/poll/poll.php?pid=".$_SESSION['pid'];
                         echo $url;
                     ?>
                 </div>
-                <div class="fa-regular fa-clone clipboard-btn"></div>
+                <div class="fa-regular fa-clone clipboard-btn-1"></div>
+            </div>
+            <div class="link-clipboard-div">
+                <div class="link-print-div-2">
+                    <?php
+                        echo "Admin Password: ". $_SESSION['pollPassword']
+                    ?>
+                </div>
+                <div class="fa-regular fa-clone clipboard-btn-2"></div>
             </div>
         </div>
     </div>

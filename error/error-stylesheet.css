@@ -1,0 +1,129 @@
+:root{
+    --bg-1: rgb(255, 0, 85);
+    --bg-2: rgb(255, 85, 142);
+    --bg-3: rgb(235, 0, 78);
+    --bg-color: #FAFAFA;
+    --bg-color-less: rgb(247, 247, 247);
+    --text-color: black;
+    --text-color-less: rgb(57, 57, 57);
+    --scrollbar-track: rgb(209, 209, 209);
+}
+.darkmode{
+    --bg-1: rgb(255, 0, 85);
+    --bg-2: rgb(255, 85, 142);
+    --bg-3: rgb(235, 0, 78);
+    --bg-color: #05141d;
+    --bg-color-less: #061720;   
+    --text-color: rgb(240, 240, 240);
+    --text-color-less: rgb(201, 201, 201);
+    --scrollbar-track: rgb(39, 39, 39);
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    width: 8px;
+    background-color: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--bg-1);
+    border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--bg-3);
+}
+.no-select {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.hidden{
+    display: none;
+}
+.flex{
+    display: flex;
+}
+*{
+    font-family: "Poppins" , Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    box-sizing:border-box;
+}
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+.total-div{
+    height: 100vh;
+    width: 100%;
+    padding: 1.8vw;
+}
+.main-div{
+    height: 100%;
+    width: 100%;
+}
+.header-div{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.header-div img{
+    height: 50px;
+}
+.header-div div{
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--text-color-less);
+}
+.body-div{
+    height: fit-content;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+.left-div{
+    height: fit-content;
+    width: 100%;
+    margin-top: 150px;
+    padding-left: 40px;
+}
+.text-1{
+    font-size: 20px;
+    font-weight: 500;
+    color: gray;
+}
+.text-2{
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+.text-3{
+    font-size: 35px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+.right-div{
+    height: fit-content;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.right-div img{ 
+    margin-top: 50px;
+    filter: contrast(120%) brightness(110%);
+}
+.typewriter {
+    color: var(--text-color-less);
+    font-size: 24px;
+    white-space: nowrap;
+    padding-right: 5px;
+    z-index: 10;
+    transform: translateY(-50px);
+    font-weight: 500;
+  }
