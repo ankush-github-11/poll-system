@@ -11,6 +11,8 @@ const initializeTheme = () => {
 }
 initializeTheme();
 
+
+
 const text = "Page Not Found!";
 const speed = 150;
 let index = 0;

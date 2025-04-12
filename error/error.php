@@ -22,7 +22,7 @@
 <body>
     <div class="total-div">
         <div class="main-div">
-            <div class="header-div">
+            <div class="header-div no-select">
                 <img src="../images/main-logo.png" alt="Main Logo">
                 <div>Pollnow</div>
             </div>
@@ -31,6 +31,11 @@
                     <div class="text-1">ERROR CODE: 404</div>
                     <div class="text-2">OOOPS!!</div>
                     <div class="text-3">This is not the page you are looking for</div>
+                    <div class="text-4">Here are some useful links instead:</div>
+                    <div class="buttons-div">
+                        <a href="../home/index.php" class="home">Home</a>
+                        <a href="../createpoll/create.php" class="create">Create Poll</a>
+                    </div>
                 </div>
                 <div class="right-div">
                     <img src="../images/error-404.png" alt="">
