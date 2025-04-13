@@ -250,6 +250,9 @@ body{
       border-bottom: 3px solid var(--bg-1);
       text-align: center;
       margin-left: auto;
+      &:hover{
+        border-bottom: 3px solid var(--bg-3);
+      }
 }
 .login a { 
     padding: 6px 15px;
@@ -260,11 +263,19 @@ body{
     border-radius: 50px;
     text-align: center;
     margin-right: 10px;
+    &:hover{
+      background-color: var(--bg-3);
+    }
 }
 .signup a{
     padding: 7px 20px;
     height: 100%;
     width: 100%;
+    transition: none;
+    color: white;
+    &:hover{
+      color: white;
+    }
 }
 /*  Profile CSS starts  */
 .dropdown-profile-div{

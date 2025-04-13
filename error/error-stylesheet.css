@@ -55,7 +55,8 @@ body{
     color: var(--text-color);
 }
 .total-div{
-    height: 100vh;
+    min-height: 100vh;
+    height: fit-content;
     width: 100%;
     padding: 1.8vw;
 }
@@ -81,15 +82,17 @@ body{
 .body-div{
     height: fit-content;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
 }
 .left-div{
+    flex: 1;
     height: fit-content;
-    width: 100%;
+    min-width: 300px;
     margin-top: 150px;
     padding-left: 40px;
+    /* padding-right: 20px; */
 }
 .text-1{
     font-size: 20px;
@@ -145,9 +148,11 @@ body{
     letter-spacing: 0.3px;
 }
 .right-div{
+    flex: 1;
     height: fit-content;
-    width: 100%;
-    margin: 0 auto;
+    min-width: 100px;
+    margin-right: 40px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -162,6 +167,47 @@ body{
     white-space: nowrap;
     padding-right: 5px;
     z-index: 10;
-    transform: translateY(-50px);
+    transform: translateY(-30px);
     font-weight: 500;
+}
+@media only screen and (max-width: 768px) {
+  .body-div{
+    gap: 0px;
   }
+  .left-div, .right-div {
+    flex: 100%;
+  }
+  .right-div{
+    margin-right: 0px;
+    margin-top: 0px;
+  }
+  .left-div{
+    margin-top: 20px;
+    padding-left: 10px;
+  }
+  .right-div img{
+    scale: 0.8;
+    margin: 0px;
+  }
+  .text-1{
+    font-size: 15px;
+  }
+  .text-2{
+    font-size: 45px;
+  }
+  .text-3{
+    font-size: 20px;
+  }
+  .text-4{
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .typewriter {
+    transform: translateY(-80px);
+  }
+}
+@media (min-width: 769px) and (max-width: 991px) {
+  .right-div img{
+    scale: 0.8;
+  }
+}

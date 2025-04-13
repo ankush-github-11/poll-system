@@ -28,10 +28,10 @@
             // }
         ?>
     </div>
-    <div class="pid hidden">
+    <div class="pid"> 
         <?php
             if(isset($_SERVER['QUERY_STRING'])){
-                $query_string = $_SERVER['QUERY_STRING']; // Example: "pid=123"
+                $query_string = $_SERVER['QUERY_STRING'];
                 preg_match('/\d+/', $query_string, $matches);
                 $pid = $matches[0] ?? null;
                 echo htmlspecialchars($pid, ENT_QUOTES, 'UTF-8');
@@ -43,12 +43,16 @@
                         $arr = mysqli_fetch_assoc($res);
                     }
                     else{
-                        // No such poll exists
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<br>";
+                        echo "No such Polls Exist";
+                        echo "<br>";
+                        echo "Enter a valid one";
+                        exit();
+                        // Refine the Design please
                     }
                 }
-            }
-            else{
-                // Write the logic to display that the URL is not correct
             }
         ?>
     </div>
@@ -150,7 +154,7 @@
                         </div>
                         <div class="signout-div">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                            <form action="./index.php" method="POST">
+                            <form action="../home/index.php" method="POST">
                                 <button class="sign-out-btn" name="signout" type="submit">Sign Out</button>
                             </form>
                         </div>
