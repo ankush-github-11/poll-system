@@ -3,13 +3,23 @@
     if(isset($_POST["selectedOption"])){
         $_SESSION["selectedOp"] = $_POST["selectedOption"];
     }
-    else{
+    if(!isset($_SESSION["selectedOp"])){
         // Error logic : That's not the page you are looking for
+        include "../error/error.php";
+        exit();
     }
-    if(isset($_SESSION["uid"])) $uid = $_SESSION["uid"];
-    // if(isset($_POST["votedPid"])) echo $_POST["votedPid"];
-    if(isset($_POST["selectedOption"])){
-        $sql = "select * from polls where ";
+    if(isset($_POST["selectedOption"]) && isset($_POST["votedPid"])){
+        $pid = $_POST["votedPid"];
+        $option = $_POST["selectedOption"];
+        $uid = "";
+        if(isset($_SESSION["uid"])) $uid = $_SESSION["uid"];
+        else{
+            // Error logic : That's not the page you are looking for
+            include "../error/error.php";
+            exit();
+        }
+        $sql = "insert into votes set pid='$pid', uid='$uid', selectedOption='$option'";
+        $res = mysqli_query($conn, $sql);
     }
     $message =  "Your vote has been successfully submitted!";
 ?>

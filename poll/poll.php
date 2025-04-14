@@ -28,7 +28,7 @@
             // }
         ?>
     </div>
-    <div class="pid"> 
+    <div class="pid hidden"> 
         <?php
             if(isset($_SERVER['QUERY_STRING'])){
                 $query_string = $_SERVER['QUERY_STRING'];
