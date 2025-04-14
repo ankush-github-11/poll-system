@@ -271,6 +271,14 @@
                     </div>
                 </div>
             </div>
+            <div class="main-div-2">
+                <div class="admin-btn-div">
+                    <form action="../polladmin/polladmin.php" method="POST">
+                        <input class="admin-btn" value="Admin Dashboard" type="submit" name="submit">
+                        <input type="text" class="hidden voted-pid" name="votedPid">
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
     <footer>

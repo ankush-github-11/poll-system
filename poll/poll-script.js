@@ -98,7 +98,6 @@ document.querySelector('.navbar-fa-div').addEventListener("click", function(){
         document.querySelector('main').classList.remove('blur');
         document.querySelector('.my-navbar-div').classList.remove('blur');
     },600);
-
 });
 window.addEventListener("resize", function () {
     if (window.innerWidth >= 768) {
@@ -120,6 +119,9 @@ document.querySelectorAll('.nav-items-div a').forEach((navItem, index) => {
     });
 });
                                                                                         // Navbar code ends
+document.querySelectorAll('.voted-pid').forEach((ele) =>{
+    ele.value = document.querySelector('.pid').textContent.trim();
+});
 document.querySelector('.participant-poll-options-div').addEventListener('click', function (event) {
     let optionDiv = event.target.closest('.option-div');
     if (optionDiv && this.contains(optionDiv)) {
@@ -130,6 +132,6 @@ document.querySelector('.participant-poll-options-div').addEventListener('click'
         if (greenDot) greenDot.classList.add('green-dot-bg-add');
         document.querySelector('.participants-footer-btn-submit').classList.remove('disabled-button');
         document.querySelector('.selected-option').value = optionDiv.textContent.trim();
-        document.querySelector('.voted-pid').value = document.querySelector('.pid').textContent.trim();
+        // document.querySelector('.voted-pid').value = document.querySelector('.pid').textContent.trim();
     }
 });
