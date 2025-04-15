@@ -2,12 +2,13 @@
     --bg-1: rgb(255, 0, 85);
     --bg-2: rgb(255, 85, 142);
     --bg-3: rgb(235, 0, 78);
-    --bg-color: white;
+    --bg-color: #FAFAFA;
     --bg-color-less: rgb(250, 250, 250);
     --text-color: black;
     --text-color-less: rgb(36, 36, 36);
     --nav-bg-color: rgb(246, 246, 255);
     --nav-footer-shadow: rgb(221, 221, 221);
+    --border: rgb(218, 218, 218);
 
     --hover-color: rgb(245, 245, 245);
     --dropdown-text-color: rgb(26, 26, 26);
@@ -23,6 +24,7 @@
     --text-color-less: rgb(201, 201, 201);
     --nav-bg-color: rgb(0, 0, 16);
     --nav-footer-shadow: rgb(0, 0, 0);
+    --border: rgb(63, 63, 63);
     
     --hover-color: rgb(32, 32, 32);
     --dropdown-text-color: rgb(248, 248, 248);
@@ -361,6 +363,71 @@ body{
 .signup > a {
     color: white !important;
 }
+.total-div{
+    min-height: 100vh;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-div-1{
+    height: fit-content;
+    width: fit-content;
+    padding: 45px;
+    margin: 20px;
+    background-color: var(--bg-color-less);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+}
+.enter-pass-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.enter-pass-text{
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+.input-pass {
+    width: 100%;
+    height: 45px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid var(--border);
+    outline: none;
+    transition: scale 0.3s cubic-bezier(0.19, 1, 0.22, 1), 
+    transform 0.1s ease-in-out;
+    background-color: var(--bg-color-less);
+    color: var(--text-color);
+}
+.input-pass:active {
+    transform: scale(0.95);
+    border: 2px solid var(--bg-2);
+}
+  
+.input-pass:focus {
+    border: 2px solid var(--bg-2);
+}
+.submit-btn{
+    width: 100%;
+    letter-spacing: 1px;
+    padding: 7px 11px;
+    border: none;
+    outline: none;
+    background-color: rgb(39, 39, 255);
+    color: white;
+    border-radius: 7px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease-out;
+    &:hover{   
+        transform: translateY(-2px);
+    }
+
+}
                                                                          /*     Footer Starts     */
 footer{
     margin-top: auto;
@@ -381,4 +448,51 @@ footer{
 .footer-div-1 > a{
     text-decoration: none;
     color: var(--bg-1);
+}
+
+/*  Navbar Media Quires Start  */
+@media only screen and (max-width: 480px) {
+    .navbar-side-div{
+      width: 75vw;
+    }
+    .nav-items-top{
+      display: none;
+    }
+    .hamburger-div{
+      display: flex;
+    }
+    .light-dark-div{
+      margin-left: 10px;
+      margin-right: 20px;
+    }
+}
+@media (min-width:481px) and (max-width: 576px) {
+    .navbar-side-div{
+      width: 60vw;
+    }
+    .nav-items-top{
+      display: none;
+    }
+    .hamburger-div{
+      display: flex;
+    }
+    .light-dark-div{
+        margin-left: 10px;
+        margin-right: 20px;
+    }
+}
+@media (min-width: 577px) and (max-width: 768px) {
+    .navbar-side-div{
+      width: 50vw;
+    }
+    .nav-items-top{
+      display: none;
+    }
+    .hamburger-div{
+      display: flex;
+    }
+    .light-dark-div{
+        margin-left: 10px;
+        margin-right: 20px;
+    }
 }
