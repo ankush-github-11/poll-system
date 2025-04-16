@@ -1,3 +1,7 @@
+if ( window.history.replaceState ) {
+    window.history.replaceState(null, null, window.location.href);
+}
+document.querySelector(".fetched-pid").value = document.querySelector(".pid").textContent.trim();
 // Profile Code Starts
 if(document.querySelector(".sessionName").textContent.trim()){
     document.querySelector(".login").classList.add('hidden');

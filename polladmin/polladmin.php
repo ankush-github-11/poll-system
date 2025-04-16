@@ -1,8 +1,15 @@
 <?php
     include "../config/connect.php";
     if (!isset($_SESSION["username"])){
-        // include "../error/error.php";
-        // exit();
+        include "../error/error.php";
+        exit();
+    }
+    if(!(isset($_POST["votedPid"]) || isset($_SESSION["fetchedPid"]))){
+        include "../error/error.php";
+        exit();
+    }
+    if(isset($_POST["votedPid"])){
+        $_SESSION["fetchedPid"] = $_POST["votedPid"];
     }
 ?>
 <!DOCTYPE html>
@@ -34,6 +41,12 @@
         <?php
             if(isset($_SESSION["name"]))
                 echo $_SESSION["name"];
+        ?>
+    </div>
+    <div class="pid hidden">
+        <?php
+            if(isset($_SESSION["fetchedPid"]))
+                echo $_SESSION["fetchedPid"];
         ?>
     </div>
     <header>
@@ -139,6 +152,7 @@
             <div class="enter-pass-box">
                 <div class="enter-pass-text">Enter the Admin Password</div>
                 <input type="text" name="pass" class="input-pass" placeholder="Password">
+                <input type="text" name="pid" class="fetched-pid hidden">
                 <input type="submit" value="Submit" class="submit-btn">
             </div>  
             </div>
