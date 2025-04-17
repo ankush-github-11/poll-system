@@ -151,13 +151,35 @@
             <div class="main-div-1">
             <div class="enter-pass-box">
                 <div class="enter-pass-text">Enter the Admin Password</div>
-                <input type="text" name="pass" class="input-pass" placeholder="Password">
-                <input type="text" name="pid" class="fetched-pid hidden">
-                <input type="submit" value="Submit" class="submit-btn">
+                <form action="./polladmin.php" method="POST">
+                    <input type="text" name="pass" class="input-pass" spellcheck="false" required placeholder="Password">
+                    <input type="text" name="pid" class="fetched-pid hidden">
+                    <input type="submit" value="Submit" class="submit-btn">
+                </form>
             </div>  
             </div>
-            <div class="main-div-2">
-
+            <div class="main-div-2 hidden">
+                <?php
+                    if(isset($_POST["pass"])){
+                        $pass = $_POST["pass"];
+                        $pid = $_POST["pid"];
+                        $sql = "select * from polls where pid='$pid' and pollPassword='$pass'";
+                        $res = mysqli_query($conn, $sql);
+                        if($res && mysqli_num_rows($res) > 0){
+                            echo "Poll Exist";
+                            $_SESSION["passwordIsPassed"] = "yes";
+                        }
+                        else{
+                            echo "Poll Doesn't Exist";
+                        }
+                    }
+                    if(isset($_SESSION["passwordIsPassed"]) && $_SESSION["passwordIsPassed"] == "yes"){
+                        echo "Poll Exist";
+                    }
+                ?>
+            </div>
+            <div class="main-div-3 hidden">
+                Yes you are the admin
             </div>
         </div>
 

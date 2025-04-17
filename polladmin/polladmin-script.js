@@ -2,6 +2,13 @@ if ( window.history.replaceState ) {
     window.history.replaceState(null, null, window.location.href);
 }
 document.querySelector(".fetched-pid").value = document.querySelector(".pid").textContent.trim();
+if(document.querySelector(".main-div-2").textContent.trim() === "Poll Doesn't Exist"){
+    document.querySelector('.main-div-2').classList.remove('hidden');
+}
+if(document.querySelector(".main-div-2").textContent.trim() === "Poll Exist"){
+    document.querySelector('.main-div-3').classList.remove('hidden');
+    document.querySelector('.main-div-1').classList.add('hidden');
+}
 // Profile Code Starts
 if(document.querySelector(".sessionName").textContent.trim()){
     document.querySelector(".login").classList.add('hidden');
