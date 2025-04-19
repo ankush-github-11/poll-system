@@ -158,23 +158,30 @@
                 </form>
             </div>  
             </div>
-            <div class="main-div-2 hidden">
+            <div class="main-div-2">
                 <?php
                     if(isset($_POST["pass"])){
                         $pass = $_POST["pass"];
-                        $pid = $_POST["pid"];
+                        $pid = $_SESSION["fetchedPid"];
                         $sql = "select * from polls where pid='$pid' and pollPassword='$pass'";
                         $res = mysqli_query($conn, $sql);
                         if($res && mysqli_num_rows($res) > 0){
                             echo "Poll Exist";
-                            $_SESSION["passwordIsPassed"] = "yes";
+                            $_SESSION["pollPassed"] = $pid;
+                            // exit();
                         }
                         else{
                             echo "Poll Doesn't Exist";
+                            // exit();
                         }
                     }
-                    if(isset($_SESSION["passwordIsPassed"]) && $_SESSION["passwordIsPassed"] == "yes"){
-                        echo "Poll Exist";
+                    else{
+                        if(isset($_SESSION["pollPassed"]) && $_SESSION["pollPassed"] == $_SESSION["fetchedPid"]){
+                            echo "Poll Exist";
+                        }
+                        // else{
+                        //     echo "Poll Doesn't Exist";
+                        // }
                     }
                 ?>
             </div>
