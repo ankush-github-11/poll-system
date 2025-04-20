@@ -371,6 +371,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 90px 30px;
 }
 .main-div-1{
     height: fit-content;
@@ -431,6 +432,12 @@ body{
 }
 .main-div-2{
     color: rgb(255, 32, 32);
+}
+.main-div-3{
+    min-height: 80vh;
+    width: 100%;
+    background: linear-gradient(155deg, var(--bg-1), var(--bg-2));
+    border-radius: 20px;
 }
                                                                          /*     Footer Starts     */
 footer{

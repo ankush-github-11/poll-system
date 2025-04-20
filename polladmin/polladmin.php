@@ -149,14 +149,14 @@
     <main>
         <div class="total-div">
             <div class="main-div-1">
-            <div class="enter-pass-box">
-                <div class="enter-pass-text">Enter the Admin Password</div>
-                <form action="./polladmin.php" method="POST">
-                    <input type="text" name="pass" class="input-pass" spellcheck="false" required placeholder="Password">
-                    <input type="text" name="pid" class="fetched-pid hidden">
-                    <input type="submit" value="Submit" class="submit-btn">
-                </form>
-            </div>  
+                <div class="enter-pass-box">
+                    <div class="enter-pass-text">Enter the Admin Password</div>
+                    <form action="./polladmin.php" method="POST">
+                        <input type="text" name="pass" class="input-pass" spellcheck="false" required placeholder="Password">
+                        <input type="text" name="pid" class="fetched-pid hidden">
+                        <input type="submit" value="Submit" class="submit-btn">
+                    </form>
+                </div>  
             </div>
             <div class="main-div-2">
                 <?php
@@ -186,7 +186,7 @@
                 ?>
             </div>
             <div class="main-div-3 hidden">
-                Yes you are the admin
+                <div></div>
             </div>
         </div>
 
