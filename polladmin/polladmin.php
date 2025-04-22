@@ -158,16 +158,18 @@
                     </form>
                 </div>  
             </div>
-            <div class="main-div-2">
+            <div class="main-div-2 hidden">
                 <?php
                     if(isset($_POST["pass"])){
                         $pass = $_POST["pass"];
                         $pid = $_SESSION["fetchedPid"];
                         $sql = "select * from polls where pid='$pid' and pollPassword='$pass'";
                         $res = mysqli_query($conn, $sql);
+                        $arr = [];
                         if($res && mysqli_num_rows($res) > 0){
                             echo "Poll Exist";
                             $_SESSION["pollPassed"] = $pid;
+                            $_SESSION["arr"] = mysqli_fetch_assoc($res);
                             // exit();
                         }
                         else{
@@ -185,8 +187,18 @@
                     }
                 ?>
             </div>
+
             <div class="main-div-3 hidden">
-                <div></div>
+                <div class="title-div">
+                    <?php
+                        echo $_SESSION["arr"]['title'];
+                    ?>
+                </div>
+                <div class="author-div">
+                    <?php
+                        echo $_SESSION["arr"]['name'];
+                    ?>
+                </div>
             </div>
         </div>
 

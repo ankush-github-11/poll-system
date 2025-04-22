@@ -7,7 +7,7 @@ if(document.querySelector(".main-div-2").textContent.trim() === "Poll Doesn't Ex
 }
 if(document.querySelector(".main-div-2").textContent.trim() === "Poll Exist"){
     document.querySelector('.main-div-3').classList.remove('hidden');
-    document.querySelector('.main-div-2').classList.add('hidden'); // Added this line
+    // document.querySelector('.main-div-2').classList.add('hidden'); // Added this line
     document.querySelector('.main-div-1').classList.add('hidden');
 }
 // Profile Code Starts

@@ -5,7 +5,7 @@
     --bg-color: #FAFAFA;
     --bg-color-less: rgb(250, 250, 250);
     --text-color: black;
-    --text-color-less: rgb(36, 36, 36);
+    --text-color-less: rgb(54, 54, 54);
     --nav-bg-color: rgb(246, 246, 255);
     --nav-footer-shadow: rgb(221, 221, 221);
     --border: rgb(218, 218, 218);
@@ -21,7 +21,7 @@
     --bg-color: #05141d; 
     --bg-color-less: #061720;   
     --text-color: rgb(240, 240, 240);
-    --text-color-less: rgb(201, 201, 201);
+    --text-color-less: rgb(194, 194, 194);
     --nav-bg-color: rgb(0, 0, 16);
     --nav-footer-shadow: rgb(0, 0, 0);
     --border: rgb(63, 63, 63);
@@ -435,9 +435,20 @@ body{
 }
 .main-div-3{
     min-height: 80vh;
+    height: fit-content;
     width: 100%;
-    background: linear-gradient(155deg, var(--bg-1), var(--bg-2));
+    /* background: linear-gradient(155deg, var(--bg-1), var(--bg-2)); */
+    border: 2px solid var(--border);
     border-radius: 20px;
+    padding: 5px 20px;
+}
+.title-div{
+    font-size: 33px;
+    color: var(--text-color-less);
+}
+.author-div{
+    font-size: 25px;
+    color: var(--text-color-less);
 }
                                                                          /*     Footer Starts     */
 footer{
