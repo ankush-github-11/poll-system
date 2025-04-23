@@ -49,6 +49,7 @@
                 echo $_SESSION["fetchedPid"];
         ?>
     </div>
+
     <header>
         <!-- Navbar Starts -->
         <nav>
@@ -187,17 +188,55 @@
                     }
                 ?>
             </div>
-
+            <div class="options-div hidden">
+                <?php
+                    $str = $_SESSION["arr"]['options'];
+                    $optionsArray = explode("<.-:.=>", $str);
+                    $optionPid = $_SESSION["fetchedPid"];
+                    $countArrayPrev = [];
+                    foreach($optionsArray as $option){
+                        $sql = "select * from votes where pid = '$optionPid' and selectedOption = '$option'";
+                        $res = mysqli_query($conn, $sql);
+                        if($res){
+                            $count = mysqli_num_rows($res);
+                            array_push($countArrayPrev, $count);
+                        }
+                    }
+                    echo $_SESSION["arr"]['options'];
+                    echo "/*-*&^/*-";
+                    $countArray = implode("<.-:.=>", $countArrayPrev);
+                    echo $countArray;
+                ?>
+            </div>
             <div class="main-div-3 hidden">
                 <div class="title-div">
                     <?php
                         echo $_SESSION["arr"]['title'];
                     ?>
                 </div>
-                <div class="author-div">
+                <div class="time-div">
+                    Created on:
                     <?php
-                        echo $_SESSION["arr"]['name'];
+                        echo $_SESSION["arr"]['timeCreated'];
                     ?>
+                </div>
+                <div class="horizontal-line"></div>
+                <div class="body-div">
+                    <div class="left-div">
+                        <!-- <div class="poll-display-box">
+                            <div class="option-and-percent">
+                                <div class="poll-option"></div>
+                                <div class="percent"></div>
+                            </div>
+                            <div class="poll-display-percent"></div>
+                        </div> -->
+                    </div>
+                    <div class="right-div">
+                        <div class="right-div-under-1">
+                            <div class="total-pariticipants-div">Total Participants:</div>
+                            <div class="total-participants-value"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
