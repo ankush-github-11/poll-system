@@ -124,11 +124,18 @@ let maxi = 0;
 for (let i = 0; i < countArray.length; i++) {
     sum += countArray[i];
 }
-
-// convert to percentage (or fraction of 100 width)
-for (let i = 0; i < countArray.length; i++) {
-    countArray[i] = (countArray[i] / sum) * 100;
-    if(countArray[i] > maxi) maxi = countArray[i];
+if(sum == 0){
+    for (let i = 0; i < countArray.length; i++) {
+        countArray[i] = 0;
+        if(countArray[i] > maxi) maxi = countArray[i];
+    }
+}
+else{
+    // convert to percentage (or fraction of 100 width)
+    for (let i = 0; i < countArray.length; i++) {
+        countArray[i] = (countArray[i] / sum) * 100;
+        if(countArray[i] > maxi) maxi = countArray[i];
+    }
 }
 
 for (let i = 0; i < optionsArray.length; i++) {
@@ -136,8 +143,8 @@ for (let i = 0; i < optionsArray.length; i++) {
     const html = `
         <div class="poll-display-box">
             <div class="option-and-percent">
-                <div class="poll-option">${optionsArray[i]}</div>
-                <div class="percent">${val}%</div>
+            <div class="poll-option">${optionsArray[i]}</div>
+            <div class="percent">${val}%</div>
             </div>
             <div class="poll-display-percent"></div>
         </div>
@@ -149,8 +156,21 @@ for (let i = 0; i < optionsArray.length; i++) {
     const percentBar = lastChild.querySelector('.poll-display-percent');
     const percentText = lastChild.querySelector('.percent');
     percentBar.style.width = `${countArray[i]}%`;
-    if(countArray[i] == maxi){
+    if(countArray[i] == maxi && sum != 0){
         percentText.style.color = "rgb(17, 108, 255)";
     }
 }
 document.querySelector(".total-participants-value").textContent = sum;
+
+
+const listArray = document.querySelector('.list-div').textContent.trim().split("<.-:.=>");
+for (let i = 0; i < listArray.length; i++) {
+    const html = `  
+                    <div class="side-horizontal-line"></div>
+                    <div class="participant-div">
+                        <div class="counter-initial">${i + 1}</div>
+                        <div class="name-div">${listArray[i]}</div>
+                    </div>
+                 `;
+    document.querySelector('.right-div-under-2').insertAdjacentHTML("beforeend", html);
+}

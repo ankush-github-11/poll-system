@@ -208,6 +208,28 @@
                     echo $countArray;
                 ?>
             </div>
+            <div class="list-div hidden">
+                <?php
+                    $listPid = $_SESSION["fetchedPid"];
+                    $sql = "select * from votes where pid = '$listPid' limit 10";
+                    $res = mysqli_query($conn, $sql);
+                    $list = [];
+                    if (mysqli_num_rows($res) > 0) {
+                        // Output data of each row
+                        while($row = mysqli_fetch_assoc($res)) {
+                            $uid = $row['uid'];
+                            $sql = "select * from users where uid = '$uid'";
+                            $val = mysqli_query($conn, $sql);
+                            if($val && mysqli_num_rows($val) > 0){
+                                $arr = mysqli_fetch_assoc($val);
+                                array_push($list, $arr["name"]);
+                            }
+                        }
+                    }
+                    $final = implode("<.-:.=>", $list);
+                    echo $final;
+                ?>
+            </div>
             <div class="main-div-3 hidden">
                 <div class="title-div">
                     <?php
@@ -235,6 +257,13 @@
                         <div class="right-div-under-1">
                             <div class="total-pariticipants-div">Total Participants:</div>
                             <div class="total-participants-value"></div>
+                        </div>
+                        <div class="right-div-under-2">
+                            <div class="first-10-header"><i class="fa-solid fa-stopwatch"></i>First 10 Participants</div>
+                            <!-- <div class="participant-div">
+                                <div class="counter-initial">1</div>
+                                <div class="name-div">Ankush Bhattacharjee</div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
