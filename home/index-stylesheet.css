@@ -22,7 +22,7 @@
     --dropdown-text-color: rgb(26, 26, 26);
     --dropdown-bg-color: rgb(250, 250, 255);
 
-    --footer-bg-color: rgb(245, 245, 245);
+    --footer-bg-color: rgb(246, 246, 246);
     --footer-color-contacts: rgb(75, 75, 75);
 }
 .darkmode{
@@ -49,7 +49,7 @@
     --dropdown-text-color: rgb(248, 248, 248);
     --dropdown-bg-color: rgb(22, 22, 22);
 
-    --footer-bg-color: #071b29;
+    --footer-bg-color: rgb(5, 23, 36);
     --footer-color-contacts: rgb(200, 200, 200);
 
 }
@@ -1209,3 +1209,4 @@ Enable users to preview the selected template before finalizing.
 /*  Add the glow scan effect in the navbar only the first time it mounts  */
 /*  Make the already voted text a bit small while being responsive  */
 /*  After login / logout please refresh the whole application  */
+/*  Change the "how it works" footer a tag's href in all the pages and "view polls" also  */
