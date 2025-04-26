@@ -388,3 +388,5 @@ document.querySelector(".btn-cancel").addEventListener("click" , function() {
 initializeTheme();
 window.addEventListener('resize', updateBarStyles);
 updateBarStyles();
+const year = new Date().getFullYear();
+document.querySelector(".footer-bottom p").textContent = `© ${year} Poll Now. All rights reserved.`; 

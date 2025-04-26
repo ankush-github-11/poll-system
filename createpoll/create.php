@@ -620,12 +620,36 @@ include "../config/connect.php";
         
         
     </main>
-    <footer>
-        <p>© 2024 Online Voting Platform. All rights reserved.</p>
-        <div class="footer-div-1">
-            <a class="" href="">Privacy Policy</a>
-            <a class="" href="">Terms of Service</a>
-            <a class="" href="">FAQ</a>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section branding">
+                <h2>Poll Now</h2>
+                <p>Vote in live polls or create your own in seconds.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../home/index.php">How It Works</a></li>
+                    <li><a href="">View Polls</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact</h3>
+                <p>Email: ankush10yt@gmail.com</p>
+                <p>Phone: +91-98312-52214</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <div class="social-icons no-select">
+                    <a href="https://www.facebook.com/people/Ankush-Bhattacharjee/100069448176354/?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/coder_ankush"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/ankush-github-11"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ankush-bhattacharjee-609972302"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Poll Now. All rights reserved.</p>
         </div>
     </footer>
     
