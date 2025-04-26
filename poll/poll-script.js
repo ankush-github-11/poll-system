@@ -135,3 +135,5 @@ document.querySelector('.participant-poll-options-div').addEventListener('click'
         // document.querySelector('.voted-pid').value = document.querySelector('.pid').textContent.trim();
     }
 });
+const year = new Date().getFullYear();
+document.querySelector(".footer-bottom p").textContent = `© ${year} Poll Now. All rights reserved.`; 
