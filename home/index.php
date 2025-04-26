@@ -394,7 +394,7 @@ if(isset($_POST["createpoll"])){
             <div class="footer-section links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="../home/index.php">How It Works</a></li>
                     <li><a href="">View Polls</a></li>
                 </ul>
             </div>
