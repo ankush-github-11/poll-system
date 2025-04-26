@@ -49,3 +49,5 @@ function handleResize() {
 }
 window.addEventListener('resize', handleResize);
 handleResize();
+const year = new Date().getFullYear();
+document.querySelector(".footer-bottom p").textContent = `© ${year} Poll Now. All rights reserved.`; 
