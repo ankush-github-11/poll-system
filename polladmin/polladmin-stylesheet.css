@@ -14,6 +14,11 @@
     --hover-color: rgb(245, 245, 245);
     --dropdown-text-color: rgb(26, 26, 26);
     --dropdown-bg-color: rgb(250, 250, 255);
+
+    --footer-bg-color: rgb(245, 245, 245);
+    --footer-color-contacts: rgb(75, 75, 75);
+    --footer-bar: rgb(212, 212, 212);
+
 }
 .darkmode{
     --bg-1: rgb(255, 0, 85);
@@ -31,6 +36,11 @@
     --hover-color: rgb(32, 32, 32);
     --dropdown-text-color: rgb(248, 248, 248);
     --dropdown-bg-color: rgb(22, 22, 22);
+
+    --footer-bg-color: #071b29;
+    --footer-color-contacts: rgb(200, 200, 200);
+    --footer-bar: rgb(54, 54, 54);
+
 }
 ::-webkit-scrollbar {
     width: 8px;
@@ -581,26 +591,70 @@ body{
     letter-spacing: 0.4px;
 }
                                                                          /*     Footer Starts     */
-footer{
-    margin-top: auto;
-    background-color: var(--bg-color);
+.footer {
+    background-color: var(--footer-bg-color);
+    color: var(--text-color);
+    padding: 40px 20px 10px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.footer-section h2,
+.footer-section h3 {
     color: var(--bg-1);
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: rgb(103, 103, 255);
+    text-underline-offset: 4px;
+}
+.footer-section li{
+    margin-top: 10px;
+}
+.contact p{
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+.footer-section ul li a:hover {
+    color:rgb(44, 44, 255);
+}
+
+.social-icons a {
+    color:var(--bg-2);
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.social-icons a:hover {
+    color: var(--bg-1);
+}
+
+.footer-bottom {
     text-align: center;
-    height: fit-content;
-    width: 100%;
-    box-shadow: 0px -1px 12px 0.1px var(--nav-footer-shadow);
-    padding: 15px;
+    padding-top: 20px;
+    border-top: 2px solid var(--footer-bar);
+    position: relative;
 }
-.footer-div-1{
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    gap: 3vw 3vw;
+
+@media (max-width: 600px) {
+  .footer-container {
+        text-align: center;
+  }
 }
-.footer-div-1 > a{
-    text-decoration: none;
-    color: var(--bg-1);
-}
+
 
 /*  Navbar Media Quires Start  */
 @media only screen and (max-width: 480px) {

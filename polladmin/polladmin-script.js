@@ -174,3 +174,5 @@ for (let i = 0; i < listArray.length; i++) {
                  `;
     document.querySelector('.right-div-under-2').insertAdjacentHTML("beforeend", html);
 }
+const year = new Date().getFullYear();
+document.querySelector(".footer-bottom p").textContent = `© ${year} Poll Now. All rights reserved.`; 
