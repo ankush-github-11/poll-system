@@ -246,12 +246,22 @@ if(isset($_POST["createpoll"])){
         </div>
         <div class="total-div-2">
             <div class="how-it-works-div">
-                <h3>How It Works</h3>
-                <div class="how-it-works-div-under">
-                    <div class="moving-border">Login & Register 🔑</div>
-                    <div class="moving-border">Verify Identity 👤</div>
-                    <div class="moving-border">Create or Participate in Polls 🗳️</div>
-                    <div class="moving-border">Confirm Your Vote and See The Results ✅</div>
+                <h1>How It Works</h1>
+                <div class="how-it-works-under-1 step">
+                    <h4><i class="fa-solid fa-user-plus"></i>Login & Register</h4>
+                    <div>Create your account or sign in to get started with polling activities. Fast and secure registration ensures a smooth experience.</div>
+                </div>
+                <div class="how-it-works-under-2 step">
+                    <h4><i class="fa-solid fa-address-card"></i>Verify Identity</h4>
+                    <div>To maintain a trustworthy voting environment, quickly verify your identity. It keeps polls fair and authentic.</div>
+                </div>
+                <div class="how-it-works-under-3 step">
+                    <h4><i class="fa-solid fa-table-list"></i>Create or Participate in Polls</h4>
+                    <div>You can easily create your own polls or participate in exciting polls created by others. Engage with the community effortlessly.</div>
+                </div>
+                <div class="how-it-works-under-4 step">
+                    <h4><i class="fa-solid fa-square-poll-vertical"></i>Confirm Your Vote and See The Results</h4>
+                    <div>After voting, instantly confirm your choice and view real-time results. Stay updated and see how your opinion shapes the outcome.</div>
                 </div>
             </div>
         </div>

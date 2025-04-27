@@ -5,7 +5,7 @@
     --bg-color: white;
     --bg-color-less: rgb(250, 250, 250);
     --text-color: black;
-    --text-color-less: rgb(75, 75, 75);
+    --text-color-less: rgb(71, 71, 71);
     --nav-bg-color: rgb(246, 246, 255);
     --nav-footer-shadow: rgb(221, 221, 221);
     --middle-div-under-1: rgb(255, 255, 255);
@@ -17,11 +17,12 @@
     --box-border: #DFE0E1;
     --box-color: rgb(255, 255, 255);
     --growth-gradient-color: rgb(215, 218, 228);
-
+    --how-it-works-bg-color: rgb(246, 246, 246);
+    
     --hover-color: rgb(245, 245, 245);
     --dropdown-text-color: rgb(26, 26, 26);
     --dropdown-bg-color: rgb(250, 250, 255);
-
+    
     --footer-bg-color: rgb(245, 245, 245);
     --footer-color-contacts: rgb(75, 75, 75);
     --footer-bar: rgb(212, 212, 212);
@@ -46,6 +47,7 @@
     --box-border: #505050;
     --box-color: rgb(31, 31, 31);
     --growth-gradient-color: rgb(255, 0, 85);
+    --how-it-works-bg-color: rgb(70, 70, 70);
     
     --hover-color: rgb(32, 32, 32);
     --dropdown-text-color: rgb(248, 248, 248);
@@ -396,13 +398,6 @@ body{
     flex-direction: column;
     height: min-content;
 }
-.total-div-2{
-    display: grid;
-    height: min-content;
-    gap: 20px;
-    grid-template-columns: 2.8fr 1fr;                  /*   Grid Layout   */ 
-    padding: 0px 8vw;
-}
 
                                /*   Middle Div   */
 .middle-div{
@@ -627,7 +622,7 @@ body{
     align-items: center;
     text-align: center;
     outline: 2px solid var(--box-border);
-    background-color: var(--box-color);
+    background: linear-gradient(155deg, var(--how-it-works-bg-color), var(--bg-color-less));
     color: var(--text-color);
     border-radius: 10px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 
@@ -706,51 +701,53 @@ body{
         background-color: var(--bg-3);
     }
 }
-                                                                      /*    How It Works Div Start    */
-.how-it-works-div {
-    grid-column: 1/3;
+.total-div-2{
+    min-height: 75vh;
+    height: fit-content;
+    padding: 40px 2.5vw;
+    background: linear-gradient(155deg, var(--side-div), var(--bg-color)); 
+}
+.how-it-works-div h1{
+    margin-bottom: 0px;
+}
+.how-it-works-div{
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    text-align: left;
-    margin: 20px 0;
+    gap: 35px;
 }
-
-.how-it-works-div-under {
+.how-it-works-div > div{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--text-color-less);
+}
+.how-it-works-div > div > h4{
+    display: flex;
     gap: 20px;
+    align-items: center;
+    margin-left: 5px;
+}
+.how-it-works-div > div i{
+    color: var(--bg-1);
+}
+.how-it-works-under-1{
+    
+}
+.step {
+    background: linear-gradient(155deg, var(--how-it-works-bg-color), var(--bg-color-less));
+    padding: 20px;
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.how-it-works-div-under > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1 1 22%;
-    height: 130px;
-    outline: 3px solid rgb(222, 222, 222);
-    padding: 20px;
-    border-radius: 8px;
-    min-width: 200px;
-    text-align: center;
+.step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-.moving-border {  /*  How It Works Each Div Moving Border Effect  */
-    &:hover{
-        animation: move 1s ease-in-out;
-    }
-}
-@keyframes move {
-    0% {
-        transform: rotate(0deg);
-    }
-    50% {
-        transform: rotate(-5deg);
-    }
-    0% {
-        transform: rotate(0deg);
-    }
-}                                                                        /*  Modal Area starts  */
+                                                                      /*    How It Works Div Start    */
+                                                                    /*  Modal Area starts  */
 .index-blur{
     filter: blur(20px);
 }
@@ -1214,3 +1211,4 @@ Enable users to preview the selected template before finalizing.
 /*  Make the already voted text a bit small while being responsive  */
 /*  After login / logout please refresh the whole application  */
 /*  Change the "how it works" footer a tag's href in all the pages and "view polls" also  */
+/*  Create and demo button should be in place in the mobile  */
