@@ -573,7 +573,7 @@ body{
 
 .side-div{
     height: 95vh;   /*  Made Changes  */
-    background: linear-gradient(135deg, var(--side-div), var(--bg-color)); 
+    background: linear-gradient(155deg, var(--side-div), var(--bg-color)); 
     height: min-content;
     display: flex;
     flex-direction: column;
@@ -701,11 +701,15 @@ body{
         background-color: var(--bg-3);
     }
 }
+                                          /*    How It Works Div Start    */
 .total-div-2{
-    min-height: 75vh;
+    min-height: 110vh;
     height: fit-content;
     padding: 40px 2.5vw;
     background: linear-gradient(155deg, var(--side-div), var(--bg-color)); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .how-it-works-div h1{
     margin-bottom: 0px;
@@ -731,8 +735,17 @@ body{
 .how-it-works-div > div i{
     color: var(--bg-1);
 }
-.how-it-works-under-1{
-    
+.how-it-works-under-1 > div{
+    margin-left: 3.5vw;
+}
+.how-it-works-under-2 > div{
+    margin-left: 3.5vw;
+}
+.how-it-works-under-3 > div{
+    margin-left: 3.4vw;
+}
+.how-it-works-under-4 > div{
+    margin-left: 3.1vw;
 }
 .step {
     background: linear-gradient(155deg, var(--how-it-works-bg-color), var(--bg-color-less));
@@ -746,7 +759,7 @@ body{
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-                                                                      /*    How It Works Div Start    */
+
                                                                     /*  Modal Area starts  */
 .index-blur{
     filter: blur(20px);
