@@ -45,17 +45,36 @@ include "../config/connect.php";
                     </div>
                     <div class="option-2">
                         <div class="option-2-text">Total Polls</div>
-                        <div class="option-2-val">30</div>
+                        <div class="option-2-val"></div>
                     </div>
                     <div class="option-3">
                         <div class="option-3-text">Total Votes</div>
-                        <div class="option-3-val">30</div>
+                        <div class="option-3-val"></div>
                     </div>
                 </div>
                 <div class="horizontal-line"></div>
                 <div class="total-users-content hidden">
                     <?php
                     $sql = "select username, name, email, pollsCreated, pollsVoted, dateJoined from users";
+                    $res = mysqli_query($conn, $sql);
+                    $arr = [];
+                    if ($res && mysqli_num_rows($res) > 0) {
+                        while ($row = mysqli_fetch_assoc($res)) {
+                            echo
+                            $row["username"] . "<-/*756-=-=>"
+                                . $row["name"] . "<-/*756-=-=>"
+                                . $row["email"] . "<-/*756-=-=>"
+                                . $row["pollsCreated"] . "<-/*756-=-=>"
+                                . $row["pollsVoted"] . "<-/*756-=-=>"
+                                . $row["dateJoined"];
+                            echo "<(&*#$*-)>";
+                        }
+                    }
+                    ?>
+                </div>
+                <div class="total-polls-content hidden">
+                    <?php
+                    $sql = "select name, title, options, pollsCreated, pollsVoted, dateJoined from polls";
                     $res = mysqli_query($conn, $sql);
                     $arr = [];
                     if ($res && mysqli_num_rows($res) > 0) {
