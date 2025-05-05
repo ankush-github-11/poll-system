@@ -85,7 +85,7 @@ if(isset($_POST["createpoll"])){
                             <div class="nav-item-2-hover-div"></div>
                         </div>
                         <div class="nav-item-3-div">
-                            <a draggable="false" class="nav-item-3" href="">View Polls</a>
+                            <a draggable="false" class="nav-item-3" href="../viewpolls/viewpolls.php">View Polls</a>
                             <div class="nav-item-3-hover-div"></div>
                         </div>
                         <div class="nav-item-4-div">

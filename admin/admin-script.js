@@ -58,27 +58,20 @@ for (let i = 0; i < totalPolls.length; i++) {
             <div class="div-17">${arr[5]}</div>
         </div>
     `;
-
-    // Insert and get the last inserted row
     document.querySelector('.total-polls').insertAdjacentHTML("beforeend", html);
     const rows = document.querySelectorAll(".total-polls-row");
     const currentRow = rows[rows.length - 1];
     const div14 = currentRow.querySelector(".div-14");
-
-    // Append options to div-14
     for (let j = 0; j < optionArr.length; j++) {
         div14.textContent += optionArr[j];
         if (j < optionArr.length - 1) div14.textContent += ", ";
     }
-
     if (i === totalPolls.length - 2) break;
 }
 
 document.querySelector(".three-option-div").addEventListener("click", function(event) {
     const clickedOption = event.target.closest(".option-1, .option-2, .option-3");
-
     if (!clickedOption) return;
-
     if (clickedOption.classList.contains('option-1')) {
         document.querySelector(".total-users").classList.remove("hidden");
         document.querySelector(".option-1-line").classList.add("my-line");

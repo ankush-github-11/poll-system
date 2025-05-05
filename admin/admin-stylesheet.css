@@ -143,6 +143,7 @@ body {
 .my-line{
     width: 100%;
     background: linear-gradient(155deg, var(--bg-1), var(--bg-2));
+    border-radius: 50px;
 }
 .option-1-text, .option-2-text{
     font-size: 20px;
