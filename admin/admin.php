@@ -42,14 +42,12 @@ include "../config/connect.php";
                     <div class="option-1 my-border">
                         <div class="option-1-text">Total Users</div>
                         <div class="option-1-val"></div>
+                        <div class="option-1-line my-line"></div>
                     </div>
                     <div class="option-2">
                         <div class="option-2-text">Total Polls</div>
                         <div class="option-2-val"></div>
-                    </div>
-                    <div class="option-3">
-                        <div class="option-3-text">Total Votes</div>
-                        <div class="option-3-val"></div>
+                        <div class="option-2-line"></div>
                     </div>
                 </div>
                 <div class="horizontal-line"></div>
@@ -108,13 +106,10 @@ include "../config/connect.php";
                         <div class="div-12">Author Name</div>
                         <div class="div-13">Poll Title</div>
                         <div class="div-14">Poll Options</div>
-                        <div class="div-15">Show Results After</div>
+                        <div class="div-15">Results After</div>
                         <div class="div-16">Creation Time</div>
                         <div class="div-17">Duration</div>
                     </div>
-                </div>
-                <div class="total-votes hidden">
-
                 </div>
             </div>
         </div>

@@ -128,7 +128,7 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
-.option-1, .option-2, .option-3{
+.option-1, .option-2{
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -137,22 +137,26 @@ body {
     gap: 5px;
     cursor: pointer;
 }
-.my-border{
-    border-bottom: 4px solid var(--bg-1);
+.option-1-line, .option-2-line{
+    height: 4px;
 }
-.option-1-text, .option-2-text, .option-3-text{
+.my-line{
+    width: 100%;
+    background: linear-gradient(155deg, var(--bg-1), var(--bg-2));
+}
+.option-1-text, .option-2-text{
     font-size: 20px;
     font-weight: 500;
 }
-.option-1-val, .option-2-val, .option-3-val{
+.option-1-val, .option-2-val{
     font-size: 30px;
     font-weight: 600;
 }
 .horizontal-line{
     height: 2px;
     width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: var(--line);
 }
 .total-users{

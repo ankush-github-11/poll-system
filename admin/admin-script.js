@@ -57,7 +57,6 @@ for(let i = 0; i < totalPolls.length; i++){
     document.querySelector('.total-polls').insertAdjacentHTML("beforeend", html);
     if(i == totalPolls.length - 2) break;
 }
-// Third
 document.querySelector(".three-option-div").addEventListener("click", function(event) {
     const clickedOption = event.target.closest(".option-1, .option-2, .option-3");
 
@@ -65,15 +64,13 @@ document.querySelector(".three-option-div").addEventListener("click", function(e
 
     if (clickedOption.classList.contains('option-1')) {
         document.querySelector(".total-users").classList.remove("hidden");
+        document.querySelector(".option-1-line").classList.add("my-line");
         document.querySelector(".total-polls").classList.add("hidden");
-        document.querySelector(".total-votes").classList.add("hidden");
+        document.querySelector(".option-2-line").classList.remove("my-line");
     } else if (clickedOption.classList.contains('option-2')) {
         document.querySelector(".total-users").classList.add("hidden");
+        document.querySelector(".option-1-line").classList.remove("my-line");
         document.querySelector(".total-polls").classList.remove("hidden");
-        document.querySelector(".total-votes").classList.add("hidden");
-    } else if (clickedOption.classList.contains('option-3')) {
-        document.querySelector(".total-users").classList.add("hidden");
-        document.querySelector(".total-polls").classList.add("hidden");
-        document.querySelector(".total-votes").classList.remove("hidden");
+        document.querySelector(".option-2-line").classList.add("my-line");
     }
 });
