@@ -74,18 +74,18 @@ include "../config/connect.php";
                 </div>
                 <div class="total-polls-content hidden">
                     <?php
-                    $sql = "select name, title, options, pollsCreated, pollsVoted, dateJoined from polls";
+                    $sql = "select name, title, options, showResults, timeCreated, duration from polls";
                     $res = mysqli_query($conn, $sql);
                     $arr = [];
                     if ($res && mysqli_num_rows($res) > 0) {
                         while ($row = mysqli_fetch_assoc($res)) {
                             echo
-                            $row["username"] . "<-/*756-=-=>"
-                                . $row["name"] . "<-/*756-=-=>"
-                                . $row["email"] . "<-/*756-=-=>"
-                                . $row["pollsCreated"] . "<-/*756-=-=>"
-                                . $row["pollsVoted"] . "<-/*756-=-=>"
-                                . $row["dateJoined"];
+                            $row["name"] . "<-/*756-=-=>"
+                                . $row["title"] . "<-/*756-=-=>"
+                                . $row["options"] . "<-/*756-=-=>"
+                                . $row["showResults"] . "<-/*756-=-=>"
+                                . $row["timeCreated"] . "<-/*756-=-=>"
+                                . $row["duration"];
                             echo "<(&*#$*-)>";
                         }
                     }
@@ -103,7 +103,15 @@ include "../config/connect.php";
                     </div>
                 </div>
                 <div class="total-polls hidden">
-
+                    <div class="total-polls-row">
+                        <div class="div-11">Sl No.</div>
+                        <div class="div-12">Author Name</div>
+                        <div class="div-13">Poll Title</div>
+                        <div class="div-14">Poll Options</div>
+                        <div class="div-15">Show Results After</div>
+                        <div class="div-16">Creation Time</div>
+                        <div class="div-17">Duration</div>
+                    </div>
                 </div>
                 <div class="total-votes hidden">
 

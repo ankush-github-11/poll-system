@@ -39,3 +39,41 @@ for(let i = 0; i < totalUsers.length; i++){
     document.querySelector('.total-users').insertAdjacentHTML("beforeend", html);
     if(i == totalUsers.length - 2) break;
 }
+const totalPolls = document.querySelector(".total-polls-content").textContent.trim().split("<(&*#$*-)>");
+document.querySelector(".option-2-val").textContent = totalPolls.length - 1;
+for(let i = 0; i < totalPolls.length; i++){
+    const arr = totalPolls[i].split("<-/*756-=-=>");
+    const html = `
+        <div class="total-polls-row">
+            <div class="div-11">${i + 1}</div>
+            <div class="div-12">${arr[0]}</div>
+            <div class="div-13">${arr[1]}</div>
+            <div class="div-14">${arr[2]}</div>
+            <div class="div-15">${arr[3]}</div>
+            <div class="div-16">${arr[4]}</div>
+            <div class="div-17">${arr[5]}</div>
+        </div>
+    `;
+    document.querySelector('.total-polls').insertAdjacentHTML("beforeend", html);
+    if(i == totalPolls.length - 2) break;
+}
+// Third
+document.querySelector(".three-option-div").addEventListener("click", function(event) {
+    const clickedOption = event.target.closest(".option-1, .option-2, .option-3");
+
+    if (!clickedOption) return;
+
+    if (clickedOption.classList.contains('option-1')) {
+        document.querySelector(".total-users").classList.remove("hidden");
+        document.querySelector(".total-polls").classList.add("hidden");
+        document.querySelector(".total-votes").classList.add("hidden");
+    } else if (clickedOption.classList.contains('option-2')) {
+        document.querySelector(".total-users").classList.add("hidden");
+        document.querySelector(".total-polls").classList.remove("hidden");
+        document.querySelector(".total-votes").classList.add("hidden");
+    } else if (clickedOption.classList.contains('option-3')) {
+        document.querySelector(".total-users").classList.add("hidden");
+        document.querySelector(".total-polls").classList.add("hidden");
+        document.querySelector(".total-votes").classList.remove("hidden");
+    }
+});
