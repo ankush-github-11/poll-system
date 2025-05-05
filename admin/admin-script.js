@@ -40,23 +40,40 @@ for(let i = 0; i < totalUsers.length; i++){
     if(i == totalUsers.length - 2) break;
 }
 const totalPolls = document.querySelector(".total-polls-content").textContent.trim().split("<(&*#$*-)>");
+
 document.querySelector(".option-2-val").textContent = totalPolls.length - 1;
-for(let i = 0; i < totalPolls.length; i++){
+
+for (let i = 0; i < totalPolls.length; i++) {
     const arr = totalPolls[i].split("<-/*756-=-=>");
+    const optionArr = arr[2].split("<.-:.=>");
+
     const html = `
         <div class="total-polls-row">
             <div class="div-11">${i + 1}</div>
             <div class="div-12">${arr[0]}</div>
             <div class="div-13">${arr[1]}</div>
-            <div class="div-14">${arr[2]}</div>
+            <div class="div-14"></div>
             <div class="div-15">${arr[3]}</div>
             <div class="div-16">${arr[4]}</div>
             <div class="div-17">${arr[5]}</div>
         </div>
     `;
+
+    // Insert and get the last inserted row
     document.querySelector('.total-polls').insertAdjacentHTML("beforeend", html);
-    if(i == totalPolls.length - 2) break;
+    const rows = document.querySelectorAll(".total-polls-row");
+    const currentRow = rows[rows.length - 1];
+    const div14 = currentRow.querySelector(".div-14");
+
+    // Append options to div-14
+    for (let j = 0; j < optionArr.length; j++) {
+        div14.textContent += optionArr[j];
+        if (j < optionArr.length - 1) div14.textContent += ", ";
+    }
+
+    if (i === totalPolls.length - 2) break;
 }
+
 document.querySelector(".three-option-div").addEventListener("click", function(event) {
     const clickedOption = event.target.closest(".option-1, .option-2, .option-3");
 
