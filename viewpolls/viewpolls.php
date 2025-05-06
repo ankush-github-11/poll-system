@@ -1,3 +1,6 @@
+<?php
+    include "../config/connect.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -126,8 +129,28 @@
     </header>
     <main>
     <div class="total-div">
+        <div class="total-polls-content hidden">
+            <?php
+            $sql = "select title, timeCreated from polls";
+            $res = mysqli_query($conn, $sql);
+            $arr = [];
+            if ($res && mysqli_num_rows($res) > 0) {
+                while ($row = mysqli_fetch_assoc($res)) {
+                    echo
+                        $row["title"] . "<-/*756-=-=>"
+                        . $row["timeCreated"];
+                    echo "<(&*#$*-)>";
+                }
+            }
+            ?>
+        </div>
         <div class="main-div">
-            
+            <h1 class="all-polls-text">All Polls</h1>
+            <!-- <a href="" class="total-rows">
+                <div class="div-11"></div>
+                <div class="div-12"></div>
+                <div class="div-13"></div>
+            </a> -->
         </div>
     </div>
     </main>

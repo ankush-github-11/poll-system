@@ -67,3 +67,29 @@ document.querySelectorAll('.nav-items-div a').forEach((navItem, index) => {
     });
 });
                                                                                         // Navbar code ends
+
+const totalPollsDetails = document.querySelector(".total-polls-content").textContent.trim().split("<(&*#$*-)>");
+
+for (let i = 0; i < totalPollsDetails.length; i++) {
+    if (!totalPollsDetails[i].trim()) continue;
+
+    const arr = totalPollsDetails[i].split("<-/*756-=-=>");
+
+    // Format date to DD-MM-YYYY
+    const dateObj = new Date(arr[1].trim());
+    const formattedDate = `${String(dateObj.getDate()).padStart(2, '0')}-${String(dateObj.getMonth() + 1).padStart(2, '0')}-${dateObj.getFullYear()}`;
+
+    // Conditional class for odd rows
+    const extraClass = (i % 2 === 1) ? "my-bg-add" : "";
+
+    const html = `  
+        <a href="" class="total-rows ${extraClass}">
+            <div class="div-11">${i + 1}</div>
+            <div class="div-12">${arr[0]}</div>
+            <div class="div-13">${formattedDate}</div>
+        </a>
+    `;
+    document.querySelector('.main-div').insertAdjacentHTML('beforeend', html);
+}
+
+
