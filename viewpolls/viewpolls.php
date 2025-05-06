@@ -146,7 +146,7 @@
         </div>
         <div class="main-div">
             <h1 class="all-polls-text">All Polls</h1>
-            <!-- <a href="" class="total-rows">
+            <!-- <a href="" target="_blank" class="total-rows">
                 <div class="div-11"></div>
                 <div class="div-12"></div>
                 <div class="div-13"></div>

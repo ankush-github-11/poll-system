@@ -3,7 +3,7 @@
     --bg-2: rgb(255, 85, 142);
     --bg-3: rgb(235, 0, 78);
     --bg-color: #FAFAFA;
-    --bg-color-less: rgb(244, 244, 244);
+    --bg-color-less: rgb(237, 237, 237);
     --text-color: black;
     --text-color-less: rgb(57, 57, 57);
     --scrollbar-track: rgb(209, 209, 209);
@@ -78,7 +78,9 @@ body {
     height: 100%;
     width: 100%;
 }
-
+.my-bg-add{
+    background-color: var(--bg-color-less);
+}
 .header-div {
     height: 50px;
     width: 100%;
@@ -168,9 +170,9 @@ body {
     height: fit-content;
     display: grid;
     grid-template-columns: 1fr 5fr 5fr 5fr 2.2fr 2.7fr 2.2fr;
+    border-radius: 10px;
 }
 .total-users-row > div {
-    outline: 1px solid var(--border);
     padding: 12px 7px;
     height: 100%;
     width: 100%;
@@ -195,9 +197,9 @@ body {
     height: fit-content;
     display: grid;
     grid-template-columns: 1fr 5fr 5fr 5fr 2.2fr 2.7fr 2.2fr;
+    border-radius: 10px;
 }
 .total-polls-row > div {
-    outline: 1px solid var(--border);
     padding: 12px 7px;
     height: 100%;
     width: 100%;

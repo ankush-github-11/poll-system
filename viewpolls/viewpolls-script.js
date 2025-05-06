@@ -83,7 +83,7 @@ for (let i = 0; i < totalPollsDetails.length; i++) {
     const extraClass = (i % 2 === 1) ? "my-bg-add" : "";
 
     const html = `  
-        <a href="" class="total-rows ${extraClass}">
+        <a href="../poll/poll.php?pid=${i + 1}" target="_blank" rel="noopener noreferrer" class="total-rows ${extraClass}">
             <div class="div-11">${i + 1}</div>
             <div class="div-12">${arr[0]}</div>
             <div class="div-13">${formattedDate}</div>

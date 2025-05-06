@@ -23,10 +23,15 @@ document.querySelector('.light-dark-div').addEventListener('click', function () 
 });
 const totalUsers = document.querySelector(".total-users-content").textContent.trim().split("<(&*#$*-)>");
 document.querySelector(".option-1-val").textContent = totalUsers.length - 1;
-for(let i = 0; i < totalUsers.length; i++){
+
+for (let i = 0; i < totalUsers.length; i++) {
     const arr = totalUsers[i].split("<-/*756-=-=>");
+
+    // Add class based on whether i is odd
+    const userRowClass = (i % 2 === 1) ? "my-bg-add" : "";
+
     const html = `
-        <div class="total-users-row">
+        <div class="total-users-row ${userRowClass}">
             <div class="div-11">${i + 1}</div>
             <div class="div-12">${arr[0]}</div>
             <div class="div-13">${arr[1]}</div>
@@ -37,18 +42,22 @@ for(let i = 0; i < totalUsers.length; i++){
         </div>
     `;
     document.querySelector('.total-users').insertAdjacentHTML("beforeend", html);
-    if(i == totalUsers.length - 2) break;
-}
-const totalPolls = document.querySelector(".total-polls-content").textContent.trim().split("<(&*#$*-)>");
 
+    if (i == totalUsers.length - 2) break;
+}
+
+const totalPolls = document.querySelector(".total-polls-content").textContent.trim().split("<(&*#$*-)>");
 document.querySelector(".option-2-val").textContent = totalPolls.length - 1;
 
 for (let i = 0; i < totalPolls.length; i++) {
     const arr = totalPolls[i].split("<-/*756-=-=>");
     const optionArr = arr[2].split("<.-:.=>");
 
+    // Add class based on whether i is odd
+    const pollRowClass = (i % 2 === 1) ? "my-bg-add" : "";
+
     const html = `
-        <div class="total-polls-row">
+        <div class="total-polls-row ${pollRowClass}">
             <div class="div-11">${i + 1}</div>
             <div class="div-12">${arr[0]}</div>
             <div class="div-13">${arr[1]}</div>
@@ -59,6 +68,7 @@ for (let i = 0; i < totalPolls.length; i++) {
         </div>
     `;
     document.querySelector('.total-polls').insertAdjacentHTML("beforeend", html);
+
     const rows = document.querySelectorAll(".total-polls-row");
     const currentRow = rows[rows.length - 1];
     const div14 = currentRow.querySelector(".div-14");
@@ -66,8 +76,10 @@ for (let i = 0; i < totalPolls.length; i++) {
         div14.textContent += optionArr[j];
         if (j < optionArr.length - 1) div14.textContent += ", ";
     }
+
     if (i === totalPolls.length - 2) break;
 }
+
 
 document.querySelector(".three-option-div").addEventListener("click", function(event) {
     const clickedOption = event.target.closest(".option-1, .option-2, .option-3");
