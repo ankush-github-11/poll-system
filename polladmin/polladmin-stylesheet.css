@@ -452,11 +452,10 @@ body{
     /* background: linear-gradient(155deg, var(--bg-1), var(--bg-2)); */
     border: 2px solid var(--border);
     border-radius: 20px;
-    padding: 5px 20px;
-    padding-bottom: 20px;
+    padding: 20px;
 }
 .title-div{
-    font-size: 33px;
+    font-weight: 400;
     color: var(--text-color-less);
 }
 .time-div{
@@ -718,8 +717,7 @@ body{
         padding-right: 5px;
     }
     .main-div-3{
-        padding: 10px;
-        padding-top: 0px;
+        padding: 12px;
     }
 }
 /*  Open this link into a new tab to prevent users from going back  */

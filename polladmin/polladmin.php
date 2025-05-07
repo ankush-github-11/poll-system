@@ -231,11 +231,11 @@
                 ?>
             </div>
             <div class="main-div-3 hidden">
-                <div class="title-div">
+                <h2 class="title-div">
                     <?php
                         echo $_SESSION["arr"]['title'];
                     ?>
-                </div>
+                </h2>
                 <div class="time-div">
                     Created on:
                     <?php

@@ -2,20 +2,61 @@
     --bg-1: rgb(255, 0, 85);
     --bg-2: rgb(255, 85, 142);
     --bg-3: rgb(235, 0, 78);
+    --bg-color: #FAFAFA;
+    --bg-color-less: rgb(237, 237, 237);
+    --text-color: black;
+    --text-color-less: rgb(71, 71, 71);
+    --nav-bg-color: rgb(246, 246, 255);
+    --nav-footer-shadow: rgb(221, 221, 221);
+    --middle-div-under-1: rgb(255, 255, 255);
+    --side-div: #EDEEF2;
+    --title-text: rgb(0, 0, 0);
+    --create-text-1: rgb(255, 0, 85);
+    --create-text-2: rgb(255, 155, 155);
+    --scrollbar-track: rgb(209, 209, 209);
+    --box-border: #DFE0E1;
+    --box-color: rgb(255, 255, 255);
+    --growth-gradient-color: rgb(215, 218, 228);
+    --how-it-works-bg-color: rgb(246, 246, 246);
+    
+    --hover-color: rgb(245, 245, 245);
+    --dropdown-text-color: rgb(26, 26, 26);
+    --dropdown-bg-color: rgb(250, 250, 255);
     
     --footer-bg-color: rgb(245, 245, 245);
     --footer-color-contacts: rgb(75, 75, 75);
     --footer-bar: rgb(212, 212, 212);
-    
+
 }
 .darkmode{
     --bg-1: rgb(255, 0, 85);
     --bg-2: rgb(255, 85, 142);
     --bg-3: rgb(235, 0, 78);
+    --bg-color: #05141d; 
+    --bg-color-less: #0c2634;   
+    --text-color: rgb(240, 240, 240);
+    --text-color-less: rgb(200, 200, 200);
+    --nav-bg-color: rgb(0, 0, 16);
+    --nav-footer-shadow: rgb(0, 0, 0);
+    --middle-div-under-1: rgb(27, 30, 36);
+    --side-div: #1a1c22;
+    --title-text: rgb(246, 247, 249);
+    --create-text-1: rgb(255, 255, 255);
+    --create-text-2: rgb(119, 114, 148);
+    --scrollbar-track: rgb(39, 39, 39);
+    --box-border: #505050;
+    --box-color: rgb(31, 31, 31);
+    --growth-gradient-color: rgb(255, 0, 85);
+    --how-it-works-bg-color: rgb(70, 70, 70);
+    
+    --hover-color: rgb(32, 32, 32);
+    --dropdown-text-color: rgb(248, 248, 248);
+    --dropdown-bg-color: rgb(22, 22, 22);
 
     --footer-bg-color: #071b29;
     --footer-color-contacts: rgb(200, 200, 200);
     --footer-bar: rgb(54, 54, 54);
+
 
 }
 ::-webkit-scrollbar {
@@ -23,7 +64,7 @@
 }
 ::-webkit-scrollbar-track {
     width: 8px;
-    background-color: rgb(209, 209, 209);
+    background-color: var(--scrollbar-track);
 }
 ::-webkit-scrollbar-thumb {
     background-color: var(--bg-1);
@@ -40,6 +81,9 @@
 .hidden{
     display: none;
 }
+.flex{
+    display: flex;
+}
 *{
     font-family: "Poppins" , Arial, Helvetica, sans-serif;
     font-weight: 400;
@@ -48,127 +92,365 @@
 body{
     padding: 0px;
     margin: 0px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
                                                             /* Navbar Starts */
-.nav{
-    padding: 0px;
+.slide-animation{
+  animation: my-slide 0.6s 1 forwards;
 }
-.btn-nav{
-    outline: 2px solid var(--bg-1);
+
+@keyframes my-slide{
+  0%{
+    transform: translateX(-75vw);
+  }
+  100%{
+    transform: translateX(0vw);
+  }
 }
-.nav-div{
-    box-shadow: 0px 1px 12px 0.1px rgb(221, 221, 221);
-    background-color: white;
+.slide-animation-rev{
+  animation: my-slide-rev 0.6s 1 forwards;
 }
-.nav-item > a{
-    color: rgb(109, 109, 109) !important;
-    border-bottom: 3px solid white;
-    text-align: center;
-    &:hover{
-        color: rgb(0, 0, 0) !important;
-        border-bottom: 3px solid var(--bg-1);
+
+@keyframes my-slide-rev{
+  0%{
+    transform: translateX(0vw);
+  }
+  100%{
+    transform: translateX(-75vw);
+  }
+}
+.navbar-side-div{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: var(--bg-color-less);
+  z-index: 10000;
+  gap: 20px;
+  flex-direction: column;
+}
+.navbar-fa-div{
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--bg-color);
+}
+.navbar-fa-div i{
+  position: absolute;
+  right: 10px;
+  top: 25px;
+  color: var(--bg-2);
+}
+.navbar-side-div > div{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.navbar-side-div a{
+  text-decoration: none;
+  color: var(--text-color);
+  height: 100%;
+  width: 90%;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+}
+
+.my-navbar-div{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row;
+  box-shadow: 0px 1px 12px 0.1px var(--nav-footer-shadow);
+  background: linear-gradient(160deg, var(--bg-color),var(--nav-bg-color));
+}
+.website-logo-div{
+  width: min-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1%;
+  margin-left: 1%;
+}
+.nav-items-div{
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  position: relative;
+  top: 1px;
+}
+.nav-items-div a{
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  color: rgb(157, 157, 157);
+  font-weight: 400;
+  &:hover{
+    color: var(--text-color);
+  }
+}
+.nav-items-div > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+}
+.nav-items-div > div > div{
+  height: 3px;
+  width: 100%;
+  border-radius: 50px;
+  background-color: transparent;
+}
+.light-dark-div{
+  height: fit-content;
+  width: fit-content;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  margin-left: 25px;
+}
+.light-mode-svg, .dark-mode-svg{
+  border-radius: 50%;
+  margin: 5px;
+  height: 15px;
+  aspect-ratio: 1 / 1;
+}
+.hamburger-div{
+  color: var(--bg-1);
+  display: none;
+}
+.blur{
+    animation: my-blur 0.6s 1 forwards;
+  }
+  @keyframes my-blur{
+    from{
+      filter: blur(0px);
     }
+    to{
+      filter: blur(2px);
+    }
+  }
+  .blur-rev{
+    animation: my-blur-rev 0.6s 1 forwards;
+  }
+  @keyframes my-blur-rev{
+    from{
+      filter: blur(2px);
+    }
+    to{
+      filter: blur(0px);
+    }
+  }
+.login{
+      border-bottom: 3px solid var(--bg-1);
+      text-align: center;
+      margin-left: auto;
 }
-.nav-items{
-    display: flex;
-    gap: 30px;
-    width: 100%;
-}
-.nav-items a{
-    cursor: pointer;
-}
-.nav-side-item{
-    display: flex;
-    margin-left: auto;
+.login a { 
+    padding: 6px 15px;
+    transition: none;
 }
 .signup{
     background-color: var(--bg-1);
-    border-radius: 25px;
-    padding: 0px 20px;
+    border-radius: 50px;
     text-align: center;
+    margin-right: 10px;
 }
-.login{
-    border-bottom: 3px solid var(--bg-1);
-    padding: 0px 15px;
-    text-align: center;
+.signup a{
+    padding: 7px 20px;
+    height: 100%;
+    width: 100%;
+}
+/*  Profile CSS starts  */
+.dropdown-profile-div{
     margin-left: auto;
+    margin-right: 8px;
+    cursor: pointer;
+}
+.profile{
+    height: 45px !important;
+    width: 45px !important;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255) !important;
+}
+.profile-logo{
+    height: 100%;
+    width: 100%;
+}
+.profile-dropdown-div{
+    height: fit-content;
+    background-color: var(--dropdown-bg-color);
+    position: absolute;
+    top: 54.5px;
+    right: 13px;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 
+    0 4px 12px rgba(0, 0, 0, 0.10);
+    /* display: flex; */
+    flex-direction: column;
+    align-items: flex-start;
+    cursor:default;
+}
+.profile-image-name-div{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+.profile-image-div{
+    display: flex;
+    align-items: center;
+}
+.profile-image-div > a{
+    height: 80px;
+}
+.profile-name-div{
+    min-width: 150px;
+}
+.profile-name-div > a{
+    height: fit-content;
+    width: min-content;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: 0.5px; 
+    color: var(--text-color); 
+}
+.horizontal-line{
+    height: 1.5px;
+    width: 100%;
+    background: linear-gradient(155deg, rgb(220, 220, 220), rgb(65, 65, 65));
+    border-radius: 10px;
+    margin-top: 0.8rem;
+    margin-bottom: 0.9rem;
+}
+.settings-div, .edit-div, .signout-div{
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    gap: 15px;
+    height: 30px;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover{
+        background-color: var(--hover-color);
+    }
+}
+.settings-div > i, .edit-div > i .signout-div > i{
+    color: var(--dropdown-text-color);
+}
+.settings-div > a, .edit-div > a{
+    width: 100%;
+    text-decoration: none;
+    color: var(--dropdown-text-color);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+.signout-div button{
+    border: none;
+    outline: none;
+    padding: 0;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: var(--dropdown-text-color);
+    background-color: var(--dropdown-bg-color);
+}
+.profile-dropdown{
+    background-color: var(--bg-color) !important;
+}
+.profile-dropdown a{
+    color: rgb(157, 157, 157) !important;
+    &:hover{
+        color: var(--text-color) !important;
+        background-color: var(--bg-color);
+    }
+}
+/*  Profile CSS ends  */
+.login > a{
+    color: var(--text-color) !important;
 }
 .signup > a {
     color: white !important;
 }
                                                /*  Main Body Startes  */
 .total-div{
-    display: flex;
-    flex-direction: column;
+    min-height: 95vh;
     height: fit-content;
-    padding: 0px 0px;
+    width: 100%;
+    padding: 60px;
+    padding-left: 4vw;
+    padding-right: 4vw;
 }
 .middle-div{
-    height: max-content;   /*  Made Changes  */
-    margin-top: 20px;
-    color: rgb(35, 35, 35);
-    padding: 1vw;
-}
-.middle-div > h1{
-    color: var(--bg-1);
-    text-align: center;
-}
-.middle-div-under-1{
     height: fit-content;
     width: 100%;
-    display: flex;
-    gap: 20px 20px;
-    flex-direction: row;
-    justify-content: center;
 }
-/*  Data Charts CSS  */
-.middle-div-under-1 > div{
-    max-height: 400px;
-    min-width: 60px;
-    gap: 10px;
+.main-horizontal-line{
+    height: 2px !important;
+    width: 100%;
+    background: linear-gradient(155deg, rgb(220, 220, 220), rgb(65, 65, 65));
+    border-radius: 10px;
+    margin-top: 0.8rem;
+    margin-bottom: 0.9rem;
+}
+.left-div{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.poll-display-box{
+    height: fit-content;
+    width: 100%;
+    border: 1px solid var(--box-border);
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.option-and-percent{
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    /* gap: 20px; */
 }
 .poll-option{
-    font-size: x-small;
+    margin: 10px;
+    letter-spacing: 0.5px;
 }
-.outer-bar{
-    height: 300px;
-    background-color: rgb(255, 233, 233);
-    border-radius: 50px;
+.percent{
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    height: fit-content;
+    margin: 10px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
-.inner-bar{
-    border-radius: 50px;
-    width: 10px;
-    background-color: var(--bg-1);
-    color: var(--bg-1);
-}
-.outer-round{
-    position: relative;
-    top: -15px;
-    width: 50px;
-    aspect-ratio: 1 / 1;
-    padding: 4px;
-    background-color: var(--bg-1);
-    border-radius: 50%;
-}
-.inner-round{
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background-color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-.poll-percentage{
-    font-weight: 600;
+.poll-display-percent{
+    height: 3px;
+    background-color: rgb(0, 206, 0);
+    margin-top: auto;
+    border-radius: 5px;
 }
                                                                 /*  Footer Starts  */
 .footer {
@@ -234,34 +516,79 @@ body{
         text-align: center;
   }
 }
-
-
-@media only screen and (max-width: 1240px) { /*  This is only for Poll Chart Div Responsiveness  */
-    .middle-div-under-1{
-        flex-wrap: wrap;
+@media only screen and (max-width: 480px) {
+    .login {
+        display: none;
     }
-    .box{
-        display: flex;
-        flex-direction: row !important;
-        flex-wrap: wrap;
-        width: fit-content;
-        height: fit-content;
-    }
-    .outer-round{
-        order: 1;
-        top: 0px;
-    }
-    .outer-bar{
-        order: 2;
-        height: 10px;
-        width: 50vw;
-    }
-    .inner-bar{
-        height: 10px;
-    }
-    .poll-option{
-        order: 3;
-        position: relative;
-        top: 8px;
+    .signup{
+        margin-left: auto;
     }
 }
+/* For screens up to 576px (mobile) */
+@media (min-width:481px) and (max-width: 576px) {
+    .login {
+        display: none;
+    }
+    .signup{
+        margin-left: auto;
+    }
+}
+
+/* For screens between 577px and 768px (small tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .login {
+        display: none;
+    }
+    .signup{
+        margin-left: auto;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .navbar-side-div{
+      width: 75vw;
+    }
+    .nav-items-top{
+      display: none;
+    }
+    .hamburger-div{
+      display: flex;
+    }
+    .light-dark-div{
+      margin-left: 10px;
+      margin-right: 20px;
+    }
+  }
+  @media (min-width:481px) and (max-width: 576px) {
+    .navbar-side-div{
+      width: 60vw;
+    }
+    .nav-items-top{
+      display: none;
+    }
+    .hamburger-div{
+      display: flex;
+    }
+    .light-dark-div{
+        margin-left: 10px;
+        margin-right: 20px;
+    }
+  }
+  
+  @media (min-width: 577px) and (max-width: 768px) {
+    .navbar-side-div{
+      width: 50vw;
+    }
+    .nav-items-top{
+      display: none;
+    }
+    .hamburger-div{
+      display: flex;
+    }
+    .light-dark-div{
+        margin-left: 10px;
+        margin-right: 20px;
+    }
+
+  }
+  /*  Fix the modal vote selection css  */
