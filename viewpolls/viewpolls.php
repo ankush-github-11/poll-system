@@ -131,17 +131,15 @@
     <div class="total-div">
         <div class="total-polls-content hidden">
             <?php
-            $sql = "select title, timeCreated from polls";
-            $res = mysqli_query($conn, $sql);
-            $arr = [];
-            if ($res && mysqli_num_rows($res) > 0) {
-                while ($row = mysqli_fetch_assoc($res)) {
-                    echo
-                        $row["title"] . "<-/*756-=-=>"
-                        . $row["timeCreated"];
-                    echo "<(&*#$*-)>";
+                $sql = "SELECT pid, title, timeCreated FROM polls ORDER BY RAND()";
+                $res = mysqli_query($conn, $sql);
+
+                if ($res && mysqli_num_rows($res) > 0) {
+                    while ($row = mysqli_fetch_assoc($res)) {
+                        echo $row["pid"] . "<-/*756-=-=>" . $row["title"] . "<-/*756-=-=>" . $row["timeCreated"];
+                        echo "<(&*#$*-)>";
+                    }
                 }
-            }
             ?>
         </div>
         <div class="main-div">

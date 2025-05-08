@@ -409,7 +409,9 @@ body{
   margin-bottom: 25px;
 }
 .total-rows{
-  height: 50px;
+  min-height: 50px;
+  height: fit-content;
+  padding: 10px 5px;
   width: 100%;
   display: grid;
   grid-template-columns: 0.2fr 5fr 0.5fr;
@@ -435,6 +437,7 @@ body{
 }
 .div-13{
   padding: 0px 10px;
+  width: 180px !important;
 }
 
 /*  Navbar Media Quires Start  */
@@ -486,3 +489,15 @@ body{
 
   }
 /*  Update the viewpolls href in all the navbars  */
+  @media only screen and (max-width: 768px) {
+    .total-rows{
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    .div-11{
+      display: none;
+    }
+    .div-13{
+      order: -1;
+    }
+  }

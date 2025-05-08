@@ -76,16 +76,32 @@ for (let i = 0; i < totalPollsDetails.length; i++) {
     const arr = totalPollsDetails[i].split("<-/*756-=-=>");
 
     // Format date to DD-MM-YYYY
-    const dateObj = new Date(arr[1].trim());
-    const formattedDate = `${String(dateObj.getDate()).padStart(2, '0')}-${String(dateObj.getMonth() + 1).padStart(2, '0')}-${dateObj.getFullYear()}`;
+    function getOrdinalSuffix(day) {
+        if (day > 3 && day < 21) return 'th';
+        switch (day % 10) {
+            case 1:  return 'st';
+            case 2:  return 'nd';
+            case 3:  return 'rd';
+            default: return 'th';
+        }
+    }
+    
+    const dateObj = new Date(arr[2].trim());
+    const day = dateObj.getDate();
+    const monthName = dateObj.toLocaleString('default', { month: 'long' });
+    const year = dateObj.getFullYear();
+    
+    const formattedDate = `${day}${getOrdinalSuffix(day)} ${monthName}, ${year}`;
+    console.log(formattedDate);
+    
 
     // Conditional class for odd rows
     const extraClass = (i % 2 === 1) ? "my-bg-add" : "";
 
     const html = `  
-        <a href="../poll/poll.php?pid=${i + 1}" target="_blank" rel="noopener noreferrer" class="total-rows ${extraClass}">
+        <a href="../poll/poll.php?pid=${arr[0]}" target="_blank" rel="noopener noreferrer" class="total-rows ${extraClass}">
             <div class="div-11">${i + 1}</div>
-            <div class="div-12">${arr[0]}</div>
+            <div class="div-12">${arr[1]}</div>
             <div class="div-13">${formattedDate}</div>
         </a>
     `;
