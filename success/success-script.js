@@ -2,16 +2,6 @@ if ( window.history.replaceState ) {
     window.history.replaceState(null, null, window.location.href);
 }
 
-document.querySelector(".btn").addEventListener("click", async () => {
-    const URL = document.querySelector(".link-print-div").textContent.trim();
-    if (navigator.share) {
-        await navigator.share({
-            title: "Check out this poll!",
-            text: "I found this poll interesting. Take a look!",
-            url: URL
-        });
-    } 
-});
 const popupScreen = function () {
     document.querySelector(".popup-screen").classList.remove("hidden");
     document.querySelector(".popup-screen").classList.add("flex");
@@ -27,6 +17,3 @@ const popupScreen = function () {
 setTimeout(() => {
     popupScreen();
 }, 3000);
-document.querySelector('.view-btn').addEventListener('click', function(){
-    window.location.href = `${document.querySelector('.link-print-div').textContent}`;
-});

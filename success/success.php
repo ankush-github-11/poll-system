@@ -56,8 +56,8 @@
                 </div>
             </div>
             <div class="view-share-div">
-                <button class="view-btn">Other Polls</button>
-                <button class="btn">Go to Homepage</button>
+                <a href="../viewpolls/viewpolls.php" class="view-btn">Other Polls</a>
+                <a href="../home/index.php" class="btn">Go to Homepage</a>
             </div>
             <div class="link-clipboard-div">
                 <div class="link-print-div">
