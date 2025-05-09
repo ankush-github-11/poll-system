@@ -257,12 +257,12 @@ include "../config/connect.php";
                             <div class="choose-template-div-2-under">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input my-radio-btn" type="radio" name="themeOptions"
-                                    id="theme1" value="minimalist">
+                                    id="theme1" value="minimalist" checked>
                                     <label class="form-check-label" for="theme1">Minimalist</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input my-radio-btn" type="radio" name="themeOptions"
-                                    id="theme2" value="colorful" checked>
+                                    id="theme2" value="colorful">
                                     <label class="form-check-label" for="theme2">Colorful</label>
                                 </div>
                                 <div class="form-check form-check-inline">

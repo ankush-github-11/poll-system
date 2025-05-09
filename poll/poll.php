@@ -67,6 +67,11 @@
             echo $arr["options"];
         ?>
     </div>
+    <div class="theme hidden">
+        <?php
+            echo $arr["theme"];
+        ?>
+    </div>
     <header>
         <!-- Navbar Starts -->
         <nav>

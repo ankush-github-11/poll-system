@@ -1,3 +1,6 @@
+// UI decisions based on the choice of user
+
+
                                                                                      // Profile Code Starts
 if(document.querySelector(".sessionName").textContent.trim()){
     document.querySelector(".login").classList.add('hidden');
@@ -35,17 +38,18 @@ document.querySelector('.signout-div').addEventListener('mouseleave', () => {
 const optionsStr = document.querySelector('.options').textContent;
 let optionsArr = optionsStr.split(/<\.-:\.=>/);
 for(let i = 0 ; i < optionsArr.length ; i++){
-    const html = `  <div class="option-div">
-                    <div class="preview-option">
-                        ${optionsArr[i]}
-                    </div>
-                    <div class="green-dot-div">
-                        <div class="green-dot-border">
-                            <div class="green-dot"></div>
+    const html = `  
+                    <div class="option-div">
+                        <div class="preview-option">
+                            ${optionsArr[i]}
+                        </div>
+                        <div class="green-dot-div">
+                            <div class="green-dot-border">
+                                <div class="green-dot"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            `;
+                `;
     document.querySelector('.participant-poll-options-div').insertAdjacentHTML("beforeend", html);
 }
 
@@ -135,5 +139,24 @@ document.querySelector('.participant-poll-options-div').addEventListener('click'
         // document.querySelector('.voted-pid').value = document.querySelector('.pid').textContent.trim();
     }
 });
+// Theme
+
+document.addEventListener("DOMContentLoaded", function () {
+    const themeEl = document.querySelector('.theme');
+
+    // Function to generate a random hex color
+    function getRandomColor() {
+        return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+    }
+
+    if (themeEl && themeEl.textContent.trim() === 'colorful') {
+        document.querySelectorAll(".option-div").forEach(ele => {
+            const randomColor = getRandomColor();
+            ele.style.outline = `2px solid ${randomColor}`;
+        });
+    }
+});
+
+
 const year = new Date().getFullYear();
 document.querySelector(".footer-bottom p").textContent = `© ${year} Poll Now. All rights reserved.`; 

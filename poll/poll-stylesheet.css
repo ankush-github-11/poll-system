@@ -451,7 +451,7 @@ body{
 }
 .participant-header-title{
     color: white;
-    font-size: 35px;
+    font-size: 28px;
     font-weight: 500;
 }
 .participant-description{
@@ -707,6 +707,14 @@ body{
 
 /*  Navbar Media Quires Start  */
 @media only screen and (max-width: 480px) {
+    /* Add this */
+    .profile-dropdown-div{
+      padding: 0.5rem;
+    }
+    .profile-image-name-div{
+      gap: 0.5rem;
+    }
+      /* Add this ends */
     .navbar-side-div{
       width: 75vw;
     }
@@ -720,8 +728,25 @@ body{
       margin-left: 10px;
       margin-right: 20px;
     }
+    .total-div{
+      padding: 6px;
+    }
+    .participant-header-name{
+      font-size: 11px;
+    }
+    .participant-header-title{
+      font-size: 18px;
+    }
   }
   @media (min-width:481px) and (max-width: 576px) {
+    /* Add this */
+    .profile-dropdown-div{ 
+      padding: 0.5rem;
+    }
+    .profile-image-name-div{
+      gap: 0.5rem;
+    }
+      /* Add this ends */
     .navbar-side-div{
       width: 60vw;
     }
@@ -734,6 +759,15 @@ body{
     .light-dark-div{
         margin-left: 10px;
         margin-right: 20px;
+    }
+    .total-div{
+      padding: 8px;
+    }
+    .participant-header-name{
+      font-size: 12px;
+    }
+    .participant-header-title{
+      font-size: 20px;
     }
   }
   
@@ -751,7 +785,34 @@ body{
         margin-left: 10px;
         margin-right: 20px;
     }
-
+    .total-div{
+      padding: 10px;
+    }
+    .participant-header-name{
+      font-size: 14px;
+    }
+    .participant-header-title{
+      font-size: 22.5px;
+    }
+  }
+  @media (min-width: 769px) and (max-width: 991px) {
+    .total-div{
+      padding: 15px;
+    }
+    .participant-header-name{
+      font-size: 16px;
+    }
+    .participant-header-title{
+      font-size: 25px;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .participant-description{
+      font-size: 13px;
+    }
+    .preview-option{
+      font-size: 12px;
+    }
   }
 /*  Navbar ends  */
 
