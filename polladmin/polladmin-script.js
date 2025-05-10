@@ -163,16 +163,23 @@ for (let i = 0; i < optionsArray.length; i++) {
 document.querySelector(".total-participants-value").textContent = sum;
 
 
-const listArray = document.querySelector('.list-div').textContent.trim().split("<.-:.=>");
-for (let i = 0; i < listArray.length; i++) {
-    const html = `  
-                    <div class="side-horizontal-line"></div>
-                    <div class="participant-div">
-                        <div class="counter-initial">${i + 1}</div>
-                        <div class="name-div">${listArray[i]}</div>
-                    </div>
-                 `;
-    document.querySelector('.right-div-under-2').insertAdjacentHTML("beforeend", html);
+const listText = document.querySelector('.list-div').textContent.trim();
+const listArray = listText.split("<.-:.=>");
+if (!(listArray.length === 1 && listArray[0] === "")) {
+    for (let i = 0; i < listArray.length; i++) {
+        const html = `  
+                        <div class="side-horizontal-line"></div>
+                        <div class="participant-div">
+                            <div class="counter-initial">${i + 1}</div>
+                            <div class="name-div">${listArray[i]}</div>
+                        </div>
+                     `;
+        document.querySelector('.right-div-under-2').insertAdjacentHTML("beforeend", html);
+    }
+}
+else{
+    document.querySelector('.right-div-under-2').insertAdjacentHTML("beforeend", `<p style="margin-top: 5px; color: var(--text-color-less)">No participants yet!</p>`);
+
 }
 const year = new Date().getFullYear();
 document.querySelector(".footer-bottom p").textContent = `© ${year} Poll Now. All rights reserved.`; 

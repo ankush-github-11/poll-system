@@ -151,8 +151,8 @@
         <div class="total-div">
             <div class="main-div-1">
                 <div class="enter-pass-box">
-                    <div class="enter-pass-text">Enter the Admin Password</div>
-                    <form action="./polladmin.php" method="POST">
+                    <h4 class="enter-pass-text">Enter the Admin Password</h4>
+                    <form class="main-input" action="./polladmin.php" method="POST">
                         <input type="text" name="pass" class="input-pass" spellcheck="false" required placeholder="Password">
                         <input type="text" name="pid" class="fetched-pid hidden">
                         <input type="submit" value="Submit" class="submit-btn">
@@ -231,11 +231,11 @@
                 ?>
             </div>
             <div class="main-div-3 hidden">
-                <h2 class="title-div">
+                <h3 class="title-div">
                     <?php
                         echo $_SESSION["arr"]['title'];
                     ?>
-                </h2>
+                </h3>
                 <div class="time-div">
                     Created on:
                     <?php

@@ -1106,13 +1106,17 @@ option {
     border-radius: 50px;
     color: var(--btn-cancel-bg-color);
     background-color: var(--bg-color);
-    border: 2px solid var(--btn-cancel-bg-color);
+    border: 1px solid var(--btn-cancel-bg-color);
     transition: none;
     font-weight: 500;
+    &:focus{
+        background-color: var(--bg-color);
+        border: 1px solid var(--btn-cancel-bg-color);
+    }
     &:hover{
         color: var(--btn-cancel-bg-color);
         background-color: var(--btn-cancel-hover-bg-color);
-        border: 2px solid var(--btn-cancel-bg-color);
+        border: 1px solid var(--btn-cancel-bg-color);
     }
 }
 .btn-continue, .btn-create{
@@ -1349,5 +1353,4 @@ Date and Time : no
 /*  Give the background color to every select dropdown  */
 /*  Fix the dark mode bg color of the flatpickr  */
 /*  Fix the responsiveness of the admin view section  */
-/*  Allow voting without login or not  */
 /*  Allow the enter button event only after the create appears  */

@@ -388,7 +388,7 @@ body{
 .main-div-1{
     height: fit-content;
     width: fit-content;
-    padding: 45px;
+    padding: 45px 2.5vw;
     margin: 20px;
     background-color: var(--bg-color-less);
     border: 2px solid var(--border);
@@ -403,7 +403,11 @@ body{
 }
 .enter-pass-text{
     letter-spacing: 1px;
-    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.main-input{
+    width: 100%;
 }
 .input-pass {
     width: 100%;
@@ -716,11 +720,14 @@ body{
         padding-left: 5px;
         padding-right: 5px;
     }
+    .main-div-1{
+        margin: 7px;
+    }
     .main-div-3{
         padding: 12px;
     }
+    
 }
 /*  Open this link into a new tab to prevent users from going back  */
 /*  Fix all the bg-color-less in other pages  */
 /*  Display the poll password in the poll section  */
-/*  Change the success page button redirections  */

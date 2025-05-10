@@ -382,9 +382,6 @@ document.querySelector('.light-dark-div').addEventListener('click', function () 
     document.querySelector('.light-mode-svg').classList.toggle('hidden');
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
 });
-document.querySelector(".btn-cancel").addEventListener("click" , function() {
-    window.location.href = "../home/index.php";
-});
 initializeTheme();
 window.addEventListener('resize', updateBarStyles);
 updateBarStyles();

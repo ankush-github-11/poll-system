@@ -608,7 +608,7 @@ include "../config/connect.php";
 
                     <div class="horizontal-line-right-div-2"></div>
                     <div class="btn-cancel-continue">
-                        <button type="button" class="btn btn-cancel">Cancel</button>
+                        <input type="reset" class="btn btn-cancel" value="Clear">
                         <button type="button" class="btn btn-continue">Continue</button>
                         <button type="submit" value="Create" class="hidden btn btn-create">Create</button>
                     </div>

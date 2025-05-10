@@ -268,7 +268,7 @@ if(isset($_POST["createpoll"])){
         <div class="total-div-3 hidden">
             <div class="modal-1 hidden">
                 <div class="modal-1-header">
-                    <h1>Programming Language</h1>
+                    <h2>Programming Language</h2>
                     <i class="fa-regular x-1 fa-circle-xmark fa-2xl"></i>
                 </div>
                 <div class="modal-1-line"></div>
@@ -300,7 +300,7 @@ if(isset($_POST["createpoll"])){
                     ?>">
                     </div>
                     <i class="fa-solid fa-paper-plane fa-2xl"></i>
-                    <h3>Your Response is already been submitted</h3>
+                    <h5>Your response is already been submitted</h5>
                     <form action="../livepolls/result.php" method="GET">
                         <input type="text" class="view1 hidden" name="view" value="1">
                         <input type="submit" class="btn btn-view-res-1" value="View Results">
@@ -318,7 +318,7 @@ if(isset($_POST["createpoll"])){
             </div>
             <div class="modal-2 hidden">
                 <div class="modal-2-header">
-                    <h1>Favourite Time of the Year</h1>
+                    <h2>Favourite Time of the Year</h2>
                     <i class="fa-regular x-2 fa-circle-xmark fa-2xl"></i>
                 </div>
                 <div class="modal-2-line"></div>
@@ -340,7 +340,7 @@ if(isset($_POST["createpoll"])){
                     ?>">
                     </div>
                     <i class="fa-solid fa-paper-plane fa-2xl"></i>
-                    <h3>Your Response is already been submitted</h3>
+                    <h5>Your response is already been submitted</h5>
                     <form action="../livepolls/result.php" method="GET">
                         <input type="text" class="view2 hidden" name="view" value="2">
                         <input type="submit" class="btn btn-view-res-2" value="View Results">
@@ -357,7 +357,7 @@ if(isset($_POST["createpoll"])){
             </div>
             <div class="modal-3 hidden">
                 <div class="modal-3-header">
-                    <h1>Most Useful Gadget</h1>
+                    <h2>Most Useful Gadget</h2>
                     <i class="fa-regular x-3 fa-circle-xmark fa-2xl"></i>
                 </div>
                 <div class="modal-3-line"></div>
@@ -378,7 +378,7 @@ if(isset($_POST["createpoll"])){
                     ?>">
                     </div>
                     <i class="fa-solid fa-paper-plane fa-2xl"></i>
-                    <h3>Your Response is already been submitted</h3>
+                    <h5>Your response is already been submitted</h5>
                     <form action="../livepolls/result.php" method="GET">
                         <input type="text" class="view3 hidden" name="view" value="3">
                         <input type="submit" class="btn btn-view-res-3" value="View Results">

@@ -617,7 +617,7 @@ body{
     width: 30%;
     display: flex;
     flex-direction: column;
-    padding: 5px;
+    padding: 10px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -684,7 +684,8 @@ body{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    gap: 10px 10px ;
+    flex-wrap: wrap;
+    gap: 10px 10px;
 }
 .side-box-1 div , .side-box-2 div , .side-box-3 div{
     color: rgb(128, 128, 128);
@@ -807,7 +808,7 @@ body{
     justify-content: center;
     flex-direction: row;
 }
-.modal-1-header > h1 , .modal-2-header > h1 , .modal-3-header > h1{
+.modal-1-header > h2 , .modal-2-header > h2 , .modal-3-header > h2{
     margin: 20px;
     color: var(--bg-1);
     height: min-content;
@@ -1021,6 +1022,9 @@ body{
     .modal-1-cancel-submit, .modal-2-cancel-submit, .modal-3-cancel-submit{
         justify-content: center;
     }
+    .btn-vote-side-box-1 > button, .btn-vote-side-box-2 > button , .btn-vote-side-box-3 > button{
+        width: 80%;
+    }
 }
 /* For screens up to 576px (mobile) */
 @media (min-width:481px) and (max-width: 576px) {
@@ -1091,6 +1095,11 @@ body{
     .modal-1-options-div {
         grid-template-columns: repeat(4,1fr);
         grid-template-rows: repeat(6,1fr);
+    }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+    .btn-vote-side-box-1 > button, .btn-vote-side-box-2 > button , .btn-vote-side-box-3 > button{
+        width: 80%;
     }
 }
 @media only screen and (max-width: 1096px) { /*  This is only for Growth Overview Div Responsiveness  */
@@ -1175,33 +1184,15 @@ body{
 /*
 Settings/Configuration
 
-Privacy Settings
-Public (anyone can vote)
-Private (restricted access via a link or code).
-
-Results Visibility
-Show results after voting
-Show results after the poll ends
-Hide results.
-
-Preview Poll
-Button: Allows users to preview how the poll will look to voters.
-Button: To save and publish the poll.
 
 Reset Form
 Button: Clears all fields in the form.
-
-Randomize Option Order
 
 Poll Expiry Actions:
 Notify the admin.
 Automatically delete/disable the poll.
 Archive the poll results.
 
-Enable Analytics: Toggle to allow tracking of poll metrics such as:
-Number of participants.
-Geographical breakdown.
-Time distribution of votes.
 
 */
 
@@ -1209,18 +1200,11 @@ Time distribution of votes.
 
 
 
-/*
 
-
-Live Results Display: Show real-time results during voting.
-7. Preview Feature
-Enable users to preview the selected template before finalizing.
-*/
-/*  Add the stylesheet to the login and signup button in the navbar  */
 /*  Change the popup of the create screen  */
-/*  Add the glow scan effect in the navbar only the first time it mounts  */
 /*  Make the already voted text a bit small while being responsive  */
 /*  After login / logout please refresh the whole application  */
 /*  Change the "how it works" footer a tag's href in all the pages and "view polls" also  */
 /*  Create and demo button should be in place in the mobile  */
 /*  Add the login and signup media queries in all the pages where without login and signup access is given  */
+/*  Add font-size !important in the .create-text > h2  */
