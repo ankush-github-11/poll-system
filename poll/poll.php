@@ -269,7 +269,7 @@
                             <input type="text" class="hidden selected-option" name="selectedOption">
                             <input type="text" class="hidden voted-pid" name="votedPid">
                             <div class="participants-footer-buttons-div">
-                                <button type="button" class="btn participants-footer-btn-exit">Exit</button>
+                                <a href="../home/index.php" class="btn participants-footer-btn-exit">Exit</a>
                                 <button type="submit" class="btn participants-footer-btn-submit disabled-button">Submit</button>
                             </div>
                         </form>

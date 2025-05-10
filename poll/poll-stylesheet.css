@@ -613,6 +613,7 @@ body{
 }
 .admin-btn{
   padding: 5px 11px;
+  margin-bottom: 60px;
 }
 .admin-btn {
   position: relative;
@@ -715,6 +716,11 @@ body{
       gap: 0.5rem;
     }
       /* Add this ends */
+    .admin-btn{
+      height: 40px;
+      width: 100%;
+      font-size: 15px;
+    }
     .navbar-side-div{
       width: 75vw;
     }
@@ -747,6 +753,9 @@ body{
       gap: 0.5rem;
     }
       /* Add this ends */
+    .admin-btn{
+      font-size: 17px;
+    }
     .navbar-side-div{
       width: 60vw;
     }
