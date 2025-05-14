@@ -67,7 +67,7 @@ include "../config/connect.php";
                             <a draggable="false" class="nav-link active" href="">Security</a>
                         </div>
                         <div class="nav-item">
-                            <a draggable="false" class="nav-link active" href="">View Polls</a>
+                            <a draggable="false" class="nav-link active" href="../viewpolls/viewpolls.php">View Polls</a>
                         </div>
                         <div class="light-dark-div">
                             <svg class="light-mode-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#ff0055">

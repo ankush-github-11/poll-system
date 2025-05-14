@@ -62,7 +62,7 @@
                     <a draggable="false" class="nav-side-item-2" href="">Contact</a>
                 </div>
                 <div class="nav-side-item-3-div">
-                    <a draggable="false" class="nav-side-item-3" href="">View Polls</a>
+                    <a draggable="false" class="nav-side-item-3" href="../viewpolls/viewpolls.php">View Polls</a>
                 </div>
                 <div class="nav-side-item-4-div">
                     <a draggable="false" class="nav-side-item-4" href="">Security</a>
@@ -85,7 +85,7 @@
                             <div class="nav-item-2-hover-div"></div>
                         </div>
                         <div class="nav-item-3-div">
-                            <a draggable="false" class="nav-item-3" href="">View Polls</a>
+                            <a draggable="false" class="nav-item-3" href="../viewpolls/viewpolls.php">View Polls</a>
                             <div class="nav-item-3-hover-div"></div>
                         </div>
                         <div class="nav-item-4-div">

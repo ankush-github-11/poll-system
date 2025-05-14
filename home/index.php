@@ -62,7 +62,7 @@ if(isset($_POST["createpoll"])){
                     <a draggable="false" class="nav-side-item-2" href="">Contact</a>
                 </div>
                 <div class="nav-side-item-3-div">
-                    <a draggable="false" class="nav-side-item-3" href="">View Polls</a>
+                    <a draggable="false" class="nav-side-item-3" href="../viewpolls/viewpolls.php">View Polls</a>
                 </div>
                 <div class="nav-side-item-4-div">
                     <a draggable="false" class="nav-side-item-4" href="">Security</a>
