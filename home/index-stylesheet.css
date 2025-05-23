@@ -462,20 +462,21 @@ body{
 @keyframes opacityAndSize {
     0% {
         opacity: 0;
-        font-size: 25px;
+        font-size: clamp(16px, 1.75vw, 24px);
         transform: translateY(0px);
     }
     50% {
         opacity: 0.7;
-        font-size: 51.5px;
+        font-size: clamp(20px, 3.75vw, 48px);
         transform: translateY(55px);
     }
     100% {
         opacity: 1;
-        font-size: 50px;
+        font-size: clamp(35px, 4vw, 50px);
         transform: translateY(25px);
     }
 }
+
 
 
 /* .vote-text > h3{
@@ -536,7 +537,7 @@ body{
     color: white;
     animation: rightSlide 1.5s ease-in-out forwards;
     &:hover{
-        color: rgb(255, 221, 229);
+        color: white;
     }
 }
 @keyframes leftSlide{
@@ -1208,3 +1209,4 @@ Archive the poll results.
 /*  Create and demo button should be in place in the mobile  */
 /*  Add the login and signup media queries in all the pages where without login and signup access is given  */
 /*  Add font-size !important in the .create-text > h2  */
+/*  Add the single linear gradinent in the main big text (remove two h2)  */
