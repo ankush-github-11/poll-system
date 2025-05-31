@@ -125,7 +125,10 @@ include "../config/connect.php";
     </header>
     <main>
         <div class=" no-select popup-screen hidden">
-            <div class="popup-1 hidden">Please fill all the fields correctly</div>
+            <div class="popup-1 hidden">Please fill all the fields</div>
+            <div class="popup-2 hidden">Choose all the fields</div>
+            <div class="popup-3 hidden">Please fill all the fields correctly</div>
+            <div class="popup-4 hidden">Please fill all the fields correctly</div>
         </div>
 
         <form action="../mypoll/poll.php" method="POST">

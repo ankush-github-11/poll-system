@@ -475,7 +475,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 20px;
+    gap: 20px 20px;
     justify-content: space-between;
     align-items: center;
     background-color: var(--bg-color);
