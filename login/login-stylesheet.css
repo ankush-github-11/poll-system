@@ -292,6 +292,11 @@
         margin-top: 60px;
     }
 }
+@media (min-width: 992px) and (max-width: 1250px) {
+    .main-div{
+        grid-template-columns: 2fr 1.4fr;
+    }
+}
 /*  Password Show Option  */
 /*  Dark Mode in JS  */
 /*  Make it Responsive  */
