@@ -103,7 +103,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.popup-1{
+.popup-1, .popup-2{
     height: 50px;
     width: fit-content;
     position:fixed;

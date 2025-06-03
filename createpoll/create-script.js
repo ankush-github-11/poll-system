@@ -117,7 +117,7 @@ const addPreviewAndSharePoll = function(){
     document.querySelector('.preview-and-share-poll').classList.remove('hidden');
     document.querySelector('.preview-and-share-poll').classList.add('flex');
 }
-const popupScreen = function () {
+const popupScreen1 = function () {
   document.querySelector(".popup-screen").classList.remove("hidden");
   document.querySelector(".popup-screen").classList.add("flex");
   document.querySelector(".popup-1").classList.remove("hidden");
@@ -127,6 +127,18 @@ const popupScreen = function () {
     document.querySelector(".popup-screen").classList.add("hidden");
     document.querySelector(".popup-1").classList.remove("flex");
     document.querySelector(".popup-1").classList.add("hidden");
+  }, 2000);
+};
+const popupScreen2 = function () {
+  document.querySelector(".popup-screen").classList.remove("hidden");
+  document.querySelector(".popup-screen").classList.add("flex");
+  document.querySelector(".popup-2").classList.remove("hidden");
+  document.querySelector(".popup-2").classList.add("flex");
+  setTimeout(() => {
+    document.querySelector(".popup-screen").classList.remove("flex");
+    document.querySelector(".popup-screen").classList.add("hidden");
+    document.querySelector(".popup-2").classList.remove("flex");
+    document.querySelector(".popup-2").classList.add("hidden");
   }, 2000);
 };
 const continueBtnClick = function(){
@@ -173,7 +185,7 @@ const continueBtnClick = function(){
                   document.querySelector(".required-poll-option-2 > input").value.trim()
                 )
               ) {
-                popupScreen();
+                popupScreen1();
                 return;
               }
               else{
@@ -186,7 +198,7 @@ const continueBtnClick = function(){
                     if(ele.checked) isChecked = true;
                 });
                 if(!isChecked){
-                    popupScreen();
+                    popupScreen2();
                     return;
                 }
                 else{
@@ -197,7 +209,7 @@ const continueBtnClick = function(){
                 const isPublishImmediatelyChecked = document.querySelector('.publish-immediately-checkbox').checked;
                 const isValidDateSelected = document.querySelector('.schedule-message').textContent.trim() === "Valid date selected";
                 if (!(isPublishImmediatelyChecked || isValidDateSelected)) {
-                    popupScreen();
+                    popupScreen2();
                     return;
                 }
                 else{
@@ -210,7 +222,7 @@ const continueBtnClick = function(){
                 if(document.querySelector('.initial-input').checked || document.querySelector('.counter-input').checked)
                     isChecked = true;
                 if(!(isChecked && document.querySelector('.btn-advanced-settings-div-3-under').textContent.trim()!=="Results")){
-                    popupScreen();
+                    popupScreen2();
                     return;
                 }
                 else{
