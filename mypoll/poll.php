@@ -62,6 +62,9 @@
     if(isset($_POST['title'])){
         $pollPassword = generateRandomPassword();
         $sql = "insert into polls set uid = '$uid', name='$name', pollPassword='$pollPassword', title='$title', description='$description', options='$joinedOptions', pollType='$pollTypeOptions', theme='$themeOptions', caseOptions='$caseOptions', publishImmediately= '$publishImmediatelyCheckbox', startDateAndTime='$dateAndTime', duration='$duration', votersRepresentation='$votersRepresentation', devices='$devices', showResults='$showResults' ";
+        $uid = $_SESSION['uid'];
+        $temp = "update users set pollsCreated = pollsCreated + 1 where uid = $uid";
+        $res = mysqli_query($conn, $temp);
     }
 
     $res = false;

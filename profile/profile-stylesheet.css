@@ -515,6 +515,7 @@ button:hover a {
   color: var(--bg-1);
 }
 .personal-informations-div{
+  height: fit-content;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -572,6 +573,7 @@ button:hover a {
   }
 }
 .contact-details-div{
+  height: fit-content;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -1041,3 +1043,4 @@ button:hover a {
 /*  Add the JS part for the Messages & Support webpage and Report a Bug webpage  */
 /*  When the Navbar will be opened then eveyrthing else should stop working  */
 /*  Add htmlspecialchars in every echo to prevent xss  */
+/*  Add the backend for the send a message to us also for the report a bug */

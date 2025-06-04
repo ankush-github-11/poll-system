@@ -206,7 +206,7 @@
                                     ?>
                                 </div>
                             </div>
-                            <div class="nationality-div">
+                            <!-- <div class="nationality-div">
                                 <div class="nationality-left-div">Nationality</div>
                                 <div class="nationality-right-div add-js">
                                     <?php
@@ -238,7 +238,7 @@
                                             echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
                                     ?>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="status-div">
                                 <div class="status-left-div">Status</div>
                                 <div class="status-right-div">
@@ -279,7 +279,7 @@
                                     ?>
                                 </div>
                             </div>
-                            <div class="linkedin-div">
+                            <!-- <div class="linkedin-div">
                                 <div class="linkedin-left-div">LinkedIn URL</div>
                                 <div class="linkedin-right-div add-js">
                                     <?php
@@ -322,7 +322,7 @@
                                             echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
                                     ?>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

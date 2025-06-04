@@ -397,5 +397,27 @@ document.querySelector('.light-dark-div').addEventListener('click', function () 
 initializeTheme();
 window.addEventListener('resize', updateBarStyles);
 updateBarStyles();
+const arr = [15, 15, 20, 30, 10, 10];
+for (let i = 0; i < 6; i++) {
+    const html = `
+        <div class="poll-display-box">
+            <div class="option-and-percent">
+            <div class="poll-option">Option ${i + 1}</div>
+            <div class="percent">${arr[i]}%</div>
+            </div>
+            <div class="poll-display-percent"></div>
+        </div>
+    `;
+    document.querySelector('.admin-body-div').insertAdjacentHTML("beforeend", html);
+
+    const container = document.querySelector(".admin-body-div");
+    const lastChild = container.lastElementChild;
+    const percentBar = lastChild.querySelector('.poll-display-percent');
+    const percentText = lastChild.querySelector('.percent');
+    percentBar.style.width = `${arr[i]}%`;
+    if(arr[i] == 30){
+        percentText.style.color = "rgb(17, 108, 255)";
+    }
+}
 const year = new Date().getFullYear();
 document.querySelector(".footer-bottom p").textContent = `© ${year} Poll Now. All rights reserved.`; 

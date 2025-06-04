@@ -20,6 +20,8 @@
         }
         $sql = "insert into votes set pid='$pid', uid='$uid', selectedOption='$option'";
         $res = mysqli_query($conn, $sql);
+        $temp = "update users set pollsVoted = pollsVoted + 1 where uid = $uid";
+        $res = mysqli_query($conn, $temp);
     }
     $message =  "Your vote has been successfully submitted!";
 ?>

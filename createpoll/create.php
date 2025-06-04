@@ -413,113 +413,67 @@ include "../config/connect.php";
                         </div>
                         <div class="admin-view">
                             <div class="admin-header-div">
-                                <div class="admin-header-image-div">
+                                <!-- <div class="admin-header-image-div">
                                     <img class="admin-image" src="../images/admin-logo.png" alt="">
-                                </div>
+                                </div> -->
                                 <div class="admin-header-texts">
                                     <div class="admin-header-name">Admin Name</div>
-                                    <div class="admin-header-title">Your Poll</div>
+                                    <div class="admin-header-title">Poll Title</div>
                                 </div>
                             </div>
                             <div class="admin-description">Poll Description</div>
                             <div class="admin-body-div">
-                                <div class="admin-box">
-                                    <p class="admin-poll-option">Option</p>
-                                    <div class="admin-outer-bar">
-                                        <div class="admin-inner-bar"></div>
+                                <!-- <div class="poll-display-box">
+                                    <div class="option-and-percent">
+                                    <div class="poll-option">Option 1</div>
+                                    <div class="percent">15%</div>
                                     </div>
-                                    <div class="admin-outer-round">
-                                        <div class="admin-inner-round">
-                                            <div class="admin-poll-percentage">11%</div>
-                                        </div>
-                                    </div>
+                                    <div class="poll-display-percent"></div>
                                 </div>
-                                <div class="admin-box">
-                                    <p class="admin-poll-option">Option</p>
-                                    <div class="admin-outer-bar">
-                                        <div class="admin-inner-bar"></div>
+                                <div class="poll-display-box">
+                                    <div class="option-and-percent">
+                                    <div class="poll-option">Option 2</div>
+                                    <div class="percent">15%</div>
                                     </div>
-                                    <div class="admin-outer-round">
-                                        <div class="admin-inner-round">
-                                            <div class="admin-poll-percentage">11%</div>
-                                        </div>
-                                    </div>
+                                    <div class="poll-display-percent"></div>
                                 </div>
-                                <div class="admin-box">
-                                    <p class="admin-poll-option">Option</p>
-                                    <div class="admin-outer-bar">
-                                        <div class="admin-inner-bar"></div>
+                                <div class="poll-display-box">
+                                    <div class="option-and-percent">
+                                    <div class="poll-option">Option 3</div>
+                                    <div class="percent">20%</div>
                                     </div>
-                                    <div class="admin-outer-round">
-                                        <div class="admin-inner-round">
-                                            <div class="admin-poll-percentage">11%</div>
-                                        </div>
-                                    </div>
+                                    <div class="poll-display-percent"></div>
                                 </div>
-                                <div class="admin-box">
-                                    <p class="admin-poll-option">Option</p>
-                                    <div class="admin-outer-bar">
-                                        <div class="admin-inner-bar"></div>
+                                <div class="poll-display-box">
+                                    <div class="option-and-percent">
+                                    <div class="poll-option">Option 4</div>
+                                    <div class="percent">30%</div>
                                     </div>
-                                    <div class="admin-outer-round">
-                                        <div class="admin-inner-round">
-                                            <div class="admin-poll-percentage">11%</div>
-                                        </div>
-                                    </div>
+                                    <div class="poll-display-percent"></div>
                                 </div>
-                                <div class="admin-box">
-                                    <p class="admin-poll-option">Option</p>
-                                    <div class="admin-outer-bar">
-                                        <div class="admin-inner-bar"></div>
+                                <div class="poll-display-box">
+                                    <div class="option-and-percent">
+                                    <div class="poll-option">Option 5</div>
+                                    <div class="percent">10%</div>
                                     </div>
-                                    <div class="admin-outer-round">
-                                        <div class="admin-inner-round">
-                                            <div class="admin-poll-percentage">11%</div>
-                                        </div>
-                                    </div>
+                                    <div class="poll-display-percent"></div>
                                 </div>
-                                <div class="admin-box">
-                                    <p class="admin-poll-option">Option</p>
-                                    <div class="admin-outer-bar">
-                                        <div class="admin-inner-bar"></div>
+                                <div class="poll-display-box">
+                                    <div class="option-and-percent">
+                                    <div class="poll-option">Option 6</div>
+                                    <div class="percent">10%</div>
                                     </div>
-                                    <div class="admin-outer-round">
-                                        <div class="admin-inner-round">
-                                            <div class="admin-poll-percentage">11%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="admin-box">
-                                    <p class="admin-poll-option">Option</p>
-                                    <div class="admin-outer-bar">
-                                        <div class="admin-inner-bar"></div>
-                                    </div>
-                                    <div class="admin-outer-round">
-                                        <div class="admin-inner-round">
-                                            <div class="admin-poll-percentage">11%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="admin-box">
-                                    <p class="admin-poll-option">Option</p>
-                                    <div class="admin-outer-bar">
-                                        <div class="admin-inner-bar"></div>
-                                    </div>
-                                    <div class="admin-outer-round">
-                                        <div class="admin-inner-round">
-                                            <div class="admin-poll-percentage">11%</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <div class="poll-display-percent"></div>
+                                </div> -->
                             </div>
                             <div class="admin-footer-div"></div>
                         </div>
 
                         <div class="participant-view hidden">
                             <div class="participant-header-div">
-                                <div class="participant-header-image-div">
+                                <!-- <div class="participant-header-image-div">
                                     <img class="participant-image" src="../images/admin-logo.png" alt="">
-                                </div>
+                                </div> -->
                                 <div class="participant-header-texts">
                                     <div class="participant-header-name">Admin Name</div>
                                     <div class="participant-header-title">Poll Title</div>
@@ -531,7 +485,7 @@ include "../config/connect.php";
                                 <div class="participant-poll-options-div">
                                     <div class="option-div">
                                         <div class="preview-option">
-                                            Hello this is your poll option number 1
+                                            Poll Option 1
                                         </div>
                                         <div class="green-dot-div">
                                             <div class="green-dot-border">
@@ -541,7 +495,7 @@ include "../config/connect.php";
                                     </div>
                                     <div class="option-div">
                                         <div class="preview-option">
-                                            Hello this is your poll option number 2
+                                            Poll Option 2
                                         </div>
                                         <div class="green-dot-div">
                                             <div class="green-dot-border">
@@ -551,7 +505,7 @@ include "../config/connect.php";
                                     </div>
                                     <div class="option-div">
                                         <div class="preview-option">
-                                            Hello this is your poll option number 3
+                                            Poll Option 3
                                         </div>
                                         <div class="green-dot-div">
                                             <div class="green-dot-border">
@@ -561,7 +515,7 @@ include "../config/connect.php";
                                     </div>
                                     <div class="option-div">
                                         <div class="preview-option">
-                                            Hello this is your poll option number 4
+                                            Poll Option 4
                                         </div>
                                         <div class="green-dot-div">
                                             <div class="green-dot-border">
@@ -571,7 +525,7 @@ include "../config/connect.php";
                                     </div>
                                     <div class="option-div">
                                         <div class="preview-option">
-                                            Hello this is your poll option number 5
+                                            Poll Option 5
                                         </div>
                                         <div class="green-dot-div">
                                             <div class="green-dot-border">
@@ -581,7 +535,7 @@ include "../config/connect.php";
                                     </div>
                                     <div class="option-div">
                                         <div class="preview-option">
-                                            Hello this is your poll option number 6
+                                            Poll Option 6
                                         </div>
                                         <div class="green-dot-div">
                                             <div class="green-dot-border">

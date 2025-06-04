@@ -42,7 +42,7 @@
     --bg-color: #05141d; 
     --text-color: white;
     --sidebar-options-text-color: rgb(190, 190, 190);
-    --op-active-bg-color: #010d16;
+    --op-active-bg-color: #313131;
     --op-hover-color: rgb(88, 88, 88);
     --btn-cancel-bg-color: rgb(219, 219, 219);
     --btn-cancel-hover-bg-color: rgb(41, 41, 41);
@@ -107,7 +107,7 @@ body{
     height: 50px;
     width: fit-content;
     position:fixed;
-    letter-spacing: 0.8px;
+    letter-spacing: 1px;
     font-weight: 500;
     bottom: 30px;
     margin: 0 auto;
@@ -794,7 +794,7 @@ option {
     flex-direction: row;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 10px;
+    gap: 5px;
     font-size: smaller;
 }
 .preview-btn-toggle > div{
@@ -888,7 +888,7 @@ option {
     gap: 20px;
 }
 .option-div{
-    height: fit-content;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -979,7 +979,7 @@ option {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: var(--bg-1);
+    background: linear-gradient(135deg,var(--bg-1), var(--participant-header-div-gradient-color)) !important;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
 }
@@ -1025,64 +1025,44 @@ option {
     border-bottom: 2px solid var(--bar);
 }
 .admin-body-div{
-    padding: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 20px 20px;
-    justify-content: space-around;
-}
-.admin-box{
-    height: 250px;
-    width: 60px;
-    gap: 10px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 7px;
-    border-radius: 10px;
-    border: 1px solid var(--bar);
+    gap: 25px;
+    padding: 20px;
 }
-.admin-poll-option{
-    font-size: small;
-    color: var(--div-text);
-}
-.admin-outer-bar{
-    height: 300px;
-    background-color: var(--admin-outer-bar);
-    border-radius: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-.admin-inner-bar{
-    border-radius: 50px;
-    width: 10px;
-    background-color: var(--bg-1);
-    color: var(--bg-1);
-}
-.admin-outer-round{
-    position: relative;
-    top: -15px;
-    width: 50px;
-    aspect-ratio: 1 / 1;
-    padding: 4px;
-    background-color: var(--bg-1);
-    border-radius: 50%;
-}
-.admin-inner-round{
+.poll-display-box{
+    height: fit-content;
     width: 100%;
-    aspect-ratio: 1 / 1;
-    background-color: var(--bg-color);
-    border-radius: 50%;
+    border: 1px solid var(--bar);
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 10px;
 }
-.admin-poll-percentage{
-    font-weight: 600;
+.option-and-percent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 20px; */
+}
+.poll-option{
+    margin: 10px;
+    letter-spacing: 0.5px;
+}
+.percent{
+    display: flex;
+    height: fit-content;
+    margin: 10px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+.poll-display-percent{
+    height: 3px;
+    background-color: rgb(0, 206, 0);
+    margin-top: auto;
+    border-radius: 5px;
 }
 
 .horizontal-line-right-div-2{
@@ -1304,9 +1284,6 @@ option {
     } */
 }
 @media only screen and (max-width: 991px) { /*  This is only for Poll Chart Div Responsiveness  */
-    .admin-body-div{
-        flex-wrap: wrap;
-    }
     .admin-box{
         display: flex;
         flex-direction: row !important;
