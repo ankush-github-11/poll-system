@@ -11,7 +11,8 @@
     --outer-bar: rgb(225, 225, 225);
     --disabled: rgb(231, 231, 231);
     --pink-text: rgb(255, 205, 228);
-    --bg-color: white;
+    --bg-color: #FAFAFA;
+    --bg-color-less: rgb(250, 250, 250);
     --text-color: black;
     --sidebar-options-text-color: rgb(17, 17, 17);
     --op-active-bg-color: rgb(243, 243, 243);
@@ -23,6 +24,9 @@
     --hover-color: rgb(245, 245, 245);
     --dropdown-text-color: rgb(26, 26, 26);
     --dropdown-bg-color: rgb(250, 250, 255);
+    --nav-footer-shadow: rgb(221, 221, 221);
+    --nav-bg-color: rgb(246, 246, 255);
+
 
     --footer-bg-color: rgb(245, 245, 245);
     --footer-color-contacts: rgb(75, 75, 75);
@@ -39,7 +43,8 @@
     --admin-outer-bar: rgb(109, 0, 36);
     --outer-bar: rgb(66, 66, 66);
     --disabled: rgb(58, 58, 58);
-    --bg-color: #05141d; 
+    --bg-color: #05141d;
+    --bg-color-less: #061720; 
     --text-color: white;
     --sidebar-options-text-color: rgb(190, 190, 190);
     --op-active-bg-color: #313131;
@@ -51,6 +56,9 @@
     --hover-color: rgb(32, 32, 32);
     --dropdown-text-color: rgb(248, 248, 248);
     --dropdown-bg-color: rgb(22, 22, 22);
+    --nav-footer-shadow: rgb(0, 0, 0);
+    --nav-bg-color: rgb(0, 0, 16);
+
 
     --footer-bg-color: #071b29;
     --footer-color-contacts: rgb(200, 200, 200);
@@ -141,74 +149,184 @@ body{
 }
 
                                                                    /* Navbar Starts */
-.nav{
-    padding: 0px;
+.slide-animation{
+  animation: my-slide 0.6s 1 forwards;
 }
-.btn-nav{
-    outline: 2px solid var(--bg-1);
+
+@keyframes my-slide{
+  0%{
+    transform: translateX(-75vw);
+  }
+  100%{
+    transform: translateX(0vw);
+  }
 }
-.nav-div{
-    box-shadow: 0px 1px 12px 0.1px var(--nav-foot-shadow);
-    background-color: var(--bg-color);
+.slide-animation-rev{
+  animation: my-slide-rev 0.6s 1 forwards;
 }
-.nav-item > a{
-    color: rgb(157, 157, 157) !important;
-    border-bottom: 3px solid var(--bg-color);
-    text-align: center;
-    &:hover{
-        color: var(--text-color) !important;
-        border-bottom: 3px solid var(--bg-1);
-    }
+
+@keyframes my-slide-rev{
+  0%{
+    transform: translateX(0vw);
+  }
+  100%{
+    transform: translateX(-75vw);
+  }
+}
+.navbar-side-div{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: var(--bg-color-less);
+  z-index: 10000;
+  gap: 20px;
+  flex-direction: column;
+}
+.navbar-fa-div{
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--bg-color);
+}
+.navbar-fa-div i{
+  position: absolute;
+  right: 10px;
+  top: 25px;
+  color: var(--bg-2);
+}
+.navbar-side-div > div{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.navbar-side-div a{
+  text-decoration: none;
+  color: var(--text-color);
+  height: 100%;
+  width: 90%;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+}
+
+.my-navbar-div{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row;
+  box-shadow: 0px 1px 12px 0.1px var(--nav-footer-shadow);
+  background: linear-gradient(160deg, var(--bg-color),var(--nav-bg-color));
+}
+.website-logo-div{
+  width: min-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1%;
+  margin-left: 1%;
+}
+.nav-items-div{
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  position: relative;
+  top: 1px;
+}
+.nav-items-div a{
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  color: rgb(157, 157, 157);
+  font-weight: 400;
+  &:hover{
+    color: var(--text-color);
+  }
+}
+.nav-items-div > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+}
+.nav-items-div > div > div{
+  height: 3px;
+  width: 100%;
+  border-radius: 50px;
+  background-color: transparent;
 }
 .light-dark-div{
-    height: fit-content;
-    width: fit-content;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    border-radius: 50%;
-    position: relative;
-    bottom: 2px;
+  height: fit-content;
+  width: fit-content;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  margin-left: 25px;
 }
 .light-mode-svg, .dark-mode-svg{
-    border-radius: 50%;
-    margin: 5px;
-    height: 15px;
-    aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  margin: 5px;
+  height: 15px;
+  aspect-ratio: 1 / 1;
 }
-.nav-items{
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    width: 100%;
+.hamburger-div{
+  color: var(--bg-1);
+  display: none;
 }
-.nav-items a{
-    cursor: pointer;
+.blur{
+    animation: my-blur 0.6s 1 forwards;
+  }
+  @keyframes my-blur{
+    from{
+      filter: blur(0px);
+    }
+    to{
+      filter: blur(2px);
+    }
+  }
+  .blur-rev{
+    animation: my-blur-rev 0.6s 1 forwards;
+  }
+  @keyframes my-blur-rev{
+    from{
+      filter: blur(2px);
+    }
+    to{
+      filter: blur(0px);
+    }
+  }
+.login{
+      border-bottom: 3px solid var(--bg-1);
+      text-align: center;
+      margin-left: auto;
 }
-.nav-side-item{
-    display: flex;
-    margin-left: auto;
+.login a { 
+    padding: 6px 15px;
+    transition: none;
 }
 .signup{
     background-color: var(--bg-1);
-    border-radius: 25px;
-    padding: 0px 20px;
+    border-radius: 50px;
     text-align: center;
+    margin-right: 10px;
 }
-.login{
-    border-bottom: 3px solid var(--bg-1);
-    padding: 0px 15px;
-    text-align: center;
-    margin-left: auto;
+.signup a{
+    padding: 7px 20px;
+    height: 100%;
+    width: 100%;
 }
-.login > a {
-    color: var(--text-color) !important;
-}
-.signup > a {
-    color: white !important;
-}
+/*  Profile CSS starts  */
 .dropdown-profile-div{
     margin-left: auto;
+    margin-right: 8px;
     cursor: pointer;
 }
 .profile{
@@ -239,7 +357,6 @@ body{
     flex-direction: column;
     align-items: flex-start;
     cursor:default;
-    z-index: 100;
 }
 .profile-image-name-div{
     height: fit-content;
@@ -310,6 +427,23 @@ body{
     letter-spacing: 0.5px;
     color: var(--dropdown-text-color);
     background-color: var(--dropdown-bg-color);
+}
+.profile-dropdown{
+    background-color: var(--bg-color) !important;
+}
+.profile-dropdown a{
+    color: rgb(157, 157, 157) !important;
+    &:hover{
+        color: var(--text-color) !important;
+        background-color: var(--bg-color);
+    }
+}
+/*  Profile CSS ends  */
+.login > a{
+    color: var(--text-color) !important;
+}
+.signup > a {
+    color: white !important;
 }
                                                                    /*  <main> Form Starts  */
 .total-div{
@@ -1279,9 +1413,6 @@ option {
     .schedule-and-duration-div-2-calendar{
         width: 200px;
     }
-    /* .choose-template-div-1-under > div, .choose-template-div-2-under > div, .choose-template-div-3-under > div{
-        display: block;
-    } */
 }
 @media only screen and (max-width: 991px) { /*  This is only for Poll Chart Div Responsiveness  */
     .admin-box{
@@ -1312,6 +1443,77 @@ option {
         top: 8px;
     }
 }
+@media only screen and (max-width: 480px) {
+    .login {
+        display: none;
+    }
+    .signup{
+        margin-left: auto;
+    }
+}
+@media (min-width:481px) and (max-width: 576px) {
+    .login {
+        display: none;
+    }
+    .signup{
+        margin-left: auto;
+    }
+}
+@media (min-width: 577px) and (max-width: 768px) {
+    .login {
+        display: none;
+    }
+    .signup{
+        margin-left: auto;
+    }
+}
+/*  Navbar Media Quires Start  */
+@media only screen and (max-width: 480px) {
+    .navbar-side-div{
+      width: 75vw;
+    }
+    .nav-items-top{
+      display: none;
+    }
+    .hamburger-div{
+      display: flex;
+    }
+    .light-dark-div{
+      margin-left: 10px;
+      margin-right: 20px;
+    }
+  }
+  @media (min-width:481px) and (max-width: 576px) {
+    .navbar-side-div{
+      width: 60vw;
+    }
+    .nav-items-top{
+      display: none;
+    }
+    .hamburger-div{
+      display: flex;
+    }
+    .light-dark-div{
+        margin-left: 10px;
+        margin-right: 20px;
+    }
+  }
+  
+  @media (min-width: 577px) and (max-width: 768px) {
+    .navbar-side-div{
+      width: 50vw;
+    }
+    .nav-items-top{
+      display: none;
+    }
+    .hamburger-div{
+      display: flex;
+    }
+    .light-dark-div{
+        margin-left: 10px;
+        margin-right: 20px;
+    }
+  }
 /*  Fix the JS of the poll chart preview bar heights  */
 /*  Fix the Publish Immediately checkbox  */
 /*  Make the Date-Time Picker in center for mobile devices  */
