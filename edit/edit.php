@@ -126,32 +126,32 @@
     </header>
     <main>
         <div class="total-div">
-            <div class="edit-profile-div"></div>
-            <h2>Edit Profile</h2>
-            <form id="profile-form">
-                <label>
-                    Name
-                    <input type="text" id="name" placeholder="Enter your full name" required />
-                </label>
-
-                <label>
+            <div class="edit-profile-div">
+                <h2 class="header-text">Edit Profile</h2>
+                <form id="profile-form" class="inputs-form" method="POST">
+                    <label>
+                        Name
+                        <input name="name" type="text" placeholder="Your full name" required spellcheck="false" />
+                    </label>
+                    <label>
                     Bio
-                    <textarea id="bio" placeholder="Tell us about yourself"></textarea>
-                </label>
-
-                <label>
-                    Email
-                    <input type="email" id="email" placeholder="Enter your email" required />
-                </label>
-
-
-                <label>
-                    Phone
-                    <input type="phone" id="avatar" />
-                </label>
-
-                <input type="submit">Save Changes</input>
-            </form>
+                    <textarea name="bio" placeholder="Tell us about yourself"></textarea>
+                    </label>
+                    <label>
+                        Email
+                        <input name="email" type="email"  placeholder="Your email" required />
+                    </label>
+                    <label>
+                        Phone
+                        <input name="phone" type="tel" pattern="[0-9]{10}" id="phone" placeholder="Your phone number"/>
+                    </label>
+                    <label>
+                        Website URL
+                        <input name="website" type="email"  placeholder="Your website URL" />
+                    </label>
+                    <input class="submit-btn" type="submit" value="Save Changes"></input>
+                </form>
+            </div>
         </div>
     </main>
     <footer class="footer">

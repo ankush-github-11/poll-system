@@ -104,34 +104,3 @@ const year = new Date().getFullYear();
 document.querySelector(".footer-bottom p").textContent = `© ${year} Poll Now. All rights reserved.`; 
 
 
-
-
-
-
-const form = document.getElementById("profile-form");
-const previewName = document.getElementById("preview-name");
-const previewEmail = document.getElementById("preview-email");
-const previewBio = document.getElementById("preview-bio");
-const previewImg = document.getElementById("preview-img");
-
-form.addEventListener("input", () => {
-  previewName.textContent = form.name.value;
-  previewEmail.textContent = form.email.value;
-  previewBio.textContent = form.bio.value;
-});
-
-form.avatar.addEventListener("change", (e) => {
-  const file = e.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = () => {
-      previewImg.src = reader.result;
-    };
-    reader.readAsDataURL(file);
-  }
-});
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("Profile saved (mock)!");
-});

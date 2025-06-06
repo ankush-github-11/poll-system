@@ -398,7 +398,49 @@ body{
     padding: clamp(5px, 5vw, 50px);
     padding-top: 100px;
 }
-
+.edit-profile-div{
+  width: 50%;
+  margin: 0 auto;
+}
+.header-text{
+  margin-bottom: 20px;
+}
+.inputs-form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.inputs-form label{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.inputs-form input,
+.inputs-form textarea {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 10px;
+  border: 1px solid var(--box-border);
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.inputs-form input:focus,
+.inputs-form textarea:focus {
+  outline: 1px solid var(--bg-1) !important;
+}
+.submit-btn{
+  margin-top: 18px;
+  color: white !important;
+  background-color: var(--bg-1) !important;
+  border: none !important;
+  font-size: 16px !important;
+  letter-spacing: 0.5px;
+  &:hover{
+    background-color: var(--bg-3) !important;
+  }
+}
                                                                          /*     Footer Starts     */
 .footer {
     background-color: var(--footer-bg-color);
@@ -470,6 +512,9 @@ body{
     .signup{
         margin-left: auto;
     }
+    .edit-profile-div{
+      width: 95%;
+    }
 }
 @media (min-width:481px) and (max-width: 576px) {
     .login {
@@ -478,6 +523,9 @@ body{
     .signup{
         margin-left: auto;
     }
+    .edit-profile-div{
+      width: 85%;
+    }
 }
 @media (min-width: 577px) and (max-width: 768px) {
     .login {
@@ -485,6 +533,14 @@ body{
     }
     .signup{
         margin-left: auto;
+    }
+    .edit-profile-div{
+      width: 75%;
+    }
+}
+@media (min-width: 769px) and (max-width: 991px) {
+    .edit-profile-div{
+      width: 65%;
     }
 }
 @media only screen and (max-width: 480px) {
