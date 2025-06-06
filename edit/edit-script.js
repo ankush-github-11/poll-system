@@ -1,3 +1,6 @@
+if ( window.history.replaceState ) {
+    window.history.replaceState(null, null, window.location.href);
+}
 // Profile Code Starts
 if(document.querySelector(".sessionName").textContent.trim()){
     document.querySelector(".login").classList.add('hidden');
@@ -104,3 +107,8 @@ const year = new Date().getFullYear();
 document.querySelector(".footer-bottom p").textContent = `© ${year} Poll Now. All rights reserved.`; 
 
 
+document.querySelector('.name-input').value = document.querySelector('.sessionName').textContent.trim();
+document.querySelector('.bio-input').value = document.querySelector('.bio').textContent.trim();
+document.querySelector('.email-input').value = document.querySelector('.email').textContent.trim();
+document.querySelector('.phone-input').value = document.querySelector('.phone').textContent.trim();
+document.querySelector('.website-input').value = document.querySelector('.website').textContent.trim();

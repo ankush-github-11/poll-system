@@ -1,3 +1,17 @@
+<?php
+    include "../config/connect.php";
+    if(isset($_SESSION["uid"])) $uid = $_SESSION["uid"];
+    else{
+        include "../error/error.php";
+        exit();
+    }
+    $sql = "select * from users where uid = $uid";
+    $res = mysqli_query($conn, $sql);
+    $arr = [];
+    if($res && mysqli_num_rows($res) > 0){
+        $arr = mysqli_fetch_assoc($res);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +39,30 @@
         <?php
             if(isset($_SESSION["name"]))
                 echo $_SESSION["name"];
+        ?>
+    </div>
+    <div class="bio hidden">
+        <?php
+            if(isset($arr["bio"]))
+                echo $arr["bio"];
+        ?>
+    </div>
+    <div class="email hidden">
+        <?php
+            if(isset($arr["email"]))
+                echo $arr["email"];
+        ?>
+    </div>
+    <div class="phone hidden">
+        <?php
+            if(isset($arr["phone"]))
+                echo $arr["phone"];
+        ?>
+    </div>
+    <div class="email hidden">
+        <?php
+            if(isset($arr["website"]))
+                echo $arr["website"];
         ?>
     </div>
     <header>
@@ -114,7 +152,7 @@
                         </div>
                         <div class="signout-div">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                            <form action="./index.php" method="POST">
+                            <form action="../home/index.php" method="POST">
                                 <button class="sign-out-btn" name="signout" type="submit">Sign Out</button>
                             </form>
                         </div>
@@ -128,28 +166,28 @@
         <div class="total-div">
             <div class="edit-profile-div">
                 <h2 class="header-text">Edit Profile</h2>
-                <form id="profile-form" class="inputs-form" method="POST">
+                <form class="inputs-form" method="POST" action="../profile/profile.php">
                     <label>
                         Name
-                        <input name="name" type="text" placeholder="Your full name" required spellcheck="false" />
+                        <input class="name-input" name="name" type="text" placeholder="Your full name" required spellcheck="false" />
                     </label>
                     <label>
-                    Bio
-                    <textarea name="bio" placeholder="Tell us about yourself"></textarea>
+                        Bio
+                        <textarea class="bio-input" name="bio" placeholder="Tell us about yourself"></textarea>
                     </label>
                     <label>
                         Email
-                        <input name="email" type="email"  placeholder="Your email" required />
+                        <input class="email-input" name="email" type="email"  placeholder="Your email" required />
                     </label>
                     <label>
                         Phone
-                        <input name="phone" type="tel" pattern="[0-9]{10}" id="phone" placeholder="Your phone number"/>
+                        <input class="phone-input" name="phone" type="tel" pattern="[0-9]{10}" id="phone" placeholder="Your phone number"/>
                     </label>
                     <label>
                         Website URL
-                        <input name="website" type="email"  placeholder="Your website URL" />
+                        <input class="website-input" name="website" type="text"  placeholder="Your website URL" />
                     </label>
-                    <input class="submit-btn" type="submit" value="Save Changes"></input>
+                    <input class="submit-btn" name="submit-edit" type="submit" value="Save Changes"></input>
                 </form>
             </div>
         </div>

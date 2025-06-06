@@ -1,6 +1,56 @@
 <?php
     include "../config/connect.php";
     $uid = $_SESSION["uid"];
+    if (isset($_POST["submit-edit"])) {
+        $fields = [];
+        $values = [];
+        if (!empty($_POST["name"])) {
+            $fields[] = "name = ?";
+            $values[] = $_POST["name"];
+        }
+        if (!empty($_POST["bio"])) {
+            $fields[] = "bio = ?";
+            $values[] = $_POST["bio"];
+        }
+        if (!empty($_POST["email"])) {
+            $fields[] = "email = ?";
+            $values[] = $_POST["email"];
+        }
+        if (!empty($_POST["phone"])) {
+            $fields[] = "phone = ?";
+            $values[] = $_POST["phone"];
+        }
+        if (!empty($_POST["website"])) {
+            $fields[] = "website = ?";
+            $values[] = $_POST["website"];
+        }
+        if (empty($fields)) {
+            echo "No fields provided to update.";
+            exit;
+        }
+        $sql = "UPDATE users SET " . implode(", ", $fields) . " WHERE uid = ?";
+        $values[] = $uid;
+
+        $stmt = $conn->prepare($sql);
+
+        if ($stmt === false) {
+            die("Prepare failed: " . $conn->error);
+        }
+
+        // Build types string (all fields are strings except uid which is integer)
+        $types = str_repeat("s", count($values) - 1) . "i";
+
+        // Bind parameters dynamically
+        $stmt->bind_param($types, ...$values);
+
+        if ($stmt->execute()) {
+            echo "Profile updated successfully!";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
+    }
     $sql = "select * from users where uid='$uid'";
     $res = mysqli_query($conn,$sql);
     $row = [];

@@ -1,3 +1,6 @@
+if ( window.history.replaceState ) {
+    window.history.replaceState(null, null, window.location.href);
+}
 // Mode code starts
 const initializeTheme = () => {
     const userPreference = localStorage.getItem('theme'); 

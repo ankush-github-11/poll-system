@@ -14,7 +14,7 @@
     --create-text-1: rgb(255, 0, 85);
     --create-text-2: rgb(255, 155, 155);
     --scrollbar-track: rgb(209, 209, 209);
-    --box-border: #DFE0E1;
+    --box-border: #cfcfcf;
     --box-color: rgb(255, 255, 255);
     --growth-gradient-color: rgb(215, 218, 228);
     --how-it-works-bg-color: rgb(246, 246, 246);
@@ -260,6 +260,7 @@ body{
     transition: none;
 }
 .signup{
+    height: fit-content;
     background-color: var(--bg-1);
     border-radius: 50px;
     text-align: center;
@@ -430,8 +431,14 @@ body{
 .inputs-form textarea:focus {
   outline: 1px solid var(--bg-1) !important;
 }
+.inputs-form input::placeholder,
+.inputs-form textarea::placeholder {
+  color: var(--text-color-less);
+  opacity: 0.85;
+}
 .submit-btn{
   margin-top: 18px;
+  margin-bottom: 60px;
   color: white !important;
   background-color: var(--bg-1) !important;
   border: none !important;
