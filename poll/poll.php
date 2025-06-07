@@ -272,6 +272,7 @@
                                 <a href="../home/index.php" class="btn participants-footer-btn-exit">Exit</a>
                                 <button type="submit" class="btn participants-footer-btn-submit disabled-button">Submit</button>
                             </div>
+                            <div class="login-to-submit hidden">Login/Signup to submit</div>
                         </form>
                     </div>
                 </div>

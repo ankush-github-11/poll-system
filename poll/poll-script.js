@@ -1,5 +1,8 @@
 // UI decisions based on the choice of user
-
+if(!document.querySelector('.sessionUsername').textContent.trim()){
+    document.querySelector('.login-to-submit').classList.remove('hidden');
+    document.querySelector('.login-to-submit').classList.add('flex');
+}
 
                                                                                      // Profile Code Starts
 if(document.querySelector(".sessionName").textContent.trim()){
@@ -134,7 +137,7 @@ document.querySelector('.participant-poll-options-div').addEventListener('click'
         });
         let greenDot = optionDiv.querySelector('.green-dot');
         if (greenDot) greenDot.classList.add('green-dot-bg-add');
-        document.querySelector('.participants-footer-btn-submit').classList.remove('disabled-button');
+        if(document.querySelector('.login-to-submit').classList.contains('hidden')) document.querySelector('.participants-footer-btn-submit').classList.remove('disabled-button');
         document.querySelector('.selected-option').value = optionDiv.textContent.trim();
         // document.querySelector('.voted-pid').value = document.querySelector('.pid').textContent.trim();
     }
