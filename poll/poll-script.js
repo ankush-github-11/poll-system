@@ -55,6 +55,21 @@ for(let i = 0 ; i < optionsArr.length ; i++){
                 `;
     document.querySelector('.participant-poll-options-div').insertAdjacentHTML("beforeend", html);
 }
+function equalizeOptionHeights() {
+    const optionDivs = document.querySelectorAll('.participant-poll-options-div .option-div');
+    optionDivs.forEach(div => div.style.height = 'auto');
+    let maxHeight = 0;
+    optionDivs.forEach(div => {
+        const height = div.offsetHeight;
+        if (height > maxHeight) maxHeight = height;
+    });
+    optionDivs.forEach(div => {
+        div.style.height = `${maxHeight}px`;
+    });
+}
+equalizeOptionHeights();
+window.addEventListener('load', equalizeOptionHeights);
+window.addEventListener('resize', equalizeOptionHeights);
 
 
                                                                                 // Light or Dark Mode JS
@@ -80,6 +95,22 @@ document.querySelector('.light-dark-div').addEventListener('click', function () 
     document.querySelector('.dark-mode-svg').classList.toggle('hidden');
     document.querySelector('.light-mode-svg').classList.toggle('hidden');
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    const themeEl = document.querySelector('.theme');
+    if (themeEl && themeEl.textContent.trim() === 'gradient') {
+        document.querySelectorAll(".option-div").forEach(ele => {
+            const darkcolor = getRandomDarkColor();
+            const lightcolor = getRandomLightColor();
+            const userPreference = localStorage.getItem('theme'); 
+            const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; 
+            const theme = userPreference || systemPreference;
+            if (theme === 'dark'){
+                ele.style.background = `linear-gradient(135deg, ${darkcolor}, ${lightcolor})`;
+            }
+            else{
+                ele.style.background = `linear-gradient(135deg, ${lightcolor}, ${darkcolor})`;
+            }
+        });
+    }
 });
                                                                                     // Dark mode code ends
 
@@ -143,19 +174,44 @@ document.querySelector('.participant-poll-options-div').addEventListener('click'
     }
 });
 // Theme
-
+function getRandomColor() {
+    return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+}
+function getRandomLightColor() {
+    const r = Math.floor(200 + Math.random() * 56);
+    const g = Math.floor(200 + Math.random() * 56);
+    const b = Math.floor(200 + Math.random() * 56);
+    return `rgb(${r}, ${g}, ${b})`;
+}
+function getRandomDarkColor() {
+    const r = Math.floor(Math.random() * 56);
+    const g = Math.floor(Math.random() * 56);
+    const b = Math.floor(Math.random() * 56);
+    return `rgb(${r}, ${g}, ${b})`;
+}
 document.addEventListener("DOMContentLoaded", function () {
     const themeEl = document.querySelector('.theme');
-
-    // Function to generate a random hex color
-    function getRandomColor() {
-        return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
-    }
 
     if (themeEl && themeEl.textContent.trim() === 'colorful') {
         document.querySelectorAll(".option-div").forEach(ele => {
             const randomColor = getRandomColor();
             ele.style.outline = `2px solid ${randomColor}`;
+        });
+    }
+
+    if (themeEl && themeEl.textContent.trim() === 'gradient') {
+        document.querySelectorAll(".option-div").forEach(ele => {
+            const darkcolor = getRandomDarkColor();
+            const lightcolor = getRandomLightColor();
+            const userPreference = localStorage.getItem('theme'); 
+            const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; 
+            const theme = userPreference || systemPreference;
+            if (theme === 'dark'){
+                ele.style.background = `linear-gradient(135deg, ${darkcolor}, ${lightcolor})`;
+            }
+            else{
+                ele.style.background = `linear-gradient(135deg, ${lightcolor}, ${darkcolor})`;
+            }
         });
     }
 });

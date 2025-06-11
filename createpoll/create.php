@@ -290,8 +290,8 @@ include "../config/connect.php";
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input my-radio-btn" type="radio" name="themeOptions"
-                                        id="theme4" value="moderate-bg">
-                                        <label class="form-check-label" for="theme4">Moderate</label>
+                                        id="theme4" value="gradient">
+                                        <label class="form-check-label" for="theme4">Gradient</label>
                                 </div>
                             </div>
                         </div>
