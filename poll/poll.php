@@ -72,6 +72,11 @@
             echo $arr["theme"];
         ?>
     </div>
+    <div class="startDateAndTime hidden">
+        <?php
+            echo $arr["startDateAndTime"];
+        ?>
+    </div>
     <header>
         <!-- Navbar Starts -->
         <nav>
@@ -284,6 +289,15 @@
                         <input type="text" class="hidden voted-pid" name="votedPid">
                     </form>
                 </div>
+            </div>
+        </div>
+        <div class="not-started-yet hidden">
+            <h5 class="center-message">
+                Poll has not started yet.
+            </h5>
+            <div class="countdown-fa-div">
+                <i class="fa-regular fa-hourglass-half"></i>
+                <div id="countdown"></div>
             </div>
         </div>
     </main>

@@ -3,6 +3,45 @@ if(!document.querySelector('.sessionUsername').textContent.trim()){
     document.querySelector('.login-to-submit').classList.remove('hidden');
     document.querySelector('.login-to-submit').classList.add('flex');
 }
+const timeText = document.querySelector('.startDateAndTime').textContent.trim();
+const countdownEl = document.getElementById('countdown');
+
+if (timeText) {
+    const startingTime = new Date(timeText.replace(' ', 'T'));
+    const currentTime = new Date();
+
+    // ✅ Only run if starting time is in the future
+    if (startingTime > currentTime) {
+        document.querySelector('.not-started-yet').classList.remove('hidden');
+        document.querySelector('.not-started-yet').classList.add('flex');
+
+        const updateCountdown = () => {
+            const now = new Date();
+            const diffMs = startingTime - now;
+
+            if (diffMs <= 0) {
+                countdownEl.textContent = "🚀 The event has started!";
+                clearInterval(intervalId);
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+                return;
+            }
+
+            const diffSeconds = Math.floor(diffMs / 1000);
+            const days = Math.floor(diffSeconds / (3600 * 24));
+            const hours = Math.floor((diffSeconds % (3600 * 24)) / 3600);
+            const minutes = Math.floor((diffSeconds % 3600) / 60);
+            const seconds = diffSeconds % 60;
+
+            countdownEl.textContent = `Starts in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        };
+
+        updateCountdown(); // initial call
+        const intervalId = setInterval(updateCountdown, 1000);
+    }
+}
+
 
                                                                                      // Profile Code Starts
 if(document.querySelector(".sessionName").textContent.trim()){
