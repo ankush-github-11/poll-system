@@ -162,7 +162,7 @@ if(isset($_POST["createpoll"])){
                         <form action="./index.php" method="POST">
                             <input type="submit" class="btn createpoll" value="Create Poll" name="createpoll"/>
                         </form>
-                        <button type="button" class="btn demo">Demo</button>
+                        <a href="../viewpolls/viewpolls.php" type="button" class="btn demo">View Polls</a>
                     </div>
                     <!-- <div class="swing-container no-select">
                         <img class="swing-image" src="../images/swing-1.png" alt="Swinging Image" draggable="false">

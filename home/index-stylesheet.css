@@ -646,18 +646,10 @@ body{
     align-items: center;
     text-align: left;
     border-radius: 10px;
-    clip-path: path("M 0,175 A 25,25 0,0,1 25,150 L 275,150 A 25,25 0,0,0 300,125 L 300,100 A 25,25 0,0,1 325,75 L 575,75 A 25,25 0,0,0 600,50 L 600,25 A 25,25 0,0,1 625,0 L 875,0 A 25,25 0,0,1 900,25 L 900,275 A 25,25 0,0,1 875,300 L 625,300 A 25,25 0,0,0 600,325 L 600,350 A 25,25 0,0,1 575,375 L 325,375 A 25,25 0,0,0 300,400 L 300,425 A 25,25 0,0,1 275,450 L 25,450 A 25,25 0,0,1 0,425 Z");
 }
+
 .side-box-4 div{
     color: var(--text-color);
-}
-.my-fa-1{
-    position: relative;
-    top: 75px;
-}
-.my-fa-3{
-    position: relative;
-    bottom: 75px;
 }
 .my-fa-1, .my-fa-2, .my-fa-3{
     background: linear-gradient(135deg, var(--growth-gradient-color), var(--bg-color)) !important;
@@ -1109,6 +1101,19 @@ body{
         padding-top: 30px;
         padding-bottom: 30px;
         width: 100%;
+    }
+}
+@media only screen and (min-width: 1097px) { /*  This is only for Growth Overview Div Responsiveness  */
+    .side-box-4{
+        clip-path: path("M 0,175 A 25,25 0,0,1 25,150 L 275,150 A 25,25 0,0,0 300,125 L 300,100 A 25,25 0,0,1 325,75 L 575,75 A 25,25 0,0,0 600,50 L 600,25 A 25,25 0,0,1 625,0 L 875,0 A 25,25 0,0,1 900,25 L 900,275 A 25,25 0,0,1 875,300 L 625,300 A 25,25 0,0,0 600,325 L 600,350 A 25,25 0,0,1 575,375 L 325,375 A 25,25 0,0,0 300,400 L 300,425 A 25,25 0,0,1 275,450 L 25,450 A 25,25 0,0,1 0,425 Z");
+    }
+    .my-fa-1{
+        position: relative;
+        top: 75px;
+    }
+    .my-fa-3{
+        position: relative;
+        bottom: 75px;
     }
 }
 /*  Navbar Media Quires Start  */
