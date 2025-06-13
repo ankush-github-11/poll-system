@@ -1,4 +1,4 @@
- // Profile Code Starts
+// Profile Code Starts
 if(document.querySelector(".sessionName").textContent.trim()){
     document.querySelector(".login").classList.add('hidden');
     document.querySelector(".signup").classList.add('hidden');
@@ -30,8 +30,9 @@ document.querySelector('.signout-div').addEventListener('mouseenter', () => {
 document.querySelector('.signout-div').addEventListener('mouseleave', () => {
     document.querySelector('.sign-out-btn').style.backgroundColor = "var(--dropdown-bg-color)";
 });
-// Profile Code Ends 
-                                                                            // Light or Dark Mode JS
+// Profile Code Ends
+
+                                                                                // Light or Dark Mode JS
 const initializeTheme = () => {
     const userPreference = localStorage.getItem('theme'); 
     const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; 
@@ -102,76 +103,3 @@ document.querySelectorAll('.nav-items-div a').forEach((navItem, index) => {
                                                                                         // Navbar code ends
 const year = new Date().getFullYear();
 document.querySelector(".footer-bottom p").textContent = `© ${year} Poll Now. All rights reserved.`; 
-
-
-const array1 = ['C', 'C++', 'Java', 'Python', 'Javascript', 'C#', 'PHP', 'Ruby', 'Go', 'Rust', 'HTML', 'Assembly', 'R', 'Swift', 'Kotlin'];
-const array2 = ['Summer', 'Monsoon', 'Fall', 'Winter', 'Spring'];
-const array3 = ['Smartphone', 'Laptop', 'Smartwatch', 'Tablet'];
-
-let optionsArray = [];
-const val = document.querySelector('.view').dataset.value;
-if (val == 1){
-    optionsArray = array1;
-    document.querySelector('.head-1').classList.remove('hidden');
-    document.querySelector('.head-2').classList.add('hidden');
-    document.querySelector('.head-3').classList.add('hidden');
-}
-if (val == 2){
-    optionsArray = array2;
-    document.querySelector('.head-1').classList.add('hidden');
-    document.querySelector('.head-2').classList.remove('hidden');
-    document.querySelector('.head-3').classList.add('hidden');
-    
-}
-if (val == 3){
-    optionsArray = array3;
-    document.querySelector('.head-1').classList.add('hidden');
-    document.querySelector('.head-2').classList.add('hidden');
-    document.querySelector('.head-3').classList.remove('hidden');
-
-}
-
-
-const arr = document.querySelector('.view-array').value.trim().split(" ").map(Number);
-
-let sum = 0;
-let maxi = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-if(sum == 0){
-    for (let i = 0; i < arr.length; i++) {
-        arr[i] = 0;
-        if(arr[i] > maxi) maxi = arr[i];
-    }
-}
-else{
-    // convert to percentage (or fraction of 100 width)
-    for (let i = 0; i < arr.length; i++) {
-        arr[i] = (arr[i] / sum) * 100;
-        if(arr[i] > maxi) maxi = arr[i];
-    }
-}
-
-for (let i = 0; i < arr.length; i++) {
-    let val = arr[i].toFixed(1);
-    const html = `
-        <div class="poll-display-box">
-            <div class="option-and-percent">
-            <div class="poll-option">${optionsArray[i]}</div>
-            <div class="percent">${val}%</div>
-            </div>
-            <div class="poll-display-percent"></div>
-        </div>
-    `;
-    document.querySelector('.left-div').insertAdjacentHTML("beforeend", html);
-
-    const container = document.querySelector(".left-div");
-    const lastChild = container.lastElementChild;
-    const percentBar = lastChild.querySelector('.poll-display-percent');
-    const percentText = lastChild.querySelector('.percent');
-    percentBar.style.width = `${arr[i]}%`;
-    if(arr[i] == maxi && sum != 0){
-        percentText.style.color = "rgb(17, 108, 255)";
-    }
-}
