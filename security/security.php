@@ -42,7 +42,7 @@
                     <a draggable="false" class="nav-side-item-3" href="../viewpolls/viewpolls.php">View Polls</a>
                 </div>
                 <div class="nav-side-item-4-div">
-                    <a draggable="false" class="nav-side-item-4" href="">Security</a>
+                    <a draggable="false" class="nav-side-item-4" href="../security/security.php">Security</a>
                 </div>
             </div>
             <div class="my-navbar-div fixed-top">
@@ -66,7 +66,7 @@
                             <div class="nav-item-3-hover-div"></div>
                         </div>
                         <div class="nav-item-4-div">
-                            <a draggable="false" class="nav-item-4" href="">Security</a>
+                            <a draggable="false" class="nav-item-4" href="../security/security.php">Security</a>
                             <div class="nav-item-4-hover-div"></div>
                         </div>
                     </div>
