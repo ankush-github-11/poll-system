@@ -3,7 +3,11 @@ if(!document.querySelector('.sessionUsername').textContent.trim()){
     document.querySelector('.login-to-submit').classList.remove('hidden');
     document.querySelector('.login-to-submit').classList.add('flex');
 }
-const timeText = document.querySelector('.startDateAndTime').textContent.trim();
+let timeText = document.querySelector('.startDateAndTime').textContent.trim();
+if (timeText.toLowerCase() === 'no') {
+    const fallbackTime = document.querySelector('.timeCreated').textContent.trim();
+    timeText = fallbackTime.slice(0, 16);
+}
 const countdownEl = document.getElementById('countdown');
 if (timeText) {
     const startingTime = new Date(timeText.replace(' ', 'T'));
@@ -27,34 +31,30 @@ if (timeText) {
             const hours = Math.floor((diffSeconds % (3600 * 24)) / 3600);
             const minutes = Math.floor((diffSeconds % 3600) / 60);
             const seconds = diffSeconds % 60;
-
             countdownEl.textContent = `Starts in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
         };
         updateCountdown();
         const intervalId = setInterval(updateCountdown, 1000);
     }
 }
-
 const durationText = document.querySelector('.duration').textContent.trim();
-const startingTime = new Date(timeText.replace(' ', 'T'));
-
-const [numStr, unit] = durationText.split(' ');
-const n = parseInt(numStr, 10);
-
-let deltaMs = 0;
-if (unit.startsWith('Hour')) {
-  deltaMs = n * 60 * 60 * 1000;
-} else if (unit.startsWith('Day')) {
-  deltaMs = n * 24 * 60 * 60 * 1000;
-} else {
-  console.error('Unsupported duration:', durationText);
+if(durationText !== "Infinite Time"){
+    const startingTime = new Date(timeText.replace(' ', 'T'));
+    const [numStr, unit] = durationText.split(' ');
+    const n = parseInt(numStr, 10);
+    let deltaMs = 0;
+    if (unit.startsWith('Hour')) {
+    deltaMs = n * 60 * 60 * 1000;
+    }
+    else if (unit.startsWith('Day')) {
+        deltaMs = n * 24 * 60 * 60 * 1000;
+    }
+    const endingTime = new Date(startingTime.getTime() + deltaMs);
+    if (Date.now() > endingTime.getTime()) {
+        document.querySelector(".ended").classList.remove("hidden");
+        document.querySelector(".ended").classList.toggle("flex");
+    }
 }
-const endingTime = new Date(startingTime.getTime() + deltaMs);
-if (Date.now() > endingTime.getTime()) {
-  document.querySelector(".ended").classList.remove("hidden");
-  document.querySelector(".ended").classList.toggle("flex");
-}
-
                                                                                      // Profile Code Starts
 if(document.querySelector(".sessionName").textContent.trim()){
     document.querySelector(".login").classList.add('hidden');

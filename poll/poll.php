@@ -82,6 +82,11 @@
             echo $arr["duration"];
         ?>
     </div>
+    <div class="timeCreated hidden">
+        <?php
+            echo $arr["timeCreated"];
+        ?>
+    </div>
     <header>
         <!-- Navbar Starts -->
         <nav>
