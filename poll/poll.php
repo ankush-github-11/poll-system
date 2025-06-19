@@ -77,6 +77,11 @@
             echo $arr["startDateAndTime"];
         ?>
     </div>
+    <div class="duration hidden">
+        <?php
+            echo $arr["duration"];
+        ?>
+    </div>
     <header>
         <!-- Navbar Starts -->
         <nav>
@@ -296,8 +301,16 @@
                 Poll has not started yet.
             </h5>
             <div class="countdown-fa-div">
-                <i class="fa-regular fa-hourglass-half"></i>
+                <i class="my-fa fa-solid fa-hourglass-start"></i>
                 <div id="countdown"></div>
+            </div>
+        </div>
+        <div class="ended hidden">
+            <h5 class="center-message">
+                Poll has ended.
+            </h5>
+            <div class="countdown-fa-div">
+                <i class="my-fa fa-solid fa-hourglass-end"></i>
             </div>
         </div>
     </main>

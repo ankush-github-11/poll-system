@@ -14,7 +14,6 @@ if (timeText) {
         const updateCountdown = () => {
             const now = new Date();
             const diffMs = startingTime - now;
-
             if (diffMs <= 0) {
                 countdownEl.textContent = "The event has started!";
                 clearInterval(intervalId);
@@ -35,6 +34,27 @@ if (timeText) {
         const intervalId = setInterval(updateCountdown, 1000);
     }
 }
+
+const durationText = document.querySelector('.duration').textContent.trim();
+const startingTime = new Date(timeText.replace(' ', 'T'));
+
+const [numStr, unit] = durationText.split(' ');
+const n = parseInt(numStr, 10);
+
+let deltaMs = 0;
+if (unit.startsWith('Hour')) {
+  deltaMs = n * 60 * 60 * 1000;
+} else if (unit.startsWith('Day')) {
+  deltaMs = n * 24 * 60 * 60 * 1000;
+} else {
+  console.error('Unsupported duration:', durationText);
+}
+const endingTime = new Date(startingTime.getTime() + deltaMs);
+if (Date.now() > endingTime.getTime()) {
+  document.querySelector(".ended").classList.remove("hidden");
+  document.querySelector(".ended").classList.toggle("flex");
+}
+
                                                                                      // Profile Code Starts
 if(document.querySelector(".sessionName").textContent.trim()){
     document.querySelector(".login").classList.add('hidden');
