@@ -77,6 +77,9 @@
     <title>Profile</title>
 </head>
 <body>
+    <div class="no-select popup-screen hidden">
+        <div class="popup-1 hidden">Thanks for Messaging Us!</div>
+    </div>
     <div class="sessionUsername hidden">
         <?php
             if(isset($_SESSION["username"]))
@@ -90,6 +93,16 @@
         <?php
             if(isset($_SESSION["name"]))
                 echo htmlspecialchars($_SESSION["name"]);
+        ?>
+    </div>
+    <div class="message-div">
+        <?php
+            if(isset($_POST["message-submit"])){
+                $message = $_POST["message"];
+                $sql = "insert into messages set uid = '$uid', message = '$message'";
+                $res = mysqli_query($conn,$sql);
+                echo "Message Sent";
+            }
         ?>
     </div>
     <header>
@@ -589,8 +602,10 @@
                 </div>
                 <div class="right-div-3 hidden">
                     <div class="send-a-message-div">Send a message to us!</div>
-                    <textarea class="textarea" rows="8" required></textarea>
-                    <button class="send-btn">Send</button>
+                    <form class="send-message-div" action="" method="POST">
+                        <textarea class="textarea" rows="8" required name="message"></textarea>
+                        <input type="submit" value="Send" class="send-btn" name="message-submit">
+                    </form>
                 </div>
                 <div class="right-div-4 hidden">
                     <form action=""></form>

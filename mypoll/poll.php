@@ -100,7 +100,7 @@
     <link rel="stylesheet" href="poll-stylesheet.css">
 </head>
 <body class="">
-    <div class=" no-select popup-screen hidden">
+    <div class="no-select popup-screen hidden">
         <div class="popup-1 hidden">Copied to Clipboard</div>
     </div>
     <div class="total-div">
