@@ -98,8 +98,9 @@
     <div class="message-div">
         <?php
             if(isset($_POST["message-submit"])){
+                $username = $_SESSION["username"];
                 $message = $_POST["message"];
-                $sql = "insert into messages set uid = '$uid', message = '$message'";
+                $sql = "insert into messages set username = '$username', message = '$message'";
                 $res = mysqli_query($conn,$sql);
                 echo "Message Sent";
             }
@@ -602,7 +603,7 @@
                 </div>
                 <div class="right-div-3 hidden">
                     <div class="send-a-message-div">Send a message to us!</div>
-                    <form class="send-message-div" action="" method="POST">
+                    <form class="send-message-div" action="./profile.php" method="POST">
                         <textarea class="textarea" rows="8" required name="message"></textarea>
                         <input type="submit" value="Send" class="send-btn" name="message-submit">
                     </form>

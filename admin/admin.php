@@ -49,6 +49,11 @@ include "../config/connect.php";
                         <div class="option-2-val"></div>
                         <div class="option-2-line"></div>
                     </div>
+                    <div class="option-3">
+                        <div class="option-3-text">Total Messages</div>
+                        <div class="option-3-val"></div>
+                        <div class="option-3-line"></div>
+                    </div>
                 </div>
                 <div class="horizontal-line"></div>
                 <div class="total-users-content hidden">
@@ -89,6 +94,21 @@ include "../config/connect.php";
                     }
                     ?>
                 </div>
+                <div class="total-messages-content hidden">
+                    <?php
+                    $sql = "select username, message from messages";
+                    $res = mysqli_query($conn, $sql);
+                    $arr = [];
+                    if ($res && mysqli_num_rows($res) > 0) {
+                        while ($row = mysqli_fetch_assoc($res)) {
+                            echo
+                            $row["username"] . "<-/*756-=-=>"
+                                . $row["message"];
+                            echo "<(&*#$*-)>";
+                        }
+                    }
+                    ?>
+                </div>
                 <div class="total-users">
                     <div class="total-users-row">
                         <div class="div-11">Sl No.</div>
@@ -109,6 +129,13 @@ include "../config/connect.php";
                         <div class="div-15">Results After</div>
                         <div class="div-16">Creation Time</div>
                         <div class="div-17">Duration</div>
+                    </div>
+                </div>
+                <div class="total-messages hidden">
+                    <div class="total-messages-row">
+                        <div class="div-11">Sl No.</div>
+                        <div class="div-12">Username</div>
+                        <div class="div-13">Message</div>
                     </div>
                 </div>
             </div>

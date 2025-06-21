@@ -119,6 +119,9 @@ body {
     height: fit-content;
     width: 100%;
     padding: 20px;
+      overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 .three-option-div{
     height: fit-content;
@@ -130,7 +133,7 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
-.option-1, .option-2{
+.option-1, .option-2, .option-3{
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -139,7 +142,7 @@ body {
     gap: 5px;
     cursor: pointer;
 }
-.option-1-line, .option-2-line{
+.option-1-line, .option-2-line, .option-3-line{
     height: 4px;
 }
 .my-line{
@@ -147,11 +150,11 @@ body {
     background: linear-gradient(155deg, var(--bg-1), var(--bg-2));
     border-radius: 50px;
 }
-.option-1-text, .option-2-text{
+.option-1-text, .option-2-text, .option-3-text{
     font-size: 20px;
     font-weight: 500;
 }
-.option-1-val, .option-2-val{
+.option-1-val, .option-2-val, .option-3-val{
     font-size: 30px;
     font-weight: 600;
 }
@@ -215,16 +218,6 @@ body {
 .total-polls :first-child > div {
     font-weight: 600;
 }
-
-
-/* .div-11{
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-}
-.div-17{
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-} */
 .total-polls{
     height: fit-content;
     width: 100%;
@@ -233,4 +226,31 @@ body {
     height: fit-content;
     width: 100%;
 }
+.total-messages{
+    height: fit-content;
+    width: 100%;
+}
+.total-messages-row{
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 2.8fr 10fr;
+    border-radius: 10px;
+}
+.total-messages-row > div{
+    padding: 12px 7px;
+    height: 100%;
+    width: 100%;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
+.total-messages :first-child > div {
+    font-weight: 600;
+}
 /*  Add border radius to the parent div of the table  */
+/*  Add a X axis scroll bar and dont shrink the width of each column in the mobile view  */
