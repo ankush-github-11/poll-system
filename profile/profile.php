@@ -161,6 +161,20 @@
     </header>
     <main>
         <div class="total-div">
+            <div class="top-nav-div">
+                <div class="dashboard-div active-div">
+                    <i class="my-fa fa-solid fa-address-card"></i>
+                </div>
+                <div class="help-faq-div">
+                    <i class="my-fa fa-solid fa-circle-question"></i>
+                </div>
+                <div class="messages-and-support-div">
+                    <i class="my-fa fa-solid fa-message"></i>
+                </div>
+                <div class="report-a-bug-div">
+                    <i class="my-fa fa-solid fa-bug"></i>
+                </div>
+            </div>
             <div class="main-div">
                 <div class="left-div">
                     <div class="quick-navigation-div">Quick Navigation</div>
@@ -609,29 +623,30 @@
                     </form>
                 </div>
                 <div class="right-div-4 hidden">
-                    <form action=""></form>
                     <div class="report-bug-div">Report a Bug</div>
                     <div class="find-issue-div">Found an issue? Help us improve by reporting it!</div>
-                    <div class="input-group flex-nowrap">
-                        <span class="input-group-text" id="addon-wrapping">Bug Title</span>
-                        <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+                    <form action="" class="bug-form">
+                        <div class="flex-nowrap">
+                            <div class="input-group-text-first" id="addon-wrapping">Bug Title</div>
+                            <input required type="text" class="form-input" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+                        </div>
+                        <div class="flex-nowrap bug-description-div">
+                            <div class="input-group-text-first" id="addon-wrapping">Bug Description</div>
+                            <textarea required type="text" class="form-textarea" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" rows="3"></textarea>
+                        </div>
+                        <div class="input-group-options mb-3">
+                            <label class="input-group-text">Bug Category</label>
+                            <select class="form-select">
+                                <option value="1">UI/UX Issue</option>
+                                <option value="2">Functional Bug</option>
+                                <option value="3">Performance Issue</option>
+                                <option value="4">Security Issue</option>
+                                <option value="5">Other</option>
+                            </select>
+                        </div>
+                        <input type="submit" name="bug-submit" class="submit-btn">
                     </div>
-                    <div class="input-group flex-nowrap bug-description-div">
-                        <span class="input-group-text" id="addon-wrapping">Bug Description</span>
-                        <textarea type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" rows="3"></textarea>
-                    </div>
-                    <div class="input-group mb-3">
-                        <label class="input-group-text" for="inputGroupSelect01">Bug Category</label>
-                        <select class="form-select" id="inputGroupSelect01">
-                            <option value="1">UI/UX Issue</option>
-                            <option value="2">Functional Bug</option>
-                            <option value="3">Performance Issue</option>
-                            <option value="4">Security Issue</option>
-                            <option value="5">Other</option>
-                        </select>
-                    </div>
-                    <button class="submit-btn">Send</button>
-                </div>
+                </form>
             </div>
         </div>
     </main>

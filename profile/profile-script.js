@@ -61,40 +61,71 @@ const hideDiv4 = function(){
     document.querySelector('.report-a-bug-div').classList.remove('active-div');
     document.querySelector('.right-div-4').classList.add('hidden');
 }
-document.querySelector('.left-div').addEventListener('click', function(e){
-    if(e.target.classList[0]=="dashboard-div" && !document.querySelector('.dashboard-div').classList.contains('active-div')){
-        hideDiv2();
-        hideDiv3();
-        hideDiv4();
-        document.querySelector('.right-div-1').classList.remove('hidden');
-        document.querySelector('.right-div-1').classList.add('flex');
-        document.querySelector('.dashboard-div').classList.add('active-div');
-    }
-    if(e.target.classList[0]=="help-faq-div" && !document.querySelector('.help-faq-div').classList.contains('active-div')){
-        hideDiv1();
-        hideDiv3();
-        hideDiv4();
-        document.querySelector('.right-div-2').classList.remove('hidden');
-        document.querySelector('.right-div-2').classList.add('flex');
-        document.querySelector('.help-faq-div').classList.add('active-div');
-    }
-    if(e.target.classList[0]=="messages-and-support-div" && !document.querySelector('.messages-and-support-div').classList.contains('active-div')){
-        hideDiv1();
-        hideDiv2();
-        hideDiv4();
-        document.querySelector('.right-div-3').classList.remove('hidden');
-        document.querySelector('.right-div-3').classList.add('flex');
-        document.querySelector('.messages-and-support-div').classList.add('active-div');
-    }
-    if(e.target.classList[0]=="report-a-bug-div" && !document.querySelector('.report-a-bug-div').classList.contains('active-div')){
-        hideDiv1();
-        hideDiv2();
-        hideDiv3();
-        document.querySelector('.right-div-4').classList.remove('hidden');
-        document.querySelector('.right-div-4').classList.add('flex');
-        document.querySelector('.report-a-bug-div').classList.add('active-div');
-    }
+const togglingDivs1 = function(paneSelector, navItem){
+  document.querySelectorAll('.' + navItem).forEach((ele) => {
+    ele.classList.add('active-div');
+  });
+  document.querySelector(paneSelector).classList.remove('hidden');
+  document.querySelector(paneSelector).classList.add('flex');
+}
+const togglingDivs2 = function(paneSelector, navItem){
+  document.querySelectorAll('.' + navItem).forEach((ele) => {
+    ele.classList.add('active-div');
+  });
+  document.querySelector(paneSelector).classList.remove('hidden');
+  document.querySelector(paneSelector).classList.add('flex');
+}
+document.querySelector('.left-div').addEventListener('click', function(e) {
+  const navItem = e.target.closest('.dashboard-div, .help-faq-div, .messages-and-support-div, .report-a-bug-div');
+  if (!navItem) return;
+  if (navItem.classList.contains('active-div')) return;
+  hideDiv1(); hideDiv2(); hideDiv3(); hideDiv4();
+  document.querySelectorAll('.left-div > div').forEach(el => el.classList.remove('active-div'));
+  document.querySelectorAll('.top-nav-div > div').forEach(el => el.classList.remove('active-div'));
+  let paneSelector;
+  if (navItem.classList.contains('dashboard-div')) {
+    paneSelector = '.right-div-1';
+  }
+  else if (navItem.classList.contains('help-faq-div')) {
+    paneSelector = '.right-div-2';
+  }
+  else if (navItem.classList.contains('messages-and-support-div')) {
+    paneSelector = '.right-div-3';
+  }
+  else {
+    paneSelector = '.right-div-4';
+  }
+  document.querySelector(paneSelector).classList.remove('hidden');
+  document.querySelector(paneSelector).classList.add('flex');
+  navItem.classList.add('active-div');
+  togglingDivs1(paneSelector, navItem.classList[0]);
 });
+document.querySelector('.top-nav-div').addEventListener('click', function(e) {
+  const navItem = e.target.closest('.dashboard-div, .help-faq-div, .messages-and-support-div, .report-a-bug-div');
+  if (!navItem) return;
+  if (navItem.classList.contains('active-div')) return;
+  hideDiv1(); hideDiv2(); hideDiv3(); hideDiv4();
+  document.querySelectorAll('.top-nav-div > div').forEach(el => el.classList.remove('active-div'));
+  document.querySelectorAll('.left-div > div').forEach(el => el.classList.remove('active-div'));
+  let paneSelector;
+  if (navItem.classList.contains('dashboard-div')) {
+    paneSelector = '.right-div-1';
+  }
+  else if (navItem.classList.contains('help-faq-div')) {
+    paneSelector = '.right-div-2';
+  }
+  else if (navItem.classList.contains('messages-and-support-div')) {
+    paneSelector = '.right-div-3';
+  }
+  else {
+    paneSelector = '.right-div-4';
+  }
+  document.querySelector(paneSelector).classList.remove('hidden');
+  document.querySelector(paneSelector).classList.add('flex');
+  navItem.classList.add('active-div');
+  togglingDivs1(paneSelector, navItem.classList[0]);
+});
+
                                                                                         // Navbar code starts
 document.querySelector('.hamburger-div').addEventListener("click", function(){
     document.querySelector('.navbar-side-div').classList.remove('slide-animation-rev');

@@ -16,6 +16,8 @@
   --footer-color-contacts: rgb(75, 75, 75);
   --footer-bar: rgb(212, 212, 212);
 
+  --i-color: var(--bg-3);
+  
 }
 .darkmode{
   --bg-1: rgb(255, 0, 85);
@@ -30,11 +32,12 @@
   --nav-bg-color: rgb(0, 0, 16);
   --hover-color: rgb(41, 40, 56);
   --border-color: rgb(74, 74, 74);
-
+  
   --footer-bg-color: #071b29;
   --footer-color-contacts: rgb(200, 200, 200);
   --footer-bar: rgb(54, 54, 54);
-
+  
+  --i-color: var(--bg-2);
 }
 ::-webkit-scrollbar {
   width: 8px;
@@ -328,7 +331,10 @@ body{
   }
 }
 .left-div i{
-  color: var(--text-color);
+  color: var(--i-color);
+}
+.top-nav-div i{
+  color: var(--i-color);
 }
 
 .active-div{
@@ -337,6 +343,26 @@ body{
     outline: 0;
   }
 }
+.top-nav-div {
+  height: fit-content;
+  width: fit-content;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+}
+.top-nav-div > div{
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+}
+
 
                                                                       /*  Right Div 1 starts  */
 
@@ -721,7 +747,7 @@ button:hover a {
   border: 2px solid var(--border-color);
   color: var(--text-color);
   border-radius: 12px;
-  width: 50%;
+  width: 100%;
   padding: 10px;
   resize: none;
 }
@@ -757,8 +783,38 @@ button:hover a {
   font-size: 16px;
   color: var(--text-color-less);
 }
+.bug-form{
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
 .input-group{
   margin-bottom: 20px;
+}
+.input-group-text-first{
+  width: fit-content;
+  padding: 4px 30px;
+  border: 2px solid var(--border-color);
+  border-bottom: 0px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background-color: var(--bg-color-less);
+  position: relative;
+  left: 8px;
+}
+.form-input, .form-textarea{
+  background-color: var(--bg-color);
+  background-color: var(--bg-color);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  width: 100%;
+  color: var(--text-color);
+  padding: 7px;
+}
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: var(--bg-2);
 }
 .input-group input, .input-group textarea{
   background-color: var(--bg-color) !important;
@@ -771,10 +827,15 @@ button:hover a {
   outline: 2px solid var(--bg-2) !important; 
   border: none !important;
 }
+.input-group-options{
+  display: flex;
+  width: fit-content;
+}
 .input-group-text{
   background-color: var(--bg-color-less) !important;
   color: var(--text-color-less) !important;
   border: 2px solid var(--border-color);
+  width: fit-content;
 }
 .bug-description-div span{
   align-items: flex-start !important;
@@ -887,6 +948,9 @@ button:hover a {
   .left-div{
     display: none;
   }
+  .top-nav-div{
+    display: flex;
+  }
   .main-div{
     grid-template-columns: 1fr;
   }
@@ -939,6 +1003,9 @@ button:hover a {
   .left-div{
     display: none;
   }
+  .top-nav-div{
+    display: flex;
+  }
   .main-div{
     grid-template-columns: 1fr;
   }
@@ -981,6 +1048,9 @@ button:hover a {
   .left-div{
     display: none;
   }
+  .top-nav-div{
+    display: flex;
+  }
   .main-div{
     grid-template-columns: 1fr;
   }
@@ -1008,6 +1078,9 @@ button:hover a {
   }
   .left-div{
     display: none;
+  }
+  .top-nav-div{
+    display: flex;
   }
   .main-div{
     grid-template-columns: 1fr;
