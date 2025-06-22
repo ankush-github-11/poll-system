@@ -106,6 +106,19 @@
             }
         ?>
     </div>
+    <div class="bug-div">
+        <?php
+            if(isset($_POST["bug-submit"])){
+                $username = $_SESSION["username"];
+                $bugTitle = $_POST["bug-title"];
+                $bugDesc = $_POST["bug-desc"];
+                $bugType = $_POST["bug-type"];
+                $sql = "insert into bugs set username = '$username', bugTitle = '$bugTitle', bugDesc = '$bugDesc', bugType = '$bugType'";
+                $res = mysqli_query($conn,$sql);
+                echo "Bug Sent";
+            }
+        ?>
+    </div>
     <header>
         <nav>
             <div class="navbar-side-div slide-animation hidden">
@@ -625,23 +638,23 @@
                 <div class="right-div-4 hidden">
                     <div class="report-bug-div">Report a Bug</div>
                     <div class="find-issue-div">Found an issue? Help us improve by reporting it!</div>
-                    <form action="" class="bug-form">
+                    <form action="./profile.php" method="POST" class="bug-form">
                         <div class="flex-nowrap">
                             <div class="input-group-text-first" id="addon-wrapping">Bug Title</div>
-                            <input required type="text" class="form-input" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+                            <input required autocomplete="off" type="text" class="form-input" name="bug-title">
                         </div>
                         <div class="flex-nowrap bug-description-div">
                             <div class="input-group-text-first" id="addon-wrapping">Bug Description</div>
-                            <textarea required type="text" class="form-textarea" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" rows="3"></textarea>
+                            <textarea required type="text" class="form-textarea" rows="3" name="bug-desc"></textarea>
                         </div>
                         <div class="input-group-options mb-3">
                             <label class="input-group-text">Bug Category</label>
-                            <select class="form-select">
-                                <option value="1">UI/UX Issue</option>
-                                <option value="2">Functional Bug</option>
-                                <option value="3">Performance Issue</option>
-                                <option value="4">Security Issue</option>
-                                <option value="5">Other</option>
+                            <select name="bug-type" class="form-select">
+                                <option value="UI/UX Issue">UI/UX Issue</option>
+                                <option value="Functional Bug">Functional Bug</option>
+                                <option value="Performance Issue">Performance Issue</option>
+                                <option value="Security Issue">Security Issue</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
                         <input type="submit" name="bug-submit" class="submit-btn">
