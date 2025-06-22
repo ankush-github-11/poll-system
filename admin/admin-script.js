@@ -103,31 +103,69 @@ for (let i = 0; i < totalMessages.length; i++) {
 }
 
 
+
+const totalBugs = document.querySelector(".total-bugs-content").textContent.trim().split("<(&*#$*-)>");
+document.querySelector(".option-4-val").textContent = totalBugs.length - 1;
+
+for (let i = 0; i < totalBugs.length; i++) {
+    const arr = totalBugs[i].split("<-/*756-=-=>");
+    const bugRowClass = (i % 2 === 1) ? "my-bg-add" : "";
+    const html = `
+        <div class="total-bugs-row ${bugRowClass}">
+            <div class="div-11">${i + 1}</div>
+            <div class="div-12">${arr[0]}</div>
+            <div class="div-13">${arr[1]}</div>
+            <div class="div-14">${arr[2]}</div>
+            <div class="div-15">${arr[3]}</div>
+        </div>
+    `;
+    document.querySelector('.total-bugs').insertAdjacentHTML("beforeend", html);
+    if (i === totalBugs.length - 2) break;
+}
+
+
 document.querySelector(".three-option-div").addEventListener("click", function(event) {
-    const clickedOption = event.target.closest(".option-1, .option-2, .option-3");
+    const clickedOption = event.target.closest(".option-1, .option-2, .option-3, .option-4");
     if (!clickedOption) return;
     if (clickedOption.classList.contains('option-1')) {
-        document.querySelector(".total-users").classList.remove("hidden");
         document.querySelector(".option-1-line").classList.add("my-line");
         document.querySelector(".option-2-line").classList.remove("my-line");
+        document.querySelector(".option-3-line").classList.remove("my-line");
+        document.querySelector(".option-4-line").classList.remove("my-line");
+        document.querySelector(".total-users").classList.remove("hidden");
         document.querySelector(".total-polls").classList.add("hidden");
         document.querySelector(".total-messages").classList.add("hidden");
-        document.querySelector(".option-3-line").classList.remove("my-line");
+        document.querySelector(".total-bugs").classList.add("hidden");
     }
     else if (clickedOption.classList.contains('option-2')) {
         document.querySelector(".option-1-line").classList.remove("my-line");
-        document.querySelector(".total-users").classList.add("hidden");
-        document.querySelector(".total-polls").classList.remove("hidden");
         document.querySelector(".option-2-line").classList.add("my-line");
         document.querySelector(".option-3-line").classList.remove("my-line");
+        document.querySelector(".option-4-line").classList.remove("my-line");
+        document.querySelector(".total-users").classList.add("hidden");
+        document.querySelector(".total-polls").classList.remove("hidden");
         document.querySelector(".total-messages").classList.add("hidden");
+        document.querySelector(".total-bugs").classList.add("hidden");
     }
     else if (clickedOption.classList.contains('option-3')) {
         document.querySelector(".option-1-line").classList.remove("my-line");
-        document.querySelector(".total-users").classList.add("hidden");
         document.querySelector(".option-2-line").classList.remove("my-line");
+        document.querySelector(".option-3-line").classList.add("my-line");
+        document.querySelector(".option-4-line").classList.remove("my-line");
+        document.querySelector(".total-users").classList.add("hidden");
         document.querySelector(".total-polls").classList.add("hidden");
         document.querySelector(".total-messages").classList.remove("hidden");
-        document.querySelector(".option-3-line").classList.add("my-line");
+        document.querySelector(".total-bugs").classList.add("hidden");
     }
+    else if (clickedOption.classList.contains('option-4')) {
+        document.querySelector(".option-1-line").classList.remove("my-line");
+        document.querySelector(".option-2-line").classList.remove("my-line");
+        document.querySelector(".option-3-line").classList.remove("my-line");
+        document.querySelector(".option-4-line").classList.add("my-line");
+        document.querySelector(".total-users").classList.add("hidden");
+        document.querySelector(".total-polls").classList.add("hidden");
+        document.querySelector(".total-messages").classList.add("hidden");
+        document.querySelector(".total-bugs").classList.remove("hidden");
+    }
+
 });

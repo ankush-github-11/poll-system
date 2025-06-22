@@ -54,6 +54,11 @@ include "../config/connect.php";
                         <div class="option-3-val"></div>
                         <div class="option-3-line"></div>
                     </div>
+                    <div class="option-4">
+                        <div class="option-4-text">Total Bug Reports</div>
+                        <div class="option-4-val"></div>
+                        <div class="option-4-line"></div>
+                    </div>
                 </div>
                 <div class="horizontal-line"></div>
                 <div class="total-users-content hidden">
@@ -109,6 +114,24 @@ include "../config/connect.php";
                     }
                     ?>
                 </div>
+                <div class="total-bugs-content hidden">
+                    <?php
+                    $sql = "select username, bugTitle, bugDesc, bugType from bugs";
+                    $res = mysqli_query($conn, $sql);
+                    $arr = [];
+                    if ($res && mysqli_num_rows($res) > 0) {
+                        while ($row = mysqli_fetch_assoc($res)) {
+                            echo
+                            $row["username"] . "<-/*756-=-=>"
+                                . $row["bugTitle"]."<-/*756-=-=>"
+                                . $row["bugDesc"]."<-/*756-=-=>"
+                                . $row["bugType"]."<-/*756-=-=>"
+                                ;
+                            echo "<(&*#$*-)>";
+                        }
+                    }
+                    ?>
+                </div>
                 <div class="total-users">
                     <div class="total-users-row">
                         <div class="div-11">Sl No.</div>
@@ -136,6 +159,15 @@ include "../config/connect.php";
                         <div class="div-11">Sl No.</div>
                         <div class="div-12">Username</div>
                         <div class="div-13">Message</div>
+                    </div>
+                </div>
+                <div class="total-bugs hidden">
+                    <div class="total-bugs-row">
+                        <div class="div-11">Sl No.</div>
+                        <div class="div-12">Username</div>
+                        <div class="div-13">Bug Title</div>
+                        <div class="div-14">Bug Description</div>
+                        <div class="div-15">Bug Type</div>
                     </div>
                 </div>
             </div>

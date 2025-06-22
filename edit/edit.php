@@ -59,7 +59,7 @@
                 echo $arr["phone"];
         ?>
     </div>
-    <div class="email hidden">
+    <div class="website hidden">
         <?php
             if(isset($arr["website"]))
                 echo $arr["website"];

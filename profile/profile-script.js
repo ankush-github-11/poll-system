@@ -1,7 +1,7 @@
 if ( window.history.replaceState ) {
     window.history.replaceState(null, null, window.location.href);
 }
-const popupScreen = function () {
+const popupScreen1 = function () {
     document.querySelector(".popup-screen").classList.remove("hidden");
     document.querySelector(".popup-screen").classList.add("flex");
     document.querySelector(".popup-1").classList.remove("hidden");
@@ -11,10 +11,25 @@ const popupScreen = function () {
       document.querySelector(".popup-screen").classList.add("hidden");
       document.querySelector(".popup-1").classList.remove("flex");
       document.querySelector(".popup-1").classList.add("hidden");
-    }, 2000);
+    }, 3000);
+};
+const popupScreen2 = function () {
+    document.querySelector(".popup-screen").classList.remove("hidden");
+    document.querySelector(".popup-screen").classList.add("flex");
+    document.querySelector(".popup-2").classList.remove("hidden");
+    document.querySelector(".popup-2").classList.add("flex");
+    setTimeout(() => {
+      document.querySelector(".popup-screen").classList.remove("flex");
+      document.querySelector(".popup-screen").classList.add("hidden");
+      document.querySelector(".popup-2").classList.remove("flex");
+      document.querySelector(".popup-2").classList.add("hidden");
+    }, 3000);
 };
 if(document.querySelector(".message-div").textContent.trim() === "Message Sent"){
-    popupScreen();
+    popupScreen1();
+}
+if(document.querySelector(".bug-div").textContent.trim() === "Bug Sent"){
+    popupScreen2();
 }
 // Mode code starts
 const initializeTheme = () => {
@@ -170,5 +185,7 @@ document.querySelectorAll('.nav-items-div a').forEach((navItem, index) => {
     });
 });
                                                                                         // Navbar code ends
+document.querySelector('.website-right-div').href = document.querySelector('.website-right-div').textContent;
+document.querySelector('.website-right-div').style.color = "rgb(60, 93, 255)";
 const year = new Date().getFullYear();
 document.querySelector(".footer-bottom p").textContent = `© ${year} Poll Now. All rights reserved.`; 

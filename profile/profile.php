@@ -79,6 +79,7 @@
 <body>
     <div class="no-select popup-screen hidden">
         <div class="popup-1 hidden">Thanks for Messaging Us!</div>
+        <div class="popup-2 hidden">Thanks for Reporting a Bug!</div>
     </div>
     <div class="sessionUsername hidden">
         <?php
@@ -361,14 +362,14 @@
                             </div>
                             <div class="website-div">
                                 <div class="website-left-div">Your Website URL</div>
-                                <div class="website-right-div add-js">
+                                <a class="website-right-div add-js">
                                     <?php
                                         if(isset($row['website']))
                                             echo htmlspecialchars($row['website']);
                                         else
                                             echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
                                     ?>
-                                </div>
+                                </a>
                             </div>
                             <!-- <div class="linkedin-div">
                                 <div class="linkedin-left-div">LinkedIn URL</div>
