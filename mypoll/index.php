@@ -1,7 +1,7 @@
 <?php
     include "../config/connect.php";
     if(!(isset($_POST["title"]) || isset($_SESSION['pid']))){
-        include "../error/error.php";
+        include "../error/";
         exit();
     }
     if(isset($_SESSION["uid"])) $uid = $_SESSION["uid"];
@@ -123,7 +123,7 @@
                 <div class="link-print-div-1">
                     <?php
                         $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http")
-                        . "://$_SERVER[HTTP_HOST]/myproject/poll/poll.php?pid=".$_SESSION['pid'];
+                        . "://$_SERVER[HTTP_HOST]/myproject/poll?pid=".$_SESSION['pid'];
                         echo $url;
                     ?>
                 </div>

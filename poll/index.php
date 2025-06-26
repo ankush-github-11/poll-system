@@ -23,7 +23,7 @@
             if(isset($_SESSION["username"]))
                 echo $_SESSION["username"];
             // else{
-            //     header("Location: ../signup/signup.php");
+            //     header("Location: ../signup/");
             //     exit();
             // }
         ?>
@@ -93,28 +93,28 @@
             <div class="navbar-side-div slide-animation hidden">
                 <div class="navbar-fa-div"><i class="fa-solid fa-square-xmark fa-2xl"></i></div>
                 <div class="nav-side-item-1-div">
-                    <a draggable="false" class="nav-side-item-1" href="../home/index.php">Home</a>
+                    <a draggable="false" class="nav-side-item-1" href="../home/">Home</a>
                 </div>
                 <div class="nav-side-item-2-div">
                     <a draggable="false" class="nav-side-item-2" href="">Contact</a>
                 </div>
                 <div class="nav-side-item-3-div">
-                    <a draggable="false" class="nav-side-item-3" href="../viewpolls/viewpolls.php">View Polls</a>
+                    <a draggable="false" class="nav-side-item-3" href="../viewpolls/">View Polls</a>
                 </div>
                 <div class="nav-side-item-4-div">
-                    <a draggable="false" class="nav-side-item-4" href="../security/security.php">Security</a>
+                    <a draggable="false" class="nav-side-item-4" href="../security/">Security</a>
                 </div>
             </div>
             <div class="my-navbar-div fixed-top">
                 <div class="website-logo-div">
-                    <a class="website-logo" href="../home/index.php">
+                    <a class="website-logo" href="../home/">
                         <img src="../images/main-logo.png" alt="Poll Now" width="50" height="50">
                     </a>
                 </div>
                 <div class="nav-items-top">
                     <div class="nav-items-div">
                         <div class="nav-item-1-div">
-                            <a draggable="false" class="nav-item-1" href="../home/index.php">Home</a>
+                            <a draggable="false" class="nav-item-1" href="../home/">Home</a>
                             <div class="nav-item-1-hover-div"></div>
                         </div>
                         <div class="nav-item-2-div">
@@ -122,11 +122,11 @@
                             <div class="nav-item-2-hover-div"></div>
                         </div>
                         <div class="nav-item-3-div">
-                            <a draggable="false" class="nav-item-3" href="../viewpolls/viewpolls.php">View Polls</a>
+                            <a draggable="false" class="nav-item-3" href="../viewpolls/">View Polls</a>
                             <div class="nav-item-3-hover-div"></div>
                         </div>
                         <div class="nav-item-4-div">
-                            <a draggable="false" class="nav-item-4" href="../security/security.php">Security</a>
+                            <a draggable="false" class="nav-item-4" href="../security/">Security</a>
                             <div class="nav-item-4-hover-div"></div>
                         </div>
                     </div>
@@ -139,10 +139,10 @@
                     <svg class="dark-mode-svg hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#ff0055"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/></svg>
                 </div>
                 <div class="login hidden">
-                    <a draggable="false" class="nav-link active" href="../login/login.php">Login</a>
+                    <a draggable="false" class="nav-link active" href="../login/">Login</a>
                 </div>
                 <div class="signup hidden">
-                    <a draggable="false" class="nav-link active" href="../signup/signup.php">Sign Up</a>
+                    <a draggable="false" class="nav-link active" href="../signup/">Sign Up</a>
                 </div>
             <!-- Profile Code Starts -->
                 <div class="dropdown-profile-div hidden">
@@ -152,10 +152,10 @@
                     <div class="profile-dropdown-div hidden">
                         <div class="profile-image-name-div">
                             <div class="profile-image-div">
-                                <a href="../profile/profile.php"><img draggable="false" src="../images/profile-logo.png" class="profile-logo no-select" alt="Profile Logo"></a>
+                                <a href="../profile/"><img draggable="false" src="../images/profile-logo.png" class="profile-logo no-select" alt="Profile Logo"></a>
                             </div>
                             <div class="profile-name-div">
-                                <a href="../profile/profile.php">
+                                <a href="../profile/">
                                     <?php
                                         if(isset($_SESSION["name"]))
                                         echo $_SESSION["name"];
@@ -166,15 +166,15 @@
                         <div class="horizontal-line"></div>
                         <div class="settings-div">
                             <i class="fa-solid fa-gear"></i>
-                            <a href="../settings/settings.php">Settings</a>
+                            <a href="../settings/">Settings</a>
                         </div>
                         <div class="edit-div">
                             <i class="fa-solid fa-pen-to-square"></i>
-                            <a href="../edit/edit.php">Edit Profile</a>
+                            <a href="../edit/">Edit Profile</a>
                         </div>
                         <div class="signout-div">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                            <form action="../home/index.php" method="POST">
+                            <form action="../home/" method="POST">
                                 <button class="sign-out-btn" name="signout" type="submit">Sign Out</button>
                             </form>
                         </div>
@@ -280,11 +280,11 @@
                         <div class="participants-horizontal-line"></div>
                     </div>
                     <div class="participants-footer-div">
-                        <form action="../success/success.php" method="POST">
+                        <form action="../success/" method="POST">
                             <input type="text" class="hidden selected-option" name="selectedOption">
                             <input type="text" class="hidden voted-pid" name="votedPid">
                             <div class="participants-footer-buttons-div">
-                                <a href="../home/index.php" class="btn participants-footer-btn-exit">Exit</a>
+                                <a href="../home/" class="btn participants-footer-btn-exit">Exit</a>
                                 <button type="submit" class="btn participants-footer-btn-submit disabled-button">Submit</button>
                             </div>
                             <div class="login-to-submit hidden">Login/Signup to submit</div>
@@ -294,7 +294,7 @@
             </div>
             <div class="main-div-2">
                 <div class="admin-btn-div">
-                    <form action="../polladmin/polladmin.php" method="POST">
+                    <form action="../polladmin/" method="POST">
                         <input class="admin-btn" value="Admin Dashboard" type="submit" name="submit">
                         <input type="text" class="hidden voted-pid" name="votedPid">
                     </form>
@@ -328,7 +328,7 @@
             <div class="footer-section links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="../home/index.php">How It Works</a></li>
+                    <li><a href="../home/">How It Works</a></li>
                     <li><a href="">View Polls</a></li>
                 </ul>
             </div>

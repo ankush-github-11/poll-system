@@ -5,7 +5,7 @@
     }
     if(!isset($_SESSION["selectedOp"])){
         // Error logic : That's not the page you are looking for
-        include "../error/error.php";
+        include "../error/";
         exit();
     }
     if(isset($_POST["selectedOption"]) && isset($_POST["votedPid"])){
@@ -15,7 +15,7 @@
         if(isset($_SESSION["uid"])) $uid = $_SESSION["uid"];
         else{
             // Error logic : That's not the page you are looking for
-            include "../error/error.php";
+            include "../error/";
             exit();
         }
         $sql = "insert into votes set pid='$pid', uid='$uid', selectedOption='$option'";
@@ -58,8 +58,8 @@
                 </div>
             </div>
             <div class="view-share-div">
-                <a href="../viewpolls/viewpolls.php" class="view-btn">Other Polls</a>
-                <a href="../home/index.php" class="btn">Go to Homepage</a>
+                <a href="../viewpolls/" class="view-btn">Other Polls</a>
+                <a href="../home/" class="btn">Go to Homepage</a>
             </div>
             <div class="link-clipboard-div">
                 <div class="link-print-div">

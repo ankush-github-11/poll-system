@@ -4,16 +4,16 @@ if(isset($_POST["signout"])){
     // session_start();
     session_unset();
     session_destroy();
-    header("Location: ./index.php");
+    header("Location: ./");
     exit();
 }
 if(isset($_POST["createpoll"])){
     if(isset($_SESSION["name"])){
-        header("Location: ../createpoll/create.php");
+        header("Location: ../createpoll/");
         exit();
     }
     else{
-        header("Location: ../signup/signup.php");
+        header("Location: ../signup/");
         exit();
     }
 }
@@ -56,28 +56,28 @@ if(isset($_POST["createpoll"])){
             <div class="navbar-side-div slide-animation hidden">
                 <div class="navbar-fa-div"><i class="fa-solid fa-square-xmark fa-2xl"></i></div>
                 <div class="nav-side-item-1-div">
-                    <a draggable="false" class="nav-side-item-1" href="../home/index.php">Home</a>
+                    <a draggable="false" class="nav-side-item-1" href="../home/">Home</a>
                 </div>
                 <div class="nav-side-item-2-div">
                     <a draggable="false" class="nav-side-item-2" href="">Contact</a>
                 </div>
                 <div class="nav-side-item-3-div">
-                    <a draggable="false" class="nav-side-item-3" href="../viewpolls/viewpolls.php">View Polls</a>
+                    <a draggable="false" class="nav-side-item-3" href="../viewpolls/">View Polls</a>
                 </div>
                 <div class="nav-side-item-4-div">
-                    <a draggable="false" class="nav-side-item-4" href="../security/security.php">Security</a>
+                    <a draggable="false" class="nav-side-item-4" href="../security/">Security</a>
                 </div>
             </div>
             <div class="my-navbar-div fixed-top">
                 <div class="website-logo-div">
-                    <a class="website-logo" href="../home/index.php">
+                    <a class="website-logo" href="../home/">
                         <img src="../images/main-logo.png" alt="Poll Now" width="50" height="50">
                     </a>
                 </div>
                 <div class="nav-items-top">
                     <div class="nav-items-div">
                         <div class="nav-item-1-div">
-                            <a draggable="false" class="nav-item-1" href="../home/index.php">Home</a>
+                            <a draggable="false" class="nav-item-1" href="../home/">Home</a>
                             <div class="nav-item-1-hover-div"></div>
                         </div>
                         <div class="nav-item-2-div">
@@ -85,11 +85,11 @@ if(isset($_POST["createpoll"])){
                             <div class="nav-item-2-hover-div"></div>
                         </div>
                         <div class="nav-item-3-div">
-                            <a draggable="false" class="nav-item-3" href="../viewpolls/viewpolls.php">View Polls</a>
+                            <a draggable="false" class="nav-item-3" href="../viewpolls/">View Polls</a>
                             <div class="nav-item-3-hover-div"></div>
                         </div>
                         <div class="nav-item-4-div">
-                            <a draggable="false" class="nav-item-4" href="../security/security.php">Security</a>
+                            <a draggable="false" class="nav-item-4" href="../security/">Security</a>
                             <div class="nav-item-4-hover-div"></div>
                         </div>
                     </div>
@@ -102,10 +102,10 @@ if(isset($_POST["createpoll"])){
                     <svg class="dark-mode-svg hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#ff0055"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/></svg>
                 </div>
                 <div class="login hidden">
-                    <a draggable="false" class="nav-link active" href="../login/login.php">Login</a>
+                    <a draggable="false" class="nav-link active" href="../login/">Login</a>
                 </div>
                 <div class="signup hidden">
-                    <a draggable="false" class="nav-link active" href="../signup/signup.php">Sign Up</a>
+                    <a draggable="false" class="nav-link active" href="../signup/">Sign Up</a>
                 </div>
             <!-- Profile Code Starts -->
                 <div class="dropdown-profile-div hidden">
@@ -115,10 +115,10 @@ if(isset($_POST["createpoll"])){
                     <div class="profile-dropdown-div hidden">
                         <div class="profile-image-name-div">
                             <div class="profile-image-div">
-                                <a href="../profile/profile.php"><img draggable="false" src="../images/profile-logo.png" class="profile-logo no-select" alt="Profile Logo"></a>
+                                <a href="../profile/"><img draggable="false" src="../images/profile-logo.png" class="profile-logo no-select" alt="Profile Logo"></a>
                             </div>
                             <div class="profile-name-div">
-                                <a href="../profile/profile.php">
+                                <a href="../profile/">
                                     <?php
                                         if(isset($_SESSION["name"]))
                                         echo $_SESSION["name"];
@@ -129,15 +129,15 @@ if(isset($_POST["createpoll"])){
                         <div class="horizontal-line"></div>
                         <div class="settings-div">
                             <i class="fa-solid fa-gear"></i>
-                            <a href="../settings/settings.php">Settings</a>
+                            <a href="../settings/">Settings</a>
                         </div>
                         <div class="edit-div">
                             <i class="fa-solid fa-pen-to-square"></i>
-                            <a href="../edit/edit.php">Edit Profile</a>
+                            <a href="../edit/">Edit Profile</a>
                         </div>
                         <div class="signout-div">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                            <form action="./index.php" method="POST">
+                            <form action="./" method="POST">
                                 <button class="sign-out-btn" name="signout" type="submit">Sign Out</button>
                             </form>
                         </div>
@@ -159,10 +159,10 @@ if(isset($_POST["createpoll"])){
                         <h3 class="moving-glow">Vote in live polls or create your own in seconds</h3>
                     </div> -->
                     <div class="btn-middle-div no-select">
-                        <form action="./index.php" method="POST">
+                        <form action="./" method="POST">
                             <input type="submit" class="btn createpoll" value="Create Poll" name="createpoll"/>
                         </form>
-                        <a href="../viewpolls/viewpolls.php" type="button" class="btn demo">View Polls</a>
+                        <a href="../viewpolls/" type="button" class="btn demo">View Polls</a>
                     </div>
                     <!-- <div class="swing-container no-select">
                         <img class="swing-image" src="../images/swing-1.png" alt="Swinging Image" draggable="false">
@@ -301,7 +301,7 @@ if(isset($_POST["createpoll"])){
                     </div>
                     <i class="fa-solid fa-paper-plane fa-2xl"></i>
                     <h5>Your response is already been submitted</h5>
-                    <form action="../livepolls/result.php" method="GET">
+                    <form action="../livepolls/" method="GET">
                         <input type="text" class="view1 hidden" name="view" value="1">
                         <input type="submit" class="btn btn-view-res-1" value="View Results">
                     </form>
@@ -310,7 +310,7 @@ if(isset($_POST["createpoll"])){
                 <div class="modal-1-cancel-submit">
                     <button type="button" class="btn btn-danger cancel-1">Cancel</button>
                     <!-- Change the POST to GET if dont want the resubmission and resubmission alert -->
-                    <form action="../livepolls/result.php" method="POST">
+                    <form action="../livepolls/" method="POST">
                         <input type="text" class="result-1 hidden" name="result1">
                         <input type="submit" class="btn btn-success submit-1" name="submit1">
                     </form>
@@ -341,7 +341,7 @@ if(isset($_POST["createpoll"])){
                     </div>
                     <i class="fa-solid fa-paper-plane fa-2xl"></i>
                     <h5>Your response is already been submitted</h5>
-                    <form action="../livepolls/result.php" method="GET">
+                    <form action="../livepolls/" method="GET">
                         <input type="text" class="view2 hidden" name="view" value="2">
                         <input type="submit" class="btn btn-view-res-2" value="View Results">
                     </form>
@@ -349,7 +349,7 @@ if(isset($_POST["createpoll"])){
                 <div class="modal-2-line"></div>
                 <div class="modal-2-cancel-submit">
                     <button type="button" class="btn btn-danger cancel-2">Cancel</button>
-                    <form action="../livepolls/result.php" method="POST">
+                    <form action="../livepolls/" method="POST">
                         <input type="text" class="result-2 hidden" name="result2">
                         <input type="submit" class="btn btn-success submit-2" name="submit2">
                     </form>
@@ -379,7 +379,7 @@ if(isset($_POST["createpoll"])){
                     </div>
                     <i class="fa-solid fa-paper-plane fa-2xl"></i>
                     <h5>Your response is already been submitted</h5>
-                    <form action="../livepolls/result.php" method="GET">
+                    <form action="../livepolls/" method="GET">
                         <input type="text" class="view3 hidden" name="view" value="3">
                         <input type="submit" class="btn btn-view-res-3" value="View Results">
                     </form>
@@ -387,7 +387,7 @@ if(isset($_POST["createpoll"])){
                 <div class="modal-3-line"></div>
                 <div class="modal-3-cancel-submit">
                     <button type="button" class="btn btn-danger cancel-3">Cancel</button>
-                    <form action="../livepolls/result.php" method="POST">
+                    <form action="../livepolls/" method="POST">
                         <input type="text" class="result-3 hidden" name="result3">
                         <input type="submit" class="btn btn-success submit-3" name="submit3">
                     </form>
@@ -404,7 +404,7 @@ if(isset($_POST["createpoll"])){
             <div class="footer-section links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="../home/index.php">How It Works</a></li>
+                    <li><a href="../home/">How It Works</a></li>
                     <li><a href="">View Polls</a></li>
                 </ul>
             </div>

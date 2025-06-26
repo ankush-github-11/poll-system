@@ -1,23 +1,12 @@
 <?php
     include "../config/connect.php";
-    if(isset($_SESSION["uid"])) $uid = $_SESSION["uid"];
-    else{
-        include "../error/error.php";
-        exit();
-    }
-    $sql = "select * from users where uid = $uid";
-    $res = mysqli_query($conn, $sql);
-    $arr = [];
-    if($res && mysqli_num_rows($res) > 0){
-        $arr = mysqli_fetch_assoc($res);
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile</title>
+    <title>View Polls</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -26,10 +15,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="edit-stylesheet.css">
+    <link rel="stylesheet" href="viewpolls-stylesheet.css">
 </head>
 <body>
-    <div class="sessionUsername hidden">
+<div class="sessionUsername hidden">
         <?php
             if(isset($_SESSION["username"]))
                 echo $_SESSION["username"];
@@ -41,58 +30,34 @@
                 echo $_SESSION["name"];
         ?>
     </div>
-    <div class="bio hidden">
-        <?php
-            if(isset($arr["bio"]))
-                echo $arr["bio"];
-        ?>
-    </div>
-    <div class="email hidden">
-        <?php
-            if(isset($arr["email"]))
-                echo $arr["email"];
-        ?>
-    </div>
-    <div class="phone hidden">
-        <?php
-            if(isset($arr["phone"]))
-                echo $arr["phone"];
-        ?>
-    </div>
-    <div class="website hidden">
-        <?php
-            if(isset($arr["website"]))
-                echo $arr["website"];
-        ?>
-    </div>
     <header>
         <!-- Navbar Starts -->
         <nav>
             <div class="navbar-side-div slide-animation hidden">
                 <div class="navbar-fa-div"><i class="fa-solid fa-square-xmark fa-2xl"></i></div>
                 <div class="nav-side-item-1-div">
-                    <a draggable="false" class="nav-side-item-1" href="../home/index.php">Home</a>
+                    <a draggable="false" class="nav-side-item-1" href="../home/">Home</a>
                 </div>
                 <div class="nav-side-item-2-div">
                     <a draggable="false" class="nav-side-item-2" href="">Contact</a>
                 </div>
                 <div class="nav-side-item-3-div">
-                    <a draggable="false" class="nav-side-item-3" href="../viewpolls/viewpolls.php">View Polls</a>
+                    <a draggable="false" class="nav-side-item-3" href="../viewpolls/">View Polls</a>
                 </div>
                 <div class="nav-side-item-4-div">
-                    <a draggable="false" class="nav-side-item-4" href="../security/security.php">Security</a>
+                    <a draggable="false" class="nav-side-item-4" href="../security/">Security</a>
                 </div>
             </div>
             <div class="my-navbar-div fixed-top">
                 <div class="website-logo-div">
-                    <a class="website-logo" href="../home/index.php">
+                    <a class="website-logo" href="../home/">
                         <img src="../images/main-logo.png" alt="Poll Now" width="50" height="50">
                     </a>
                 </div>
                 <div class="nav-items-top">
                     <div class="nav-items-div">
                         <div class="nav-item-1-div">
-                            <a draggable="false" class="nav-item-1" href="../home/index.php">Home</a>
+                            <a draggable="false" class="nav-item-1" href="../home/">Home</a>
                             <div class="nav-item-1-hover-div"></div>
                         </div>
                         <div class="nav-item-2-div">
@@ -100,11 +65,11 @@
                             <div class="nav-item-2-hover-div"></div>
                         </div>
                         <div class="nav-item-3-div">
-                            <a draggable="false" class="nav-item-3" href="../viewpolls/viewpolls.php">View Polls</a>
+                            <a draggable="false" class="nav-item-3" href="../viewpolls/">View Polls</a>
                             <div class="nav-item-3-hover-div"></div>
                         </div>
                         <div class="nav-item-4-div">
-                            <a draggable="false" class="nav-item-4" href="../security/security.php">Security</a>
+                            <a draggable="false" class="nav-item-4" href="../security/">Security</a>
                             <div class="nav-item-4-hover-div"></div>
                         </div>
                     </div>
@@ -117,10 +82,10 @@
                     <svg class="dark-mode-svg hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#ff0055"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/></svg>
                 </div>
                 <div class="login hidden">
-                    <a draggable="false" class="nav-link active" href="../login/login.php">Login</a>
+                    <a draggable="false" class="nav-link active" href="../login/">Login</a>
                 </div>
                 <div class="signup hidden">
-                    <a draggable="false" class="nav-link active" href="../signup/signup.php">Sign Up</a>
+                    <a draggable="false" class="nav-link active" href="../signup/">Sign Up</a>
                 </div>
             <!-- Profile Code Starts -->
                 <div class="dropdown-profile-div hidden">
@@ -130,10 +95,10 @@
                     <div class="profile-dropdown-div hidden">
                         <div class="profile-image-name-div">
                             <div class="profile-image-div">
-                                <a href="../profile/profile.php"><img draggable="false" src="../images/profile-logo.png" class="profile-logo no-select" alt="Profile Logo"></a>
+                                <a href="../profile/"><img draggable="false" src="../images/profile-logo.png" class="profile-logo no-select" alt="Profile Logo"></a>
                             </div>
                             <div class="profile-name-div">
-                                <a href="../profile/profile.php">
+                                <a href="../profile/">
                                     <?php
                                         if(isset($_SESSION["name"]))
                                         echo $_SESSION["name"];
@@ -144,15 +109,15 @@
                         <div class="horizontal-line"></div>
                         <div class="settings-div">
                             <i class="fa-solid fa-gear"></i>
-                            <a href="../settings/settings.php">Settings</a>
+                            <a href="../settings/">Settings</a>
                         </div>
                         <div class="edit-div">
                             <i class="fa-solid fa-pen-to-square"></i>
-                            <a href="../edit/edit.php">Edit Profile</a>
+                            <a href="../edit/">Edit Profile</a>
                         </div>
                         <div class="signout-div">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                            <form action="../home/index.php" method="POST">
+                            <form action="../home/" method="POST">
                                 <button class="sign-out-btn" name="signout" type="submit">Sign Out</button>
                             </form>
                         </div>
@@ -163,67 +128,30 @@
         </nav>
     </header>
     <main>
-        <div class="total-div">
-            <div class="edit-profile-div">
-                <h2 class="header-text">Edit Profile</h2>
-                <form class="inputs-form" method="POST" action="../profile/profile.php">
-                    <label>
-                        Name
-                        <input class="name-input" name="name" type="text" placeholder="Your full name" required spellcheck="false" />
-                    </label>
-                    <label>
-                        Bio
-                        <textarea class="bio-input" name="bio" placeholder="Tell us about yourself"></textarea>
-                    </label>
-                    <label>
-                        Email
-                        <input class="email-input" name="email" type="email"  placeholder="Your email" required />
-                    </label>
-                    <label>
-                        Phone
-                        <input class="phone-input" name="phone" type="tel" pattern="[0-9]{10}" id="phone" placeholder="Your phone number"/>
-                    </label>
-                    <label>
-                        Website URL
-                        <input class="website-input" name="website" type="text"  placeholder="Your website URL" />
-                    </label>
-                    <input class="submit-btn" name="submit-edit" type="submit" value="Save Changes"></input>
-                </form>
-            </div>
+    <div class="total-div">
+        <div class="total-polls-content hidden">
+            <?php
+                $sql = "SELECT pid, title, timeCreated FROM polls ORDER BY RAND()";
+                $res = mysqli_query($conn, $sql);
+
+                if ($res && mysqli_num_rows($res) > 0) {
+                    while ($row = mysqli_fetch_assoc($res)) {
+                        echo $row["pid"] . "<-/*756-=-=>" . $row["title"] . "<-/*756-=-=>" . $row["timeCreated"];
+                        echo "<(&*#$*-)>";
+                    }
+                }
+            ?>
         </div>
+        <div class="main-div">
+            <h1 class="all-polls-text">All Polls</h1>
+            <!-- <a href="" target="_blank" class="total-rows">
+                <div class="div-11"></div>
+                <div class="div-12"></div>
+                <div class="div-13"></div>
+            </a> -->
+        </div>
+    </div>
     </main>
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section branding">
-                <h2>Poll Now</h2>
-                <p>Vote in live polls or create your own in seconds.</p>
-            </div>
-            <div class="footer-section links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="../home/index.php">How It Works</a></li>
-                    <li><a href="">View Polls</a></li>
-                </ul>
-            </div>
-            <div class="footer-section contact">
-                <h3>Contact</h3>
-                <p>Email: ankush10yt@gmail.com</p>
-                <p>Phone: +91-98312-52214</p>
-            </div>
-            <div class="footer-section social">
-                <h3>Follow Us</h3>
-                <div class="social-icons no-select">
-                    <a href="https://www.facebook.com/people/Ankush-Bhattacharjee/100069448176354/?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://x.com/coder_ankush"><i class="fab fa-twitter"></i></a>
-                    <a href="https://github.com/ankush-github-11"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/ankush-bhattacharjee-609972302"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Poll Now. All rights reserved.</p>
-        </div>
-    </footer>
-    <script src="edit-script.js"></script>
+    <script src="viewpolls-script.js"></script>
 </body>
 </html>

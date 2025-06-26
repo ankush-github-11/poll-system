@@ -43,16 +43,16 @@
                     </p>
                 </div>
                 <div class="button-div">
-                    <a href="../home/index.php">Back to Website<i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="../home/">Back to Website<i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="right-div">
                 <h1 class="login-text">Login</h1>
                 <p class="signup-text">
                     Don't have an account? 
-                    <a href="../signup/signup.php" draggable="false" class="signup">Sign Up</a>
+                    <a href="../signup/" draggable="false" class="signup">Sign Up</a>
                 </p>
-                <form action="./login.php" method="POST">
+                <form action="./" method="POST">
                 <div class="email-password-btn-div">
                         
                     <input required name="email" type="text" class="email-input" spellcheck="false" placeholder="Email">
@@ -103,7 +103,7 @@ function wrongCredentialsReturn ($email, $password){
     $_SESSION["invalidCredentials"] = "yes";
     $_SESSION["wrongEmail"] = $email;
     $_SESSION["wrongPassword"] = $password;
-    header("Location: ./login.php");
+    header("Location: ./");
     exit();
 }
 if (isset($_POST["login"])) {
@@ -120,7 +120,7 @@ if (isset($_POST["login"])) {
                 $_SESSION["name"] = $row["name"];
                 $_SESSION["username"] = $row["username"];
                 $_SESSION["invalidCredentials"] = "no";
-                header("Location: ../createpoll/create.php");
+                header("Location: ../createpoll/");
                 exit();
             }
             else{

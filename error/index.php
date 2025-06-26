@@ -288,8 +288,8 @@
                     <div class="text-3">This is not the page you are looking for</div>
                     <div class="text-4">Here are some useful links instead:</div>
                     <div class="buttons-div">
-                        <a href="/myproject/home/index.php" class="home">Home</a>
-                        <a href="/myproject/createpoll/create.php" class="create">Create Poll</a>
+                        <a href="/myproject/home/" class="home">Home</a>
+                        <a href="/myproject/createpoll/" class="create">Create Poll</a>
                     </div>
                 </div>
                 <div class="right-div">

@@ -99,6 +99,7 @@ body {
     font-weight: 600;
     color: var(--text-color-less);
     margin-left: 10px;
+    text-decoration: none;
 }
 .light-dark-div{
     height: fit-content;

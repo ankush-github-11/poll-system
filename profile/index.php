@@ -86,7 +86,7 @@
             if(isset($_SESSION["username"]))
                 echo htmlspecialchars($_SESSION["username"]);
             else{
-                header("Location: ../signup/signup.php");
+                header("Location: ../signup/");
             }
         ?>
     </div>
@@ -125,28 +125,28 @@
             <div class="navbar-side-div slide-animation hidden">
                 <div class="navbar-fa-div"><i class="fa-solid fa-square-xmark fa-2xl"></i></div>
                 <div class="nav-side-item-1-div">
-                    <a draggable="false" class="nav-side-item-1" href="../home/index.php">Home</a>
+                    <a draggable="false" class="nav-side-item-1" href="../home/">Home</a>
                 </div>
                 <div class="nav-side-item-2-div">
                     <a draggable="false" class="nav-side-item-2" href="">Contact</a>
                 </div>
                 <div class="nav-side-item-3-div">
-                    <a draggable="false" class="nav-side-item-3" href="../viewpolls/viewpolls.php">View Polls</a>
+                    <a draggable="false" class="nav-side-item-3" href="../viewpolls/">View Polls</a>
                 </div>
                 <div class="nav-side-item-4-div">
-                    <a draggable="false" class="nav-side-item-4" href="../security/security.php">Security</a>
+                    <a draggable="false" class="nav-side-item-4" href="../security/">Security</a>
                 </div>
             </div>
             <div class="my-navbar-div fixed-top">
                 <div class="website-logo-div">
-                    <a class="website-logo" href="../home/index.php">
+                    <a class="website-logo" href="../home/">
                         <img src="../images/main-logo.png" alt="Poll Now" width="50" height="50">
                     </a>
                 </div>
                 <div class="nav-items-top">
                     <div class="nav-items-div">
                         <div class="nav-item-1-div">
-                            <a draggable="false" class="nav-item-1" href="../home/index.php">Home</a>
+                            <a draggable="false" class="nav-item-1" href="../home/">Home</a>
                             <div class="nav-item-1-hover-div"></div>
                         </div>
                         <div class="nav-item-2-div">
@@ -154,11 +154,11 @@
                             <div class="nav-item-2-hover-div"></div>
                         </div>
                         <div class="nav-item-3-div">
-                            <a draggable="false" class="nav-item-3" href="../viewpolls/viewpolls.php">View Polls</a>
+                            <a draggable="false" class="nav-item-3" href="../viewpolls/">View Polls</a>
                             <div class="nav-item-3-hover-div"></div>
                         </div>
                         <div class="nav-item-4-div">
-                            <a draggable="false" class="nav-item-4" href="../security/security.php">Security</a>
+                            <a draggable="false" class="nav-item-4" href="../security/">Security</a>
                             <div class="nav-item-4-hover-div"></div>
                         </div>
                     </div>
@@ -265,7 +265,7 @@
                     </div>
                     <div class="right-div-under-2">
                         <button class="btn-shine">
-                            <a href="../edit/edit.php">Edit Profile</a>
+                            <a href="../edit/">Edit Profile</a>
                         </button>
                     </div>
                     <div class="right-div-under-3">
@@ -294,7 +294,7 @@
                                         if(isset($row['bio']))
                                             echo htmlspecialchars($row['bio']);
                                         else
-                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
                                     ?>
                                 </div>
                             </div>
@@ -305,7 +305,7 @@
                                         if(isset($row['nationality']))
                                             echo htmlspecialchars($row['nationality']);
                                         else
-                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
                                     ?>
                                 </div>
                             </div>
@@ -316,7 +316,7 @@
                                         if(isset($row['city']))
                                             echo htmlspecialchars($row['city']);
                                         else
-                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
                                     ?>
                                 </div>
                             </div>
@@ -327,7 +327,7 @@
                                         if(isset($row['dob']))
                                             echo htmlspecialchars($row['dob']);
                                         else
-                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
                                     ?>
                                 </div>
                             </div> -->
@@ -356,7 +356,7 @@
                                         if(isset($row['phone']))
                                             echo htmlspecialchars($row['phone']);
                                         else
-                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
                                     ?>
                                 </div>
                             </div>
@@ -367,7 +367,7 @@
                                         if(isset($row['website']))
                                             echo htmlspecialchars($row['website']);
                                         else
-                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
                                     ?>
                                 </a>
                             </div>
@@ -378,7 +378,7 @@
                                         if(isset($row['linkedin']))
                                             echo htmlspecialchars($row['linkedin']);
                                         else
-                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
                                     ?>
                                 </div>
                             </div>
@@ -389,7 +389,7 @@
                                         if(isset($row['twitter']))
                                             echo htmlspecialchars($row['twitter']);
                                         else
-                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
                                     ?>
                                 </div>
                             </div>
@@ -400,7 +400,7 @@
                                         if(isset($row['facebook']))
                                             echo htmlspecialchars($row['facebook']);
                                         else
-                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
                                     ?>
                                 </div>
                             </div>
@@ -411,7 +411,7 @@
                                         if(isset($row['instagram']))
                                             echo htmlspecialchars($row['instagram']);
                                         else
-                                            echo "<a href='../edit/edit.php' class='add-a'>+ Add</a>";
+                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
                                     ?>
                                 </div>
                             </div> -->
@@ -631,7 +631,7 @@
                 </div>
                 <div class="right-div-3 hidden">
                     <div class="send-a-message-div">Send a message to us!</div>
-                    <form class="send-message-div" action="./profile.php" method="POST">
+                    <form class="send-message-div" action="./" method="POST">
                         <textarea class="textarea" rows="8" required name="message"></textarea>
                         <input type="submit" value="Send" class="send-btn" name="message-submit">
                     </form>
@@ -639,7 +639,7 @@
                 <div class="right-div-4 hidden">
                     <div class="report-bug-div">Report a Bug</div>
                     <div class="find-issue-div">Found an issue? Help us improve by reporting it!</div>
-                    <form action="./profile.php" method="POST" class="bug-form">
+                    <form action="./" method="POST" class="bug-form">
                         <div class="flex-nowrap">
                             <div class="input-group-text-first" id="addon-wrapping">Bug Title</div>
                             <input required autocomplete="off" type="text" class="form-input" name="bug-title">
@@ -673,7 +673,7 @@
             <div class="footer-section links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="../home/index.php">How It Works</a></li>
+                    <li><a href="../home/">How It Works</a></li>
                     <li><a href="">View Polls</a></li>
                 </ul>
             </div>

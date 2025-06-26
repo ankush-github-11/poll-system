@@ -47,9 +47,9 @@
                 <h1 class="signup-text">Signup</h1>
                 <p class="login-text">
                     Already have an account? 
-                    <a href="../login/login.php" draggable="false" class="login">Login</a>
+                    <a href="../login/" draggable="false" class="login">Login</a>
                 </p>
-                <form action="./signup.php" method="POST">
+                <form action="./" method="POST">
                     <div class="email-password-btn-div">
                         <div>
                             <input required name="name" type="text" class="name-input" spellcheck="false" placeholder="Your Name">
@@ -98,7 +98,7 @@
                     <p class="caption-text">Signup to access all the features of Poll Now System</p>
                 </div>
                 <div class="button-div">
-                    <a href="../home/index.php">Back to Website<i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="../home/">Back to Website<i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -160,7 +160,7 @@ if(isset($_POST["signup"])){
                     $_SESSION["uid"] = $row['uid'];
                 }
             }
-            header("Location:../createpoll/create.php");
+            header("Location:../createpoll/");
             exit();
         }
     }
@@ -186,7 +186,7 @@ if(isset($_POST["signup"])){
         $_SESSION["wrongName"] = $name;
         $_SESSION["wrongEmail"] = $email;
         $_SESSION["wrongPassword"] = $password;
-        header("Location: ./signup.php");
+        header("Location: ./");
         exit();
     }
 }
