@@ -1,15 +1,5 @@
+# Turn on rewriting
 RewriteEngine On
-
-# ✅ Block direct access to CSS, JS, Images, Fonts from browser
-RewriteCond %{HTTP_REFERER} ^$ [OR]
-RewriteCond %{HTTP_REFERER} !^http://localhost/myproject [NC]
-RewriteRule .*\.(css|js|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$ /myproject/error/error.php [L]
-
-# ✅ Block direct browser access to /config folder
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /myproject/config/ [NC]
-RewriteRule ^config/ - [F,L]
-
-# ✅ Redirect broken links to error page
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ /myproject/error/error.php [L]
+RewriteRule ^ /myproject/error/ [L]
