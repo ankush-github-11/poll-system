@@ -1,4 +1,13 @@
 <?php
+    $uri = $_SERVER['REQUEST_URI'];
+    $parts = parse_url($uri);
+    parse_str($parts['query'] ?? '', $queryParams);
+    $view = $queryParams['view'] ?? null;
+    if($view <= 0 or $view >= 3){
+        include "../error/index.php";
+        exit();
+    }
+
     include "../config/connect.php";
     $n = 0;
     if (isset($_POST["submit1"]))
@@ -87,7 +96,7 @@
             <div class="navbar-side-div slide-animation hidden">
                 <div class="navbar-fa-div"><i class="fa-solid fa-square-xmark fa-2xl"></i></div>
                 <div class="nav-side-item-1-div">
-                    <a draggable="false" class="nav-side-item-1" href="../home/">Home</a>
+                    <a draggable="false" class="nav-side-item-1" href="../">Home</a>
                 </div>
                 <div class="nav-side-item-2-div">
                     <a draggable="false" class="nav-side-item-2" href="">Contact</a>
@@ -101,14 +110,14 @@
             </div>
             <div class="my-navbar-div fixed-top">
                 <div class="website-logo-div">
-                    <a class="website-logo" href="../home/">
+                    <a class="website-logo" href="../">
                         <img src="../images/main-logo.png" alt="Poll Now" width="50" height="50">
                     </a>
                 </div>
                 <div class="nav-items-top">
                     <div class="nav-items-div">
                         <div class="nav-item-1-div">
-                            <a draggable="false" class="nav-item-1" href="../home/">Home</a>
+                            <a draggable="false" class="nav-item-1" href="../">Home</a>
                             <div class="nav-item-1-hover-div"></div>
                         </div>
                         <div class="nav-item-2-div">
@@ -168,7 +177,7 @@
                         </div>
                         <div class="signout-div">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                            <form action="../home/" method="POST">
+                            <form action="../" method="POST">
                                 <button class="sign-out-btn" name="signout" type="submit">Sign Out</button>
                             </form>
                         </div>
@@ -208,7 +217,7 @@
             <div class="footer-section links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="../home/">How It Works</a></li>
+                    <li><a href="../">How It Works</a></li>
                     <li><a href="">View Polls</a></li>
                 </ul>
             </div>

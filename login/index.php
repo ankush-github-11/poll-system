@@ -43,7 +43,7 @@
                     </p>
                 </div>
                 <div class="button-div">
-                    <a href="../home/">Back to Website<i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="../">Back to Website<i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="right-div">
@@ -73,7 +73,7 @@
                             <label class="form-check-label remember-me-label" for="flexCheckDefault">Remember me</label>
                         </div>
                         <div class="forgot-password-div">
-                            <a href="" class="forgot-password" draggable="false">Forgot Password?</a>
+                            <a href="../soon/" class="forgot-password" draggable="false">Forgot Password?</a>
                         </div>
                     </div>
                     <button class="login-btn" name="login" type="submit">L O G I N</button>

@@ -98,7 +98,7 @@
                     <p class="caption-text">Signup to access all the features of Poll Now System</p>
                 </div>
                 <div class="button-div">
-                    <a href="../home/">Back to Website<i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="../">Back to Website<i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>

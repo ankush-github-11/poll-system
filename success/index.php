@@ -59,7 +59,7 @@
             </div>
             <div class="view-share-div">
                 <a href="../viewpolls/" class="view-btn">Other Polls</a>
-                <a href="../home/" class="btn">Go to Homepage</a>
+                <a href="../" class="btn">Go to Homepage</a>
             </div>
             <div class="link-clipboard-div">
                 <div class="link-print-div">

@@ -1,0 +1,64 @@
+:root{
+    --bg-1: rgb(255, 0, 85);
+    --bg-2: rgb(255, 85, 142);
+    --bg-3: rgb(235, 0, 78);
+    --bg-color: #FAFAFA;
+    --main-color: white;
+    --text-color: black;
+    --image-text-color: black;
+    --gray-bar: rgb(141, 141, 141);
+}
+.darkmode{
+    --bg-1: rgb(255, 0, 85);
+    --bg-2: rgb(255, 85, 142);
+    --bg-3: rgb(235, 0, 78);
+    --bg-color: #05141d; 
+    --main-color: #1d1d1d;
+    --text-color: rgb(219, 219, 219);
+    --image-text-color: white;
+    --gray-bar: rgb(102, 102, 102);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+.hidden{
+    display: none;
+}
+.flex{
+    display: flex;
+}
+body{
+    height: 99vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+h3{
+    text-align: center;
+    margin-bottom: 15px !important;
+}
+.anchor{
+    text-decoration: none;
+    background-color: var(--bg-1);
+    color: white;
+    padding: 7px 25px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 50px !important;
+    &:hover{
+        background-color: var(--bg-3);
+    }
+}
+@media only screen and (max-width: 768px) {
+    h3{
+        font-size: 19px;
+    }
+}
