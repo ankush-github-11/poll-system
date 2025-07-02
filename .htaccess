@@ -1,5 +1,5 @@
-# Turn on rewriting
 RewriteEngine On
+RewriteRule ^(myproject/.*/)[^/.]+$ /$1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ /myproject/error/ [L]
