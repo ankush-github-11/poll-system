@@ -462,22 +462,20 @@ body{
 @keyframes opacityAndSize {
     0% {
         opacity: 0;
-        font-size: clamp(16px, 1.75vw, 24px);
+        font-size: 10px;
         transform: translateY(0px);
     }
     50% {
         opacity: 0.7;
-        font-size: clamp(20px, 3.75vw, 48px);
+        font-size: 28px;
         transform: translateY(55px);
     }
     100% {
         opacity: 1;
-        font-size: clamp(35px, 4vw, 50px);
+        font-size: 40px;
         transform: translateY(25px);
     }
 }
-
-
 
 /* .vote-text > h3{
     font-size: 22px;
@@ -528,6 +526,10 @@ body{
         background-color: var(--bg-1);
     }
 }
+.createpoll:active {
+    outline: 2px solid var(--bg-1) !important;
+    color: var(--bg-1) !important;
+}
 .demo{
     width: 150px;
     border-top-right-radius: 50px;
@@ -539,6 +541,9 @@ body{
     &:hover{
         color: white;
     }
+}
+.demo:active {
+  color: white !important; /* color when clicked and held */
 }
 @keyframes leftSlide{
     0%{
@@ -552,7 +557,6 @@ body{
     100%{
         transform: translateX(0px) translateY(25px) scale(1);
         opacity: 1;
-
     }
 }
 @keyframes rightSlide{
@@ -595,7 +599,7 @@ body{
 }
 .side-div h3{
     text-align: center;
-    font-size: 45px;
+    font-size: 35px;
     color: var(--title-text);
 }
 
@@ -634,7 +638,7 @@ body{
 }
 .side-box-1 h4 , .side-box-2 h4 , .side-box-3 h4{
     margin-bottom: 30px;
-    font-size: 25px;
+    font-size: 23.5px;
 }
 .side-box-4{
     height: 450px;
@@ -646,6 +650,7 @@ body{
     align-items: center;
     text-align: left;
     border-radius: 10px;
+    gap: 20px;
 }
 
 .side-box-4 div{
@@ -663,7 +668,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 15px;
+    border-radius: 15px;
 }
 .my-fa-1>div, .my-fa-2>div, .my-fa-3>div{
     font-size: large;
@@ -974,8 +979,22 @@ body{
     .create-text{
         margin-bottom: 20px;
     }
-    .create-text > h2{
-        font-size: 35px;
+    @keyframes opacityAndSize {
+        0% {
+            opacity: 0;
+            font-size: 6px;
+            transform: translateY(0px);
+        }
+        50% {
+            opacity: 0.7;
+            font-size: 14px;
+            transform: translateY(55px);
+        }
+        100% {
+            opacity: 1;
+            font-size: 25px;
+            transform: translateY(25px);
+        }
     }
     .total-div-1{
         padding: 0px 1vw;
@@ -985,7 +1004,7 @@ body{
         width: 100%;
     }
     .createpoll, .demo{
-        width: 12rem !important;
+        width: 150px !important;
     }
     .vote-text h3{
         font-size: 18px;
@@ -993,8 +1012,14 @@ body{
     .side-div {
         margin-top: 0;
     }
+    .side-div h3{
+        font-size: 32px;
+    }
     .side-box-1, .side-box-2, .side-box-3 , .side-box-4 {
         width: 90%;
+    }
+    .side-box-1 h4 , .side-box-2 h4 , .side-box-3 h4{
+        font-size: 20px;
     }
     .login {
         display: none;
@@ -1015,15 +1040,15 @@ body{
     .modal-1-cancel-submit, .modal-2-cancel-submit, .modal-3-cancel-submit{
         justify-content: center;
     }
+    .side-box-4 h3{
+        font-size: 27px;
+    }
     .btn-vote-side-box-1 > button, .btn-vote-side-box-2 > button , .btn-vote-side-box-3 > button{
         width: 80%;
     }
 }
 /* For screens up to 576px (mobile) */
 @media (min-width:481px) and (max-width: 576px) {
-    .create-text > h2{
-        font-size: 40px;
-    }
     .side-div {
         margin-top: 0;
     }
@@ -1053,9 +1078,6 @@ body{
 
 /* For screens between 577px and 768px (small tablets) */
 @media (min-width: 577px) and (max-width: 768px) {
-    .create-text > h2{
-        font-size: 45px;
-    }
     .side-div {
         margin-top: 0;
     }
@@ -1106,6 +1128,7 @@ body{
 @media only screen and (min-width: 1097px) { /*  This is only for Growth Overview Div Responsiveness  */
     .side-box-4{
         clip-path: path("M 0,175 A 25,25 0,0,1 25,150 L 275,150 A 25,25 0,0,0 300,125 L 300,100 A 25,25 0,0,1 325,75 L 575,75 A 25,25 0,0,0 600,50 L 600,25 A 25,25 0,0,1 625,0 L 875,0 A 25,25 0,0,1 900,25 L 900,275 A 25,25 0,0,1 875,300 L 625,300 A 25,25 0,0,0 600,325 L 600,350 A 25,25 0,0,1 575,375 L 325,375 A 25,25 0,0,0 300,400 L 300,425 A 25,25 0,0,1 275,450 L 25,450 A 25,25 0,0,1 0,425 Z");
+        gap: 0px;
     }
     .my-fa-1{
         position: relative;
@@ -1215,3 +1238,6 @@ Archive the poll results.
 /*  Add font-size !important in the .create-text > h2  */
 /*  Add the single linear gradinent in the main big text (remove two h2)  */
 /*  Fix the scrollbar track color in each page (specially in create page dark mode)  */
+/*  Make the padding of the profile sqaure in the mobile screen  */
+/*  Prevent from giving the user two same poll options  */
+/*  Prevent from users giving vote twice  */

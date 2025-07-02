@@ -1,3 +1,36 @@
+// Profile Code Starts
+if(document.querySelector(".sessionName").textContent.trim()){
+    document.querySelector(".login").classList.add('hidden');
+    document.querySelector(".signup").classList.add('hidden');
+    document.querySelector(".dropdown-profile-div").classList.remove('hidden');
+    document.querySelector(".dropdown-profile-div").classList.add('flex');
+}
+else{
+    document.querySelector(".dropdown-profile-div").classList.remove('flex');
+    document.querySelector(".dropdown-profile-div").classList.add('hidden');
+    document.querySelector(".login").classList.remove('hidden');
+    document.querySelector(".signup").classList.remove('hidden');
+}
+const dropdown = document.querySelector('.profile-dropdown-div');
+const profileLogo = document.querySelector('.profile-logo');
+profileLogo.addEventListener('click', (event) => {
+    event.stopPropagation();
+    dropdown.classList.toggle('hidden');
+    dropdown.classList.toggle('flex');
+});
+document.addEventListener('click', (event) => {
+    if (dropdown && !dropdown.contains(event.target) && event.target !== profileLogo) {
+        dropdown.classList.remove('flex');
+        dropdown.classList.add('hidden');
+    }
+});
+document.querySelector('.signout-div').addEventListener('mouseenter', () => {
+    document.querySelector('.sign-out-btn').style.backgroundColor = "var(--hover-color)";
+});
+document.querySelector('.signout-div').addEventListener('mouseleave', () => {
+    document.querySelector('.sign-out-btn').style.backgroundColor = "var(--dropdown-bg-color)";
+});
+// Profile Code Ends
                                                                                 // Light or Dark Mode JS
 const initializeTheme = () => {
     const userPreference = localStorage.getItem('theme'); 
