@@ -439,6 +439,70 @@ body{
   padding: 0px 10px;
   width: 180px !important;
 }
+                                                                         /*     Footer Starts     */
+.footer {
+    background-color: var(--footer-bg-color);
+    color: var(--text-color);
+    padding: 40px 20px 10px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.footer-section h2,
+.footer-section h3 {
+    color: var(--bg-1);
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: rgb(103, 103, 255);
+    text-underline-offset: 4px;
+}
+.footer-section li{
+    margin-top: 10px;
+}
+.contact p{
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+.footer-section ul li a:hover {
+    color:rgb(44, 44, 255);
+}
+
+.social-icons a {
+    color:var(--bg-2);
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.social-icons a:hover {
+    color: var(--bg-1);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 2px solid var(--footer-bar);
+    position: relative;
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+        text-align: center;
+  }
+}
 
 /*  Navbar Media Quires Start  */
 @media only screen and (max-width: 480px) {

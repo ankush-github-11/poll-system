@@ -602,7 +602,7 @@ include "../config/connect.php";
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="../">How It Works</a></li>
-                    <li><a href="">View Polls</a></li>
+                    <li><a href="../viewpolls/">View Polls</a></li>
                 </ul>
             </div>
             <div class="footer-section contact">
