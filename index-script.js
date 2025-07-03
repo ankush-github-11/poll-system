@@ -274,5 +274,87 @@ document.querySelectorAll('.nav-items-div a').forEach((navItem, index) => {
     });
 });
                                                                                         // Navbar code ends
+
+ScrollReveal().reveal('.headline');
+ScrollReveal().reveal('.reveal-me-1', {
+  delay: 150,
+  distance: '50px',
+  origin: 'bottom',
+  duration: 1000,
+  easing: 'ease-in-out',
+  reset: false
+});
+ScrollReveal().reveal('.reveal-me-2', {
+  delay: 450,
+  distance: '50px',
+  origin: 'bottom',
+  duration: 1000,
+  easing: 'ease-in-out',
+  reset: false
+});
+ScrollReveal().reveal('.reveal-me-3', {
+  delay: 750,
+  distance: '50px',
+  origin: 'bottom',
+  duration: 1000,
+  easing: 'ease-in-out',
+  reset: false
+});
+ScrollReveal().reveal('.reveal-me-4', {
+  delay: 1000,
+  distance: '100px',
+  origin: 'bottom',
+  duration: 1000,
+  easing: 'ease-in-out',
+  reset: false
+});
+
+
+
+ScrollReveal().reveal('.reveal-me-5', {
+  delay: 200,
+  distance: '100px',
+  origin: 'left',
+  duration: 1600,
+  easing: 'ease-in-out',
+  opacity: 0,
+  reset: false,
+  cleanup: true
+});
+
+ScrollReveal().reveal('.reveal-me-6', {
+  delay: 400,
+  distance: '100px',
+  origin: 'right',
+  duration: 1600,
+  easing: 'ease-in-out',
+  opacity: 0,
+  reset: false,
+  cleanup: true
+});
+
+ScrollReveal().reveal('.reveal-me-7', {
+  delay: 600,
+  distance: '100px',
+  origin: 'left',
+  duration: 1600,
+  easing: 'ease-in-out',
+  opacity: 0,
+  reset: false,
+  cleanup: true
+});
+
+ScrollReveal().reveal('.reveal-me-8', {
+  delay: 800,
+  distance: '100px',
+  origin: 'right',
+  duration: 1600,
+  easing: 'ease-in-out',
+  opacity: 0,
+  reset: false,
+  cleanup: true
+});
+
+
 const year = new Date().getFullYear();
 document.querySelector(".footer-bottom p").textContent = `© ${year} Poll Now. All rights reserved.`; 

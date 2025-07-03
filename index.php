@@ -35,6 +35,7 @@ if(isset($_POST["createpoll"])){
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="index-stylesheet.css">
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 </head>
 
 <body>
@@ -174,7 +175,7 @@ if(isset($_POST["createpoll"])){
                     <h3 class="popular-polls">Popular Polls</h3>
                 </div>
                 <div class="side-div-under-1">
-                    <div class="side-box-1">
+                    <div class="side-box-1 reveal-me-1">
                         <h4>Programming Language</h4>
                         <p>C / C++ / Java / Python / Javascript / etc.</p>
                         <div class="btn-vote-side-box-1">
@@ -190,7 +191,7 @@ if(isset($_POST["createpoll"])){
                             <button type="button" class="btn btn-side-box btn-vote-1">Vote</button>
                         </div>
                     </div>
-                    <div class="side-box-2">
+                    <div class="side-box-2 reveal-me-2">
                         <h4>Favourite Time of the Year</h4>
                         <p>Summer / Monsoon / Fall / Winter / Spring</p>
                         <div class="btn-vote-side-box-2">
@@ -206,7 +207,7 @@ if(isset($_POST["createpoll"])){
                             <button type="button" class="btn btn-side-box btn-vote-2">Vote</button>
                         </div>
                     </div>
-                    <div class="side-box-3">
+                    <div class="side-box-3 reveal-me-3">
                         <h4>Most Useful Gadget</h4>
                         <p>Smartphone / Laptop / Smartwatch / Tablet</p>
                         <div class="btn-vote-side-box-3">
@@ -224,7 +225,7 @@ if(isset($_POST["createpoll"])){
                 </div>
                 <h3>Growth Overview</h3>
                 <div class="side-div-under-2 no-select">
-                    <div class="side-box-4">
+                    <div class="side-box-4 reveal-me-4">
                         <div class="my-fa-1">
                             <div><i class="fa-solid fa-paper-plane fa-xl"></i></div>
                             <h3>10,000</h3>
@@ -247,19 +248,19 @@ if(isset($_POST["createpoll"])){
         <div class="total-div-2">
             <div class="how-it-works-div">
                 <h1>How It Works</h1>
-                <div class="how-it-works-under-1 step">
+                <div class="how-it-works-under-1 step reveal-me-5">
                     <h4><i class="fa-solid fa-user-plus"></i>Login & Register</h4>
                     <div>Create your account or sign in to get started with polling activities. Fast and secure registration ensures a smooth experience.</div>
                 </div>
-                <div class="how-it-works-under-2 step">
+                <div class="how-it-works-under-2 step reveal-me-6">
                     <h4><i class="fa-solid fa-address-card"></i>Verify Identity</h4>
                     <div>To maintain a trustworthy voting environment, quickly verify your identity. It keeps polls fair and authentic.</div>
                 </div>
-                <div class="how-it-works-under-3 step">
+                <div class="how-it-works-under-3 step reveal-me-7">
                     <h4><i class="fa-solid fa-table-list"></i>Create or Participate in Polls</h4>
                     <div>You can easily create your own polls or participate in exciting polls created by others. Engage with the community effortlessly.</div>
                 </div>
-                <div class="how-it-works-under-4 step">
+                <div class="how-it-works-under-4 step reveal-me-8">
                     <h4><i class="fa-solid fa-square-poll-vertical"></i>Confirm Your Vote and See The Results</h4>
                     <div>After voting, instantly confirm your choice and view real-time results. Stay updated and see how your opinion shapes the outcome.</div>
                 </div>
@@ -427,7 +428,6 @@ if(isset($_POST["createpoll"])){
             <p>© 2025 Poll Now. All rights reserved.</p>
         </div>
     </footer>
-
 
 
 
