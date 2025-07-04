@@ -341,7 +341,7 @@ include "../config/connect.php";
                             <input class="publish-immediately-checkbox form-check-input" name="publish-immediately-checkbox" type="checkbox">
                         </div>
                         <div class="schedule-and-duration-div-2">
-                            <label for="start-date-time">Select Start Date & Time</label>
+                            <label>Select Start Date & Time</label>
                             <div class="schedule-message"></div>
                             <div class="schedule-and-duration-div-2-under">
                                 <i class="fa-solid my-fa-calendar fa-calendar-days" alt="Calendar Icon"></i>
