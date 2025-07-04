@@ -36,14 +36,20 @@ document.querySelector('.signout-div').addEventListener('mouseleave', () => {
 document.querySelector(".schedule-and-duration-div-2-calendar").value = 'Calendar';
 const arrayOfSidebar = new Set();
 arrayOfSidebar.add("sidebar-1");
-flatpickr("#start-date-time", {
+const flatpickrInstance = flatpickr("#start-date-time", {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
-    minDate: "today", // Disables past dates
+    minDate: "today", // Disable past dates
     minuteIncrement: 1,
     onChange: function (selectedDates) {
         validateDate(selectedDates[0]);
     },
+    onReady: function (_, __, instance) {
+        syncFlatpickrTheme(instance);
+    },
+    onOpen: function (_, __, instance) {
+        syncFlatpickrTheme(instance);
+    }
 });
 
 const validateDate = (selectedDate) => {
@@ -389,11 +395,25 @@ document.querySelector('.participant-poll-options-div').addEventListener('click'
 document.querySelector('.light-dark-div').addEventListener('click', function () {
     document.body.classList.toggle('darkmode');
     const isDarkMode = document.body.classList.contains('darkmode');
-    document.querySelectorAll('.my-fa-1, .my-fa-3').forEach((ele) => ele.classList.toggle('my-fa-linear-gradient'));
+
+    document.querySelectorAll('.my-fa-1, .my-fa-3')
+        .forEach(ele => ele.classList.toggle('my-fa-linear-gradient'));
     document.querySelector('.dark-mode-svg').classList.toggle('hidden');
     document.querySelector('.light-mode-svg').classList.toggle('hidden');
+
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+
+    // 🟢 Update Flatpickr to reflect theme
+    syncFlatpickrTheme(flatpickrInstance);
 });
+function syncFlatpickrTheme(fpInstance) {
+    if (fpInstance && fpInstance.calendarContainer) {
+        fpInstance.calendarContainer.classList.toggle(
+            'darkmode',
+            document.body.classList.contains('darkmode')
+        );
+    }
+}
 initializeTheme();
 window.addEventListener('resize', updateBarStyles);
 updateBarStyles();

@@ -807,6 +807,17 @@ input:valid ~ label {
         box-shadow: none; 
     }
 }
+/* add this to your stylesheet */
+.flatpickr-calendar.darkmode {
+  background: #2b2b2b;
+  color: #eee;
+}
+.flatpickr-calendar.darkmode .flatpickr-weekdayspan,
+.flatpickr-calendar.darkmode .flatpickr-day {
+  color: var(--text-color);
+}
+/* tweak any other selectors (arrows, inputs, selects) to suit your theme */
+
 .schedule-and-duration-div-2 i {
     position: relative;
     left: 90%;

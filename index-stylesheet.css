@@ -1200,8 +1200,6 @@ body{
         margin-right: 20px;
     }
   }
-/*  Add the media queries for the 2nd and 3rd poll  */
-/*  Add BG color to all the option divs in the popular polls and write the corresponding Javascript  */
 /*  Fix the Responsiveness of the modals  */
 /*  Fix the login button in responsiveness in result.php  */
 /*  Use cookie to ensure only one time voting  */
@@ -1210,40 +1208,15 @@ body{
 /*  Fix view result button logic  */
 /*  Make Poll Result Chart Responsive  */
 /*  Add Media Query to all the stylesheets (Copy and Paste from index.stylesheet.css)  */
-/*  Make the content width in index page 85%  */
-/*  Deleting the option on questionAndPollOptions  */
-/*  Give info on hovering on each radio button  */
 /*  Add a Simple and Advanced Poll Switch in the beginning of the Create Poll  */
 /*  Fix the responsiveness of the divs under the Schedule and Duration Layout  */
 /*  Fix the layout of the Poll Chart in Mobile Mode  */
-/*  Use flatpickr for calendar logo in schedule and duration  */
 /*  Add Responsiveness to the Growth Overview Div  */
 /*  Add animation to the profile dropdown  */
-/*  Change the .sessionName logic to .sessionUsername  */
-/*  Fix the username issue in signup  */
-/*  Fix the demo form  */
-
-/*
-Settings/Configuration
-
-
-Reset Form
-Button: Clears all fields in the form.
-
-Poll Expiry Actions:
-Notify the admin.
-Automatically delete/disable the poll.
-Archive the poll results.
-
-
-*/
 
 
 
 
-
-
-/*  Change the popup of the create screen  */
 /*  Make the already voted text a bit small while being responsive  */
 /*  After login / logout please refresh the whole application  */
 /*  Change the "how it works" footer a tag's href in all the pages and "view polls" also  */
