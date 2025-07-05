@@ -3,26 +3,26 @@
     $parts = parse_url($uri);
     parse_str($parts['query'] ?? '', $queryParams);
     $view = $queryParams['view'] ?? null;
-    if($view <= 0 or $view >= 3){
+    if($view <= 0 or $view >= 4){
         include "../error/index.php";
         exit();
     }
 
     include "../config/connect.php";
     $n = 0;
-    if (isset($_POST["submit1"]))
+    if (isset($_GET["submit1"]))
         $n = 1;
-    if (isset($_POST["submit2"]))
+    if (isset($_GET["submit2"]))
         $n = 2;
-    if (isset($_POST["submit3"]))
+    if (isset($_GET["submit3"]))
         $n = 3;
     // Make changes if selecting option then submitting gives error
     if ($n != 0) {
-        $poll = $_POST["result$n"];
+        $poll = $_GET["result$n"];
         $ipaddress = $_SERVER['REMOTE_ADDR'];
         $sql = "insert into modal$n set ipaddress='$ipaddress',polloption='$poll'";
         $res = mysqli_query($conn, $sql);
-
+        
     }
 ?>
 <!DOCTYPE html>

@@ -296,7 +296,7 @@ if(isset($_POST["createpoll"])){
                     $sql = "select * from modal1 where ipaddress='$address'";
                     $res = mysqli_query($conn,$sql);
                     if($res && mysqli_num_rows($res) > 0){
-                        echo "Voted";
+                        echo "Voted"; // Change this to Vote to check the
                     }
                     ?>">
                     </div>
@@ -311,7 +311,8 @@ if(isset($_POST["createpoll"])){
                 <div class="modal-1-cancel-submit">
                     <button type="button" class="btn btn-danger cancel-1">Cancel</button>
                     <!-- Change the POST to GET if dont want the resubmission and resubmission alert -->
-                    <form action="./livepolls/" method="POST">
+                    <form action="./livepolls/" method="GET">
+                        <input type="text" class="view1 hidden" name="view" value="1">
                         <input type="text" class="result-1 hidden" name="result1">
                         <input type="submit" class="btn btn-success submit-1" name="submit1">
                     </form>
@@ -350,7 +351,7 @@ if(isset($_POST["createpoll"])){
                 <div class="modal-2-line"></div>
                 <div class="modal-2-cancel-submit">
                     <button type="button" class="btn btn-danger cancel-2">Cancel</button>
-                    <form action="./livepolls/" method="POST">
+                    <form action="./livepolls/" method="GET">
                         <input type="text" class="result-2 hidden" name="result2">
                         <input type="submit" class="btn btn-success submit-2" name="submit2">
                     </form>
@@ -388,7 +389,7 @@ if(isset($_POST["createpoll"])){
                 <div class="modal-3-line"></div>
                 <div class="modal-3-cancel-submit">
                     <button type="button" class="btn btn-danger cancel-3">Cancel</button>
-                    <form action="./livepolls/" method="POST">
+                    <form action="./livepolls/" method="GET">
                         <input type="text" class="result-3 hidden" name="result3">
                         <input type="submit" class="btn btn-success submit-3" name="submit3">
                     </form>

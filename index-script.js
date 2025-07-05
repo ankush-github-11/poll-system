@@ -141,7 +141,7 @@ document.querySelector('.modal-1-options-div').addEventListener('click', functio
         });
         event.target.classList.add('active-bg');
         event.target.classList.add('active-text');
-        document.querySelector('.result-1').textContent = event.target.textContent;
+        document.querySelector('.result-1').value = event.target.textContent;
     }
 });
 document.querySelector('.modal-2-options-div').addEventListener('click', function (event) {
