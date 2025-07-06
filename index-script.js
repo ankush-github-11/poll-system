@@ -2,7 +2,7 @@ if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 window.addEventListener('beforeunload', () => window.scrollTo(0,0));
-window.addEventListener('load',        () => window.scrollTo(0,0));
+window.addEventListener('load', () => window.scrollTo(0,0));
 // Profile Code Starts
 if(document.querySelector(".sessionName").textContent.trim()){
     document.querySelector(".login").classList.add('hidden');
@@ -282,7 +282,7 @@ document.querySelectorAll('.nav-items-div a').forEach((navItem, index) => {
 
 ScrollReveal().reveal('.headline');
 ScrollReveal().reveal('.reveal-me-1', {
-  delay: 150,
+  delay: 250,
   distance: '50px',
   origin: 'bottom',
   duration: 1000,
@@ -290,7 +290,7 @@ ScrollReveal().reveal('.reveal-me-1', {
   reset: false
 });
 ScrollReveal().reveal('.reveal-me-2', {
-  delay: 450,
+  delay: 550,
   distance: '50px',
   origin: 'bottom',
   duration: 1000,
@@ -298,23 +298,22 @@ ScrollReveal().reveal('.reveal-me-2', {
   reset: false
 });
 ScrollReveal().reveal('.reveal-me-3', {
-  delay: 750,
+  delay: 850,
   distance: '50px',
   origin: 'bottom',
   duration: 1000,
   easing: 'ease-in-out',
   reset: false
 });
+
 ScrollReveal().reveal('.reveal-me-4', {
-  delay: 1000,
+  delay: 400,
   distance: '100px',
   origin: 'bottom',
   duration: 1000,
   easing: 'ease-in-out',
   reset: false
 });
-
-
 
 ScrollReveal().reveal('.reveal-me-5', {
   delay: 200,

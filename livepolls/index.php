@@ -7,23 +7,7 @@
         include "../error/index.php";
         exit();
     }
-
     include "../config/connect.php";
-    $n = 0;
-    if (isset($_GET["submit1"]))
-        $n = 1;
-    if (isset($_GET["submit2"]))
-        $n = 2;
-    if (isset($_GET["submit3"]))
-        $n = 3;
-    // Make changes if selecting option then submitting gives error
-    if ($n != 0) {
-        $poll = $_GET["result$n"];
-        $ipaddress = $_SERVER['REMOTE_ADDR'];
-        $sql = "insert into modal$n set ipaddress='$ipaddress',polloption='$poll'";
-        $res = mysqli_query($conn, $sql);
-        
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,39 +41,39 @@
         ?>
     </div>
     <div class="hidden view" data-value="
-                <?php
-                    $n = 0;
-                    if (isset($_GET["view"]))
-                        $n = $_GET["view"];
-                    echo $n;
-                ?>
-                "></div>
-                <input class="view-array" value="
-                <?php
-                    if (isset($_GET["view"]))
-                        $n = $_GET["view"];
-                    $array = [];
-                    $array1 = ['C', 'C++', 'Java', 'Python', 'Javascript', 'C#', 'PHP', 'Ruby', 'Go', 'Rust', 'HTML', 'Assembly', 'R', 'Swift', 'Kotlin'];
-                    $array2 = ['Summer', 'Monsoon', 'Fall', 'Winter', 'Spring'];
-                    $array3 = ['Smartphone', 'Laptop', 'Smartwatch', 'Tablet'];
-                    if ($n == 1)
-                        $optionsArray = $array1;
-                    if ($n == 2)
-                        $optionsArray = $array2;
-                    if ($n == 3)
-                        $optionsArray = $array3;
+        <?php
+            $n = 0;
+            if (isset($_GET["view"]))
+                $n = $_GET["view"];
+            echo $n;
+        ?>
+        "></div>
+        <input class="view-array" value="
+        <?php
+            if (isset($_GET["view"]))
+                $n = $_GET["view"];
+            $array = [];
+            $array1 = ['C', 'C++', 'Java', 'Python', 'Javascript', 'C#', 'PHP', 'Ruby', 'Go', 'Rust', 'HTML', 'Assembly', 'R', 'Swift', 'Kotlin'];
+            $array2 = ['Summer', 'Monsoon', 'Fall', 'Winter', 'Spring'];
+            $array3 = ['Smartphone', 'Laptop', 'Smartwatch', 'Tablet'];
+            if ($n == 1)
+                $optionsArray = $array1;
+            if ($n == 2)
+                $optionsArray = $array2;
+            if ($n == 3)
+                $optionsArray = $array3;
 
-                        foreach ($optionsArray as $option) {
-                            $sql = "SELECT COUNT(*) as count FROM modal$n WHERE polloption = '$option'";
-                            $res = mysqli_query($conn, $sql);
-                            if ($res) {
-                                $row = mysqli_fetch_assoc($res);
-                                $count = $row['count'];
-                                echo "$count ";
-                            }
-                        }
-                ?>
-                ">
+            foreach ($optionsArray as $option) {
+                $sql = "SELECT COUNT(*) as count FROM modal$n WHERE polloption = '$option'";
+                $res = mysqli_query($conn, $sql);
+                if ($res) {
+                    $row = mysqli_fetch_assoc($res);
+                    $count = $row['count'];
+                    echo "$count ";
+                }
+            }
+        ?>
+    ">
     <header>
         <!-- Navbar Starts -->
         <nav>
@@ -191,9 +175,9 @@
         <div class="total-div">
             <div class="middle-div">
                 <div class="middle-div-under-1">
-                    <h1 class="head-1 hidden">Programming Language</h1>
-                    <h1 class="head-2 hidden">Favourite Time of the Year</h1>
-                    <h1 class="head-3 hidden">Most Useful Gadget</h1>
+                    <h3 class="head-1 hidden">Best Programming Language</h3>
+                    <h3 class="head-2 hidden">Favourite Time of the Year</h3>
+                    <h3 class="head-3 hidden">Most Useful Gadget</h3>
                     <div class="main-horizontal-line"></div>
                     <div class="left-div">
                         <!-- <div class="poll-display-box">

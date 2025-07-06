@@ -176,7 +176,7 @@ if(isset($_POST["createpoll"])){
                 </div>
                 <div class="side-div-under-1">
                     <div class="side-box-1 reveal-me-1">
-                        <h4>Programming Language</h4>
+                        <h4>Best Programming Language</h4>
                         <p>C / C++ / Java / Python / Javascript / etc.</p>
                         <div class="btn-vote-side-box-1">
                             <div>
@@ -269,7 +269,7 @@ if(isset($_POST["createpoll"])){
         <div class="total-div-3 hidden">
             <div class="modal-1 hidden">
                 <div class="modal-1-header">
-                    <h2>Programming Language</h2>
+                    <h2>Best Programming Language</h2>
                     <i class="fa-regular x-1 fa-circle-xmark fa-2xl"></i>
                 </div>
                 <div class="modal-1-line"></div>
@@ -310,8 +310,7 @@ if(isset($_POST["createpoll"])){
                 <div class="modal-1-line"></div>
                 <div class="modal-1-cancel-submit">
                     <button type="button" class="btn btn-danger cancel-1">Cancel</button>
-                    <!-- Change the POST to GET if dont want the resubmission and resubmission alert -->
-                    <form action="./livepolls/" method="GET">
+                    <form action="./submit/" method="POST">
                         <input type="text" class="view1 hidden" name="view" value="1">
                         <input type="text" class="result-1 hidden" name="result1">
                         <input type="submit" class="btn btn-success submit-1" name="submit1">
@@ -351,7 +350,7 @@ if(isset($_POST["createpoll"])){
                 <div class="modal-2-line"></div>
                 <div class="modal-2-cancel-submit">
                     <button type="button" class="btn btn-danger cancel-2">Cancel</button>
-                    <form action="./livepolls/" method="GET">
+                    <form action="./submit/" method="POST">
                         <input type="text" class="view2 hidden" name="view" value="2">
                         <input type="text" class="result-2 hidden" name="result2">
                         <input type="submit" class="btn btn-success submit-2" name="submit2">
@@ -390,7 +389,7 @@ if(isset($_POST["createpoll"])){
                 <div class="modal-3-line"></div>
                 <div class="modal-3-cancel-submit">
                     <button type="button" class="btn btn-danger cancel-3">Cancel</button>
-                    <form action="./livepolls/" method="GET">
+                    <form action="./submit/" method="POST">
                         <input type="text" class="view3 hidden" name="view" value="3">
                         <input type="text" class="result-3 hidden" name="result3">
                         <input type="submit" class="btn btn-success submit-3" name="submit3">
