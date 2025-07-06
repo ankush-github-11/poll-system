@@ -26,7 +26,9 @@
     --footer-bg-color: rgb(245, 245, 245);
     --footer-color-contacts: rgb(75, 75, 75);
     --footer-bar: rgb(212, 212, 212);
-
+    
+    --option-hover: #969696;
+    --modal-border: rgb(198, 198, 198);
 }
 .darkmode{
     --bg-1: rgb(255, 0, 85);
@@ -52,12 +54,14 @@
     --hover-color: rgb(32, 32, 32);
     --dropdown-text-color: rgb(248, 248, 248);
     --dropdown-bg-color: rgb(22, 22, 22);
-
+    
     --footer-bg-color: #071b29;
     --footer-color-contacts: rgb(200, 200, 200);
     --footer-bar: rgb(54, 54, 54);
-
-
+    
+    --option-hover: rgb(201, 201, 201);
+    --modal-border: gray;
+    
 }
 ::-webkit-scrollbar {
     width: 8px;
@@ -731,6 +735,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 35px;
+    padding-bottom: 35px;
 }
 .how-it-works-div > div{
     margin: 0px 2.5vw;
@@ -780,8 +785,25 @@ body{
 .flex{
     display: flex;
 }
-.active-bg{
-    background-color: rgb(12, 165, 40);
+.active-bg {
+  position: relative;
+  background: linear-gradient(155deg, rgb(33, 255, 21), rgb(0, 179, 0), rgb(212, 255, 0));
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 1;
+  overflow: hidden;
+  outline: none !important;
+}
+.active-bg::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(155deg, rgb(33, 255, 21), rgb(0, 179, 0), rgb(212, 255, 0));
+  z-index: -1;
+  border-radius: inherit;
 }
 .active-text{
     color: white;
@@ -798,7 +820,7 @@ body{
 }
 .modal-1-css , .modal-2-css , .modal-3-css{
     background-color: rgba(207, 207, 207, 0.1);
-    outline: 2px solid rgb(211, 211, 211);
+    outline: 2px solid var(--modal-border);
     border-radius: 10px;
     position: fixed;
     display: flex;
@@ -822,7 +844,7 @@ body{
 }
 .modal-1-header > h2 , .modal-2-header > h2 , .modal-3-header > h2{
     margin: 20px;
-    color: var(--bg-1);
+    color: var(--text-color-less);
     height: min-content;
 }
 .modal-1-line, .modal-2-line, .modal-3-line{
@@ -830,7 +852,7 @@ body{
     margin-bottom: 5px;
     width: 97%;
     height: 2px;
-    background-color: rgb(211, 211, 211);
+    background-color: var(--modal-border);
 }
 .modal-1-options-div {
     height: 50vh;
@@ -842,14 +864,16 @@ body{
 
 .modal-1-options-div > div {
     cursor: pointer;
-    outline: 2px solid rgb(218, 218, 218);
+    outline: 2px solid var(--modal-border);
+    font-weight: 500;
+    letter-spacing: 0.3px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 10px;
     &:hover{
-        outline: 2px solid rgb(201, 201, 201);
+        outline: 2px solid var(--option-hover);
     }
 }
 .modal-2-options-div {
@@ -862,14 +886,16 @@ body{
 
 .modal-2-options-div > div {
     cursor: pointer;
-    outline: 2px solid rgb(218, 218, 218);
+    outline: 2px solid var(--modal-border);
+    font-weight: 500;
+    letter-spacing: 0.3px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 10px;
     &:hover{
-        outline: 2px solid rgb(201, 201, 201);
+        outline: 2px solid var(--option-hover);
     }
 }
 .modal-3-options-div {
@@ -882,14 +908,16 @@ body{
 
 .modal-3-options-div > div {
     cursor: pointer;
-    outline: 2px solid rgb(218, 218, 218);
+    outline: 2px solid var(--modal-border);
+    font-weight: 500;
+    letter-spacing: 0.3px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 10px;
     &:hover{
-        outline: 2px solid rgb(201, 201, 201);
+        outline: 2px solid var(--option-hover);
     }
 }
 .modal-1-cancel-submit, .modal-2-cancel-submit, .modal-3-cancel-submit{
