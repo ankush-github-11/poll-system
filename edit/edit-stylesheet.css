@@ -342,7 +342,7 @@ body{
     margin-top: 0.8rem;
     margin-bottom: 0.9rem;
 }
-.settings-div, .edit-div, .signout-div{
+.profile-div, .edit-div, .signout-div{
     font-size: 15px;
     display: flex;
     flex-direction: row;
@@ -357,10 +357,10 @@ body{
         background-color: var(--hover-color);
     }
 }
-.settings-div > i, .edit-div > i .signout-div > i{
+.profile-div > i, .edit-div > i .signout-div > i{
     color: var(--dropdown-text-color);
 }
-.settings-div > a, .edit-div > a{
+.profile-div > a, .edit-div > a{
     width: 100%;
     text-decoration: none;
     color: var(--dropdown-text-color);

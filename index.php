@@ -128,9 +128,9 @@ if(isset($_POST["createpoll"])){
                             </div>
                         </div>
                         <div class="horizontal-line"></div>
-                        <div class="settings-div">
-                            <i class="fa-solid fa-gear"></i>
-                            <a href="./settings/">Settings</a>
+                        <div class="profile-div">
+                            <i class="fa-solid fa-user"></i>
+                            <a href="./profile/">My Profile</a>
                         </div>
                         <div class="edit-div">
                             <i class="fa-solid fa-pen-to-square"></i>
