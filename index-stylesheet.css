@@ -161,6 +161,7 @@ body{
   justify-content: center;
   align-items: center;
   border-radius: 16px;
+  border: 1px solid var(--box-border);
 }
 
 .my-navbar-div{
@@ -234,16 +235,17 @@ body{
 }
 .blur{
     animation: my-blur 0.6s 1 forwards;
-  }
-  @keyframes my-blur{
+    pointer-events: none;
+}
+@keyframes my-blur{
     from{
-      filter: blur(0px);
+        filter: blur(0px);
     }
     to{
       filter: blur(2px);
     }
-  }
-  .blur-rev{
+}
+.blur-rev{
     animation: my-blur-rev 0.6s 1 forwards;
   }
   @keyframes my-blur-rev{
@@ -1254,3 +1256,7 @@ body{
 /*  Make the padding of the profile sqaure in the mobile screen  */
 /*  Prevent from giving the user two same poll options  */
 /*  Prevent from users giving vote twice  */
+
+/*  Give a border in the dark mode of the profile dropdown or make the bg color as same as the op-active color of createpoll page  */
+
+/*  Change the poll page title gradient color - bg-1 to violet   */

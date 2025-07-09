@@ -193,7 +193,7 @@
                             <img class="participant-image" src="../images/admin-logo.png" alt="">
                         </div> -->
                         <div class="participant-header-texts">
-                            <div class="participant-header-name">Author: 
+                            <div class="participant-header-name">
                                 <?php
                                 echo $arr["name"];
                                 ?>
