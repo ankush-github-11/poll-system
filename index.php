@@ -39,6 +39,12 @@ if(isset($_POST["createpoll"])){
 </head>
 
 <body>
+    <div class="bg-glow-container">
+        <div class="glow-box box1"></div>
+        <div class="glow-box box2"></div>
+        <div class="glow-box box3"></div>
+        <div class="glow-box box4"></div>
+    </div>
     <div class="sessionUsername hidden">
         <?php
             if(isset($_SESSION["username"]))
