@@ -44,6 +44,7 @@ if(isset($_POST["createpoll"])){
         <div class="glow-box box2"></div>
         <div class="glow-box box3"></div>
         <div class="glow-box box4"></div>
+        <div class="glow-box box5"></div>
     </div>
     <div class="sessionUsername hidden">
         <?php
