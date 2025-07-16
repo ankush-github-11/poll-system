@@ -29,6 +29,7 @@
     
     --option-hover: #969696;
     --modal-border: rgb(198, 198, 198);
+    --going-line: #DFE0E1;
 }
 .darkmode{
     --bg-1: rgb(255, 0, 85);
@@ -61,6 +62,7 @@
     
     --option-hover: rgb(201, 201, 201);
     --modal-border: gray;
+    --going-line: #252525;
     
 }
 ::-webkit-scrollbar {
@@ -98,6 +100,7 @@ body{
     margin: 0px;
     background-color: var(--bg-color);
     color: var(--text-color);
+    overflow-x: hidden;
 }
 .bg-glow-container {
   position: absolute;
@@ -814,6 +817,42 @@ body{
     padding-right: 1vw;
     padding-left: 1vw;
     padding-bottom: 3vh;
+}
+.going-line-div {
+    height: 3px;
+    width: 100%;
+    background-color: var(--going-line);
+    position: absolute;
+    top: 100vh;
+}
+.going-line-outer {
+    height: 3px;
+    width: 200px;
+    display: flex;
+    background-color: rgba(133, 133, 133, 0.312);
+    justify-content: center;
+    box-shadow: 0 0 150px 15px rgb(229, 229, 229);
+    animation: moveBall 4.5s infinite;
+}
+.going-line {
+    height: 3px;
+    width: 50px;
+    background: linear-gradient(to right, white, rgba(255, 255, 0, 0.842));
+}
+.going-line-ball {
+    height: 3px;
+    width: 8px;
+    background-color: rgba(255, 255, 0, 0.842);
+    box-shadow: 0 0 130px 30px rgba(0, 255, 229, 0.689), 0 0 50px 10px rgba(0, 255, 229, 0.689), 0 0 20px 3px rgba(0, 255, 229, 0.689);
+    border-radius: 50px;
+}
+@keyframes moveBall {
+    0% {
+        margin-left: -300px;
+    }
+    100% {
+        margin-left: calc(100% + 40px);
+    }
 }
 .popular-polls-div{
     height: fit-content;

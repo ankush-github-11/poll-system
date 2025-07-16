@@ -156,6 +156,12 @@ if(isset($_POST["createpoll"])){
         </nav>
     </header>
     <main>
+        <div class="going-line-div">
+            <div class="going-line-outer">
+                <div class="going-line"></div>
+                <div class="going-line-ball"></div>
+            </div>
+        </div>
         <div class="total-div-1">
             <div class="middle-div">
                 <div class="middle-div-under-1">
@@ -178,7 +184,7 @@ if(isset($_POST["createpoll"])){
                 </div>
             </div>
             <div class="side-div">
-                <div class="popular-polls-div glow-border">
+                <div class="popular-polls-div">
                     <h3 class="popular-polls">Popular Polls</h3>
                 </div>
                 <div class="side-div-under-1">
