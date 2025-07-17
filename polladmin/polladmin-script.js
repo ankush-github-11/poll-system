@@ -117,7 +117,7 @@ document.querySelectorAll('.nav-items-div a').forEach((navItem, index) => {
 
 const arr = document.querySelector('.options-div').textContent.trim().split("/*-*&^/*-");
 const optionsArray = arr[0].split("<.-:.=>");
-const countArray = arr[1].split("<.-:.=>").map(Number); // convert to numbers
+const countArray = arr[1].split("<.-:.=>").map(Number);
 
 let sum = 0;
 let maxi = 0;
@@ -131,7 +131,6 @@ if(sum == 0){
     }
 }
 else{
-    // convert to percentage (or fraction of 100 width)
     for (let i = 0; i < countArray.length; i++) {
         countArray[i] = (countArray[i] / sum) * 100;
         if(countArray[i] > maxi) maxi = countArray[i];
@@ -162,7 +161,12 @@ for (let i = 0; i < optionsArray.length; i++) {
 }
 document.querySelector(".total-participants-value").textContent = sum;
 
-
+const votersRepresentation = function(ele, i){
+    if(document.querySelector('.representation-div').textContent.trim() === 'initial'){
+        return ele[0].toUpperCase();                          
+    }
+    else return i + 1;
+}
 const listText = document.querySelector('.list-div').textContent.trim();
 const listArray = listText.split("<.-:.=>");
 if (!(listArray.length === 1 && listArray[0] === "")) {
@@ -170,7 +174,7 @@ if (!(listArray.length === 1 && listArray[0] === "")) {
         const html = `  
                         <div class="side-horizontal-line"></div>
                         <div class="participant-div">
-                            <div class="counter-initial">${i + 1}</div>
+                            <div class="counter-initial">${votersRepresentation(listArray[i], i)}</div>
                             <div class="name-div">${listArray[i]}</div>
                         </div>
                      `;

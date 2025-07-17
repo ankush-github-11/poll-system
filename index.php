@@ -156,12 +156,6 @@ if(isset($_POST["createpoll"])){
         </nav>
     </header>
     <main>
-        <div class="going-line-div">
-            <div class="going-line-outer">
-                <div class="going-line"></div>
-                <div class="going-line-ball"></div>
-            </div>
-        </div>
         <div class="total-div-1">
             <div class="middle-div">
                 <div class="middle-div-under-1">

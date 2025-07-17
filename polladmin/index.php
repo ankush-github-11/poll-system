@@ -242,6 +242,11 @@
                         echo $_SESSION["arr"]['timeCreated'];
                     ?>
                 </div>
+                <div class="representation-div hidden">
+                    <?php
+                        echo $_SESSION["arr"]['votersRepresentation'];
+                    ?>
+                </div>
                 <div class="horizontal-line"></div>
                 <div class="body-div">
                     <div class="left-div">

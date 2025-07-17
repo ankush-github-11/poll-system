@@ -142,7 +142,6 @@ body{
   border-radius: 16px;
   border: 1px solid var(--border);
 }
-
 .my-navbar-div{
   height: 60px;
   width: 100%;
@@ -185,7 +184,6 @@ body{
   justify-content: center;
   align-items: center;
   gap: 8px;
-
 }
 .nav-items-div > div > div{
   height: 3px;
