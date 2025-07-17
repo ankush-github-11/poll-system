@@ -450,13 +450,15 @@ body{
 .participant-header-name{
     color: white;
     font-size: 18px;
-}
-.participant-header-title{
+    word-break: break-all;
+  }
+  .participant-header-title{
     color: white;
     font-size: 28px;
     font-weight: 500;
-}
-.participant-description{
+    word-break: break-all;
+  }
+  .participant-description{
     padding: 15px;
     background: linear-gradient(155deg, var(--bg-color), var(--box-color));
     color: var(--text-color-less);
@@ -466,7 +468,8 @@ body{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-}
+    word-break: break-all;
+  }
 /* .participant-body-heading{
     padding: 7px 10px;
     display: flex;
@@ -560,6 +563,7 @@ body{
     height: fit-content;
     width: 100%;
     padding: 15px;
+    text-align: end;
 }
 .participants-footer-buttons-div{
     display: flex;
@@ -609,6 +613,10 @@ body{
   justify-content: end;
   margin-top: 10px;
   color: var(--bg-2);
+}
+.already-voted-text{
+  color: rgb(0, 198, 0);
+  font-weight: 500;
 }
 .main-div-2{
   height: fit-content;
@@ -881,3 +889,4 @@ body{
 /*  Fix the signout  */
 /*  Please do the designing part of the pid div  */
 /*  Make each and every poll option box of equal height because when there is a two line option in the 1st row and 1 line option in the second row then its appearing a bug  */
+/*  Add word break in the author, title, description  */

@@ -3,6 +3,10 @@ if(!document.querySelector('.sessionUsername').textContent.trim()){
     document.querySelector('.login-to-submit').classList.remove('hidden');
     document.querySelector('.login-to-submit').classList.add('flex');
 }
+if(document.querySelector(".voted-or-not").textContent.trim() === "Already Voted"){
+    document.querySelector(".footer-form").classList.add('hidden');
+    document.querySelector(".already-voted-text").classList.remove('hidden');
+}
 let timeText = document.querySelector('.startDateAndTime').textContent.trim();
 if (timeText.toLowerCase() === 'no') {
     const fallbackTime = document.querySelector('.timeCreated').textContent.trim();

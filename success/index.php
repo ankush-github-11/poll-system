@@ -5,7 +5,7 @@
     }
     if(!isset($_SESSION["selectedOp"])){
         // Error logic : That's not the page you are looking for
-        include "../error/";
+        include "../error/index.php";
         exit();
     }
     if(isset($_POST["selectedOption"]) && isset($_POST["votedPid"])){
@@ -15,15 +15,25 @@
         if(isset($_SESSION["uid"])) $uid = $_SESSION["uid"];
         else{
             // Error logic : That's not the page you are looking for
-            include "../error/";
+            include "../error/error.php";
             exit();
         }
-        $sql = "insert into votes set pid='$pid', uid='$uid', selectedOption='$option'";
-        $res = mysqli_query($conn, $sql);
-        $temp = "update users set pollsVoted = pollsVoted + 1 where uid = $uid";
-        $res = mysqli_query($conn, $temp);
+        $checkSql = "SELECT 1 FROM votes WHERE pid='$pid' AND uid='$uid'";
+        $checkRes = mysqli_query($conn, $checkSql);
+        if ($checkRes && mysqli_num_rows($checkRes) == 0) {
+            $sql = "INSERT INTO votes SET pid='$pid', uid='$uid', selectedOption='$option'";
+            $res = mysqli_query($conn, $sql);
+            $temp = "update users set pollsVoted = pollsVoted + 1 where uid = $uid";
+            $res = mysqli_query($conn, $temp);
+            $message =  "Your vote has been submitted successfully!";
+        }
+        else{
+            $message = "Your have already voted!";
+        }
     }
-    $message =  "Your vote has been successfully submitted!";
+    else{
+        $message = "Your vote has been submitted successfully!";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

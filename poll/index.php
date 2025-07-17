@@ -18,6 +18,21 @@
     <link rel="stylesheet" href="poll-stylesheet.css">
 </head>
 <body>
+    <div class="voted-or-not hidden">
+        <?php
+            $uid = $_SESSION["uid"];
+            if(isset($_SERVER['QUERY_STRING'])){
+                $query_string = $_SERVER['QUERY_STRING'];
+                preg_match('/\d+/', $query_string, $matches);
+                $pid = $matches[0] ?? null;
+                $pid = htmlspecialchars($pid, ENT_QUOTES, 'UTF-8');
+                $sql = "select * from votes where pid = '$pid' and uid = '$uid'";
+                $res = mysqli_query($conn, $sql);
+                if($res and mysqli_num_rows($res) > 0) echo "Already Voted";
+                else echo "Not Voted";
+            }
+        ?>
+    </div>
     <div class="sessionUsername hidden">
         <?php
             if(isset($_SESSION["username"]))
@@ -34,23 +49,18 @@
                 $query_string = $_SERVER['QUERY_STRING'];
                 preg_match('/\d+/', $query_string, $matches);
                 $pid = $matches[0] ?? null;
-                echo htmlspecialchars($pid, ENT_QUOTES, 'UTF-8');
+                $pid = htmlspecialchars($pid, ENT_QUOTES, 'UTF-8');
+                echo $pid;
                 $sql = "select * from polls where pid = '$pid'";
                 $res = mysqli_query($conn, $sql);
                 $arr = [];
-                if($res==true){
+                if($res == true){
                     if(mysqli_num_rows($res) > 0){
                         $arr = mysqli_fetch_assoc($res);
                     }
                     else{
-                        echo "<br>";
-                        echo "<br>";
-                        echo "<br>";
-                        echo "No such Polls Exist";
-                        echo "<br>";
-                        echo "Enter a valid one";
+                        header("Location: ../error/");
                         exit();
-                        // Refine the Design please
                     }
                 }
             }
@@ -280,7 +290,7 @@
                         <div class="participants-horizontal-line"></div>
                     </div>
                     <div class="participants-footer-div">
-                        <form action="../success/" method="POST">
+                        <form action="../success/" method="POST" class="footer-form">
                             <input type="text" class="hidden selected-option" name="selectedOption">
                             <input type="text" class="hidden voted-pid" name="votedPid">
                             <div class="participants-footer-buttons-div">
@@ -289,6 +299,7 @@
                             </div>
                             <div class="login-to-submit hidden">Login/Signup to submit</div>
                         </form>
+                        <div class="already-voted-text hidden">Already Voted!</div>
                     </div>
                 </div>
             </div>

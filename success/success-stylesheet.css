@@ -269,6 +269,9 @@ body{
     display: inline-block;
     color: white;
     padding: 7px 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50px;
     border: 2px solid var(--bg-1);
     color: var(--bg-1);
