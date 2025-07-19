@@ -25,6 +25,7 @@ if(isset($_POST["createpoll"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create and participate in polls easily with PollNow.">
     <title>Poll Now</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -39,13 +40,6 @@ if(isset($_POST["createpoll"])){
 </head>
 
 <body>
-    <div class="bg-glow-container">
-        <div class="glow-box box1"></div>
-        <div class="glow-box box2"></div>
-        <div class="glow-box box3"></div>
-        <div class="glow-box box4"></div>
-        <div class="glow-box box5"></div>
-    </div>
     <div class="sessionUsername hidden">
         <?php
             if(isset($_SESSION["username"]))
@@ -157,6 +151,13 @@ if(isset($_POST["createpoll"])){
     </header>
     <main>
         <div class="total-div-1">
+            <div class="bg-glow-container">
+                <div class="glow-box box1"></div>
+                <div class="glow-box box2"></div>
+                <div class="glow-box box3"></div>
+                <div class="glow-box box4"></div>
+                <div class="glow-box box5"></div>
+            </div>
             <div class="middle-div">
                 <div class="middle-div-under-1">
                     <div class="create-text">
@@ -279,7 +280,7 @@ if(isset($_POST["createpoll"])){
                     <h2>Best Programming Language</h2>
                     <i class="fa-regular x-1 fa-circle-xmark fa-2xl"></i>
                 </div>
-                <div class="modal-1-line"></div>
+                <div class="modal-1-line-top"></div>
                 <div class="modal-1-options-div">
                     <div class="modal-1-op-1">C</div>
                     <div class="modal-1-op-2">C++</div>
@@ -314,10 +315,10 @@ if(isset($_POST["createpoll"])){
                         <input type="submit" class="btn btn-view-res-1" value="View Results">
                     </form>
                 </div>
-                <div class="modal-1-line"></div>
+                <div class="modal-1-line-down"></div>
                 <div class="modal-1-cancel-submit">
                     <button type="button" class="btn btn-danger cancel-1">Cancel</button>
-                    <form action="./submit/" method="POST">
+                    <form action="./submit/" method="POST" class="submit-1-form">
                         <input type="text" class="view1 hidden" name="view" value="1">
                         <input type="text" class="result-1 hidden" name="result1">
                         <input type="submit" class="btn btn-success submit-1" name="submit1">
@@ -329,7 +330,7 @@ if(isset($_POST["createpoll"])){
                     <h2>Favourite Time of the Year</h2>
                     <i class="fa-regular x-2 fa-circle-xmark fa-2xl"></i>
                 </div>
-                <div class="modal-2-line"></div>
+                <div class="modal-2-line-top"></div>
                 <div class="modal-2-options-div">
                     <div class="modal-2-op-1">Summer</div>
                     <div class="modal-2-op-2">Monsoon</div>
@@ -354,10 +355,10 @@ if(isset($_POST["createpoll"])){
                         <input type="submit" class="btn btn-view-res-2" value="View Results">
                     </form>
                 </div>
-                <div class="modal-2-line"></div>
+                <div class="modal-2-line-down"></div>
                 <div class="modal-2-cancel-submit">
                     <button type="button" class="btn btn-danger cancel-2">Cancel</button>
-                    <form action="./submit/" method="POST">
+                    <form action="./submit/" method="POST" class="submit-2-form">
                         <input type="text" class="view2 hidden" name="view" value="2">
                         <input type="text" class="result-2 hidden" name="result2">
                         <input type="submit" class="btn btn-success submit-2" name="submit2">
@@ -369,7 +370,7 @@ if(isset($_POST["createpoll"])){
                     <h2>Most Useful Gadget</h2>
                     <i class="fa-regular x-3 fa-circle-xmark fa-2xl"></i>
                 </div>
-                <div class="modal-3-line"></div>
+                <div class="modal-3-line-top"></div>
                 <div class="modal-3-options-div">
                     <div class="modal-3-op-1">Smartphone</div>
                     <div class="modal-3-op-2">Laptop</div>
@@ -393,10 +394,10 @@ if(isset($_POST["createpoll"])){
                         <input type="submit" class="btn btn-view-res-3" value="View Results">
                     </form>
                 </div>
-                <div class="modal-3-line"></div>
+                <div class="modal-3-line-down"></div>
                 <div class="modal-3-cancel-submit">
                     <button type="button" class="btn btn-danger cancel-3">Cancel</button>
-                    <form action="./submit/" method="POST">
+                    <form action="./submit/" method="POST" class="submit-3-form">
                         <input type="text" class="view3 hidden" name="view" value="3">
                         <input type="text" class="result-3 hidden" name="result3">
                         <input type="submit" class="btn btn-success submit-3" name="submit3">

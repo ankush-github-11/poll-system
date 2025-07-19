@@ -29,8 +29,10 @@
     
     --option-hover: #969696;
     --modal-border: rgb(198, 198, 198);
-}
-.darkmode{
+    --createpoll-color: rgb(85, 85, 85);
+    --cancel-btn: rgb(234, 234, 234); 
+  }
+  .darkmode{
     --bg-1: rgb(255, 0, 85);
     --bg-2: rgb(255, 85, 142);
     --bg-3: rgb(235, 0, 78);
@@ -61,8 +63,9 @@
     
     --option-hover: rgb(201, 201, 201);
     --modal-border: gray;
-    
-}
+    --createpoll-color: rgb(255, 255, 255);
+    --cancel-btn: rgb(35, 36, 42); 
+  }
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -112,6 +115,7 @@ body{
   gap: 350px;
   overflow: hidden;
   padding-left: 50px;
+  z-index: 0;
 }
 .glow-box {
   position: relative;
@@ -719,10 +723,10 @@ body{
   border-bottom-right-radius: 50px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  outline: 2px solid var(--text-color);
-  color: var(--text-color);
+  outline: 2px solid var(--createpoll-color);
+  color: var(--createpoll-color);
   animation: leftSlide 1.5s ease-in-out forwards;
-  box-shadow: 0 0 8px var(--text-color);
+  box-shadow: 0 0 8px var(--createpoll-color);
   transition: box-shadow 0.4s ease, background-color 0.4s ease, color 0.4s ease;
 }
 .createpoll:hover {
@@ -1021,48 +1025,56 @@ body{
 .total-div-3-css{
     position: fixed;
     top: 0px;
+    left: 0;
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    z-index: 2;
+    z-index: 100000;
+    background: transparent;
 }
 .modal-1-css , .modal-2-css , .modal-3-css{
-    background-color: rgba(207, 207, 207, 0.1);
+    background: transparent;
     outline: 2px solid var(--modal-border);
     border-radius: 10px;
-    position: fixed;
     display: flex;
-    gap: 5px;
     flex-direction: column;
     flex-wrap: wrap;
-    padding: 10px;
-    height: 80vh;
+    height: 85vh;
     width: 90vw;
-    z-index: 3;
+    margin-top: 75px;
 }
 .x-1 , .x-2 , .x-3{
     margin-left: auto;
-    margin-top: 15px;
     cursor: pointer;
 }
 .modal-1-header, .modal-2-header, .modal-3-header{
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: row;
+    margin: 0px 15px;
+    margin-top: 10px;
 }
 .modal-1-header > h2 , .modal-2-header > h2 , .modal-3-header > h2{
-    margin: 20px;
     color: var(--text-color-less);
     height: min-content;
 }
-.modal-1-line, .modal-2-line, .modal-3-line{
-    margin: 0 auto;
-    margin-bottom: 5px;
-    width: 97%;
+.modal-1-line-top, .modal-2-line-top, .modal-3-line-top{
+    margin: 10px auto;
+    width: 100%;
     height: 2px;
     background-color: var(--modal-border);
+}
+.modal-1-line-down, .modal-2-line-down, .modal-3-line-down{
+    margin-top: auto;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--modal-border);
+}
+.modal-1-options-div, .modal-2-options-div, .modal-3-options-div{
+  margin: 0px 10px;
 }
 .modal-1-options-div {
     height: 50vh;
@@ -1071,52 +1083,21 @@ body{
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(6,1fr);
 }
-
-.modal-1-options-div > div {
-    cursor: pointer;
-    outline: 2px solid var(--modal-border);
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    &:hover{
-        outline: 2px solid var(--option-hover);
-    }
-}
 .modal-2-options-div {
-    height: 50vh;
-    display: grid;
-    gap: 10px 10px;
-    grid-template-columns: repeat(5,1fr);
-    grid-template-rows: repeat(6,1fr);
-}
-
-.modal-2-options-div > div {
-    cursor: pointer;
-    outline: 2px solid var(--modal-border);
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    &:hover{
-        outline: 2px solid var(--option-hover);
-    }
+  height: 50vh;
+  display: grid;
+  gap: 10px 10px;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: repeat(6,1fr);
 }
 .modal-3-options-div {
-    height: 50vh;
-    display: grid;
-    gap: 10px 10px;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(6,1fr);
+  height: 50vh;
+  display: grid;
+  gap: 10px 10px;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(6,1fr);
 }
-
-.modal-3-options-div > div {
+.modal-1-options-div > div, .modal-2-options-div > div, .modal-3-options-div > div {
     cursor: pointer;
     outline: 2px solid var(--modal-border);
     font-weight: 500;
@@ -1126,23 +1107,67 @@ body{
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    padding: 7px 0px;
     &:hover{
-        outline: 2px solid var(--option-hover);
+      outline: 2px solid var(--option-hover);
     }
-}
+  }
 .modal-1-cancel-submit, .modal-2-cancel-submit, .modal-3-cancel-submit{
     display: flex;
-    gap: 30px;
+    gap: 2vw;
     flex-direction: row;
     justify-content: right;
-    padding: 5px 30px;
+    padding: 0px 2.2vw;
+    padding-bottom: 10px;
+    min-height: 50px;
 }
 .cancel-1, .cancel-2, .cancel-3{
-    border: none;
+  width: 100px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--text-color);
+  background: linear-gradient(155deg, var(--cancel-btn), var(--box-border));
+  border: 2px solid var(--box-border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
-.submit-1, .submit-2, .submit-3{
-    border: none;
+.cancel-1:hover, .cancel-2:hover, .cancel-3:hover {
+  color: var(--text-color);
+  background: linear-gradient(155deg, var(--cancel-btn), var(--box-border));
+  border: 2px solid var(--box-border);
+  transform: translateY(-2px);
 }
+.cancel-1:active, .cancel-2:active, .cancel-3:active {
+  transform: scale(0.95);
+}
+.submit-1-form, .submit-2-form, .submit-3-form{
+    width: 15%;
+    min-width: 170px;
+}
+.submit-1, .submit-2, .submit-3 {
+  width: 100%;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: white;
+  background: linear-gradient(155deg, rgb(0, 190, 104), #00b291);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.submit-1:hover, .submit-2:hover, .submit-3:hover {
+  background: linear-gradient(155deg, rgb(0, 177, 98), #00a486);
+  transform: translateY(-2px);
+}
+.submit-1:active, .submit-2:active, .submit-3:active {
+  transform: scale(0.95);
+}
+
 .modal-1-result, .modal-2-result, .modal-3-result{
     height: 50vh;
     flex-direction: column;
@@ -1282,15 +1307,26 @@ body{
     .swing-container{
         margin: 0 auto;
     }
-    .modal-1-header > h1{
-        font-size: 18px;
+    .modal-1-header > h2, .modal-2-header > h2,  .modal-3-header > h2{
+      font-size: 20.5px;
     }
     .modal-1-options-div {
         grid-template-columns: repeat(2,1fr);
         grid-template-rows: repeat(8,1fr);
     }
+    .modal-2-options-div {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(8,1fr);
+    }
+    .modal-3-options-div {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(8,1fr);
+    }
     .modal-1-cancel-submit, .modal-2-cancel-submit, .modal-3-cancel-submit{
         justify-content: center;
+    }
+    .submit-1-form, .submit-2-form, .submit-3-form{
+      width: 100%;
     }
     .side-box-4 h3{
         font-size: 27px;
@@ -1316,10 +1352,18 @@ body{
     .swing-container{
         margin: 0 auto;
     }
-    .modal-1-header > h1{
-        font-size: 25px;
+    .modal-1-header > h2, .modal-2-header > h2,  .modal-3-header > h2{
+      font-size: 25px;
     }
     .modal-1-options-div {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(8,1fr);
+    }
+    .modal-2-options-div {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(8,1fr);
+    }
+    .modal-3-options-div {
         grid-template-columns: repeat(2,1fr);
         grid-template-rows: repeat(8,1fr);
     }
@@ -1349,6 +1393,14 @@ body{
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: repeat(6,1fr);
     }
+    .modal-2-options-div {
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(6,1fr);
+    }
+    .modal-3-options-div {
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(6,1fr);
+    }
     .modal-1-cancel-submit, .modal-2-cancel-submit, .modal-3-cancel-submit{
         justify-content: center;
     }
@@ -1360,6 +1412,14 @@ body{
         margin: 0 auto;
     }
     .modal-1-options-div {
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(6,1fr);
+    }
+    .modal-2-options-div {
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(6,1fr);
+    }
+    .modal-3-options-div {
         grid-template-columns: repeat(4,1fr);
         grid-template-rows: repeat(6,1fr);
     }
@@ -1438,13 +1498,10 @@ body{
         margin-right: 20px;
     }
   }
-/*  Use cookie to ensure only one time voting  */
-/*  Make the Live Poll Submission confirmed from the SUBMIT button , currently its been done by View Results  */
 /*  Fix the please select an option  */
 /*  Fix view result button logic  */
 /*  Make Poll Result Chart Responsive  */
 /*  Add Media Query to all the stylesheets (Copy and Paste from index.stylesheet.css)  */
-/*  Add a Simple and Advanced Poll Switch in the beginning of the Create Poll  */
 /*  Fix the responsiveness of the divs under the Schedule and Duration Layout  */
 /*  Fix the layout of the Poll Chart in Mobile Mode  */
 /*  Add Responsiveness to the Growth Overview Div  */
@@ -1469,3 +1526,4 @@ body{
 
 /*  Change the poll page title gradient color - bg-1 to violet   */
 /*  Make the poll now logo draggable false and select none through out the  */
+/*  Fix the submit button in the modals  */

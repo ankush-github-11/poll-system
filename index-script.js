@@ -40,9 +40,10 @@ document.querySelector('.signout-div').addEventListener('mouseleave', () => {
 // UI Modifications based on Database Interection
 window.onload = function(){
     for(let i = 1 ; i <= 3 ; i++){
-        if(document.querySelector(`.UI-decision-${i}`).dataset.value=="Voted"){
+        if(document.querySelector(`.UI-decision-${i}`).dataset.value == "Voted"){
             document.querySelector(`.modal-${i}-options-div`).style.display = 'none';
             document.querySelector(`.modal-${i}-cancel-submit`).style.display = 'none';
+            document.querySelector(`.modal-${i}-line-down`).style.marginBottom = "70px";
             document.querySelector(`.modal-${i}-result`).classList.toggle('hidden');
             document.querySelector(`.modal-${i}-result`).classList.toggle('flex');
         }
@@ -256,6 +257,9 @@ document.querySelector('.navbar-fa-div').addEventListener("click", function(){
         document.querySelector('.navbar-side-div').classList.add('hidden');
         document.querySelector('main').classList.remove('blur');
         document.querySelector('.my-navbar-div').classList.remove('blur');
+        document.querySelector('.navbar-side-div').classList.remove('slide-animation-rev');
+        document.querySelector('main').classList.remove('blur-rev');
+        document.querySelector('.my-navbar-div').classList.remove('blur-rev');
     },600);
 
 });
@@ -280,7 +284,6 @@ document.querySelectorAll('.nav-items-div a').forEach((navItem, index) => {
 });
                                                                                         // Navbar code ends
 
-ScrollReveal().reveal('.headline');
 ScrollReveal().reveal('.reveal-me-1', {
   delay: 250,
   distance: '50px',
