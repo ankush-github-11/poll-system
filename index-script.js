@@ -86,6 +86,7 @@ document.querySelector('.btn-vote-3').addEventListener("click",function(){
     toggleVote3andDivs();
 });
 document.querySelector('.x-1').addEventListener('click',function(){
+    document.querySelector(".submit-1-form").classList.add("pe-none");
     const allDivs = document.querySelectorAll('.modal-1-options-div > div');
     allDivs.forEach(div => {
         div.classList.remove('active-bg');
@@ -94,6 +95,7 @@ document.querySelector('.x-1').addEventListener('click',function(){
     toggleVote1andDivs();
 });
 document.querySelector('.x-2').addEventListener('click',function(){
+    document.querySelector(".submit-2-form").classList.add("pe-none");
     const allDivs = document.querySelectorAll('.modal-2-options-div > div');
     allDivs.forEach(div => {
         div.classList.remove('active-bg');
@@ -102,6 +104,7 @@ document.querySelector('.x-2').addEventListener('click',function(){
     toggleVote2andDivs();
 });
 document.querySelector('.x-3').addEventListener('click',function(){
+    document.querySelector(".submit-3-form").classList.add("pe-none");
     const allDivs = document.querySelectorAll('.modal-3-options-div > div');
     allDivs.forEach(div => {
         div.classList.remove('active-bg');
@@ -142,7 +145,8 @@ document.querySelector('.modal-1-options-div').addEventListener('click', functio
         });
         event.target.classList.add('active-bg');
         event.target.classList.add('active-text');
-        document.querySelector('.result-1').value = event.target.textContent;
+        document.querySelector('.result-1').value = event.target.textContent.trim();
+        document.querySelector(".submit-1-form").classList.remove("pe-none");
     }
 });
 document.querySelector('.modal-2-options-div').addEventListener('click', function (event) {
@@ -154,7 +158,8 @@ document.querySelector('.modal-2-options-div').addEventListener('click', functio
         });
         event.target.classList.add('active-bg');
         event.target.classList.add('active-text');
-        document.querySelector('.result-2').value = event.target.textContent;
+        document.querySelector('.result-2').value = event.target.textContent.trim();
+        document.querySelector(".submit-2-form").classList.remove("pe-none");
     }
 });
 document.querySelector('.modal-3-options-div').addEventListener('click', function (event) {
@@ -166,47 +171,27 @@ document.querySelector('.modal-3-options-div').addEventListener('click', functio
         });
         event.target.classList.add('active-bg');
         event.target.classList.add('active-text');
-        document.querySelector('.result-3').value = event.target.textContent;
+        document.querySelector('.result-3').value = event.target.textContent.trim();
+        document.querySelector(".submit-3-form").classList.remove("pe-none");
     }
 });
 document.querySelector('.submit-1').addEventListener('click', function(){
-    let flag = 1;
-    document.querySelectorAll('.modal-1-options-div > div').forEach((ele) => {
-        if(ele.classList.contains('active-bg')) flag = 0;
-    });
-    if(flag){
-        window.alert("Please Select an Option");
-        return;
-    }
     document.querySelector('.modal-1-options-div').style.display = 'none';
+    document.querySelector('.modal-1-line-down').classList.add('line-margin-bottom');
     document.querySelector('.modal-1-cancel-submit').style.display = 'none';
     document.querySelector('.modal-1-result').classList.toggle('hidden');
     document.querySelector('.modal-1-result').classList.toggle('flex');
 });
 document.querySelector('.submit-2').addEventListener('click', function(){
-    let flag = 1;
-    document.querySelectorAll('.modal-2-options-div > div').forEach((ele) => {
-        if(ele.classList.contains('active-bg')) flag = 0;
-    });
-    if(flag){
-        window.alert("Please Select an Option");
-        return;
-    }
     document.querySelector('.modal-2-options-div').style.display = 'none';
+    document.querySelector('.modal-2-line-down').classList.add('line-margin-bottom');
     document.querySelector('.modal-2-cancel-submit').style.display = 'none';
     document.querySelector('.modal-2-result').classList.toggle('hidden');
     document.querySelector('.modal-2-result').classList.toggle('flex');
 });
 document.querySelector('.submit-3').addEventListener('click', function(){
-    let flag = 1;
-    document.querySelectorAll('.modal-3-options-div > div').forEach((ele) => {
-        if(ele.classList.contains('active-bg')) flag = 0;
-    });
-    if(flag){
-        window.alert("Please Select an Option");
-        return;
-    }
     document.querySelector('.modal-3-options-div').style.display = 'none';
+    document.querySelector('.modal-3-line-down').classList.add('line-margin-bottom');
     document.querySelector('.modal-3-cancel-submit').style.display = 'none';
     document.querySelector('.modal-3-result').classList.toggle('hidden');
     document.querySelector('.modal-3-result').classList.toggle('flex');

@@ -318,7 +318,7 @@ if(isset($_POST["createpoll"])){
                 <div class="modal-1-line-down"></div>
                 <div class="modal-1-cancel-submit">
                     <button type="button" class="btn btn-danger cancel-1">Cancel</button>
-                    <form action="./submit/" method="POST" class="submit-1-form">
+                    <form action="./submit/" method="POST" class="submit-1-form pe-none">
                         <input type="text" class="view1 hidden" name="view" value="1">
                         <input type="text" class="result-1 hidden" name="result1">
                         <input type="submit" class="btn btn-success submit-1" name="submit1">
@@ -358,7 +358,7 @@ if(isset($_POST["createpoll"])){
                 <div class="modal-2-line-down"></div>
                 <div class="modal-2-cancel-submit">
                     <button type="button" class="btn btn-danger cancel-2">Cancel</button>
-                    <form action="./submit/" method="POST" class="submit-2-form">
+                    <form action="./submit/" method="POST" class="submit-2-form pe-none">
                         <input type="text" class="view2 hidden" name="view" value="2">
                         <input type="text" class="result-2 hidden" name="result2">
                         <input type="submit" class="btn btn-success submit-2" name="submit2">
@@ -397,7 +397,7 @@ if(isset($_POST["createpoll"])){
                 <div class="modal-3-line-down"></div>
                 <div class="modal-3-cancel-submit">
                     <button type="button" class="btn btn-danger cancel-3">Cancel</button>
-                    <form action="./submit/" method="POST" class="submit-3-form">
+                    <form action="./submit/" method="POST" class="submit-3-form pe-none">
                         <input type="text" class="view3 hidden" name="view" value="3">
                         <input type="text" class="result-3 hidden" name="result3">
                         <input type="submit" class="btn btn-success submit-3" name="submit3">

@@ -102,6 +102,9 @@ body{
     background-color: var(--bg-color);
     color: var(--text-color);
 }
+.line-margin-bottom{
+  margin-bottom: 68px !important;
+}
 .bg-glow-container {
   position: absolute;
   top: 0;
@@ -1119,7 +1122,6 @@ body{
     justify-content: right;
     padding: 0px 2.2vw;
     padding-bottom: 10px;
-    min-height: 50px;
 }
 .cancel-1, .cancel-2, .cancel-3{
   width: 100px;
@@ -1499,13 +1501,6 @@ body{
     }
   }
 /*  Fix the please select an option  */
-/*  Fix view result button logic  */
-/*  Make Poll Result Chart Responsive  */
-/*  Add Media Query to all the stylesheets (Copy and Paste from index.stylesheet.css)  */
-/*  Fix the responsiveness of the divs under the Schedule and Duration Layout  */
-/*  Fix the layout of the Poll Chart in Mobile Mode  */
-/*  Add Responsiveness to the Growth Overview Div  */
-/*  Add animation to the profile dropdown  */
 
 
 
@@ -1515,15 +1510,10 @@ body{
 /*  Change the "how it works" footer a tag's href in all the pages and "view polls" also  */
 /*  Create and demo button should be in place in the mobile  */
 /*  Add the login and signup media queries in all the pages where without login and signup access is given  */
-/*  Add font-size !important in the .create-text > h2  */
-/*  Add the single linear gradinent in the main big text (remove two h2)  */
 /*  Fix the scrollbar track color in each page (specially in create page dark mode)  */
 /*  Make the padding of the profile sqaure in the mobile screen  */
 /*  Prevent from giving the user two same poll options  */
-/*  Prevent from users giving vote twice  */
-
 /*  Give a border in the dark mode of the profile dropdown or make the bg color as same as the op-active color of createpoll page  */
-
 /*  Change the poll page title gradient color - bg-1 to violet   */
 /*  Make the poll now logo draggable false and select none through out the  */
 /*  Fix the submit button in the modals  */
