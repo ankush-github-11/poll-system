@@ -482,6 +482,27 @@ body{
 .footer-section ul li a:hover {
     color:rgb(44, 44, 255);
 }
+.footer-createpoll{
+    color: rgb(103, 103, 255);
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+    &:selection{
+        color: #008cff;
+    }
+    &:hover{
+        color:rgb(44, 44, 255);
+    }
+    &:active{
+        border: none !important;
+        color:rgb(44, 44, 255) !important;
+    }
+    &:focus{
+        border: none !important;
+        color:rgb(44, 44, 255) !important;
+    }
+}
 
 .social-icons a {
     color:var(--bg-2);

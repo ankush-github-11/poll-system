@@ -1,5 +1,15 @@
 <?php
     include "../config/connect.php";
+    if(isset($_POST["createpoll"])){
+        if(isset($_SESSION["name"])){
+            header("Location: ../createpoll/");
+            exit();
+        }
+        else{
+            header("Location: ../signup/");
+            exit();
+        }
+    }
     $uid = $_SESSION["uid"];
     if (isset($_POST["submit-edit"])) {
         $fields = [];
@@ -672,9 +682,15 @@
             </div>
             <div class="footer-section links">
                 <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="../">How It Works</a></li>
-                    <li><a href="">View Polls</a></li>
+                <ul class="no-select">
+                    <li>
+                        <a href="./">                        
+                            <form action="./" method="POST">
+                                <input type="submit" class="footer-createpoll" value="Create Poll" name="createpoll"/>
+                            </form>
+                        </a>
+                    </li>
+                    <li><a href="../viewpolls/">View Polls</a></li>
                 </ul>
             </div>
             <div class="footer-section contact">

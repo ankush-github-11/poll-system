@@ -1230,6 +1230,27 @@ body{
 .footer-section ul li a:hover {
     color:rgb(44, 44, 255);
 }
+.footer-createpoll{
+    color: rgb(103, 103, 255);
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+    &:selection{
+        color: #008cff;
+    }
+    &:hover{
+        color:rgb(44, 44, 255);
+    }
+    &:active{
+        border: none !important;
+        color:rgb(44, 44, 255) !important;
+    }
+    &:focus{
+        border: none !important;
+        color:rgb(44, 44, 255) !important;
+    }
+}
 
 .social-icons a {
     color:var(--bg-2);
@@ -1311,6 +1332,9 @@ body{
     }
     .modal-1-header > h2, .modal-2-header > h2,  .modal-3-header > h2{
       font-size: 20.5px;
+    }
+    .modal-1-result h5, .modal-2-result h5, .modal-3-result h5{
+      font-size: 15px;
     }
     .modal-1-options-div {
         grid-template-columns: repeat(2,1fr);
@@ -1500,20 +1524,12 @@ body{
         margin-right: 20px;
     }
   }
-/*  Fix the please select an option  */
 
-
-
-
-/*  Make the already voted text a bit small while being responsive  */
-/*  After login / logout please refresh the whole application  */
-/*  Change the "how it works" footer a tag's href in all the pages and "view polls" also  */
-/*  Create and demo button should be in place in the mobile  */
+/*  After someone logs out from one window but other windows are open(logged in condition) then redirect to the error.php if anyone tries to do anything  */
 /*  Add the login and signup media queries in all the pages where without login and signup access is given  */
 /*  Fix the scrollbar track color in each page (specially in create page dark mode)  */
 /*  Make the padding of the profile sqaure in the mobile screen  */
 /*  Prevent from giving the user two same poll options  */
 /*  Give a border in the dark mode of the profile dropdown or make the bg color as same as the op-active color of createpoll page  */
 /*  Change the poll page title gradient color - bg-1 to violet   */
-/*  Make the poll now logo draggable false and select none through out the  */
-/*  Fix the submit button in the modals  */
+/*  Make the poll now logo draggable false and select none through out the website  */
