@@ -1,5 +1,13 @@
 <?php
 include "./config/connect.php";
+unset(
+    $_SESSION['wrongName'],
+    $_SESSION['wrongEmail'],
+    $_SESSION['wrongPassword'],
+    $_SESSION['invalidName'],
+    $_SESSION['invalidEmail'],
+    $_SESSION['invalidPassword']
+);
 if(isset($_POST["signout"])){
     // session_start();
     session_unset();

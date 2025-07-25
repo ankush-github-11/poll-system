@@ -120,8 +120,9 @@ function validateName($name){
 function sanitizeEmail($email){
     return filter_var(trim($email), FILTER_SANITIZE_EMAIL);
 }
-function validateEmail($email){
-    return filter_var($email, FILTER_VALIDATE_EMAIL);
+function validateEmail($email) {
+    return filter_var($email, FILTER_VALIDATE_EMAIL) && 
+           str_ends_with(strtolower($email), '@gmail.com');
 }
 function sanitizePassword($password){
     return trim(htmlspecialchars($password));
@@ -139,8 +140,19 @@ if(isset($_POST["signup"])){
     $email = sanitizeEmail($_POST['email']);
     $password = sanitizePassword($_POST['password']);
     if (validateName($name) && validateEmail($email) && validatePassword($password)) {
+        $check_sql = "SELECT 1 FROM users WHERE email = '$email' LIMIT 1";
+        $check_res = mysqli_query($conn, $check_sql);
+        if ($check_res && mysqli_num_rows($check_res) > 0) {
+            $_SESSION["invalidEmail"]    = "Email is already used";
+            $_SESSION["invalidName"]     = "no";
+            $_SESSION["invalidPassword"] = "no";
+            $_SESSION["wrongName"]       = $name;
+            $_SESSION["wrongEmail"]      = $email;
+            $_SESSION["wrongPassword"]   = $password;
+            header("Location: ./");
+            exit();
+        }
         $username = getLocalPart($email);
-        $_SESSION["username"] = $username;
         $sql = "insert into users set username='$username', name='$name',email='$email', password='$password'";
         $res = mysqli_query($conn, $sql);
         if ($res == true)
@@ -148,6 +160,7 @@ if(isset($_POST["signup"])){
             $_SESSION["name"] = $name;
             $_SESSION["email"] = $email;
             $_SESSION["password"] = $password;
+            $_SESSION["username"] = $username;
 
             $sql="select * from users where username='$username'";
             $res=mysqli_query($conn,$sql);

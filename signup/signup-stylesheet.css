@@ -161,6 +161,7 @@
     background-color: var(--main-color);
     color: var(--text-color);
     font-size: 15px;
+    margin-bottom: 2px;
 }
 .name-input:focus, .password-input:focus, .email-input:focus{
     outline: 2.5px solid var(--bg-1);
@@ -171,7 +172,32 @@
     margin: 0;
     padding-left: 2px;
     font-size: 12px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.7px;
+    animation: jitter 1s 1 forwards;
+    font-weight: 500;
+}
+@keyframes jitter {
+    0%{
+        transform: translateX(0px);
+    }
+    17%{
+        transform: translateX(5px);
+    }
+    34%{
+        transform: translateX(0px);
+    }
+    51%{
+        transform: translateX(5px);
+    }
+    68%{
+        transform: translateX(0px);
+    }
+    84%{
+        transform: translateX(5px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
 }
 /* .password-div{
     position: relative;
