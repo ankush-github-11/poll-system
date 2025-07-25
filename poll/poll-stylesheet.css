@@ -792,7 +792,13 @@ body{
     .profile-image-name-div{
       gap: 0.5rem;
     }
-      /* Add this ends */
+    /* Add this ends */
+    .login {
+        display: none;
+    }
+    .signup{
+        margin-left: auto;
+    }
     .admin-btn{
       height: 40px;
       width: 100%;
@@ -833,6 +839,12 @@ body{
       gap: 0.5rem;
     }
       /* Add this ends */
+    .login {
+        display: none;
+    }
+    .signup{
+        margin-left: auto;
+    }
     .admin-btn{
       font-size: 17px;
     }
@@ -861,6 +873,12 @@ body{
   }
   
   @media (min-width: 577px) and (max-width: 768px) {
+    .login {
+        display: none;
+    }
+    .signup{
+        margin-left: auto;
+    }
     .navbar-side-div{
       width: 50vw;
     }

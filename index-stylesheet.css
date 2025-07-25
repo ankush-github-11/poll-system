@@ -1533,3 +1533,4 @@ body{
 /*  Give a border in the dark mode of the profile dropdown or make the bg color as same as the op-active color of createpoll page  */
 /*  Change the poll page title gradient color - bg-1 to violet   */
 /*  Make the poll now logo draggable false and select none through out the website  */
+/*  Add the particular media query everywhere which is present in the poll-stylesheet.css  */

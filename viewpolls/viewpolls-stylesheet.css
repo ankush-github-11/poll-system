@@ -542,6 +542,12 @@ body{
       margin-left: 10px;
       margin-right: 20px;
     }
+    .login {
+        display: none;
+    }
+    .signup{
+        margin-left: auto;
+    }
   }
   @media (min-width:481px) and (max-width: 576px) {
     .navbar-side-div{
@@ -556,6 +562,12 @@ body{
     .light-dark-div{
         margin-left: 10px;
         margin-right: 20px;
+    }
+    .login {
+        display: none;
+    }
+    .signup{
+        margin-left: auto;
     }
   }
   
@@ -572,6 +584,12 @@ body{
     .light-dark-div{
         margin-left: 10px;
         margin-right: 20px;
+    }
+    .login {
+        display: none;
+    }
+    .signup{
+        margin-left: auto;
     }
 
   }

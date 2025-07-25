@@ -752,3 +752,4 @@ body{
 /*  Open this link into a new tab to prevent users from going back  */
 /*  Fix all the bg-color-less in other pages  */
 /*  Display the poll password in the poll section  */
+/*  Handle the case : accessing the polladmin from the poll page without login condition  */
