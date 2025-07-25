@@ -172,7 +172,32 @@
     font-size: 12px;
     margin-top: -9px;
     margin-bottom: -9px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.7px;
+    animation: jitter 1s 1 forwards;
+    font-weight: 500;
+}
+@keyframes jitter {
+    0%{
+        transform: translateX(0px);
+    }
+    17%{
+        transform: translateX(5px);
+    }
+    34%{
+        transform: translateX(0px);
+    }
+    51%{
+        transform: translateX(5px);
+    }
+    68%{
+        transform: translateX(0px);
+    }
+    84%{
+        transform: translateX(5px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
 }
 .remember-forgot-div{
     display: flex;
