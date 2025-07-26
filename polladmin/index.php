@@ -62,7 +62,7 @@
 
     <header>
         <!-- Navbar Starts -->
-        <nav>
+        <nav class="no-select">
             <div class="navbar-side-div slide-animation hidden">
                 <div class="navbar-fa-div"><i class="fa-solid fa-square-xmark fa-2xl"></i></div>
                 <div class="nav-side-item-1-div">
@@ -80,8 +80,8 @@
             </div>
             <div class="my-navbar-div fixed-top">
                 <div class="website-logo-div">
-                    <a class="website-logo" href="../">
-                        <img src="../images/main-logo.png" alt="Poll Now" width="50" height="50">
+                    <a draggable="false" class="website-logo" href="../">
+                        <img draggable="false" src="../images/main-logo.png" alt="Poll Now" width="50" height="50">
                     </a>
                 </div>
                 <div class="nav-items-top">

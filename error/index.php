@@ -278,7 +278,7 @@
     <div class="total-div">
         <div class="main-div">
             <div class="header-div no-select">
-                <img src="/myproject/images/main-logo.png" alt="Main Logo">
+                <img draggable="false" src="/myproject/images/main-logo.png" alt="Main Logo">
                 <div>Pollnow</div>
             </div>
             <div class="body-div">

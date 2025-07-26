@@ -21,6 +21,7 @@
     --btn-cancel-hover-bg-color: rgb(244, 244, 244);
     --option-color: rgb(47, 47, 47);
     --participant-header-div-gradient-color: rgb(237, 64, 107);
+    --scrollbar-track: rgb(209, 209, 209);
 
     --hover-color: rgb(245, 245, 245);
     --dropdown-text-color: rgb(26, 26, 26);
@@ -57,6 +58,7 @@
     --option-color: rgb(188, 188, 188);
     --participant-header-div-gradient-color: rgb(21, 0, 0);
     --hover-color: rgb(32, 32, 32);
+    --scrollbar-track: rgb(39, 39, 39);
 
     --dropdown-text-color: rgb(248, 248, 248);
     --dropdown-bg-color: rgb(31, 30, 40);
@@ -76,7 +78,7 @@
 }
 ::-webkit-scrollbar-track {
     width: 8px;
-    background-color: rgb(209, 209, 209);
+    background-color: var(--scrollbar-track);
 }
 ::-webkit-scrollbar-thumb {
     background-color: var(--bg-1);
