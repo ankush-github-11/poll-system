@@ -154,6 +154,7 @@
 .email-input, .password-input{
     height: 42px;
     padding-left: 8px;
+    padding-right: 8px;
     border-radius: 7px;
     outline: 2px solid var(--gray-bar);
     border: none;

@@ -155,6 +155,7 @@
     height: 42px;
     width: 100%;
     padding-left: 8px;
+    padding-right: 8px;
     border-radius: 7px;
     outline: 2px solid var(--gray-bar);
     border: none;

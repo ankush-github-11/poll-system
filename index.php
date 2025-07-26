@@ -6,7 +6,8 @@ unset(
     $_SESSION['wrongPassword'],
     $_SESSION['invalidName'],
     $_SESSION['invalidEmail'],
-    $_SESSION['invalidPassword']
+    $_SESSION['invalidPassword'],
+    $_SESSION['invalidCredentials']
 );
 if(isset($_POST["signout"])){
     // session_start();
