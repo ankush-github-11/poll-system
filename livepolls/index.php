@@ -161,20 +161,20 @@
                             </div>
                         </div>
                         <div class="horizontal-line"></div>
-                        <div class="profile-div">
+                        <a href="../profile/" class="profile-div">
                             <i class="fa-solid fa-user"></i>
-                            <a href="../profile/">My Profile</a>
-                        </div>
-                        <div class="edit-div">
+                            <div>My Profile</div>
+                        </a>
+                        <a href="../edit/" class="edit-div">
                             <i class="fa-solid fa-pen-to-square"></i>
-                            <a href="../edit/">Edit Profile</a>
-                        </div>
-                        <div class="signout-div">
-                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                            <form action="../" method="POST">
-                                <button class="sign-out-btn" name="signout" type="submit">Sign Out</button>
-                            </form>
-                        </div>
+                            <div>Edit Profile</div>
+                        </a>
+                        <form action="../" method="POST" class="signout-div">
+                            <button class="sign-out-btn" name="signout" type="submit">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                Sign Out
+                            </button>
+                        </form>
                     </div>
                 </div>
             <!-- Profile Code Ends -->

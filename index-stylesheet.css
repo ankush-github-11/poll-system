@@ -21,7 +21,8 @@
     
     --hover-color: rgb(245, 245, 245);
     --dropdown-text-color: rgb(26, 26, 26);
-    --dropdown-bg-color: rgb(250, 250, 255);
+    --dropdown-bg-color: rgb(243, 244, 248);
+    --dropdown-hover-bg-color: rgb(226, 229, 238);
     
     --footer-bg-color: rgb(245, 245, 245);
     --footer-color-contacts: rgb(75, 75, 75);
@@ -55,7 +56,8 @@
     
     --hover-color: rgb(32, 32, 32);
     --dropdown-text-color: rgb(248, 248, 248);
-    --dropdown-bg-color: rgb(22, 22, 22);
+    --dropdown-bg-color: rgb(31, 30, 40);
+    --dropdown-hover-bg-color: rgb(51, 51, 60);
     
     --footer-bg-color: #071b29;
     --footer-color-contacts: rgb(200, 200, 200);
@@ -506,6 +508,7 @@ body{
     right: 13px;
     padding: 1.5rem;
     border-radius: 15px;
+    border: 1px solid var(--box-border);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 
     0 4px 12px rgba(0, 0, 0, 0.10);
     /* display: flex; */
@@ -549,7 +552,7 @@ body{
     margin-top: 0.8rem;
     margin-bottom: 0.9rem;
 }
-.profile-div, .edit-div, .signout-div{
+.profile-div, .edit-div{
     font-size: 15px;
     display: flex;
     flex-direction: row;
@@ -559,15 +562,39 @@ body{
     height: 30px;
     width: 100%;
     border-radius: 10px;
+    text-decoration: none;
     cursor: pointer;
     &:hover{
-        background-color: var(--hover-color);
+        background-color: var(--dropdown-hover-bg-color);
+      }
     }
+    .signout-div{
+      font-size: 15px;
+      width: 100%;
+      border-radius: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      height: fit-content;
+      &:hover{
+        background-color: var(--dropdown-hover-bg-color);
+    }
+  }
+.sign-out-btn{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  height: 40px;
+  width: 100%;
+  background: transparent !important;
 }
-.profile-div > i, .edit-div > i .signout-div > i{
+.sign-out-btn > i{
+  margin-left: 20px;
+}
+.profile-div > i, .edit-div > i, .signout-div > i{
     color: var(--dropdown-text-color);
 }
-.profile-div > a, .edit-div > a{
+.profile-div > div, .edit-div > div{
     width: 100%;
     text-decoration: none;
     color: var(--dropdown-text-color);
