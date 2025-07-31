@@ -516,33 +516,56 @@ body{
     align-items: flex-start;
     cursor:default;
 }
-.profile-image-name-div{
-    height: fit-content;
+.profile-image-name-div {
+    height: 100px;
     width: 100%;
     display: flex;
     align-items: center;
     gap: 0.8rem;
 }
-.profile-image-div{
+.profile-image-div {
     display: flex;
     align-items: center;
 }
-.profile-image-div > a{
-    height: 80px;
+
+.profile-image-div > a {
+    height: 90px;
 }
-.profile-name-div{
+.profile-name-div {
+    height: 90px;
     min-width: 150px;
+    display: flex;
+    align-items: flex-start;
+    overflow-y: auto;
+    padding: 10px 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -ms-overflow-style: none;
 }
-.profile-name-div > a{
-    height: fit-content;
-    width: min-content;
+
+.profile-name-div::-webkit-scrollbar {
+    display: none;
+}
+
+.profile-name-div::-webkit-scrollbar {
+    display: none;
+}
+.profile-name-div > a {
+    width: 160px;
     text-decoration: none;
     display: flex;
-    align-items: center;
-    text-align: left;
+    flex-direction: column;
+    justify-content: flex-start;
     font-weight: 500;
-    letter-spacing: 0.5px; 
-    color: var(--text-color); 
+    letter-spacing: 0.5px;
+    color: var(--text-color);
+    overflow-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.4;
 }
 .horizontal-line{
     height: 1.5px;
@@ -1303,6 +1326,10 @@ body{
 }
 
 @media only screen and (max-width: 480px) {
+    .profile-dropdown-div{
+      padding: 5px;
+      padding-bottom: 15px;
+    }
     .create-text{
         margin-bottom: 20px;
     }
@@ -1553,11 +1580,13 @@ body{
   }
 
 /*  After someone logs out from one window but other windows are open(logged in condition) then redirect to the error.php if anyone tries to do anything  */
-/*  Add the login and signup media queries in all the pages where without login and signup access is given  */
-/*  Fix the scrollbar track color in each page (specially in create page dark mode)  */
 /*  Make the padding of the profile sqaure in the mobile screen  */
 /*  Prevent from giving the user two same poll options  */
 /*  Give a border in the dark mode of the profile dropdown or make the bg color as same as the op-active color of createpoll page  */
 /*  Change the poll page title gradient color - bg-1 to violet   */
 /*  Make the poll now logo draggable false and select none through out the website  */
 /*  Add the particular media query everywhere which is present in the poll-stylesheet.css  */
+/*  Make the name field to take only 50 chars(in signup and profile edit also)  */
+/*  Increase the Voted counter by 1 just after the user votes  */
+/*  Fix the storing of the IP address  */
+/*  Change the $_SESSION["name"] in the profile wave, convert it to db fetch  */

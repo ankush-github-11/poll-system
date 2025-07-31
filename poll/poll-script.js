@@ -60,6 +60,10 @@ if(durationText !== "Infinite Time"){
     }
 }
                                                                                      // Profile Code Starts
+document.querySelectorAll('.profile-name-div > a').forEach(link => {
+    const words = link.textContent.trim().split(/\s+/);
+    link.innerHTML = words.map(word => `<span>${word}</span>`).join('');
+});
 if(document.querySelector(".sessionName").textContent.trim()){
     document.querySelector(".login").classList.add('hidden');
     document.querySelector(".signup").classList.add('hidden');

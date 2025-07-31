@@ -177,8 +177,13 @@
                             <div class="profile-name-div">
                                 <a href="../profile/">
                                     <?php
-                                        if(isset($_SESSION["name"]))
-                                        echo $_SESSION["name"];
+                                        $uid = $_SESSION["uid"];
+                                        $sql = "select * from users where uid = '$uid'";
+                                        $res = mysqli_query($conn, $sql);
+                                        if($res && mysqli_num_rows($res) > 0){
+                                            $arr = mysqli_fetch_assoc($res);
+                                            echo $arr["name"];
+                                        }
                                     ?>
                                 </a>
                             </div>
