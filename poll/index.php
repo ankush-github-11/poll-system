@@ -107,6 +107,16 @@
             echo $arr["timeCreated"];
         ?>
     </div>
+    <div class="title hidden">
+        <?php
+            echo $arr["title"];
+        ?>
+    </div>
+    <div class="description hidden">
+        <?php
+            echo $arr["description"];
+        ?>
+    </div>
     <header>
         <!-- Navbar Starts -->
         <nav class="no-select">
@@ -220,22 +230,13 @@
                         <div class="participant-header-texts">
                             <div class="participant-header-name">
                                 <?php
-                                echo $arr["name"];
+                                    echo $arr["name"];
                                 ?>
                             </div>
-                            <div class="participant-header-title">
-                                <?php
-                                    echo $arr["title"];
-                                ?>
-                            </div>
+                            <div class="participant-header-title"></div>
                         </div>
                     </div>
-                    <div class="participant-description">
-                        <!-- Poll Description -->
-                         <?php
-                            echo $arr["description"];
-                         ?>
-                    </div>
+                    <div class="participant-description"></div>
                     <div class="participant-body-div">
                         <!-- <div class="participant-body-heading">Select Your Option</div> -->
                         <div class="participant-poll-options-div">

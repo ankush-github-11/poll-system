@@ -1,3 +1,5 @@
+document.querySelector('.participant-header-title').textContent = document.querySelector('.title').textContent.trim();
+document.querySelector('.participant-description').textContent = document.querySelector('.description').textContent.trim();
 // UI decisions based on the choice of user
 if(!document.querySelector('.sessionUsername').textContent.trim()){
     document.querySelector('.login-to-submit').classList.remove('hidden');
