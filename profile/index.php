@@ -96,7 +96,8 @@
             if(isset($_SESSION["username"]))
                 echo htmlspecialchars($_SESSION["username"]);
             else{
-                header("Location: ../signup/");
+                header("Location: ../error/");
+                exit();
             }
         ?>
     </div>
@@ -231,14 +232,17 @@
                                     <img draggable="false" src="../images/profile-logo.png" alt="Profile Image">
                                 </div>
                                 <div class="name-email-div">
-                                    <div class="name-div-top">
+                                    <div class="name-div-top fade-scroll">
                                         <?php
-                                            echo $row['name'];
+                                            echo $row["name"];
                                         ?>
                                     </div>
-                                    <div class="email-div-top">
+                                    <div class="date-joined-div-top">Date Joined:
                                         <?php
-                                            echo $row['email'];
+                                            $date = new DateTime($row['dateJoined']);
+                                            $day = (int)$date->format('j');
+                                            $daySuffix = date('S', mktime(0, 0, 0, 1, $day)); // st, nd, rd, th
+                                            echo $day . $daySuffix . ' ' . $date->format('F, Y'); // 1st August, 2025
                                         ?>
                                     </div>
                                 </div>

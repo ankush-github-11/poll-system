@@ -387,7 +387,8 @@ body{
   background: transparent;
   position: relative;
   width: 100%;
-  height: 200px;
+  min-height: 200px;
+  height: fit-content;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.45);
@@ -409,6 +410,7 @@ body{
   top: 0;
   left: 0;
   display: flex;
+  height: fit-content;
 }
 .image-div{
   height: 120px;
@@ -420,21 +422,60 @@ body{
 .image-div img{
   width: 100%;
 }
-.name-div-top{
-  margin-top: 50px;
+.name-email-div{
+  height: 200px;
+}
+.name-div-top {
+  max-height: 130px;                /* Set scroll area height */
+  overflow-y: auto;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 20px 5px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  word-wrap: break-word;      
+  overflow-wrap: break-word; 
+  word-break: break-word;
   font-size: 20px;
   color: white;
   font-weight: 600;
+
+  /* Hide scrollbar (WebKit) */
 }
-.email-div-top{
+.name-div-top::-webkit-scrollbar {
+  display: none;
+}
+.fade-scroll {
+  -webkit-mask-image: linear-gradient(to bottom, 
+      transparent 0%, 
+      black 10%, 
+      black 90%, 
+      transparent 100%);
+  mask-image: linear-gradient(to bottom, 
+      transparent 0%, 
+      black 10%, 
+      black 90%, 
+      transparent 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.date-joined-div-top{
   color: white;
   font-size: 14px;
   font-weight: 500;
   position: relative;
+  padding: 0px 5px;
   top: 1em;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  word-wrap: break-word;      
+  overflow-wrap: break-word; 
+  word-break: break-word;
 }
 .playing .wave {
   border-radius: 40%;
@@ -623,7 +664,10 @@ button:hover a {
   color: var(--text-color);
 }
 .username-right-div, .name-right-div, .bio-right-div, .nationality-right-div, .city-right-div, .dob-right-div, .status-right-div{
-  color: var(--text-color);
+  color: var(--text-color-less);
+  word-wrap: break-word;      
+  overflow-wrap: break-word; 
+  word-break: break-word;
 }
 .status-right-div{
   display: flex;
@@ -680,8 +724,11 @@ button:hover a {
   font-weight: 500;
   color: var(--text-color);
 }
-.email-right-div, .phone-left-div, .website-right-div, .linkedin-right-div, .twitter-right-div, .facebook-right-div, .instagram-right-div{
-  color: var(--text-color);
+.email-right-div, .phone-right-div, .website-right-div, .linkedin-right-div, .twitter-right-div, .facebook-right-div, .instagram-right-div{
+  color: var(--text-color-less);
+  word-wrap: break-word;      
+  overflow-wrap: break-word; 
+  word-break: break-word;
 }
 .website-right-div{
   word-break: break-all;
@@ -1199,10 +1246,4 @@ button:hover a {
 /*  Linkedin URL , your website   */
 
 /*  If anyone tries to access this page using URL then throw the Error that's not the page you are looking for message  */
-/*  Fix the dark mode  */
-/*  Fix the box shadow  */
-/*  Add the JS part for the Messages & Support webpage and Report a Bug webpage  */
-/*  When the Navbar will be opened then eveyrthing else should stop working  */
 /*  Add htmlspecialchars in every echo to prevent xss  */
-/*  Add the backend for the send a message to us also for the report a bug */
-/*  Show the dateJoined in the Profile  */
