@@ -257,9 +257,9 @@
                                     ?>
                                 </div>
                                 <div class="polls-created-seeall-arrow-div">
-                                    <button class="polls-created-seeall-btn">
+                                    <a href="../created/" class="polls-created-seeall-btn">
                                         See All<i class="fa-solid fa-chevron-right"></i>
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                             <div class="polls-participated-div">
@@ -270,9 +270,9 @@
                                     ?>
                                 </div>
                                 <div class="polls-participated-seeall-arrow-div">
-                                    <button class="polls-participated-seeall-btn">
+                                    <a href="../participated/" class="polls-participated-seeall-btn">
                                         See All<i class="fa-solid fa-chevron-right"></i>
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
