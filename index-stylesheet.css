@@ -1580,7 +1580,6 @@ body{
   }
 
 /*  After someone logs out from one window but other windows are open(logged in condition) then redirect to the error.php if anyone tries to do anything  */
-/*  Make the padding of the profile sqaure in the mobile screen  */
 /*  Prevent from giving the user two same poll options  */
 /*  Give a border in the dark mode of the profile dropdown or make the bg color as same as the op-active color of createpoll page  */
 /*  Change the poll page title gradient color - bg-1 to violet   */

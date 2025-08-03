@@ -119,7 +119,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.popup-1, .popup-2{
+.popup-1, .popup-2, .popup-3{
     height: 50px;
     width: fit-content;
     position:fixed;
@@ -760,7 +760,7 @@ input:valid ~ label {
 }
 .option{
     height: 60px;
-    width: 48%;
+    width: 48.8%;
 }
 .option > input{
     height: 60px;

@@ -159,6 +159,7 @@
         <div class=" no-select popup-screen hidden">
             <div class="popup-1 hidden">Please fill all the fields</div>
             <div class="popup-2 hidden">Choose all the fields</div>
+            <div class="popup-3 hidden">No two options can be identical</div>
         </div>
 
         <form action="../mypoll/" method="POST">

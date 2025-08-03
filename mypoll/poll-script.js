@@ -32,7 +32,7 @@ document.querySelector('.clipboard-btn-1').addEventListener('click', function(){
 });
 document.querySelector('.clipboard-btn-2').addEventListener('click', function(){
     document.querySelector('.clipboard-btn-2').classList.add('pointer-none');
-    const text = document.querySelector('.link-print-div-2').textContent.trim().slice(-10);
+    const text = document.querySelector('.link-print-div-2').textContent.trim().slice(-12);
     navigator.clipboard.writeText(text);
     popupScreen();
     document.querySelector('.clipboard-btn-2').classList.remove('fa-regular');

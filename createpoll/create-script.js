@@ -145,6 +145,40 @@ const popupScreen2 = function () {
     document.querySelector(".popup-2").classList.add("hidden");
   }, 2000);
 };
+const popupScreen3 = function () {
+  document.querySelector(".popup-screen").classList.remove("hidden");
+  document.querySelector(".popup-screen").classList.add("flex");
+  document.querySelector(".popup-3").classList.remove("hidden");
+  document.querySelector(".popup-3").classList.add("flex");
+  setTimeout(() => {
+    document.querySelector(".popup-screen").classList.remove("flex");
+    document.querySelector(".popup-screen").classList.add("hidden");
+    document.querySelector(".popup-3").classList.remove("flex");
+    document.querySelector(".popup-3").classList.add("hidden");
+  }, 2000);
+};
+const validateDuplicateOptions = function() {
+  const inputs = document.querySelectorAll(".option input");
+  const values = Array.from(inputs)
+    .map(input => input.value.trim())
+    .filter(val => val !== "");
+  const duplicates = values.filter((item, index, self) =>
+    self.indexOf(item) !== index
+  );
+  if (duplicates.length > 0) {
+    return false;
+  }
+  return true;
+};
+const isAnyOptionNull = function () {
+  const inputs = document.querySelectorAll(".option input");
+  for (let input of inputs) {
+    if (input.value.trim() === "") {
+      return false;
+    }
+  }
+  return true;
+};
 const continueBtnClick = function(){
     let flag = 0;
     let str = "";
@@ -185,15 +219,24 @@ const continueBtnClick = function(){
                 !(
                   document.querySelector(".form-title > input").value.trim() &&
                   document.querySelector(".form-desc > input").value.trim() &&
-                  document.querySelector(".required-poll-option-1 > input").value.trim() &&
-                  document.querySelector(".required-poll-option-2 > input").value.trim()
+                  isAnyOptionNull()
                 )
               ) {
                 popupScreen1();
                 return;
               }
+              else if(
+                !(
+                    validateDuplicateOptions()
+                )
+              ){
+                popupScreen3();
+                console.log(15);
+                return;
+              }
               else{
                   arrayOfSidebar.add("sidebar-2");
+
               }
             }
             if(activeEleClass==="sidebar-2"){
