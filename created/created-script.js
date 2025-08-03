@@ -136,6 +136,6 @@ for (let i = 0; i < totalPollsDetails.length; i++) {
     `;
     document.querySelector('.main-div').insertAdjacentHTML('beforeend', html);
 }
-if(totalPollsDetails.length == 0) document.querySelector('.no-polls').classList.toggle('hidden');
+if(document.querySelector(".total-polls-created").textContent.trim() == '') document.querySelector('.no-polls').classList.toggle('hidden');
 const year = new Date().getFullYear();
 document.querySelector(".footer-bottom p").textContent = `© ${year} Poll Now. All rights reserved.`; 

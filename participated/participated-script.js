@@ -106,6 +106,36 @@ document.querySelectorAll('.nav-items-div a').forEach((navItem, index) => {
         hoverDiv.style.backgroundColor = "transparent";
     });
 });
+const totalPollsDetails = document.querySelector(".total-polls-created").textContent.trim().split("<(&*#$*-)>");
+for (let i = 0; i < totalPollsDetails.length; i++) {
+    if (!totalPollsDetails[i].trim()) continue;
+    const arr = totalPollsDetails[i].split("<-/*756-=-=>");
+    function getOrdinalSuffix(day) {
+        if (day > 3 && day < 21) return 'th';
+        switch (day % 10) {
+            case 1:  return 'st';
+            case 2:  return 'nd';
+            case 3:  return 'rd';
+            default: return 'th';
+        }
+    }
+    const dateObj = new Date(arr[2].trim());
+    const day = dateObj.getDate();
+    const monthName = dateObj.toLocaleString('default', { month: 'long' });
+    const year = dateObj.getFullYear();
+    
+    const formattedDate = `${day}${getOrdinalSuffix(day)} ${monthName}, ${year}`;
+    console.log(formattedDate);
+    const html = `  
+        <a href="../poll/?pid=${arr[0]}" target="_blank" rel="noopener noreferrer" class="total-rows">
+            <div class="div-11">${i + 1}</div>
+            <div class="div-12">${arr[1]}</div>
+            <div class="div-13">${formattedDate}</div>
+        </a>
+    `;
+    document.querySelector('.main-div').insertAdjacentHTML('beforeend', html);
+}
+if(document.querySelector(".total-polls-created").textContent.trim() == '') document.querySelector('.no-polls').classList.toggle('hidden');
                                                                                         // Navbar code ends
 const year = new Date().getFullYear();
 document.querySelector(".footer-bottom p").textContent = `© ${year} Poll Now. All rights reserved.`; 

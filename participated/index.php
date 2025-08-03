@@ -149,7 +149,47 @@
         </nav>
     </header>
     <main>
+        <div class="total-div">
+            <div class="heading">
+                <h3 class="first-heading">Polls Participated</h3>
+                <h3 class="hyphen">by</h3>
+                <h3 class="heading-name">
+                    <?php
+                        $uid = $_SESSION["uid"];
+                        $sql = "select * from users where uid = '$uid'";
+                        $res = mysqli_query($conn, $sql);
+                        if($res and mysqli_num_rows($res) > 0){
+                            $arr = mysqli_fetch_assoc($res);
+                            echo $arr["name"];
+                        }
+                    ?>
+                </h3>
+            </div>
+            <div class="total-polls-created hidden">
+                <?php
+                    $uid = $_SESSION["uid"];
+                    $sql = "select pid from votes where uid = '$uid'";
+                    $res = mysqli_query($conn, $sql);
+                    if ($res && mysqli_num_rows($res) > 0) {
+                        while ($row = mysqli_fetch_assoc($res)) {
+                            $pid = $row['pid'];
+                            $sql2 = "select pid, title, timeCreated from polls where pid = '$pid'";
+                            $res2 = mysqli_query($conn, $sql2);
+                            if ($res2 && mysqli_num_rows($res2) > 0) {
+                                $arr = mysqli_fetch_assoc($res2);
+                                echo $arr["pid"] . "<-/*756-=-=>" . $arr["title"] . "<-/*756-=-=>" . $arr["timeCreated"];
+                                echo "<(&*#$*-)>";
+                            }
+                        }
+                    }
+                ?>
 
+            </div>
+            <div class="main-div"></div>
+            <div class="no-polls hidden">
+                <div class="no-polls-div">No Polls Participated Yet!</div>
+            </div>
+        </div>
     </main>
     <footer class="footer">
         <div class="footer-container">

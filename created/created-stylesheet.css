@@ -38,7 +38,7 @@
     --bg-2: rgb(255, 85, 142);
     --bg-3: rgb(235, 0, 78);
     --bg-color: #05141d; 
-    --bg-color-less: #143141;   
+    --bg-color-less: #1d3b4c;   
     --text-color: rgb(240, 240, 240);
     --text-color-less: rgb(200, 200, 200);
     --nav-bg-color: rgb(0, 0, 16);
@@ -462,7 +462,7 @@ body{
 }
 .heading{
   display: flex;
-  gap: 5px;
+  gap: 0px 5px;
   margin-bottom: 15px;
 }
 .heading h3{
@@ -481,8 +481,17 @@ body{
   gap: 20px;
 }
 .no-polls{
-  text-align: center;
-  margin-top: 50px;
+  width: 100%;
+}
+.no-polls-div{
+  margin: 0 auto;
+  width: fit-content;
+  padding: 15px 30px;
+  margin-top: 100px;
+  font-size: larger;
+  border-radius: 10px;
+  font-weight: 500;
+  background: linear-gradient(155deg, var(--box-border), var(--bg-color), var(--bg-color), var(--box-border));
 }
 .total-rows{
   min-height: 50px;

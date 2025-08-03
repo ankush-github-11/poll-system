@@ -179,7 +179,9 @@
                 ?>
             </div>
             <div class="main-div"></div>
-            <div class="no-polls hidden">No Polls Created Yet!</div>
+            <div class="no-polls hidden">
+                <div class="no-polls-div">No Polls Created Yet!</div>
+            </div>
         </div>
     </main>
     <footer class="footer">
