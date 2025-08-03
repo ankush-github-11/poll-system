@@ -149,7 +149,38 @@
         </nav>
     </header>
     <main>
-
+        <div class="total-div">
+            <div class="heading">
+                <h3 class="first-heading">Polls Created</h3>
+                <h3 class="hyphen">by</h3>
+                <h3>
+                    <?php
+                        $uid = $_SESSION["uid"];
+                        $sql = "select * from users where uid = '$uid'";
+                        $res = mysqli_query($conn, $sql);
+                        if($res and mysqli_num_rows($res) > 0){
+                            $arr = mysqli_fetch_assoc($res);
+                            echo $arr["name"];
+                        }
+                    ?>
+                </h3>
+            </div>
+            <div class="total-polls-created hidden">
+                <?php
+                    $uid = $_SESSION["uid"];
+                    $sql = "select pid, title, timeCreated from polls where uid = '$uid'";
+                    $res = mysqli_query($conn, $sql);
+                    if ($res && mysqli_num_rows($res) > 0) {
+                        while ($row = mysqli_fetch_assoc($res)) {
+                            echo $row["pid"] . "<-/*756-=-=>" . $row["title"] . "<-/*756-=-=>" . $row["timeCreated"];
+                            echo "<(&*#$*-)>";
+                        }
+                    }
+                ?>
+            </div>
+            <div class="main-div"></div>
+            <div class="no-polls hidden">No Polls Created Yet!</div>
+        </div>
     </main>
     <footer class="footer">
         <div class="footer-container">

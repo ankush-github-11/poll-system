@@ -647,7 +647,6 @@ body{
     }
 
   }
-/*  Update the viewpolls href in all the navbars  */
   @media only screen and (max-width: 768px) {
     .total-rows{
       grid-template-columns: 1fr;
@@ -660,3 +659,7 @@ body{
       order: -1;
     }
   }
+
+
+
+  /*  Update the viewpolls href in all the navbars  */
