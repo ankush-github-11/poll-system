@@ -17,7 +17,7 @@
     --box-border: #DFE0E1;
     --box-color: rgb(255, 255, 255);
     --growth-gradient-color: rgb(215, 218, 228);
-    --participant-header-div-gradient-color: rgb(255, 136, 166);
+    --participant-header-div-gradient-color: rgb(243, 46, 250);
     --green-shadow: rgb(155, 255, 155);
 
     --hover-color: rgb(245, 245, 245);
@@ -49,7 +49,7 @@
     --box-border: #505050;
     --box-color: rgb(31, 31, 31);
     --growth-gradient-color: rgb(255, 0, 85);
-    --participant-header-div-gradient-color: rgb(21, 0, 0);
+    --participant-header-div-gradient-color: rgb(169, 0, 175);
     --green-shadow: rgb(0, 255, 0);
     
     --hover-color: rgb(32, 32, 32);
@@ -572,13 +572,16 @@ body{
     aspect-ratio: 1 / 1;
     padding: 2px;
     border-radius: 50%;
-    background-color: rgb(200, 200, 200);
+    background-color: var(--box-border);
 }
 .green-dot{
     height: 10px;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     background-color: var(--bg-color);
+}
+.green-dot-border-add{
+    background-color: lime !important;
 }
 .green-dot-bg-add{
     background-color: lime !important;
@@ -839,14 +842,6 @@ body{
       padding: 5px;
       padding-bottom: 15px;
     }
-    /* Add this */
-    .profile-dropdown-div{
-      padding: 0.5rem;
-    }
-    .profile-image-name-div{
-      gap: 0.5rem;
-    }
-    /* Add this ends */
     .login {
         display: none;
     }

@@ -226,9 +226,11 @@ document.querySelector('.participant-poll-options-div').addEventListener('click'
     if (optionDiv && this.contains(optionDiv)) {
         document.querySelectorAll('.green-dot').forEach((ele) => {
             ele.classList.remove('green-dot-bg-add');
+            ele.parentElement.classList.remove('green-dot-border-add');
         });
         let greenDot = optionDiv.querySelector('.green-dot');
         if (greenDot) greenDot.classList.add('green-dot-bg-add');
+        if (greenDot) greenDot.parentElement.classList.add('green-dot-border-add');
         if(document.querySelector('.login-to-submit').classList.contains('hidden')) document.querySelector('.participants-footer-btn-submit').classList.remove('disabled-button');
         document.querySelector('.selected-option').value = optionDiv.textContent.trim();
         // document.querySelector('.voted-pid').value = document.querySelector('.pid').textContent.trim();
