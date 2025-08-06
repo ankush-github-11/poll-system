@@ -967,6 +967,14 @@ body{
     flex-wrap: wrap;
     gap: 10px 10px;
 }
+.people-voted-1-div-parent, .people-voted-2-div-parent, .people-voted-3-div-parent{
+  display: flex;
+  gap: 5px;
+}
+.people-voted-1-div, .people-voted-2-div, .people-voted-3-div{
+  width: min-content;
+  color: var(--text-color) !important;
+}
 .side-box-1 div , .side-box-2 div , .side-box-3 div{
     color: rgb(128, 128, 128);
     font-size: 1rem;
@@ -1580,8 +1588,6 @@ body{
   }
 
 /*  After someone logs out from one window but other windows are open(logged in condition) then redirect to the error.php if anyone tries to do anything  */
-/*  Add the particular media query everywhere which is present in the poll-stylesheet.css  */
-/*  Make the name field to take only 50 chars(in signup and profile edit also)  */
 /*  Increase the Voted counter by 1 just after the user votes  */
 /*  Fix the storing of the IP address  */
 /*  Change the $_SESSION["name"] in the profile wave, convert it to db fetch  */

@@ -201,14 +201,16 @@ if(isset($_POST["createpoll"])){
                         <h4>Best Programming Language</h4>
                         <p>C / C++ / Java / Python / Javascript / etc.</p>
                         <div class="btn-vote-side-box-1">
-                            <div>
-                                <?php
-                                $sql = "select * from modal1";
-                                $res = mysqli_query($conn, $sql);
-                                $count = mysqli_num_rows($res);
-                                echo $count;
-                                ?>   
-                                people have voted
+                            <div class="people-voted-1-div-parent">
+                                <div class="people-voted-1-div">
+                                    <?php
+                                        $sql = "select * from modal1";
+                                        $res = mysqli_query($conn, $sql);
+                                        $count = mysqli_num_rows($res);
+                                        echo $count;
+                                    ?>                  
+                                </div>
+                                <div>people have voted</div>
                             </div>
                             <button type="button" class="btn btn-side-box btn-vote-1">Vote</button>
                         </div>
@@ -217,14 +219,16 @@ if(isset($_POST["createpoll"])){
                         <h4>Favourite Time of the Year</h4>
                         <p>Summer / Monsoon / Fall / Winter / Spring</p>
                         <div class="btn-vote-side-box-2">
-                            <div>
-                                <?php
-                                $sql = "select * from modal2";
-                                $res = mysqli_query($conn, $sql);
-                                $count = mysqli_num_rows($res);
-                                echo $count;
-                                ?>                  
-                                people have voted
+                            <div class="people-voted-2-div-parent">
+                                <div class="people-voted-2-div">
+                                    <?php
+                                        $sql = "select * from modal2";
+                                        $res = mysqli_query($conn, $sql);
+                                        $count = mysqli_num_rows($res);
+                                        echo $count;
+                                    ?>                  
+                                </div>
+                                <div>people have voted</div>
                             </div>
                             <button type="button" class="btn btn-side-box btn-vote-2">Vote</button>
                         </div>
@@ -233,14 +237,17 @@ if(isset($_POST["createpoll"])){
                         <h4>Most Useful Gadget</h4>
                         <p>Smartphone / Laptop / Smartwatch / Tablet</p>
                         <div class="btn-vote-side-box-3">
-                            <div>
-                            <?php
-                                $sql = "select * from modal3";
-                                $res = mysqli_query($conn, $sql);
-                                $count = mysqli_num_rows($res);
-                                echo $count;
-                            ?> 
-                            people have voted</div>
+                            <div class="people-voted-3-div-parent">
+                                <div class="people-voted-3-div">
+                                    <?php
+                                        $sql = "select * from modal3";
+                                        $res = mysqli_query($conn, $sql);
+                                        $count = mysqli_num_rows($res);
+                                        echo $count;
+                                    ?>                  
+                                </div>
+                                <div>people have voted</div>
+                            </div>
                             <button type="button" class="btn btn-side-box btn-vote-3">Vote</button>
                         </div>
                     </div>

@@ -185,6 +185,9 @@ document.querySelector('.submit-1').addEventListener('click', function(){
     document.querySelector('.modal-1-cancel-submit').style.display = 'none';
     document.querySelector('.modal-1-result').classList.toggle('hidden');
     document.querySelector('.modal-1-result').classList.toggle('flex');
+    let val = parseInt(document.querySelector(`.people-voted-1-div`).textContent.trim());
+    val++;
+    document.querySelector(`.people-voted-1-div`).textContent = val;
 });
 document.querySelector('.submit-2').addEventListener('click', function(){
     document.querySelector('.modal-2-options-div').style.display = 'none';
@@ -192,6 +195,9 @@ document.querySelector('.submit-2').addEventListener('click', function(){
     document.querySelector('.modal-2-cancel-submit').style.display = 'none';
     document.querySelector('.modal-2-result').classList.toggle('hidden');
     document.querySelector('.modal-2-result').classList.toggle('flex');
+    let val = parseInt(document.querySelector(`.people-voted-2-div`).textContent.trim());
+    val++;
+    document.querySelector(`.people-voted-2-div`).textContent = val;
 });
 document.querySelector('.submit-3').addEventListener('click', function(){
     document.querySelector('.modal-3-options-div').style.display = 'none';
@@ -199,6 +205,9 @@ document.querySelector('.submit-3').addEventListener('click', function(){
     document.querySelector('.modal-3-cancel-submit').style.display = 'none';
     document.querySelector('.modal-3-result').classList.toggle('hidden');
     document.querySelector('.modal-3-result').classList.toggle('flex');
+    let val = parseInt(document.querySelector(`.people-voted-3-div`).textContent.trim());
+    val++;
+    document.querySelector(`.people-voted-3-div`).textContent = val;
 });
                                                                                 // Light or Dark Mode JS
 const initializeTheme = () => {
