@@ -1,5 +1,14 @@
 <?php
 include "./config/connect.php";
+    function getUserIP() {
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+            return $_SERVER['HTTP_CLIENT_IP'];
+        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            return explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0];
+        } else {
+            return $_SERVER['REMOTE_ADDR'];
+        }
+    }
 unset(
     $_SESSION['wrongName'],
     $_SESSION['wrongEmail'],
@@ -321,7 +330,7 @@ if(isset($_POST["createpoll"])){
                 </div>
                 <div class="modal-1-result hidden">
                 <div class="UI-decision-1 hidden" data-value="<?php
-                    $address = $_SERVER["REMOTE_ADDR"];
+                    $address = getUserIP();
                     $sql = "select * from modal1 where ipaddress='$address'";
                     $res = mysqli_query($conn,$sql);
                     if($res && mysqli_num_rows($res) > 0){
@@ -361,7 +370,7 @@ if(isset($_POST["createpoll"])){
                 </div>
                 <div class="modal-2-result hidden">
                 <div class="UI-decision-2 hidden" data-value="<?php
-                    $address = $_SERVER["REMOTE_ADDR"];
+                    $address = getUserIP();
                     $sql = "select * from modal2 where ipaddress='$address'";
                     $res = mysqli_query($conn,$sql);
                     if($res && mysqli_num_rows($res) > 0){
@@ -400,7 +409,7 @@ if(isset($_POST["createpoll"])){
                 </div>
                 <div class="modal-3-result hidden">
                 <div class="UI-decision-3 hidden" data-value="<?php
-                    $address = $_SERVER["REMOTE_ADDR"];
+                    $address = getUserIP();
                     $sql = "select * from modal3 where ipaddress='$address'";
                     $res = mysqli_query($conn,$sql);
                     if($res && mysqli_num_rows($res) > 0){
