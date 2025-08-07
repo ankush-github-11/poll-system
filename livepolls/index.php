@@ -46,12 +46,14 @@
     </div>
     <div class="sessionName hidden">
         <?php
-            $uid = $_SESSION["uid"];
-            $sql = "select * from users where uid = '$uid'";
-            $res = mysqli_query($conn, $sql);
-            if($res && mysqli_num_rows($res) > 0){
-                $arr = mysqli_fetch_assoc($res);
-                echo $arr["name"];
+            if(isset($_SESSION["uid"])){
+                $uid = $_SESSION["uid"];
+                $sql = "select * from users where uid = '$uid'";
+                $res = mysqli_query($conn, $sql);
+                if($res && mysqli_num_rows($res) > 0){
+                    $arr = mysqli_fetch_assoc($res);
+                    echo $arr["name"];
+                }
             }
         ?>
     </div>
