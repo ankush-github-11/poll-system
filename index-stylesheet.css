@@ -1588,5 +1588,3 @@ body{
   }
 
 /*  After someone logs out from one window but other windows are open(logged in condition) then redirect to the error.php if anyone tries to do anything  */
-/*  Fix the storing of the IP address  */
-/*  Change the $_SESSION["name"] in the profile wave, convert it to db fetch  */
