@@ -1,5 +1,9 @@
 <?php
     include "../config/connect.php";
+    if(!isset($_SESSION["uid"])){
+        header("Location: ../error/");
+        exit();
+    }
     function getUserIP() {
         if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
             return $_SERVER['HTTP_CLIENT_IP'];

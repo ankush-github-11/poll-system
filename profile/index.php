@@ -10,7 +10,11 @@
             exit();
         }
     }
-    $uid = $_SESSION["uid"];
+    if(isset($_SESSION["uid"])) $uid = $_SESSION["uid"];
+    else{
+        header("Location: ../error/");
+        exit();
+    }
     if (isset($_POST["submit-edit"])) {
         $fields = [];
         $values = [];

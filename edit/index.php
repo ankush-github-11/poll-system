@@ -1,18 +1,18 @@
 <?php
     include "../config/connect.php";
     if(isset($_POST["createpoll"])){
-    if(isset($_SESSION["name"])){
-        header("Location: ../createpoll/");
-        exit();
+        if(isset($_SESSION["name"])){
+            header("Location: ../createpoll/");
+            exit();
+        }
+        else{
+            header("Location: ../signup/");
+            exit();
+        }
     }
-    else{
-        header("Location: ../signup/");
-        exit();
-    }
-}
     if(isset($_SESSION["uid"])) $uid = $_SESSION["uid"];
     else{
-        include "../error/";
+        header("Location: ../error/");
         exit();
     }
     $sql = "select * from users where uid = $uid";

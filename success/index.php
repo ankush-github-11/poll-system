@@ -1,11 +1,14 @@
 <?php
     include "../config/connect.php";
+    if(!isset($_SESSION["uid"])){
+        header("Location: ../error/");
+        exit();
+    }
     if(isset($_POST["selectedOption"])){
         $_SESSION["selectedOp"] = $_POST["selectedOption"];
     }
     if(!isset($_SESSION["selectedOp"])){
-        // Error logic : That's not the page you are looking for
-        include "../error/index.php";
+        header("Location: ../error/");
         exit();
     }
     if(isset($_POST["selectedOption"]) && isset($_POST["votedPid"])){

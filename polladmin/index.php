@@ -58,6 +58,10 @@
                     echo $arr["name"];
                 }
             }
+            else{
+                header("Location: ../error/");
+                exit();
+            }
         ?>
     </div>
     <div class="pid hidden">

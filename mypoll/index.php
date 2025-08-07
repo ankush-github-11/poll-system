@@ -1,10 +1,16 @@
 <?php
     include "../config/connect.php";
     if(!(isset($_POST["title"]) || isset($_SESSION['pid']))){
-        include "../error/";
+        header("Location: ../error/");
         exit();
     }
-    if(isset($_SESSION["uid"])) $uid = $_SESSION["uid"];
+    if(isset($_SESSION["uid"])){
+        $uid = $_SESSION["uid"];
+    }
+    else{
+        header("Location: ../error/");
+        exit();
+    }
     if(isset($_SESSION["name"])) $name = $_SESSION["name"];
     if(isset($_POST["title"])){
         $title = $_POST["title"];
@@ -100,6 +106,23 @@
     <link rel="stylesheet" href="poll-stylesheet.css">
 </head>
 <body class="">
+    <div class="sessionName hidden">
+        <?php
+            if(isset($_SESSION["uid"])){
+                $uid = $_SESSION["uid"];
+                $sql = "select * from users where uid = '$uid'";
+                $res = mysqli_query($conn, $sql);
+                if($res && mysqli_num_rows($res) > 0){
+                    $arr = mysqli_fetch_assoc($res);
+                    echo $arr["name"];
+                }
+            }
+            else{
+                header("Location: ../error/");
+                exit();
+            }
+        ?>
+    </div>
     <div class="no-select popup-screen hidden">
         <div class="popup-1 hidden">Copied to Clipboard</div>
     </div>

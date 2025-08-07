@@ -51,6 +51,10 @@
                     echo $arr["name"];
                 }
             }
+            else{
+                header("Location: ../error/");
+                exit();
+            }
         ?>
     </div>
     <header>
