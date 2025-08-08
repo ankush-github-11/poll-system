@@ -151,7 +151,9 @@
         </nav>
     </header>
     <main>
-
+        <div class="total-div">
+            
+        </div>
     </main>
     <footer class="footer">
         <div class="footer-container">

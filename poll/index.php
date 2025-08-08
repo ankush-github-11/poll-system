@@ -83,8 +83,8 @@
                 $sql = "select * from users where uid = '$uid'";
                 $res = mysqli_query($conn, $sql);
                 if($res && mysqli_num_rows($res) > 0){
-                    $arr = mysqli_fetch_assoc($res);
-                    echo $arr["name"];
+                    $temp = mysqli_fetch_assoc($res);
+                    echo $temp["name"];
                 }
             }
         ?>
@@ -328,8 +328,14 @@
             </div>
             <div class="main-div-2">
                 <div class="admin-btn-div">
-                    <form action="../polladmin/" method="POST">
+                    <form class="admin-btn-div-form" action="../polladmin/" method="POST">
                         <input class="admin-btn" value="Admin Dashboard" type="submit" name="submit">
+                        <input type="text" class="hidden voted-pid" name="votedPid">
+                    </form>
+                </div>
+                <div class="pollresult-btn-div">
+                    <form class="pollresult-btn-div-form" action="../pollresult/" method="POST">
+                        <input class="pollresult-btn" value="Poll Result" type="submit" name="result">
                         <input type="text" class="hidden voted-pid" name="votedPid">
                     </form>
                 </div>

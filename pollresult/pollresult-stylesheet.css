@@ -454,6 +454,12 @@ body{
 .signup > a {
     color: white !important;
 }
+
+.total-div{
+  min-height: 100vh;
+  height: fit-content;
+}
+
 .footer {
     background-color: var(--footer-bg-color);
     color: var(--text-color);

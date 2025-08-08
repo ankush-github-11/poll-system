@@ -674,17 +674,19 @@ body{
 .main-div-2{
   height: fit-content;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 .admin-btn-div{
   height: fit-content;
-  width: 100%;
-  padding-top: 20px;
+  width: fit-content;
+  margin-top: 20px;
+}
+.admin-btn-div-form{
+  width: fit-content;
 }
 .admin-btn{
-  padding: 5px 11px;
-  margin-bottom: 60px;
-}
-.admin-btn {
   position: relative;
   display: inline-block;
   padding: 5px 11px;
@@ -695,7 +697,7 @@ body{
   color: var(--bg-2);
   background: transparent;
   cursor: pointer;
-  transition: ease-out 0.5s;
+  transition: color ease-out 0.5s;
   border: 2px solid var(--bg-2);
   border-radius: 10px;
   box-shadow: inset 0 0 0 0 var(--bg-2);
@@ -706,6 +708,33 @@ body{
 }
 .admin-btn:active {
   transform: scale(0.9);
+}
+.pollresult-btn-div {
+  height: fit-content;
+  width: fit-content;
+  margin-top: 20px;
+}
+.pollresult-btn-div form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+.pollresult-btn {
+  background: linear-gradient(155deg, rgb(104, 104, 255), rgb(0, 188, 81));
+  height: 41.5px;
+  color: white;
+  border: none;
+  padding: 5px 25px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid var(--bg-color-less);
+}
+.pollresult-btn:hover {
+  background: linear-gradient(155deg, rgb(81, 81, 240), rgb(0, 169, 73));
 }
 .not-started-yet {
   position: absolute;
@@ -848,7 +877,24 @@ body{
     .signup{
         margin-left: auto;
     }
+    .admin-btn-div{
+      width: 100%;
+    }
+    .admin-btn-div-form{
+      width: 100%;
+    }
     .admin-btn{
+      height: 40px;
+      width: 100%;
+      font-size: 15px;
+    }
+    .pollresult-btn-div{
+      width: 100%;
+    }
+    .pollresult-btn-div-form{
+      width: 100%;
+    }
+    .pollresult-btn{
       height: 40px;
       width: 100%;
       font-size: 15px;
@@ -895,6 +941,9 @@ body{
         margin-left: auto;
     }
     .admin-btn{
+      font-size: 17px;
+    }
+    .pollresult-btn{
       font-size: 17px;
     }
     .navbar-side-div{
