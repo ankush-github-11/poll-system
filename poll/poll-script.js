@@ -9,6 +9,9 @@ if(document.querySelector(".voted-or-not").textContent.trim() === "Already Voted
     document.querySelector(".footer-form").classList.add('hidden');
     document.querySelector(".already-voted-text").classList.remove('hidden');
 }
+if (!document.querySelector('.already-voted-text').classList.contains('hidden') && document.querySelector(".showResults").textContent.trim() === "participant votes"){
+    document.querySelector(".pollresult-btn-div").classList.remove('hidden');
+}
 let timeText = document.querySelector('.startDateAndTime').textContent.trim();
 if (timeText.toLowerCase() === 'no') {
     const fallbackTime = document.querySelector('.timeCreated').textContent.trim();
@@ -59,6 +62,9 @@ if(durationText !== "Infinite Time"){
     if (Date.now() > endingTime.getTime()) {
         document.querySelector(".ended").classList.remove("hidden");
         document.querySelector(".ended").classList.toggle("flex");
+    }
+    if(Date.now() > endingTime.getTime() && document.querySelector(".showResults").textContent.trim() === "poll finishes"){
+        document.querySelector(".pollresult-btn-div").classList.remove('hidden');
     }
 }
                                                                                      // Profile Code Starts

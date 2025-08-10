@@ -124,6 +124,11 @@
             echo $arr["description"];
         ?>
     </div>
+    <div class="showResults">
+        <?php
+            echo $arr["showResults"];
+        ?>
+    </div>
     <header>
         <!-- Navbar Starts -->
         <nav class="no-select">
@@ -198,8 +203,8 @@
                                         $sql = "select * from users where uid = '$uid'";
                                         $res = mysqli_query($conn, $sql);
                                         if($res && mysqli_num_rows($res) > 0){
-                                            $arr = mysqli_fetch_assoc($res);
-                                            echo $arr["name"];
+                                            $profile = mysqli_fetch_assoc($res);
+                                            echo $profile["name"];
                                         }
                                     ?>
                                 </a>
@@ -333,7 +338,7 @@
                         <input type="text" class="hidden voted-pid" name="votedPid">
                     </form>
                 </div>
-                <div class="pollresult-btn-div">
+                <div class="pollresult-btn-div hidden">
                     <form class="pollresult-btn-div-form" action="../pollresult/" method="POST">
                         <input class="pollresult-btn" value="Poll Result" type="submit" name="result">
                         <input type="text" class="hidden voted-pid" name="votedPid">
@@ -351,11 +356,17 @@
             </div>
         </div>
         <div class="ended hidden">
+            <div class="countdown-fa-div">
+                <i class="my-fa fa-solid fa-hourglass-end"></i>
+            </div>
             <h5 class="center-message">
                 Poll has ended.
             </h5>
-            <div class="countdown-fa-div">
-                <i class="my-fa fa-solid fa-hourglass-end"></i>
+            <div class="pollresult-btn-div-modal">
+                <form class="pollresult-btn-div-form-modal" action="../pollresult/" method="POST">
+                    <input class="pollresult-btn-modal" value="Poll Result" type="submit" name="result">
+                    <input type="text" class="hidden voted-pid" name="votedPid">
+                </form>
             </div>
         </div>
     </main>

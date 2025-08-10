@@ -552,6 +552,9 @@ body{
     border-radius: 5px;
     outline: 2px solid var(--box-border);
     cursor: pointer;
+    &:hover{
+      outline: 3px solid var(--box-border);
+    }
 }
 .preview-option{
     height: fit-content;
@@ -709,18 +712,22 @@ body{
 .admin-btn:active {
   transform: scale(0.9);
 }
-.pollresult-btn-div {
+.pollresult-btn-div{
   height: fit-content;
   width: fit-content;
   margin-top: 20px;
 }
-.pollresult-btn-div form {
+.pollresult-btn-div-modal{
+  height: fit-content;
+  width: fit-content;
+}
+.pollresult-btn-div form, .pollresult-btn-div-modal form{
   display: flex;
   flex-direction: column;
   gap: 12px;
   align-items: center;
 }
-.pollresult-btn {
+.pollresult-btn, .pollresult-btn-modal{
   background: linear-gradient(155deg, rgb(104, 104, 255), rgb(0, 188, 81));
   height: 41.5px;
   color: white;
@@ -731,9 +738,10 @@ body{
   letter-spacing: 0.5px;
   border-radius: 10px;
   cursor: pointer;
-  border: 1px solid var(--bg-color-less);
+  border: none;
+  outline: none;
 }
-.pollresult-btn:hover {
+.pollresult-btn:hover, .pollresult-btn-modal:hover  {
   background: linear-gradient(155deg, rgb(81, 81, 240), rgb(0, 169, 73));
 }
 .not-started-yet {
@@ -877,8 +885,12 @@ body{
     .signup{
         margin-left: auto;
     }
+    .already-voted-text{
+      font-size: 13px;
+    }
     .admin-btn-div{
       width: 100%;
+      order: 10;
     }
     .admin-btn-div-form{
       width: 100%;
@@ -888,16 +900,25 @@ body{
       width: 100%;
       font-size: 15px;
     }
-    .pollresult-btn-div{
+    .pollresult-btn-div, .pollresult-btn-div-modal{
       width: 100%;
     }
-    .pollresult-btn-div-form{
+    .pollresult-btn-div-form, .pollresult-btn-div-form-modal{
       width: 100%;
     }
     .pollresult-btn{
       height: 40px;
       width: 100%;
       font-size: 15px;
+      border: none;
+      outline: none;
+    }
+    .pollresult-btn-modal{
+      height: 40px;
+      width: 80%;
+      font-size: 15px;
+      border: none;
+      outline: none;
     }
     .navbar-side-div{
       width: 75vw;

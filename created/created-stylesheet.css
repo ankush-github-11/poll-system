@@ -459,6 +459,7 @@ body{
   height: fit-content;
   padding: 25px 3vw;
   padding-top: 100px;
+  padding-bottom: 100px;
 }
 .heading{
   display: flex;

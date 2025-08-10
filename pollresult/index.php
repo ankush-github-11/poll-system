@@ -10,6 +10,14 @@
             exit();
         }
     }
+    $pollResultPid = "";
+    if(isset($_POST["votedPid"])){
+        $_SESSION["pollResultPid"] = $_POST["votedPid"];  
+    }
+    else if(!isset($_SESSION["pollResultPid"])){
+        header("Location: ../error/");
+        exit();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,6 +54,11 @@
                     echo $arr["name"];
                 }
             }
+        ?>
+    </div>
+    <div class="pid">
+        <?php
+            echo $_SESSION["pollResultPid"];
         ?>
     </div>
     <header>
@@ -152,7 +165,42 @@
     </header>
     <main>
         <div class="total-div">
-            
+            <h2>
+                <?php
+                    $sql = "select * from polls where pid = '$pollResultPid'";
+                    $res = mysqli_query($conn, $sql);
+                    if($res && mysqli_num_rows($res)){
+                        $pollTitle = mysqli_fetch_assoc($res);
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<br>";
+                        echo $pollTitle["title"];
+                    }
+                    echo "15";
+                ?>
+            </h2>
+            <div class="options-div hidden">
+                <?php
+                    $str = $_SESSION["arr"]['options'];
+                    $optionsArray = explode("<.-:.=>", $str);
+                    $optionPid = $_SESSION["fetchedPid"];
+                    $countArrayPrev = [];
+                    foreach($optionsArray as $option){
+                        $sql = "select * from votes where pid = '$optionPid' and selectedOption = '$option'";
+                        $res = mysqli_query($conn, $sql);
+                        if($res){
+                            $count = mysqli_num_rows($res);
+                            array_push($countArrayPrev, $count);
+                        }
+                    }
+                    echo $_SESSION["arr"]['options'];
+                    echo "/*-*&^/*-";
+                    $countArray = implode("<.-:.=>", $countArrayPrev);
+                    echo $countArray;
+                ?>
+            </div>
+            <div class="main-div"></div>
         </div>
     </main>
     <footer class="footer">

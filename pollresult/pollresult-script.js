@@ -110,3 +110,46 @@ document.querySelectorAll('.nav-items-div a').forEach((navItem, index) => {
     });
 });
                                                                                         // Navbar code ends
+const arr = document.querySelector('.options-div').textContent.trim().split("/*-*&^/*-");
+const optionsArray = arr[0].split("<.-:.=>");
+const countArray = arr[1].split("<.-:.=>").map(Number);
+let sum = 0;
+let maxi = 0;
+for (let i = 0; i < countArray.length; i++) {
+    sum += countArray[i];
+}
+if(sum == 0){
+    for (let i = 0; i < countArray.length; i++) {
+        countArray[i] = 0;
+        if(countArray[i] > maxi) maxi = countArray[i];
+    }
+}
+else{
+    for (let i = 0; i < countArray.length; i++) {
+        countArray[i] = (countArray[i] / sum) * 100;
+        if(countArray[i] > maxi) maxi = countArray[i];
+    }
+}
+for (let i = 0; i < optionsArray.length; i++) {
+    let val = countArray[i].toFixed(1);
+    const html = `
+        <div class="poll-display-box">
+            <div class="option-and-percent">
+                <div class="poll-option">${optionsArray[i]}</div>
+                <div class="percent">${val}%</div>
+            </div>
+            <div class="poll-display-percent"></div>
+        </div>
+    `;
+    document.querySelector('.main-div').insertAdjacentHTML("beforeend", html);
+    const container = document.querySelector(".main-div");
+    const lastChild = container.lastElementChild;
+    const percentBar = lastChild.querySelector('.poll-display-percent');
+    const percentText = lastChild.querySelector('.percent');
+    percentBar.style.width = `${countArray[i]}%`;
+    if(countArray[i] == maxi && sum != 0){
+        percentText.style.color = "rgb(17, 108, 255)";
+    }
+}
+const year = new Date().getFullYear();
+document.querySelector(".footer-bottom p").textContent = `© ${year} Poll Now. All rights reserved.`; 
