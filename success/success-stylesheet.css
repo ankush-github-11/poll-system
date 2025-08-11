@@ -321,6 +321,10 @@ body{
     align-items: center;
     width: fit-content;
     animation: bottomSlide 1.5s ease-in-out forwards;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
 }
 .clipboard-btn{
     width: 40px;

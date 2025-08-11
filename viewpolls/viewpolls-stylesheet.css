@@ -480,12 +480,11 @@ body{
   padding: 0px 10px;
 }
 .div-12 {
-  white-space: nowrap;
-  overflow: hidden;  
-  position: relative;
-  -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
-  mask-image: linear-gradient(to right, black 80%, transparent 100%);
   padding: 0px 10px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
 }
 .div-13{
   padding: 0px 10px;
@@ -649,9 +648,11 @@ body{
   }
   @media only screen and (max-width: 768px) {
     .total-rows{
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
+
     .div-11{
       display: none;
     }

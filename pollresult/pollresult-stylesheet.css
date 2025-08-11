@@ -473,6 +473,7 @@ body{
   word-wrap: break-word;
   word-break: break-word;
   white-space: normal;
+  color: var(--text-color-less);
 }
 .poll-display-box{
     height: fit-content;
@@ -497,6 +498,7 @@ body{
     word-wrap: break-word;
     word-break: break-word;
     white-space: normal;
+    color: var(--text-color-less);
 }
 .percent{
     display: flex;
