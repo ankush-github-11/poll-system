@@ -10,9 +10,8 @@
             exit();
         }
     }
-    $pollResultPid = "";
     if(isset($_POST["votedPid"])){
-        $_SESSION["pollResultPid"] = $_POST["votedPid"];  
+        $_SESSION["pollResultPid"] = $_POST["votedPid"];
     }
     else if(!isset($_SESSION["pollResultPid"])){
         header("Location: ../error/");
@@ -56,7 +55,7 @@
             }
         ?>
     </div>
-    <div class="pid">
+    <div class="pid hidden">
         <?php
             echo $_SESSION["pollResultPid"];
         ?>
@@ -165,36 +164,39 @@
     </header>
     <main>
         <div class="total-div">
-            <h2>
+            <h3 class="header-title">
                 <?php
-                    $sql = "select * from polls where pid = '$pollResultPid'";
+                    $pidTemp = $_SESSION["pollResultPid"];
+                    $sql = "select * from polls where pid = '$pidTemp'";
                     $res = mysqli_query($conn, $sql);
-                    if($res && mysqli_num_rows($res)){
+                    if($res && mysqli_num_rows($res) > 0){
                         $pollTitle = mysqli_fetch_assoc($res);
-                        echo "<br>";
-                        echo "<br>";
-                        echo "<br>";
-                        echo "<br>";
                         echo $pollTitle["title"];
                     }
-                    echo "15";
                 ?>
-            </h2>
+            </h3>
             <div class="options-div hidden">
                 <?php
-                    $str = $_SESSION["arr"]['options'];
-                    $optionsArray = explode("<.-:.=>", $str);
-                    $optionPid = $_SESSION["fetchedPid"];
+                    $pidTemp = $_SESSION["pollResultPid"];
+                    $sql = "select * from polls where pid = '$pidTemp'";
+                    $res = mysqli_query($conn, $sql);
+                    $optionsArray = "";
+                    if($res && mysqli_num_rows($res) > 0){
+                        $fetchedArr = mysqli_fetch_assoc($res);
+                        $optionsArray = $fetchedArr["options"];
+                    }
+                    echo $optionsArray;
+                    $optionsArray = explode("<.-:.=>", $optionsArray);
                     $countArrayPrev = [];
                     foreach($optionsArray as $option){
-                        $sql = "select * from votes where pid = '$optionPid' and selectedOption = '$option'";
+                        $sql = "select * from votes where pid = '$pidTemp' and selectedOption = '$option'";
                         $res = mysqli_query($conn, $sql);
                         if($res){
                             $count = mysqli_num_rows($res);
                             array_push($countArrayPrev, $count);
                         }
                     }
-                    echo $_SESSION["arr"]['options'];
+                    
                     echo "/*-*&^/*-";
                     $countArray = implode("<.-:.=>", $countArrayPrev);
                     echo $countArray;

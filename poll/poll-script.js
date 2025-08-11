@@ -64,7 +64,7 @@ if(durationText !== "Infinite Time"){
         document.querySelector(".ended").classList.toggle("flex");
     }
     if(Date.now() > endingTime.getTime() && document.querySelector(".showResults").textContent.trim() === "poll finishes"){
-        document.querySelector(".pollresult-btn-div").classList.remove('hidden');
+        document.querySelector(".pollresult-btn-div-modal").classList.remove('hidden');
     }
 }
                                                                                      // Profile Code Starts

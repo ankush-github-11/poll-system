@@ -458,13 +458,21 @@ body{
 .total-div{
   min-height: 100vh;
   height: fit-content;
-  padding: 70px 1.5vw;
+  padding: 85px 2.5vw;
 }
 .main-div{
     height: fit-content;
     display: flex;
     flex-direction: column;
     gap: 25px;
+}
+.header-title{
+  margin-top: 15px;
+  margin-bottom: 20px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
 }
 .poll-display-box{
     height: fit-content;
@@ -485,6 +493,10 @@ body{
 .poll-option{
     margin: 10px;
     letter-spacing: 0.5px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
 }
 .percent{
     display: flex;

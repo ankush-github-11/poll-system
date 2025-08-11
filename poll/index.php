@@ -362,7 +362,7 @@
             <h5 class="center-message">
                 Poll has ended.
             </h5>
-            <div class="pollresult-btn-div-modal">
+            <div class="pollresult-btn-div-modal hidden">
                 <form class="pollresult-btn-div-form-modal" action="../pollresult/" method="POST">
                     <input class="pollresult-btn-modal" value="Poll Result" type="submit" name="result">
                     <input type="text" class="hidden voted-pid" name="votedPid">
