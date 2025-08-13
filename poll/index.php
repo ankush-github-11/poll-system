@@ -76,6 +76,7 @@
             }
         ?>
     </div>
+
     <div class="sessionName hidden">
         <?php
             if(isset($_SESSION["uid"])){
@@ -196,6 +197,7 @@
                             <div class="profile-image-div">
                                 <a href="../profile/"><img draggable="false" src="../images/profile-logo.png" class="profile-logo no-select" alt="Profile Logo"></a>
                             </div>
+                            
                             <div class="profile-name-div">
                                 <a href="../profile/">
                                     <?php

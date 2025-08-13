@@ -652,7 +652,6 @@ body{
       flex-direction: column;
       align-items: flex-start;
     }
-
     .div-11{
       display: none;
     }
@@ -660,7 +659,3 @@ body{
       order: -1;
     }
   }
-
-
-
-  /*  Update the viewpolls href in all the navbars  */

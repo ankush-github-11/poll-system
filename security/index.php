@@ -41,8 +41,8 @@
                 $sql = "select * from users where uid = '$uid'";
                 $res = mysqli_query($conn, $sql);
                 if($res && mysqli_num_rows($res) > 0){
-                    $arr = mysqli_fetch_assoc($res);
-                    echo $arr["name"];
+                    $temp = mysqli_fetch_assoc($res);
+                    echo $temp["name"];
                 }
             }
         ?>
@@ -121,8 +121,8 @@
                                         $sql = "select * from users where uid = '$uid'";
                                         $res = mysqli_query($conn, $sql);
                                         if($res && mysqli_num_rows($res) > 0){
-                                            $arr = mysqli_fetch_assoc($res);
-                                            echo $arr["name"];
+                                            $profile = mysqli_fetch_assoc($res);
+                                            echo $profile["name"];
                                         }
                                     ?>
                                 </a>

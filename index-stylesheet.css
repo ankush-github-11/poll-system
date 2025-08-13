@@ -1586,8 +1586,6 @@ body{
         margin-right: 20px;
     }
   }
-
-
 /*  When the sidenavbar is opened then also add the blur in the footer section throughout the website  */
 /*  Change the profile and temp arr through out the webpage which is in the poll.php page  */
 /*  As someone votes then using preventDefault() fix the Already Voted then move to the success page  */
