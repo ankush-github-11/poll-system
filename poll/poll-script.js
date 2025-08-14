@@ -1,5 +1,12 @@
 document.querySelector('.participant-header-title').textContent = document.querySelector('.title').textContent.trim();
 document.querySelector('.participant-description').textContent = document.querySelector('.description').textContent.trim();
+document.querySelector('.participants-footer-btn-submit').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.querySelector(".footer-form").classList.add('hidden');
+        document.querySelector(".already-voted-text").classList.remove('hidden');
+        this.closest('form').submit();
+    });
+
 // UI decisions based on the choice of user
 if(!document.querySelector('.sessionUsername').textContent.trim()){
     document.querySelector('.login-to-submit').classList.remove('hidden');

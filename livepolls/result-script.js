@@ -64,22 +64,26 @@ document.querySelector('.light-dark-div').addEventListener('click', function () 
 document.querySelector('.hamburger-div').addEventListener("click", function(){
     document.querySelector('.navbar-side-div').classList.remove('slide-animation-rev');
     document.querySelector('main').classList.remove('blur-rev');
+    document.querySelector('footer').classList.remove('blur-rev');
     document.querySelector('.my-navbar-div').classList.remove('blur-rev');
     document.querySelector('.navbar-side-div').classList.remove('hidden');
     document.querySelector('.navbar-side-div').classList.add('flex');
     document.querySelector('.navbar-side-div').classList.add('slide-animation');
     document.querySelector('main').classList.add('blur');
+    document.querySelector('footer').classList.add('blur');
     document.querySelector('.my-navbar-div').classList.add('blur');
 });
 document.querySelector('.navbar-fa-div').addEventListener("click", function(){
     document.querySelector('.navbar-side-div').classList.remove('slide-animation');
     document.querySelector('.navbar-side-div').classList.add('slide-animation-rev');
     document.querySelector('main').classList.add('blur-rev');
+    document.querySelector('footer').classList.add('blur-rev');
     document.querySelector('.my-navbar-div').classList.add('blur-rev');
     setTimeout(()=>{
         document.querySelector('.navbar-side-div').classList.remove('flex');
         document.querySelector('.navbar-side-div').classList.add('hidden');
         document.querySelector('main').classList.remove('blur');
+        document.querySelector('footer').classList.remove('blur');
         document.querySelector('.my-navbar-div').classList.remove('blur');
     },600);
 
@@ -89,6 +93,7 @@ window.addEventListener("resize", function () {
       document.querySelector(".navbar-side-div").classList.remove("flex");
       document.querySelector(".navbar-side-div").classList.add("hidden");
       document.querySelector('main').classList.remove('blur');
+      document.querySelector('footer').classList.remove('blur');
       document.querySelector('.my-navbar-div').classList.remove('blur');
     }
 });
