@@ -118,21 +118,24 @@ body {
 }
 .body-div{
     height: fit-content;
+    min-height: 88vh;
     width: 100%;
     padding: 20px;
-      overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.body-div::-webkit-scrollbar{
+    display: none;
 }
 .three-option-div{
     height: fit-content;
-    width: 100%;
+    width: fit-content;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 25px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-bottom: 35px;
 }
 .option-1, .option-2, .option-3, .option-4{
     height: fit-content;
@@ -159,19 +162,17 @@ body {
     font-size: 30px;
     font-weight: 600;
 }
-.horizontal-line{
-    height: 2px;
-    width: 100%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: var(--line);
+.div-11{
+    padding-left: 15px !important;
+    min-width: 80px !important;
 }
 .total-users{
     height: fit-content;
-    width: 100%;
+    width: fit-content;
 }
 .total-users-row{
     height: fit-content;
+    width: fit-content;
     display: grid;
     grid-template-columns: 1fr 5fr 5fr 5fr 2.2fr 2.7fr 2.2fr;
     border-radius: 10px;
@@ -188,6 +189,7 @@ body {
     word-wrap: break-word;
     word-break: break-word;
     white-space: normal;
+    min-width: 150px;
 }
 .total-users :first-child > div {
     font-weight: 600;
@@ -195,9 +197,10 @@ body {
 
 .total-polls{
     height: fit-content;
-    width: 100%;
+    width: fit-content;
 }
 .total-polls-row{
+    width: fit-content;
     height: fit-content;
     display: grid;
     grid-template-columns: 1fr 5fr 5fr 5fr 2.2fr 2.7fr 2.2fr;
@@ -215,18 +218,20 @@ body {
     word-wrap: break-word;
     word-break: break-word;
     white-space: normal;
+    min-width: 150px;
 }
 .total-polls :first-child > div {
     font-weight: 600;
 }
 .total-messages{
     height: fit-content;
-    width: 100%;
+    width: fit-content;
 }
 .total-messages-row{
     height: fit-content;
+    width: fit-content;
     display: grid;
-    grid-template-columns: 1fr 2.8fr 10fr;
+    grid-template-columns: 1fr 2.8fr 15fr;
     border-radius: 10px;
 }
 .total-messages-row > div{
@@ -241,16 +246,18 @@ body {
     word-wrap: break-word;
     word-break: break-word;
     white-space: normal;
+    min-width: 150px;
 }
 .total-messages :first-child > div {
     font-weight: 600;
 }
 .total-bugs{
     height: fit-content;
-    width: 100%;
+    width: fit-content;
 }
 .total-bugs-row{
     height: fit-content;
+    width: fit-content;
     display: grid;
     grid-template-columns: 1fr 3fr 6fr 8fr 2.8fr;
     border-radius: 10px;
@@ -267,9 +274,8 @@ body {
     word-wrap: break-word;
     word-break: break-word;
     white-space: normal;
+    min-width: 150px;
 }
 .total-bugs :first-child > div {
     font-weight: 600;
 }
-/*  Add border radius to the parent div of the table  */
-/*  Add a X axis scroll bar and dont shrink the width of each column in the mobile view  */

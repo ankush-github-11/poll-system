@@ -60,7 +60,6 @@ include "../config/connect.php";
                         <div class="option-4-line"></div>
                     </div>
                 </div>
-                <div class="horizontal-line"></div>
                 <div class="total-users-content hidden">
                     <?php
                     $sql = "select username, name, email, pollsCreated, pollsVoted, dateJoined from users";
