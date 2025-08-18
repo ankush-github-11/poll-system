@@ -3,11 +3,10 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup to POLL NOW</title>
+    <title>Signup to Poll Now</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -18,10 +17,8 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 </head>
-
 <body>
     <div class="popup-1 hidden">Please fill all the fields</div>
-
     <div class="wrongName hidden">
         <?php
         if(isset($_SESSION["wrongName"]) and $_SESSION["wrongName"]!='no')
@@ -40,7 +37,6 @@
             echo $_SESSION["wrongPassword"];
         ?>
     </div>
-
     <div class="total-div">
         <div class="main-div">
             <div class="left-div">
@@ -80,7 +76,6 @@
                                 ?>
                             </p>
                         </div>
-
                         <div class="checkbox-password-div">
                             <div class="terms-conditions-div">
                                 <input required class="form-check-input terms-input" type="checkbox" id="flexCheckDefault">
@@ -105,7 +100,6 @@
     </div>
     <script src="signup-script.js"></script>
 </body>
-
 </html>
 <?php
 function sanitizeName($name){
@@ -132,9 +126,8 @@ function validatePassword($password){
 }
 function getLocalPart($email) {
     $parts = explode("@", $email);
-    return $parts[0] ?? ''; // Return the local part or empty string if not found
+    return $parts[0] ?? '';
 }
-
 if(isset($_POST["signup"])){
     $name = sanitizeName($_POST['name']);
     $email = sanitizeEmail($_POST['email']);
@@ -153,7 +146,8 @@ if(isset($_POST["signup"])){
             exit();
         }
         $username = getLocalPart($email);
-        $sql = "insert into users set username='$username', name='$name',email='$email', password='$password'";
+        $hashed = password_hash($password, PASSWORD_BCRYPT);
+        $sql = "insert into users set username='$username', name='$name',email='$email', password='$hashed'";
         $res = mysqli_query($conn, $sql);
         if ($res == true)
         {
@@ -161,7 +155,6 @@ if(isset($_POST["signup"])){
             $_SESSION["email"] = $email;
             $_SESSION["password"] = $password;
             $_SESSION["username"] = $username;
-
             $sql="select * from users where username='$username'";
             $res=mysqli_query($conn,$sql);
             if($res==true)

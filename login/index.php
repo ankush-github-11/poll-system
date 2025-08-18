@@ -3,11 +3,10 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login to POLL NOW</title>
+    <title>Login to Poll Now</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -18,9 +17,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 </head>
-
 <body>
-
     <div class="wrongEmail hidden">
         <?php
             if(isset($_SESSION["wrongEmail"])) echo $_SESSION["wrongEmail"];
@@ -31,7 +28,6 @@
             if(isset($_SESSION["wrongPassword"])) echo $_SESSION["wrongPassword"];
         ?>
     </div>
-
     <div class="popup-1 hidden">Please fill all the fields</div>
     <div class="total-div">
         <div class="main-div">
@@ -110,31 +106,34 @@ if (isset($_POST["login"])) {
     $email = sanitizeEmail($_POST["email"]);
     $password = sanitizePassword($_POST["password"]);
     if (validateEmail($email) && validatePassword($password)) {
-        $sql = "select * from users where email='$email' and password='$password'";
+        $sql = "select * from users where email='$email'";
         $res = mysqli_query($conn, $sql);
         if ($res == true) {
             $count = mysqli_num_rows($res);
             if ($count > 0) {
                 $row = mysqli_fetch_assoc($res);
-                $_SESSION["uid"] = $row["uid"];
-                $_SESSION["name"] = $row["name"];
-                $_SESSION["username"] = $row["username"];
-                $_SESSION["invalidCredentials"] = "no";
-                header("Location: ../createpoll/");
-                exit();
+                if (isset($row["password"]) && password_verify($password, $row["password"])) {
+                    $_SESSION["uid"] = $row["uid"];
+                    $_SESSION["name"] = $row["name"];
+                    $_SESSION["username"] = $row["username"];
+                    $_SESSION["invalidCredentials"] = "no";
+                    header("Location: ../createpoll/");
+                    exit();
+                }
+                else {
+                    wrongCredentialsReturn ($email, $password);
+                }
             }
             else{
                 wrongCredentialsReturn ($email, $password);
-            } 
-                
+            }   
         }
         else{
             wrongCredentialsReturn ($email, $password);
         }
     }
-    else {
+    else{
         wrongCredentialsReturn ($email, $password);
     }
 }
-
 ?>
