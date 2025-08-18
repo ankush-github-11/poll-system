@@ -227,6 +227,9 @@ body {
     height: fit-content;
     width: fit-content;
 }
+.total-messages-row > .div-13{
+    min-width: 350px;
+}
 .total-messages-row{
     height: fit-content;
     width: fit-content;

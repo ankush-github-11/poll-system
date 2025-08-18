@@ -1,3 +1,8 @@
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Enter" && event.target.tagName !== "TEXTAREA") {
+        event.preventDefault();
+    }
+});
 // Profile Code Starts
 document.querySelectorAll('.profile-name-div > a').forEach(link => {
     const words = link.textContent.trim().split(/\s+/);

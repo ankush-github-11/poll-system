@@ -198,10 +198,6 @@
                         <textarea class="bio-input" name="bio" placeholder="Tell us about yourself"></textarea>
                     </label>
                     <label>
-                        Email
-                        <input class="email-input" name="email" type="email"  placeholder="Your email" required />
-                    </label>
-                    <label>
                         Phone
                         <input class="phone-input" name="phone" type="tel" pattern="[0-9]{10}" id="phone" placeholder="Your phone number"/>
                     </label>

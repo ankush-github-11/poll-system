@@ -18,23 +18,19 @@
     if (isset($_POST["submit-edit"])) {
         $fields = [];
         $values = [];
-        if (!empty($_POST["name"])) {
+        if (!empty($_POST["name"])  && trim($_POST["name"]) != "") {
             $fields[] = "name = ?";
             $values[] = $_POST["name"];
         }
-        if (!empty($_POST["bio"])) {
+        if (!empty($_POST["bio"]) && trim($_POST["bio"]) != "") {
             $fields[] = "bio = ?";
             $values[] = $_POST["bio"];
         }
-        if (!empty($_POST["email"])) {
-            $fields[] = "email = ?";
-            $values[] = $_POST["email"];
-        }
-        if (!empty($_POST["phone"])) {
+        if (!empty($_POST["phone"]) && trim($_POST["phone"]) != "") {
             $fields[] = "phone = ?";
             $values[] = $_POST["phone"];
         }
-        if (!empty($_POST["website"])) {
+        if (isset($_POST["website"])) {
             $fields[] = "website = ?";
             $values[] = $_POST["website"];
         }
@@ -44,25 +40,18 @@
         }
         $sql = "UPDATE users SET " . implode(", ", $fields) . " WHERE uid = ?";
         $values[] = $uid;
-
         $stmt = $conn->prepare($sql);
-
         if ($stmt === false) {
             die("Prepare failed: " . $conn->error);
         }
-
-        // Build types string (all fields are strings except uid which is integer)
         $types = str_repeat("s", count($values) - 1) . "i";
-
-        // Bind parameters dynamically
         $stmt->bind_param($types, ...$values);
-
         if ($stmt->execute()) {
             echo "Profile updated successfully!";
-        } else {
+        }
+        else {
             echo "Error: " . $stmt->error;
         }
-
         $stmt->close();
     }
     $sql = "select * from users where uid='$uid'";
@@ -316,7 +305,8 @@
                                 <div class="bio-left-div">Bio</div>
                                 <div class="bio-right-div add-js">
                                     <?php
-                                        if(isset($row['bio']))
+                                        $val = trim($row['bio']);
+                                        if(isset($row['bio']) && $val != "")
                                             echo htmlspecialchars($row['bio']);
                                         else
                                             echo "<a href='../edit/' class='add-a'>+ Add</a>";
@@ -378,7 +368,8 @@
                                 <div class="phone-left-div">Phone</div>
                                 <div class="phone-right-div add-js">
                                     <?php
-                                        if(isset($row['phone']))
+                                        $val = trim($row['phone']);
+                                        if(isset($row['phone']) && $val != "")
                                             echo htmlspecialchars($row['phone']);
                                         else
                                             echo "<a href='../edit/' class='add-a'>+ Add</a>";
@@ -389,10 +380,18 @@
                                 <div class="website-left-div">Your Website URL</div>
                                 <a class="website-right-div add-js">
                                     <?php
-                                        if(isset($row['website']))
-                                            echo htmlspecialchars($row['website']);
-                                        else
-                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
+                                    $val = trim($row['website']);
+                                    if (isset($row['website']) && $val != "") {
+                                        if (!preg_match("~^(?:f|ht)tps?://~i", $val)) {
+                                            $val = "https://" . $val;
+                                        }
+                                        $safeUrl = htmlspecialchars($val, ENT_QUOTES, 'UTF-8');
+                                        $displayText = htmlspecialchars($row['website'], ENT_QUOTES, 'UTF-8');
+                                        echo "<a class='website-right-div add-js' href='{$safeUrl}' target='_blank'>{$displayText}</a>";
+                                    }
+                                    else {
+                                        echo "<a href='../edit/' class='add-a'>+ Add</a>";
+                                    }
                                     ?>
                                 </a>
                             </div>

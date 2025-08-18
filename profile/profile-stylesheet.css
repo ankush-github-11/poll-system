@@ -300,6 +300,7 @@ body{
   grid-template-columns: 1fr 3.5fr;
   grid-template-rows: 1fr;
   gap: 30px;
+  margin-bottom: 50px;
 }
 .left-div{
   height: 100%;
@@ -732,7 +733,8 @@ button:hover a {
   word-break: break-word;
 }
 .website-right-div{
-  word-break: break-all;
+  color: rgb(60, 93, 255);
+  text-decoration: none;
 }
 
 
@@ -1058,8 +1060,8 @@ button:hover a {
     font-size: 13px;
   }
   .right-div-under-3{
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex !important;
+    flex-direction: column;
   }
   .submit-btn{
     width: 100%;
@@ -1108,8 +1110,8 @@ button:hover a {
     width: 100%;
   }
   .right-div-under-3{
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex !important;
+    flex-direction: column;
   }
 }
 
@@ -1147,8 +1149,8 @@ button:hover a {
     width: min-content;
   }
   .right-div-under-3{
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex !important;
+    flex-direction: column;
   }
 }
 
@@ -1158,8 +1160,8 @@ button:hover a {
     grid-template-rows: 1fr 1fr;
   }
   .right-div-under-3{
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex !important;
+    flex-direction: column;
   }
   .left-div{
     display: none;
@@ -1173,78 +1175,9 @@ button:hover a {
 }
 @media (min-width: 991px) and (max-width: 1366px) {  
   .right-div-under-1{
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex !important;
+    flex-direction: column;
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*  Personal Information, contact details  */
-/*  Linkedin URL , your website   */
-
-/*  If anyone tries to access this page using URL then throw the Error that's not the page you are looking for message  */
 /*  Add htmlspecialchars in every echo to prevent xss  */
