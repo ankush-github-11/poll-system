@@ -44,7 +44,7 @@
     <div class="sessionUsername hidden">
         <?php
             if(isset($_SESSION["username"]))
-                echo $_SESSION["username"];
+                echo htmlspecialchars($_SESSION["username"]);
         ?>
     </div>
     <div class="sessionName hidden">
@@ -55,7 +55,7 @@
                 $res = mysqli_query($conn, $sql);
                 if($res && mysqli_num_rows($res) > 0){
                     $temp = mysqli_fetch_assoc($res);
-                    echo $temp["name"];
+                    echo htmlspecialchars($temp["name"]);
                 }
             }
             else{
@@ -67,7 +67,7 @@
     <div class="pid hidden">
         <?php
             if(isset($_SESSION["fetchedPid"]))
-                echo $_SESSION["fetchedPid"];
+                echo htmlspecialchars($_SESSION["fetchedPid"]);
         ?>
     </div>
 
@@ -146,7 +146,7 @@
                                         $res = mysqli_query($conn, $sql);
                                         if($res && mysqli_num_rows($res) > 0){
                                             $profile = mysqli_fetch_assoc($res);
-                                            echo $profile["name"];
+                                            echo htmlspecialchars($profile["name"]);
                                         }
                                     ?>
                                 </a>
@@ -194,22 +194,22 @@
                         $res = mysqli_query($conn, $sql);
                         $arr = [];
                         if($res && mysqli_num_rows($res) > 0){
-                            echo "Poll Exist";
+                            echo htmlspecialchars("Poll Exist");
                             $_SESSION["pollPassed"] = $pid;
                             $_SESSION["arr"] = mysqli_fetch_assoc($res);
                             // exit();
                         }
                         else{
-                            echo "Poll Doesn't Exist";
+                            echo htmlspecialchars("Poll Doesn't Exist");
                             // exit();
                         }
                     }
                     else{
                         if(isset($_SESSION["pollPassed"]) && $_SESSION["pollPassed"] == $_SESSION["fetchedPid"]){
-                            echo "Poll Exist";
+                            echo htmlspecialchars("Poll Exist");
                         }
                         // else{
-                        //     echo "Poll Doesn't Exist";
+                        //     echo htmlspecialchars("Poll Doesn't Exist");
                         // }
                     }
                 ?>
@@ -228,10 +228,10 @@
                             array_push($countArrayPrev, $count);
                         }
                     }
-                    echo $_SESSION["arr"]['options'];
-                    echo "/*-*&^/*-";
+                    echo htmlspecialchars($_SESSION["arr"]['options']);
+                    echo htmlspecialchars("/*-*&^/*-");
                     $countArray = implode("<.-:.=>", $countArrayPrev);
-                    echo $countArray;
+                    echo htmlspecialchars($countArray);
                 ?>
             </div>
             <div class="list-div hidden">
@@ -253,24 +253,24 @@
                         }
                     }
                     $final = implode("<.-:.=>", $list);
-                    echo $final;
+                    echo htmlspecialchars($final);
                 ?>
             </div>
             <div class="main-div-3 hidden">
                 <h3 class="title-div">
                     <?php
-                        echo $_SESSION["arr"]['title'];
+                        echo htmlspecialchars($_SESSION["arr"]['title']);
                     ?>
                 </h3>
                 <div class="time-div">
                     Created on:
                     <?php
-                        echo $_SESSION["arr"]['timeCreated'];
+                        echo htmlspecialchars($_SESSION["arr"]['timeCreated']);
                     ?>
                 </div>
                 <div class="representation-div hidden">
                     <?php
-                        echo $_SESSION["arr"]['votersRepresentation'];
+                        echo htmlspecialchars($_SESSION["arr"]['votersRepresentation']);
                     ?>
                 </div>
                 <div class="horizontal-line"></div>

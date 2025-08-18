@@ -37,7 +37,7 @@
     <div class="sessionUsername hidden">
         <?php
             if(isset($_SESSION["username"]))
-                echo $_SESSION["username"];
+                echo htmlspecialchars($_SESSION["username"]);
         ?>
     </div>
     <div class="sessionName hidden">
@@ -48,7 +48,7 @@
                 $res = mysqli_query($conn, $sql);
                 if($res && mysqli_num_rows($res) > 0){
                     $temp = mysqli_fetch_assoc($res);
-                    echo $temp["name"];
+                    echo htmlspecialchars($temp["name"]);
                 }
             }
             else{
@@ -132,7 +132,7 @@
                                         $res = mysqli_query($conn, $sql);
                                         if($res && mysqli_num_rows($res) > 0){
                                             $profile = mysqli_fetch_assoc($res);
-                                            echo $profile["name"];
+                                            echo htmlspecialchars($profile["name"]);
                                         }
                                     ?>
                                 </a>
@@ -171,7 +171,7 @@
                         $res = mysqli_query($conn, $sql);
                         if($res and mysqli_num_rows($res) > 0){
                             $arr = mysqli_fetch_assoc($res);
-                            echo $arr["name"];
+                            echo htmlspecialchars($arr["name"]);
                         }
                     ?>
                 </h3>
@@ -188,8 +188,8 @@
                             $res2 = mysqli_query($conn, $sql2);
                             if ($res2 && mysqli_num_rows($res2) > 0) {
                                 $arr = mysqli_fetch_assoc($res2);
-                                echo $arr["pid"] . "<-/*756-=-=>" . $arr["title"] . "<-/*756-=-=>" . $arr["timeCreated"];
-                                echo "<(&*#$*-)>";
+                                echo htmlspecialchars($arr["pid"] . "<-/*756-=-=>" . $arr["title"] . "<-/*756-=-=>" . $arr["timeCreated"]);
+                                echo htmlspecialchars("<(&*#$*-)>");
                             }
                         }
                     }

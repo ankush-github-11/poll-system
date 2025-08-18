@@ -38,15 +38,15 @@
                 $pid = htmlspecialchars($pid, ENT_QUOTES, 'UTF-8');
                 $sql = "select * from votes where pid = '$pid' and uid = '$uid'";
                 $res = mysqli_query($conn, $sql);
-                if($res and mysqli_num_rows($res) > 0) echo "Already Voted";
-                else echo "Not Voted";
+                if($res and mysqli_num_rows($res) > 0) echo htmlspecialchars("Already Voted");
+                else echo htmlspecialchars("Not Voted");
             }
         ?>
     </div>
     <div class="sessionUsername hidden">
         <?php
             if(isset($_SESSION["username"]))
-                echo $_SESSION["username"];
+                echo htmlspecialchars($_SESSION["username"]);
             // else{
             //     header("Location: ../signup/");
             //     exit();
@@ -60,7 +60,7 @@
                 preg_match('/\d+/', $query_string, $matches);
                 $pid = $matches[0] ?? null;
                 $pid = htmlspecialchars($pid, ENT_QUOTES, 'UTF-8');
-                echo $pid;
+                echo htmlspecialchars($pid);
                 $sql = "select * from polls where pid = '$pid'";
                 $res = mysqli_query($conn, $sql);
                 $arr = [];
@@ -85,49 +85,49 @@
                 $res = mysqli_query($conn, $sql);
                 if($res && mysqli_num_rows($res) > 0){
                     $temp = mysqli_fetch_assoc($res);
-                    echo $temp["name"];
+                    echo htmlspecialchars($temp["name"]);
                 }
             }
         ?>
     </div>
     <div class="options hidden">
         <?php
-            echo $arr["options"];
+            echo htmlspecialchars($arr["options"]);
         ?>
     </div>
     <div class="theme hidden">
         <?php
-            echo $arr["theme"];
+            echo htmlspecialchars($arr["theme"]);
         ?>
     </div>
     <div class="startDateAndTime hidden">
         <?php
-            echo $arr["startDateAndTime"];
+            echo htmlspecialchars($arr["startDateAndTime"]);
         ?>
     </div>
     <div class="duration hidden">
         <?php
-            echo $arr["duration"];
+            echo htmlspecialchars($arr["duration"]);
         ?>
     </div>
     <div class="timeCreated hidden">
         <?php
-            echo $arr["timeCreated"];
+            echo htmlspecialchars($arr["timeCreated"]);
         ?>
     </div>
     <div class="title hidden">
         <?php
-            echo $arr["title"];
+            echo htmlspecialchars($arr["title"]);
         ?>
     </div>
     <div class="description hidden">
         <?php
-            echo $arr["description"];
+            echo htmlspecialchars($arr["description"]);
         ?>
     </div>
     <div class="showResults">
         <?php
-            echo $arr["showResults"];
+            echo htmlspecialchars($arr["showResults"]);
         ?>
     </div>
     <header>
@@ -206,7 +206,7 @@
                                         $res = mysqli_query($conn, $sql);
                                         if($res && mysqli_num_rows($res) > 0){
                                             $profile = mysqli_fetch_assoc($res);
-                                            echo $profile["name"];
+                                            echo htmlspecialchars($profile["name"]);
                                         }
                                     ?>
                                 </a>
@@ -244,7 +244,7 @@
                         <div class="participant-header-texts">
                             <div class="participant-header-name">
                                 <?php
-                                    echo $arr["name"];
+                                    echo htmlspecialchars($arr["name"]);
                                 ?>
                             </div>
                             <div class="participant-header-title"></div>

@@ -57,7 +57,7 @@ if(isset($_POST["createpoll"])){
     <div class="sessionUsername hidden">
         <?php
             if(isset($_SESSION["username"]))
-                echo $_SESSION["username"];
+                echo htmlspecialchars($_SESSION["username"]);
         ?>
     </div>
     <div class="sessionName hidden">
@@ -68,7 +68,7 @@ if(isset($_POST["createpoll"])){
                 $res = mysqli_query($conn, $sql);
                 if($res && mysqli_num_rows($res) > 0){
                     $temp = mysqli_fetch_assoc($res);
-                    echo $temp["name"];
+                    echo htmlspecialchars($temp["name"]);
                 }
             }
         ?>
@@ -148,7 +148,7 @@ if(isset($_POST["createpoll"])){
                                         $res = mysqli_query($conn, $sql);
                                         if($res && mysqli_num_rows($res) > 0){
                                             $profile = mysqli_fetch_assoc($res);
-                                            echo $profile["name"];
+                                            echo htmlspecialchars($profile["name"]);
                                         }
                                     ?>
                                 </a>
@@ -219,7 +219,7 @@ if(isset($_POST["createpoll"])){
                                         $sql = "select * from modal1";
                                         $res = mysqli_query($conn, $sql);
                                         $count = mysqli_num_rows($res);
-                                        echo $count;
+                                        echo htmlspecialchars($count);
                                     ?>                  
                                 </div>
                                 <div>people have voted</div>
@@ -237,7 +237,7 @@ if(isset($_POST["createpoll"])){
                                         $sql = "select * from modal2";
                                         $res = mysqli_query($conn, $sql);
                                         $count = mysqli_num_rows($res);
-                                        echo $count;
+                                        echo htmlspecialchars($count);
                                     ?>                  
                                 </div>
                                 <div>people have voted</div>
@@ -255,7 +255,7 @@ if(isset($_POST["createpoll"])){
                                         $sql = "select * from modal3";
                                         $res = mysqli_query($conn, $sql);
                                         $count = mysqli_num_rows($res);
-                                        echo $count;
+                                        echo htmlspecialchars($count);
                                     ?>                  
                                 </div>
                                 <div>people have voted</div>
@@ -337,7 +337,7 @@ if(isset($_POST["createpoll"])){
                     $sql = "select * from modal1 where ipaddress='$address'";
                     $res = mysqli_query($conn,$sql);
                     if($res && mysqli_num_rows($res) > 0){
-                        echo "Voted"; // Change this to Vote to check the
+                        echo htmlspecialchars("Voted");
                     }
                     ?>">
                     </div>
@@ -377,7 +377,7 @@ if(isset($_POST["createpoll"])){
                     $sql = "select * from modal2 where ipaddress='$address'";
                     $res = mysqli_query($conn,$sql);
                     if($res && mysqli_num_rows($res) > 0){
-                        echo "Voted";
+                        echo htmlspecialchars("Voted");
                     }
                     ?>">
                     </div>
@@ -416,7 +416,7 @@ if(isset($_POST["createpoll"])){
                     $sql = "select * from modal3 where ipaddress='$address'";
                     $res = mysqli_query($conn,$sql);
                     if($res && mysqli_num_rows($res) > 0){
-                        echo "Voted";
+                        echo htmlspecialchars("Voted");
                     }
                     ?>">
                     </div>

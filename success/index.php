@@ -66,7 +66,7 @@
                 </div>
                 <div class="message">
                     <?php
-                        echo $message;
+                        echo htmlspecialchars($message);
                     ?>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                 <div class="link-print-div">
                     Selected Option: 
                     <?php
-                        echo $_SESSION["selectedOp"];
+                        echo htmlspecialchars($_SESSION["selectedOp"]);
                     ?>
                 </div>
                 <!-- <div class="fa-regular fa-clone clipboard-btn"></div> -->

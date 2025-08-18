@@ -114,7 +114,7 @@
                 $res = mysqli_query($conn, $sql);
                 if($res && mysqli_num_rows($res) > 0){
                     $temp = mysqli_fetch_assoc($res);
-                    echo $temp["name"];
+                    echo htmlspecialchars($temp["name"]);
                 }
             }
             else{
@@ -134,7 +134,7 @@
                 </div>
                 <div class="message">
                     <?php
-                        echo $message;
+                        echo htmlspecialchars($message);
                     ?>
                 </div>
             </div>
@@ -147,7 +147,7 @@
                     <?php
                         $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http")
                         . "://$_SERVER[HTTP_HOST]/myproject/poll?pid=".$_SESSION['pid'];
-                        echo $url;
+                        echo htmlspecialchars($url);
                     ?>
                 </div>
                 <div class="fa-regular fa-clone clipboard-btn-1"></div>
@@ -155,7 +155,7 @@
             <div class="link-clipboard-div">
                 <div class="link-print-div-2">
                     <?php
-                        echo "Admin Password: ". $_SESSION['pollPassword']
+                        echo htmlspecialchars("Admin Password: ". $_SESSION['pollPassword']);
                     ?>
                 </div>
                 <div class="fa-regular fa-clone clipboard-btn-2"></div>

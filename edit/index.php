@@ -42,7 +42,7 @@
     <div class="sessionUsername hidden">
         <?php
             if(isset($_SESSION["username"]))
-                echo $_SESSION["username"];
+                echo htmlspecialchars($_SESSION["username"]);
         ?>
     </div>
     <div class="sessionName hidden">
@@ -53,7 +53,7 @@
                 $res = mysqli_query($conn, $sql);
                 if($res && mysqli_num_rows($res) > 0){
                     $temp = mysqli_fetch_assoc($res);
-                    echo $temp["name"];
+                    echo htmlspecialchars($temp["name"]);
                 }
             }
         ?>
@@ -61,25 +61,25 @@
     <div class="bio hidden">
         <?php
             if(isset($arr["bio"]))
-                echo $arr["bio"];
+                echo htmlspecialchars($arr["bio"]);
         ?>
     </div>
     <div class="email hidden">
         <?php
             if(isset($arr["email"]))
-                echo $arr["email"];
+                echo htmlspecialchars($arr["email"]);
         ?>
     </div>
     <div class="phone hidden">
         <?php
             if(isset($arr["phone"]))
-                echo $arr["phone"];
+                echo htmlspecialchars($arr["phone"]);
         ?>
     </div>
     <div class="website hidden">
         <?php
             if(isset($arr["website"]))
-                echo $arr["website"];
+                echo htmlspecialchars($arr["website"]);
         ?>
     </div>
     <header>
@@ -157,7 +157,7 @@
                                         $res = mysqli_query($conn, $sql);
                                         if($res && mysqli_num_rows($res) > 0){
                                             $profile = mysqli_fetch_assoc($res);
-                                            echo $profile["name"];
+                                            echo htmlspecialchars($profile["name"]);
                                         }
                                     ?>
                                 </a>

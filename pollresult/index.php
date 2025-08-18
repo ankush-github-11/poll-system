@@ -39,7 +39,7 @@
     <div class="sessionUsername hidden">
         <?php
             if(isset($_SESSION["username"]))
-                echo $_SESSION["username"];
+                echo htmlspecialchars($_SESSION["username"]);
         ?>
     </div>
     <div class="sessionName hidden">
@@ -50,14 +50,14 @@
                 $res = mysqli_query($conn, $sql);
                 if($res && mysqli_num_rows($res) > 0){
                     $temp = mysqli_fetch_assoc($res);
-                    echo $temp["name"];
+                    echo htmlspecialchars($temp["name"]);
                 }
             }
         ?>
     </div>
     <div class="pid hidden">
         <?php
-            echo $_SESSION["pollResultPid"];
+            echo htmlspecialchars($_SESSION["pollResultPid"]);
         ?>
     </div>
     <header>
@@ -135,7 +135,7 @@
                                         $res = mysqli_query($conn, $sql);
                                         if($res && mysqli_num_rows($res) > 0){
                                             $profile = mysqli_fetch_assoc($res);
-                                            echo $profile["name"];
+                                            echo htmlspecialchars($profile["name"]);
                                         }
                                     ?>
                                 </a>
@@ -171,7 +171,7 @@
                     $res = mysqli_query($conn, $sql);
                     if($res && mysqli_num_rows($res) > 0){
                         $pollTitle = mysqli_fetch_assoc($res);
-                        echo $pollTitle["title"];
+                        echo htmlspecialchars($pollTitle["title"]);
                     }
                 ?>
             </h3>
@@ -185,7 +185,7 @@
                         $fetchedArr = mysqli_fetch_assoc($res);
                         $optionsArray = $fetchedArr["options"];
                     }
-                    echo $optionsArray;
+                    echo htmlspecialchars($optionsArray);
                     $optionsArray = explode("<.-:.=>", $optionsArray);
                     $countArrayPrev = [];
                     foreach($optionsArray as $option){
@@ -197,9 +197,9 @@
                         }
                     }
                     
-                    echo "/*-*&^/*-";
+                    echo htmlspecialchars("/*-*&^/*-");
                     $countArray = implode("<.-:.=>", $countArrayPrev);
-                    echo $countArray;
+                    echo htmlspecialchars($countArray);
                 ?>
             </div>
             <div class="main-div"></div>

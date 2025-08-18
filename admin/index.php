@@ -67,14 +67,14 @@ include "../config/connect.php";
                     $arr = [];
                     if ($res && mysqli_num_rows($res) > 0) {
                         while ($row = mysqli_fetch_assoc($res)) {
-                            echo
+                            echo htmlspecialchars(
                             $row["username"] . "<-/*756-=-=>"
                                 . $row["name"] . "<-/*756-=-=>"
                                 . $row["email"] . "<-/*756-=-=>"
                                 . $row["pollsCreated"] . "<-/*756-=-=>"
                                 . $row["pollsVoted"] . "<-/*756-=-=>"
-                                . $row["dateJoined"];
-                            echo "<(&*#$*-)>";
+                                . $row["dateJoined"]);
+                            echo htmlspecialchars("<(&*#$*-)>");
                         }
                     }
                     ?>
@@ -86,14 +86,14 @@ include "../config/connect.php";
                     $arr = [];
                     if ($res && mysqli_num_rows($res) > 0) {
                         while ($row = mysqli_fetch_assoc($res)) {
-                            echo
+                            echo htmlspecialchars(
                             $row["name"] . "<-/*756-=-=>"
                                 . $row["title"] . "<-/*756-=-=>"
                                 . $row["options"] . "<-/*756-=-=>"
                                 . $row["showResults"] . "<-/*756-=-=>"
                                 . $row["timeCreated"] . "<-/*756-=-=>"
-                                . $row["duration"];
-                            echo "<(&*#$*-)>";
+                                . $row["duration"]);
+                            echo htmlspecialchars("<(&*#$*-)>");
                         }
                     }
                     ?>
@@ -105,10 +105,10 @@ include "../config/connect.php";
                     $arr = [];
                     if ($res && mysqli_num_rows($res) > 0) {
                         while ($row = mysqli_fetch_assoc($res)) {
-                            echo
+                            echo htmlspecialchars(
                             $row["username"] . "<-/*756-=-=>"
-                                . $row["message"];
-                            echo "<(&*#$*-)>";
+                                . $row["message"]);
+                            echo htmlspecialchars("<(&*#$*-)>");
                         }
                     }
                     ?>
@@ -120,13 +120,13 @@ include "../config/connect.php";
                     $arr = [];
                     if ($res && mysqli_num_rows($res) > 0) {
                         while ($row = mysqli_fetch_assoc($res)) {
-                            echo
+                            echo htmlspecialchars(
                             $row["username"] . "<-/*756-=-=>"
                                 . $row["bugTitle"]."<-/*756-=-=>"
                                 . $row["bugDesc"]."<-/*756-=-=>"
                                 . $row["bugType"]."<-/*756-=-=>"
-                                ;
-                            echo "<(&*#$*-)>";
+                            );
+                            echo htmlspecialchars("<(&*#$*-)>");
                         }
                     }
                     ?>

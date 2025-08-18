@@ -35,7 +35,7 @@
             $values[] = $_POST["website"];
         }
         if (empty($fields)) {
-            echo "No fields provided to update.";
+            echo htmlspecialchars("No fields provided to update.");
             exit;
         }
         $sql = "UPDATE users SET " . implode(", ", $fields) . " WHERE uid = ?";
@@ -47,10 +47,10 @@
         $types = str_repeat("s", count($values) - 1) . "i";
         $stmt->bind_param($types, ...$values);
         if ($stmt->execute()) {
-            echo "Profile updated successfully!";
+            echo htmlspecialchars("Profile updated successfully!");
         }
         else {
-            echo "Error: " . $stmt->error;
+            echo htmlspecialchars("Error: " . $stmt->error);
         }
         $stmt->close();
     }
@@ -87,7 +87,7 @@
     <div class="sessionUsername hidden">
         <?php
             if(isset($_SESSION["username"]))
-                echo htmlspecialchars($_SESSION["username"]);
+                echo htmlspecialchars(htmlspecialchars($_SESSION["username"]));
             else{
                 header("Location: ../error/");
                 exit();
@@ -102,7 +102,7 @@
                 $res = mysqli_query($conn, $sql);
                 if($res && mysqli_num_rows($res) > 0){
                     $temp = mysqli_fetch_assoc($res);
-                    echo $temp["name"];
+                    echo htmlspecialchars($temp["name"]);
                 }
             }
         ?>
@@ -114,7 +114,7 @@
                 $message = $_POST["message"];
                 $sql = "insert into messages set username = '$username', message = '$message'";
                 $res = mysqli_query($conn,$sql);
-                echo "Message Sent";
+                echo htmlspecialchars("Message Sent");
             }
         ?>
     </div>
@@ -127,7 +127,7 @@
                 $bugType = $_POST["bug-type"];
                 $sql = "insert into bugs set username = '$username', bugTitle = '$bugTitle', bugDesc = '$bugDesc', bugType = '$bugType'";
                 $res = mysqli_query($conn,$sql);
-                echo "Bug Sent";
+                echo htmlspecialchars("Bug Sent");
             }
         ?>
     </div>
@@ -234,15 +234,15 @@
                                 <div class="name-email-div">
                                     <div class="name-div-top fade-scroll">
                                         <?php
-                                            echo $row["name"];
+                                            echo htmlspecialchars($row["name"]);
                                         ?>
                                     </div>
                                     <div class="date-joined-div-top">Date Joined:
                                         <?php
                                             $date = new DateTime($row['dateJoined']);
                                             $day = (int)$date->format('j');
-                                            $daySuffix = date('S', mktime(0, 0, 0, 1, $day)); // st, nd, rd, th
-                                            echo $day . $daySuffix . ' ' . $date->format('F, Y'); // 1st August, 2025
+                                            $daySuffix = date('S', mktime(0, 0, 0, 1, $day));
+                                            echo htmlspecialchars($day . $daySuffix . ' ' . $date->format('F, Y'));
                                         ?>
                                     </div>
                                 </div>
@@ -253,7 +253,7 @@
                                 <div class="polls-created-text">Polls Created</div>
                                 <div class="polls-created-number">
                                     <?php
-                                        echo $row['pollsCreated'];
+                                        echo htmlspecialchars($row['pollsCreated']);
                                     ?>
                                 </div>
                                 <div class="polls-created-seeall-arrow-div">
@@ -266,7 +266,7 @@
                                 <div class="polls-participated-text">Polls Participated</div>
                                 <div class="polls-participated-number">
                                     <?php
-                                        echo $row['pollsVoted'];
+                                        echo htmlspecialchars($row['pollsVoted']);
                                     ?>
                                 </div>
                                 <div class="polls-participated-seeall-arrow-div">
@@ -289,7 +289,7 @@
                                 <div class="username-left-div">Username</div>
                                 <div class="username-right-div">
                                     <?php
-                                        echo htmlspecialchars($row['username']);
+                                        echo htmlspecialchars(htmlspecialchars($row['username']));
                                     ?>
                                 </div>
                             </div>
@@ -297,7 +297,7 @@
                                 <div class="name-left-div">Name</div>
                                 <div class="name-right-div">
                                     <?php
-                                        echo htmlspecialchars($row['name']);
+                                        echo htmlspecialchars(htmlspecialchars($row['name']));
                                     ?>
                                 </div>
                             </div>
@@ -307,9 +307,9 @@
                                     <?php
                                         $val = trim($row['bio']);
                                         if(isset($row['bio']) && $val != "")
-                                            echo htmlspecialchars($row['bio']);
+                                            echo htmlspecialchars(htmlspecialchars($row['bio']));
                                         else
-                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
+                                            echo htmlspecialchars("<a href='../edit/' class='add-a'>+ Add</a>");
                                     ?>
                                 </div>
                             </div>
@@ -318,9 +318,9 @@
                                 <div class="nationality-right-div add-js">
                                     <?php
                                         if(isset($row['nationality']))
-                                            echo htmlspecialchars($row['nationality']);
+                                            echo htmlspecialchars(htmlspecialchars($row['nationality']));
                                         else
-                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
+                                            echo htmlspecialchars("<a href='../edit/' class='add-a'>+ Add</a>");
                                     ?>
                                 </div>
                             </div>
@@ -329,9 +329,9 @@
                                 <div class="city-right-div add-js">
                                     <?php
                                         if(isset($row['city']))
-                                            echo htmlspecialchars($row['city']);
+                                            echo htmlspecialchars(htmlspecialchars($row['city']));
                                         else
-                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
+                                            echo htmlspecialchars("<a href='../edit/' class='add-a'>+ Add</a>");
                                     ?>
                                 </div>
                             </div>
@@ -340,9 +340,9 @@
                                 <div class="dob-right-div add-js">
                                     <?php
                                         if(isset($row['dob']))
-                                            echo htmlspecialchars($row['dob']);
+                                            echo htmlspecialchars(htmlspecialchars($row['dob']));
                                         else
-                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
+                                            echo htmlspecialchars("<a href='../edit/' class='add-a'>+ Add</a>");
                                     ?>
                                 </div>
                             </div> -->
@@ -360,7 +360,7 @@
                                 <div class="email-left-div">Email</div>
                                 <div class="email-right-div">
                                     <?php
-                                        echo htmlspecialchars($row['email']);
+                                        echo htmlspecialchars(htmlspecialchars($row['email']));
                                     ?>
                                 </div>
                             </div>
@@ -370,9 +370,9 @@
                                     <?php
                                         $val = trim($row['phone']);
                                         if(isset($row['phone']) && $val != "")
-                                            echo htmlspecialchars($row['phone']);
+                                            echo htmlspecialchars(htmlspecialchars($row['phone']));
                                         else
-                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
+                                            echo htmlspecialchars("<a href='../edit/' class='add-a'>+ Add</a>");
                                     ?>
                                 </div>
                             </div>
@@ -387,10 +387,10 @@
                                         }
                                         $safeUrl = htmlspecialchars($val, ENT_QUOTES, 'UTF-8');
                                         $displayText = htmlspecialchars($row['website'], ENT_QUOTES, 'UTF-8');
-                                        echo "<a class='website-right-div add-js' href='{$safeUrl}' target='_blank'>{$displayText}</a>";
+                                        echo htmlspecialchars("<a class='website-right-div add-js' href='{$safeUrl}' target='_blank'>{$displayText}</a>");
                                     }
                                     else {
-                                        echo "<a href='../edit/' class='add-a'>+ Add</a>";
+                                        echo htmlspecialchars("<a href='../edit/' class='add-a'>+ Add</a>");
                                     }
                                     ?>
                                 </a>
@@ -400,9 +400,9 @@
                                 <div class="linkedin-right-div add-js">
                                     <?php
                                         if(isset($row['linkedin']))
-                                            echo htmlspecialchars($row['linkedin']);
+                                            echo htmlspecialchars(htmlspecialchars($row['linkedin']));
                                         else
-                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
+                                            echo htmlspecialchars("<a href='../edit/' class='add-a'>+ Add</a>");
                                     ?>
                                 </div>
                             </div>
@@ -411,9 +411,9 @@
                                 <div class="twitter-right-div add-js">
                                     <?php
                                         if(isset($row['twitter']))
-                                            echo htmlspecialchars($row['twitter']);
+                                            echo htmlspecialchars(htmlspecialchars($row['twitter']));
                                         else
-                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
+                                            echo htmlspecialchars("<a href='../edit/' class='add-a'>+ Add</a>");
                                     ?>
                                 </div>
                             </div>
@@ -422,9 +422,9 @@
                                 <div class="facebook-right-div add-js">
                                     <?php
                                         if(isset($row['facebook']))
-                                            echo htmlspecialchars($row['facebook']);
+                                            echo htmlspecialchars(htmlspecialchars($row['facebook']));
                                         else
-                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
+                                            echo htmlspecialchars("<a href='../edit/' class='add-a'>+ Add</a>");
                                     ?>
                                 </div>
                             </div>
@@ -433,9 +433,9 @@
                                 <div class="instagram-right-div add-js">
                                     <?php
                                         if(isset($row['instagram']))
-                                            echo htmlspecialchars($row['instagram']);
+                                            echo htmlspecialchars(htmlspecialchars($row['instagram']));
                                         else
-                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
+                                            echo htmlspecialchars("<a href='../edit/' class='add-a'>+ Add</a>");
                                     ?>
                                 </div>
                             </div> -->

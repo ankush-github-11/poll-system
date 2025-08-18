@@ -22,19 +22,19 @@
     <div class="wrongName hidden">
         <?php
         if(isset($_SESSION["wrongName"]) and $_SESSION["wrongName"]!='no')
-            echo $_SESSION["wrongName"];
+            echo htmlspecialchars($_SESSION["wrongName"]);
         ?>
     </div>
     <div class="wrongEmail hidden">
         <?php
         if(isset($_SESSION["wrongEmail"]) and $_SESSION["wrongEmail"]!='no')
-            echo $_SESSION["wrongEmail"];
+            echo htmlspecialchars($_SESSION["wrongEmail"]);
         ?>
     </div>
     <div class="wrongPassword hidden">
         <?php
         if(isset($_SESSION["wrongPassword"]) and $_SESSION["wrongPassword"]!='no')
-            echo $_SESSION["wrongPassword"];
+            echo htmlspecialchars($_SESSION["wrongPassword"]);
         ?>
     </div>
     <div class="total-div">
@@ -52,7 +52,7 @@
                             <p class="name-alert invalidName hidden">
                                 <?php
                                 if(isset($_SESSION["invalidName"]) and $_SESSION["invalidName"] != "no")
-                                    echo $_SESSION["invalidName"];
+                                    echo htmlspecialchars($_SESSION["invalidName"]);
                                 ?>
                             </p>
                         </div>
@@ -61,7 +61,7 @@
                             <p class="email-alert invalidEmail hidden">
                                 <?php
                                 if(isset($_SESSION["invalidEmail"]) and $_SESSION["invalidEmail"] != "no")
-                                    echo $_SESSION["invalidEmail"];
+                                    echo htmlspecialchars($_SESSION["invalidEmail"]);
                                 ?>
                             </p>
                         </div>
@@ -70,8 +70,8 @@
                             <p class="password-alert invalidPassword hidden">
                                 <?php
                                 if(isset($_SESSION["invalidPassword"]) and $_SESSION["invalidPassword"] != "no"){
-                                    echo $_SESSION["invalidPassword"];
-                                    echo " (8 characters minimum)";
+                                    echo htmlspecialchars($_SESSION["invalidPassword"]);
+                                    echo htmlspecialchars(" (8 characters minimum)");
                                 }
                                 ?>
                             </p>

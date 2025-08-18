@@ -41,7 +41,7 @@
     <div class="sessionUsername hidden">
         <?php
             if(isset($_SESSION["username"]))
-                echo $_SESSION["username"];
+                echo htmlspecialchars($_SESSION["username"]);
         ?>
     </div>
     <div class="sessionName hidden">
@@ -52,7 +52,7 @@
                 $res = mysqli_query($conn, $sql);
                 if($res && mysqli_num_rows($res) > 0){
                     $temp = mysqli_fetch_assoc($res);
-                    echo $temp["name"];
+                    echo htmlspecialchars($temp["name"]);
                 }
             }
         ?>
@@ -62,7 +62,7 @@
             $n = 0;
             if (isset($_GET["view"]))
                 $n = $_GET["view"];
-            echo $n;
+            echo htmlspecialchars($n);
         ?>
         "></div>
         <input class="view-array" value="
@@ -86,7 +86,7 @@
                 if ($res) {
                     $row = mysqli_fetch_assoc($res);
                     $count = $row['count'];
-                    echo "$count ";
+                    echo htmlspecialchars("$count ");
                 }
             }
         ?>
@@ -166,7 +166,7 @@
                                         $res = mysqli_query($conn, $sql);
                                         if($res && mysqli_num_rows($res) > 0){
                                             $profile = mysqli_fetch_assoc($res);
-                                            echo $profile["name"];
+                                            echo htmlspecialchars($profile["name"]);
                                         }
                                     ?>
                                 </a>

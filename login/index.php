@@ -20,12 +20,12 @@
 <body>
     <div class="wrongEmail hidden">
         <?php
-            if(isset($_SESSION["wrongEmail"])) echo $_SESSION["wrongEmail"];
+            if(isset($_SESSION["wrongEmail"])) echo htmlspecialchars($_SESSION["wrongEmail"]);
         ?>
     </div>
     <div class="wrongPassword hidden">
         <?php
-            if(isset($_SESSION["wrongPassword"])) echo $_SESSION["wrongPassword"];
+            if(isset($_SESSION["wrongPassword"])) echo htmlspecialchars($_SESSION["wrongPassword"]);
         ?>
     </div>
     <div class="popup-1 hidden">Please fill all the fields</div>
@@ -58,7 +58,7 @@
                     <p class="credentials-alert invalidCredentials">
                         <?php
                             if(isset($_SESSION["invalidCredentials"]) && $_SESSION["invalidCredentials"] == "yes"){
-                               echo "Wrong Credentials"; 
+                               echo htmlspecialchars("Wrong Credentials");
                             }
                         ?>
                     </p>
