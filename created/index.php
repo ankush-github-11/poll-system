@@ -22,6 +22,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View the total number of polls created, track poll statistics, and monitor overall poll activity in the system.">
+    <meta name="keywords" content="poll statistics, number of polls, poll tracking, poll activity, poll analytics">
+    <meta name="robots" content="index, follow">
     <title>Polls Participated</title>
     <link rel="icon" type="image/png" href="../images/main-logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">

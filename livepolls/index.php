@@ -26,6 +26,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Polls</title>
+    <meta name="description" content="Vote in live polls like Best Programming Language, Favourite Season, and Most Useful Gadgets, and see real-time results.">
+    <meta name="keywords" content="live polls, best programming language, favourite season, most useful gadgets, real-time voting, poll results">
+    <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" href="../images/main-logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"

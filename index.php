@@ -41,6 +41,9 @@ if(isset($_POST["createpoll"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Create and participate in polls easily with PollNow.">
     <title>Poll Now</title>
+    <meta name="description" content="Discover and participate in engaging online polls on trending topics. Create polls, vote instantly, and view real-time results. Join the ultimate online polling platform for fun and insights.">
+    <meta name="keywords" content="online polls, create poll, vote online, trending polls, live poll results, interactive polls, best polling platform, poll maker, survey polls">
+    <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" href="./images/main-logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"

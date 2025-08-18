@@ -23,6 +23,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polls Participated</title>
+    <meta name="description" content="View the total number of polls you have participated in and track your poll activity history.">
+    <meta name="keywords" content="poll participation, number of polls participated, poll activity, user poll history, poll tracking">
+    <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" href="../images/main-logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"

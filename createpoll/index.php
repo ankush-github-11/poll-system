@@ -17,6 +17,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create a new poll easily with customizable options. Set questions, add choices, and launch your online poll instantly.">
+    <meta name="keywords" content="create poll, new poll, online poll, poll builder, add choices, launch poll">
+    <meta name="robots" content="index, follow">
     <title>Create Poll</title>
     <link rel="icon" type="image/png" href="../images/main-logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
