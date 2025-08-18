@@ -367,7 +367,3 @@ body{
 @media (min-width: 992px) and (max-width: 1199px) {
 
 }
-
-/*  If someone tries to enter the page using the page URL then show the message that its not the page he's looking for and show the error 404 message  */
-/*  Add form verification in all the forms to prevent SQL injection */
-/*  Add the dark mode in this page  */

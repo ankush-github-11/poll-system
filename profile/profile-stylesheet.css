@@ -1179,5 +1179,3 @@ button:hover a {
     flex-direction: column;
   }
 }
-
-/*  Add htmlspecialchars in every echo to prevent xss  */

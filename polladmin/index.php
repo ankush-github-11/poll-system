@@ -11,11 +11,11 @@
         }
     }
     if (!isset($_SESSION["username"])){
-        include "../error/";
+        header("Location: ../signup/");
         exit();
     }
     if(!(isset($_POST["votedPid"]) || isset($_SESSION["fetchedPid"]))){
-        include "../error/";
+        header("Location: ../error/");
         exit();
     }
     if(isset($_POST["votedPid"])){
@@ -341,7 +341,6 @@
             <p>© 2025 Poll Now. All rights reserved.</p>
         </div>
     </footer>
-
     <script src="./polladmin-script.js"></script>
 </body>
 
