@@ -1570,7 +1570,6 @@ body{
         margin-right: 20px;
     }
   }
-  
   @media (min-width: 577px) and (max-width: 768px) {
     .navbar-side-div{
       width: 50vw;
@@ -1586,7 +1585,5 @@ body{
         margin-right: 20px;
     }
   }
-  /*  add htmlspecialchars() in each echo to prevernt XSS  */
   /*  Add form verification in all the forms to prevent SQL injection */
   /*  SEO  */
-  /*  Favicon  */
