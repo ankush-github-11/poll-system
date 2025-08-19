@@ -12,17 +12,22 @@
         exit();
     }
     if(isset($_SESSION["name"])) $name = $_SESSION["name"];
+    function sanitize_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
+        return $data;
+    }
     if(isset($_POST["title"])){
-        $title = $_POST["title"];
+        $title = sanitize_input($_POST["title"]);
     }
     if(isset($_POST["description"])){
-        $description = $_POST["description"];
+        $description = sanitize_input($_POST["description"]);
     }
-
     $i = 1;
     $arrayOfOptions = [];
     while(isset($_POST["option$i"])){
-        array_push($arrayOfOptions, $_POST["option$i"]);
+        array_push($arrayOfOptions, sanitize_input($_POST["option$i"]));
         $i++;
     }
     $joinedOptions = implode("<.-:.=>", $arrayOfOptions);

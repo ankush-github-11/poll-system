@@ -15,29 +15,35 @@
         header("Location: ../error/");
         exit();
     }
-    if (isset($_POST["submit-edit"])) {
+    function sanitize_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
+        return $data;
+    }
+    if(isset($_POST["submit-edit"])) {
         $fields = [];
         $values = [];
         if (!empty($_POST["name"])  && trim($_POST["name"]) != "") {
             $fields[] = "name = ?";
-            $values[] = $_POST["name"];
+            $values[] = sanitize_input($_POST["name"]);
         }
         if (!empty($_POST["bio"]) && trim($_POST["bio"]) != "") {
             $fields[] = "bio = ?";
-            $values[] = $_POST["bio"];
+            $values[] = sanitize_input($_POST["bio"]);
         }
         if (!empty($_POST["phone"]) && trim($_POST["phone"]) != "") {
             $fields[] = "phone = ?";
-            $values[] = $_POST["phone"];
+            $values[] = sanitize_input($_POST["phone"]);
         }
         if (isset($_POST["website"])) {
             $fields[] = "website = ?";
-            $values[] = $_POST["website"];
+            $values[] = sanitize_input($_POST["website"]);
         }
-        if (empty($fields)) {
-            echo htmlspecialchars("No fields provided to update.");
-            exit;
-        }
+        // if (empty($fields)) {
+        //     echo htmlspecialchars("No fields provided to update.");
+        //     exit;
+        // }
         $sql = "UPDATE users SET " . implode(", ", $fields) . " WHERE uid = ?";
         $values[] = $uid;
         $stmt = $conn->prepare($sql);
