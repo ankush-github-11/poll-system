@@ -52,12 +52,12 @@
         }
         $types = str_repeat("s", count($values) - 1) . "i";
         $stmt->bind_param($types, ...$values);
-        if ($stmt->execute()) {
-            echo htmlspecialchars("Profile updated successfully!");
-        }
-        else {
-            echo htmlspecialchars("Error: " . $stmt->error);
-        }
+        // if ($stmt->execute()) {
+        //     echo htmlspecialchars("Profile updated successfully!");
+        // }
+        // else {
+        //     echo htmlspecialchars("Error: " . $stmt->error);
+        // }
         $stmt->close();
     }
     $sql = "select * from users where uid='$uid'";
@@ -319,7 +319,7 @@
                                         if(isset($row['bio']) && $val != "")
                                             echo htmlspecialchars(htmlspecialchars($row['bio']));
                                         else
-                                            echo htmlspecialchars("<a href='../edit/' class='add-a'>+ Add</a>");
+                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
                                     ?>
                                 </div>
                             </div>
@@ -382,7 +382,7 @@
                                         if(isset($row['phone']) && $val != "")
                                             echo htmlspecialchars(htmlspecialchars($row['phone']));
                                         else
-                                            echo htmlspecialchars("<a href='../edit/' class='add-a'>+ Add</a>");
+                                            echo "<a href='../edit/' class='add-a'>+ Add</a>";
                                     ?>
                                 </div>
                             </div>
@@ -397,10 +397,10 @@
                                         }
                                         $safeUrl = htmlspecialchars($val, ENT_QUOTES, 'UTF-8');
                                         $displayText = htmlspecialchars($row['website'], ENT_QUOTES, 'UTF-8');
-                                        echo htmlspecialchars("<a class='website-right-div add-js' href='{$safeUrl}' target='_blank'>{$displayText}</a>");
+                                        echo "<a class='website-right-div add-js' href='{$safeUrl}' target='_blank'>{$displayText}</a>";
                                     }
                                     else {
-                                        echo htmlspecialchars("<a href='../edit/' class='add-a'>+ Add</a>");
+                                        echo "<a href='../edit/' class='add-a'>+ Add</a>";
                                     }
                                     ?>
                                 </a>

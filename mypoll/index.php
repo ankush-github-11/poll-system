@@ -61,35 +61,62 @@
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $password = '';
         $maxIndex = strlen($characters) - 1;
-    
         for ($i = 0; $i < $length; $i++) {
             $index = rand(0, $maxIndex);
             $password .= $characters[$index];
         }
-    
         return $password;
     }
-
-    if(isset($_POST['title'])){
+    if (isset($_POST['title'])) {
         $pollPassword = generateRandomPassword();
-        $sql = "insert into polls set uid = '$uid', name='$name', pollPassword='$pollPassword', title='$title', description='$description', options='$joinedOptions', pollType='$pollTypeOptions', theme='$themeOptions', caseOptions='$caseOptions', publishImmediately= '$publishImmediatelyCheckbox', startDateAndTime='$dateAndTime', duration='$duration', votersRepresentation='$votersRepresentation', devices='$devices', showResults='$showResults' ";
+        $sql = "insert into polls set uid=?, name=?, pollPassword=?, title=?, description=?, options=?, 
+                pollType=?, theme=?, caseOptions=?, publishImmediately=?, 
+                startDateAndTime=?, duration=?, votersRepresentation=?, 
+                devices=?, showResults=?";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param(
+            $stmt,
+            "issssssssssssss",
+            $uid,
+            $name,
+            $pollPassword,
+            $title,
+            $description,
+            $joinedOptions,
+            $pollTypeOptions,
+            $themeOptions,
+            $caseOptions,
+            $publishImmediatelyCheckbox,
+            $dateAndTime,
+            $duration,
+            $votersRepresentation,
+            $devices,
+            $showResults
+        );
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
         $uid = $_SESSION['uid'];
-        $temp = "update users set pollsCreated = pollsCreated + 1 where uid = $uid";
-        $res = mysqli_query($conn, $temp);
+        $temp = "UPDATE users SET pollsCreated = pollsCreated + 1 WHERE uid = ?";
+        $stmt2 = mysqli_prepare($conn, $temp);
+        mysqli_stmt_bind_param($stmt2, "i", $uid);
+        $res = mysqli_stmt_execute($stmt2);
+        mysqli_stmt_close($stmt2);
     }
-
     $res = false;
     $arr = [];
-    if(isset($_POST['title'])) {
-        $res = mysqli_query($conn, $sql);
-        $sql = "select * from polls where uid='$uid' and title='$title'";
-        $res = mysqli_query($conn, $sql);
-        if($res == true && mysqli_num_rows($res) > 0){
-            mysqli_data_seek($res, mysqli_num_rows($res) - 1); // Move pointer to last row
-            $arr = mysqli_fetch_assoc($res); // Fetch the last row
+    if (isset($_POST['title'])) {
+        $sql = "SELECT * FROM polls WHERE uid=? AND title=?";
+        $stmt3 = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt3, "is", $uid, $title);
+        mysqli_stmt_execute($stmt3);
+        $res = mysqli_stmt_get_result($stmt3);
+        if ($res == true && mysqli_num_rows($res) > 0) {
+            mysqli_data_seek($res, mysqli_num_rows($res) - 1);
+            $arr = mysqli_fetch_assoc($res);
             $_SESSION['pid'] = $arr["pid"];
             $_SESSION['pollPassword'] = $arr["pollPassword"];
         }
+        mysqli_stmt_close($stmt3);
     }
     $message ="";
     $message =  "Your poll has been created successfully!";

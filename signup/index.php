@@ -1,5 +1,104 @@
 <?php
     include "../config/connect.php";
+    function sanitizeName($name){
+        $name = trim($name);
+        $name = stripslashes($name);
+        $name = htmlspecialchars($name);
+        return $name;
+    }
+    function validateName($name){
+        return preg_match("/^[a-zA-Z\s]+$/", $name);
+    }
+    function sanitizeEmail($email){
+        return filter_var(trim($email), FILTER_SANITIZE_EMAIL);
+    }
+    function validateEmail($email) {
+        return filter_var($email, FILTER_VALIDATE_EMAIL) && 
+            str_ends_with(strtolower($email), '@gmail.com');
+    }
+    function sanitizePassword($password){
+        return trim(htmlspecialchars($password));
+    }
+    function validatePassword($password){
+        return strlen($password) >= 8;
+    }
+    function getLocalPart($email) {
+        $parts = explode("@", $email);
+        return $parts[0] ?? '';
+    }
+    if(isset($_POST["signup"])){ 
+        $name = sanitizeName($_POST['name']); 
+        $email = sanitizeEmail($_POST['email']); 
+        $password = sanitizePassword($_POST['password']); 
+        if(validateName($name) && validateEmail($email) && validatePassword($password)) { 
+            $check_sql = "SELECT 1 FROM users WHERE email = ? LIMIT 1"; 
+            $stmt = mysqli_prepare($conn, $check_sql);
+            mysqli_stmt_bind_param($stmt, "s", $email);
+            mysqli_stmt_execute($stmt);
+            $check_res = mysqli_stmt_get_result($stmt);
+            if ($check_res && mysqli_num_rows($check_res) > 0) { 
+                $_SESSION["invalidEmail"] = "Email is already used"; 
+                $_SESSION["invalidName"] = "no"; 
+                $_SESSION["invalidPassword"] = "no"; 
+                $_SESSION["wrongName"] = $name; 
+                $_SESSION["wrongEmail"] = $email; 
+                $_SESSION["wrongPassword"] = $password; 
+                header("Location: ./"); 
+                exit(); 
+            }
+            $username = getLocalPart($email); 
+            $hashed = password_hash($password, PASSWORD_BCRYPT); 
+            $sql = "INSERT INTO users (username, name, email, password) VALUES (?, ?, ?, ?)";
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt, "ssss", $username, $name, $email, $hashed);
+            $res = mysqli_stmt_execute($stmt);
+            if ($res == true) { 
+                $_SESSION["name"] = $name; 
+                $_SESSION["email"] = $email; 
+                $_SESSION["password"] = $password; 
+                $_SESSION["username"] = $username; 
+                $sql = "SELECT * FROM users WHERE username = ?"; 
+                $stmt = mysqli_prepare($conn, $sql);
+                mysqli_stmt_bind_param($stmt, "s", $username);
+                mysqli_stmt_execute($stmt);
+                $res = mysqli_stmt_get_result($stmt);
+                if($res==true) { 
+                    $count=mysqli_num_rows($res); 
+                    if($count>0) { 
+                        $row=mysqli_fetch_assoc($res); 
+                        $_SESSION["uid"] = $row['uid']; 
+                    } 
+                } 
+                header("Location:../createpoll/"); 
+                exit(); 
+            } 
+        }
+        else{ 
+            if(!validateName($name)){ 
+                $_SESSION["invalidName"] = "Invalid Name"; 
+            }
+            else{ 
+                $_SESSION["invalidName"] = "no"; 
+            } 
+            if(!validateEmail($email)){ 
+                $_SESSION["invalidEmail"] = "Invalid Email"; 
+            }
+            else{ 
+                $_SESSION["invalidEmail"] = "no"; 
+            } 
+            if(!validatePassword($password)){ 
+                $_SESSION["invalidPassword"] = "Invalid Password"; 
+            }
+            else{ 
+                $_SESSION["invalidPassword"] = "no"; 
+            } 
+            $_SESSION["wrongName"] = $name; 
+            $_SESSION["wrongEmail"] = $email; 
+            $_SESSION["wrongPassword"] = $password; 
+            header("Location: ./"); 
+            exit(); 
+        } 
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -105,99 +204,3 @@
     <script src="signup-script.js"></script>
 </body>
 </html>
-<?php
-function sanitizeName($name){
-    $name = trim($name);
-    $name = stripslashes($name);
-    $name = htmlspecialchars($name);
-    return $name;
-}
-function validateName($name){
-    return preg_match("/^[a-zA-Z\s]+$/", $name);
-}
-function sanitizeEmail($email){
-    return filter_var(trim($email), FILTER_SANITIZE_EMAIL);
-}
-function validateEmail($email) {
-    return filter_var($email, FILTER_VALIDATE_EMAIL) && 
-           str_ends_with(strtolower($email), '@gmail.com');
-}
-function sanitizePassword($password){
-    return trim(htmlspecialchars($password));
-}
-function validatePassword($password){
-    return strlen($password) >= 8;
-}
-function getLocalPart($email) {
-    $parts = explode("@", $email);
-    return $parts[0] ?? '';
-}
-if(isset($_POST["signup"])){
-    $name = sanitizeName($_POST['name']);
-    $email = sanitizeEmail($_POST['email']);
-    $password = sanitizePassword($_POST['password']);
-    if (validateName($name) && validateEmail($email) && validatePassword($password)) {
-        $check_sql = "SELECT 1 FROM users WHERE email = '$email' LIMIT 1";
-        $check_res = mysqli_query($conn, $check_sql);
-        if ($check_res && mysqli_num_rows($check_res) > 0) {
-            $_SESSION["invalidEmail"]    = "Email is already used";
-            $_SESSION["invalidName"]     = "no";
-            $_SESSION["invalidPassword"] = "no";
-            $_SESSION["wrongName"]       = $name;
-            $_SESSION["wrongEmail"]      = $email;
-            $_SESSION["wrongPassword"]   = $password;
-            header("Location: ./");
-            exit();
-        }
-        $username = getLocalPart($email);
-        $hashed = password_hash($password, PASSWORD_BCRYPT);
-        $sql = "insert into users set username='$username', name='$name',email='$email', password='$hashed'";
-        $res = mysqli_query($conn, $sql);
-        if ($res == true)
-        {
-            $_SESSION["name"] = $name;
-            $_SESSION["email"] = $email;
-            $_SESSION["password"] = $password;
-            $_SESSION["username"] = $username;
-            $sql="select * from users where username='$username'";
-            $res=mysqli_query($conn,$sql);
-            if($res==true)
-            {
-                $count=mysqli_num_rows($res);
-                if($count>0)
-                {
-                    $row=mysqli_fetch_assoc($res);
-                    $_SESSION["uid"] = $row['uid'];
-                }
-            }
-            header("Location:../createpoll/");
-            exit();
-        }
-    }
-    else{
-        if(!validateName($name)){
-            $_SESSION["invalidName"] = "Invalid Name";
-        }
-        else{
-            $_SESSION["invalidName"] = "no";
-        }
-        if(!validateEmail($email)){
-            $_SESSION["invalidEmail"] = "Invalid Email";
-        }
-        else{
-            $_SESSION["invalidEmail"] = "no";
-        }
-        if(!validatePassword($password)){
-            $_SESSION["invalidPassword"] = "Invalid Password";
-        }
-        else{
-            $_SESSION["invalidPassword"] = "no";
-        }
-        $_SESSION["wrongName"] = $name;
-        $_SESSION["wrongEmail"] = $email;
-        $_SESSION["wrongPassword"] = $password;
-        header("Location: ./");
-        exit();
-    }
-}
-?>
