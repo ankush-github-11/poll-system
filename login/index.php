@@ -1,5 +1,9 @@
 <?php
     include "../config/connect.php";
+    if(isset($_SESSION["uid"])){
+        header('Location: ../');
+        exit();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -121,7 +125,7 @@ if (isset($_POST["login"])) {
                     $_SESSION["name"] = $row["name"];
                     $_SESSION["username"] = $row["username"];
                     $_SESSION["invalidCredentials"] = "no";
-                    header("Location: ../createpoll/");
+                    header("Location: ../");
                     exit();
                 }
                 else {

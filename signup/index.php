@@ -1,5 +1,9 @@
 <?php
     include "../config/connect.php";
+    if(isset($_SESSION["uid"])){
+        header('Location: ../');
+        exit();
+    }
     function sanitizeName($name){
         $name = trim($name);
         $name = stripslashes($name);
@@ -69,7 +73,7 @@
                         $_SESSION["uid"] = $row['uid']; 
                     } 
                 } 
-                header("Location:../createpoll/"); 
+                header("Location: ../"); 
                 exit(); 
             } 
         }
