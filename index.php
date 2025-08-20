@@ -273,17 +273,38 @@ if(isset($_POST["createpoll"])){
                     <div class="side-box-4 reveal-me-4">
                         <div class="my-fa-1">
                             <div><i class="fa-solid fa-paper-plane fa-xl"></i></div>
-                            <h3>10,000</h3>
-                            <div>Votes Cast</div>
+                            <h3>
+                                <?php
+                                    $sql = "select count(*) as total from votes";
+                                    $result = mysqli_query($conn, $sql);
+                                    $row = mysqli_fetch_assoc($result);
+                                    echo $row['total'];
+                                ?>
+                            </h3>
+                            <div>Total Votes</div>
                         </div>
                         <div class="my-fa-2">
                             <div><i class="fa-solid fa-wand-magic-sparkles fa-xl"></i></div>
-                            <h3>1,000</h3>
-                            <div>Polls Conducted</div>
+                            <h3>
+                                <?php
+                                    $sql = "select count(*) as total from polls";
+                                    $result = mysqli_query($conn, $sql);
+                                    $row = mysqli_fetch_assoc($result);
+                                    echo $row['total'];
+                                ?>
+                            </h3>
+                            <div>Polls Created</div>
                         </div>
                         <div class="my-fa-3">
                             <div><i class="fa-solid fa-users fa-xl"></i></div>
-                            <h3>500</h3>
+                            <h3>
+                                <?php
+                                    $sql = "select count(*) as total from users";
+                                    $result = mysqli_query($conn, $sql);
+                                    $row = mysqli_fetch_assoc($result);
+                                    echo $row['total'];
+                                ?>
+                            </h3>
                             <div>Active Users</div>
                         </div>
                     </div>
@@ -459,7 +480,7 @@ if(isset($_POST["createpoll"])){
                             </form>
                         </a>
                     </li>
-                    <li><a href="../viewpolls/">View Polls</a></li>
+                    <li><a href="./viewpolls/">View Polls</a></li>
                 </ul>
             </div>
             <div class="footer-section contact">

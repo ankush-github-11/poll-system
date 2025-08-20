@@ -959,6 +959,7 @@ body{
 .my-fa-1>h3, .my-fa-2>h3, .my-fa-3>h3{
     font-size: xx-large;
     font-weight: 600;
+    margin-top: 8px;
 }
 .btn-vote-side-box-1, .btn-vote-side-box-2 , .btn-vote-side-box-3{
     display: flex;
@@ -984,7 +985,7 @@ body{
     border: none;
     height: min-content;
     color: white;
-    background-color: var(--bg-1);
+    background: linear-gradient(155deg, var(--bg-1), rgb(134, 0, 164));
     &:hover{
         color: white;
         background-color: var(--bg-3);
