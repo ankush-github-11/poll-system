@@ -313,7 +313,7 @@ if(isset($_POST["createpoll"])){
         </div>
         <div class="total-div-2">
             <div class="how-it-works-div">
-                <h1>How It Works</h1>
+                <h2>How It Works</h2>
                 <div class="how-it-works-under-1 step reveal-me-5">
                     <h4><i class="fa-solid fa-user-plus"></i>Login & Register</h4>
                     <div>Create your account or sign in to get started with polling activities. Fast and secure registration ensures a smooth experience.</div>

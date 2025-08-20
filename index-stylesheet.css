@@ -1001,7 +1001,7 @@ body{
     flex-direction: column;
     justify-content: center;
 }
-.how-it-works-div h1{
+.how-it-works-div h2{
     margin-bottom: 0px;
     margin: 0px 2.5vw;
 }
