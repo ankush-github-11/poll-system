@@ -117,26 +117,30 @@
             }
         ?>
     </div>
-    <div class="message-div">
+    <div class="message-div hidden">
         <?php
             if(isset($_POST["message-submit"])){
                 $username = $_SESSION["username"];
-                $message = $_POST["message"];
-                $sql = "insert into messages set username = '$username', message = '$message'";
-                $res = mysqli_query($conn,$sql);
+                $message = sanitize_input($_POST["message"]);
+                $stmt = $conn->prepare("INSERT INTO messages (username, message) VALUES (?, ?)");
+                $stmt->bind_param("ss", $username, $message);
+                $stmt->execute();
+                $stmt->close();
                 echo htmlspecialchars("Message Sent");
             }
         ?>
     </div>
-    <div class="bug-div">
+    <div class="bug-div hidden">
         <?php
             if(isset($_POST["bug-submit"])){
                 $username = $_SESSION["username"];
-                $bugTitle = $_POST["bug-title"];
-                $bugDesc = $_POST["bug-desc"];
-                $bugType = $_POST["bug-type"];
-                $sql = "insert into bugs set username = '$username', bugTitle = '$bugTitle', bugDesc = '$bugDesc', bugType = '$bugType'";
-                $res = mysqli_query($conn,$sql);
+                $bugTitle = sanitize_input($_POST["bug-title"]);
+                $bugDesc = sanitize_input($_POST["bug-desc"]);
+                $bugType = sanitize_input($_POST["bug-type"]);
+                $stmt = $conn->prepare("INSERT INTO bugs (username, bugTitle, bugDesc, bugType) VALUES (?, ?, ?, ?)");
+                $stmt->bind_param("ssss", $username, $bugTitle, $bugDesc, $bugType);
+                $stmt->execute();
+                $stmt->close();
                 echo htmlspecialchars("Bug Sent");
             }
         ?>
