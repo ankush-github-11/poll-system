@@ -85,9 +85,6 @@ if(isset($_POST["createpoll"])){
                 <div class="nav-side-item-1-div">
                     <a draggable="false" class="nav-side-item-1" href="./">Home</a>
                 </div>
-                <div class="nav-side-item-2-div">
-                    <a draggable="false" class="nav-side-item-2" href="">Contact</a>
-                </div>
                 <div class="nav-side-item-3-div">
                     <a draggable="false" class="nav-side-item-3" href="./viewpolls/">View Polls</a>
                 </div>
@@ -106,10 +103,6 @@ if(isset($_POST["createpoll"])){
                         <div class="nav-item-1-div">
                             <a draggable="false" class="nav-item-1" href="./">Home</a>
                             <div class="nav-item-1-hover-div"></div>
-                        </div>
-                        <div class="nav-item-2-div">
-                            <a draggable="false" class="nav-item-2" href="">Contact</a>
-                            <div class="nav-item-2-hover-div"></div>
                         </div>
                         <div class="nav-item-3-div">
                             <a draggable="false" class="nav-item-3" href="./viewpolls/">View Polls</a>
