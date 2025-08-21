@@ -52,9 +52,7 @@
         }
         $types = str_repeat("s", count($values) - 1) . "i";
         $stmt->bind_param($types, ...$values);
-        // if ($stmt->execute()) {
-        //     echo htmlspecialchars("Profile updated successfully!");
-        // }
+        $stmt->execute();
         // else {
         //     echo htmlspecialchars("Error: " . $stmt->error);
         // }
