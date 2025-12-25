@@ -1,4 +1,4 @@
-# Poll System Project (Poll Now)
+# Poll Now
 
 ### A simple and interactive **Polling System** built with **PHP, CSS, JavaScript, and MySQL**.  
 This project allows users to create polls, vote, and view real-time results with a clean frontend and secure backend.
