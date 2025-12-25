@@ -69,11 +69,11 @@
                 <div class="nav-side-item-1-div">
                     <a draggable="false" class="nav-side-item-1" href="../">Home</a>
                 </div>
-                <div class="nav-side-item-3-div">
-                    <a draggable="false" class="nav-side-item-3" href="../viewpolls/">View Polls</a>
+                <div class="nav-side-item-2-div">
+                    <a draggable="false" class="nav-side-item-2" href="../viewpolls/">View Polls</a>
                 </div>
-                <div class="nav-side-item-4-div">
-                    <a draggable="false" class="nav-side-item-4" href="../security/">Security</a>
+                <div class="nav-side-item-3-div">
+                    <a draggable="false" class="nav-side-item-3" href="../security/">Security</a>
                 </div>
             </div>
             <div class="my-navbar-div fixed-top">
@@ -88,13 +88,13 @@
                             <a draggable="false" class="nav-item-1" href="../">Home</a>
                             <div class="nav-item-1-hover-div"></div>
                         </div>
-                        <div class="nav-item-3-div">
-                            <a draggable="false" class="nav-item-3" href="../viewpolls/">View Polls</a>
-                            <div class="nav-item-3-hover-div"></div>
+                        <div class="nav-item-2-div">
+                            <a draggable="false" class="nav-item-2" href="../viewpolls/">View Polls</a>
+                            <div class="nav-item-2-hover-div"></div>
                         </div>
-                        <div class="nav-item-4-div">
-                            <a draggable="false" class="nav-item-4" href="../security/">Security</a>
-                            <div class="nav-item-4-hover-div"></div>
+                        <div class="nav-item-3-div">
+                            <a draggable="false" class="nav-item-3" href="../security/">Security</a>
+                            <div class="nav-item-3-hover-div"></div>
                         </div>
                     </div>
                 </div>
